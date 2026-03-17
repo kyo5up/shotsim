@@ -36,76 +36,7 @@
 
   <div class="articles-list">
     <h1>記事一覧</h1>
-
-    <div class="section-title">SIMガイド・選び方</div>
-
-    <a href="/shotsim/ja/articles/how-to-choose-sim.html" class="article-item">
-      <span class="tag">基礎知識</span>
-      <h3>海外旅行SIMの選び方【初心者向け】eSIMと物理SIMの違いから購入手順まで</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/top5-destinations-2024.html" class="article-item">
-      <span class="tag">調査・データ</span>
-      <h3>2024年版：日本人が最も多く訪れた海外旅行先TOP5</h3>
-      <span class="date">2026-03-15</span>
-    </a>
-
-    <div class="section-title">国別SIMガイド</div>
-
-    <a href="/shotsim/ja/articles/sim-guide-korea.html" class="article-item">
-      <span class="tag">国別ガイド</span>
-      <h3>韓国旅行のeSIM・SIM完全ガイド【2026年版】現地で使えるおすすめ3選</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/sim-guide-hawaii.html" class="article-item">
-      <span class="tag">国別ガイド</span>
-      <h3>ハワイ旅行のeSIM・SIM完全ガイド【2026年版】T-Mobile正規品おすすめ3選</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/sim-guide-taiwan.html" class="article-item">
-      <span class="tag">国別ガイド</span>
-      <h3>台湾旅行のeSIM・SIM完全ガイド【2026年版】中華電信対応おすすめ3選</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/sim-guide-southeast-asia.html" class="article-item">
-      <span class="tag">国別ガイド</span>
-      <h3>タイ・ベトナム旅行のeSIM比較【2026年版】東南アジアおすすめSIM6選</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-
-    <div class="section-title">通信キャリア解説 - 日本</div>
-
-    <a href="/shotsim/ja/articles/carriers/japan/japan-carrier-01-overview.html" class="article-item">
-      <span class="tag">キャリア解説</span>
-      <h3>日本の通信キャリア事情【訪日旅行者向け完全ガイド】4大キャリアと格安SIMを解説</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/carriers/japan/japan-carrier-02-docomo.html" class="article-item">
-      <span class="tag">キャリア解説</span>
-      <h3>NTTドコモのSIMは訪日旅行者に向いている？日本最大キャリアを2026年版で解説</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/carriers/japan/japan-carrier-03-au.html" class="article-item">
-      <span class="tag">キャリア解説</span>
-      <h3>au（KDDI）のSIMは訪日旅行者に向いている？日本第2位キャリアを2026年版で解説</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/carriers/japan/japan-carrier-04-softbank.html" class="article-item">
-      <span class="tag">キャリア解説</span>
-      <h3>ソフトバンクのSIMは訪日旅行者に向いている？都市部に強い第3位キャリアを2026年版で解説</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/carriers/japan/japan-carrier-05-rakuten.html" class="article-item">
-      <span class="tag">キャリア解説</span>
-      <h3>楽天モバイルのSIMは訪日旅行者に向いている？第4位キャリアの実力を2026年版で解説</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-    <a href="/shotsim/ja/articles/carriers/japan/japan-carrier-06-mvno.html" class="article-item">
-      <span class="tag">キャリア解説</span>
-      <h3>日本の格安SIM（MVNO）とは？訪日旅行者向けに仕組みとおすすめを解説【2026年版】</h3>
-      <span class="date">2026-03-16</span>
-    </a>
-
+    <div id="articles-container"></div>
     <div style="margin-top: 48px;">
       <a href="/shotsim/" style="color: #1a73e8; text-decoration: none; font-size: 0.9rem;">← トップページへ戻る</a>
     </div>
@@ -114,5 +45,73 @@
   <footer>
     <p>&copy; 2026 ShotSIM. 本サイトはAmazonアソシエイトプログラムに参加しています。</p>
   </footer>
+
+  <script>
+    // セクション定義（表示順）
+    const sections = [
+      {
+        title: 'SIMガイド・選び方',
+        filter: a => a.tags.some(t => ['基礎知識', '調査・データ', 'eSIM'].includes(t)) && !a.tags.includes('国別ガイド') && !a.tags.includes('キャリア解説')
+      },
+      {
+        title: '国別SIMガイド',
+        filter: a => a.tags.includes('国別ガイド')
+      },
+      {
+        title: '通信キャリア解説 - 日本',
+        filter: a => a.tags.includes('キャリア解説') && a.tags.includes('日本')
+      },
+      {
+        title: '通信キャリア解説 - 韓国',
+        filter: a => a.tags.includes('キャリア解説') && a.tags.includes('韓国')
+      },
+      {
+        title: '通信キャリア解説 - 台湾',
+        filter: a => a.tags.includes('キャリア解説') && a.tags.includes('台湾')
+      },
+      {
+        title: '通信キャリア解説 - タイ',
+        filter: a => a.tags.includes('キャリア解説') && a.tags.includes('タイ')
+      },
+      {
+        title: '通信キャリア解説 - ベトナム',
+        filter: a => a.tags.includes('キャリア解説') && a.tags.includes('ベトナム')
+      },
+      {
+        title: '通信キャリア解説 - アメリカ・ハワイ',
+        filter: a => a.tags.includes('キャリア解説') && a.tags.includes('アメリカ・ハワイ')
+      },
+    ];
+
+    fetch('/data/articles.json')
+      .then(r => r.json())
+      .then(articles => {
+        const container = document.getElementById('articles-container');
+        // 日付降順にソート
+        articles.sort((a, b) => b.date.localeCompare(a.date));
+
+        sections.forEach(section => {
+          const items = articles.filter(section.filter);
+          if (items.length === 0) return;
+
+          const titleEl = document.createElement('div');
+          titleEl.className = 'section-title';
+          titleEl.textContent = section.title;
+          container.appendChild(titleEl);
+
+          items.forEach(article => {
+            const a = document.createElement('a');
+            a.href = article.url;
+            a.className = 'article-item';
+            a.innerHTML = `
+              <span class="tag">${article.tags[0]}</span>
+              <h3>${article.title}</h3>
+              <span class="date">${article.date}</span>
+            `;
+            container.appendChild(a);
+          });
+        });
+      });
+  </script>
 </body>
 </html>
