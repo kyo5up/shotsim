@@ -198,8 +198,25 @@ footer {
   font-size: 0.85rem;
 }
 
+/* 最新記事・HOT情報 2カラム */
+.articles-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 8px;
+}
+
+.articles-col h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #555;
+}
+
 /* レスポンシブ */
 @media (max-width: 600px) {
+  .articles-columns {
+    grid-template-columns: 1fr;
+  }
   .search-section h1 {
     font-size: 1.4rem;
   }

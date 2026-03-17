@@ -80,40 +80,17 @@
     </div>
   </section>
 
-  <!-- 最新記事 -->
+  <!-- 最新記事・HOT情報 -->
   <section class="articles-section">
-    <h2>最新記事・HOT情報</h2>
-    <div class="articles-grid">
-      <a href="/shotsim/ja/articles/how-to-choose-sim.html" class="article-card">
-        <div class="tag">基礎知識</div>
-        <h3>海外旅行SIMの選び方【初心者向け】eSIMと物理SIMの違いから購入手順まで</h3>
-        <div class="date">2026-03-16</div>
-      </a>
-      <a href="/shotsim/ja/articles/sim-guide-korea.html" class="article-card">
-        <div class="tag">国別ガイド</div>
-        <h3>韓国旅行のeSIM・SIM完全ガイド【2026年版】</h3>
-        <div class="date">2026-03-16</div>
-      </a>
-      <a href="/shotsim/ja/articles/sim-guide-hawaii.html" class="article-card">
-        <div class="tag">国別ガイド</div>
-        <h3>ハワイ旅行のeSIM・SIM完全ガイド【2026年版】</h3>
-        <div class="date">2026-03-16</div>
-      </a>
-      <a href="/shotsim/ja/articles/sim-guide-taiwan.html" class="article-card">
-        <div class="tag">国別ガイド</div>
-        <h3>台湾旅行のeSIM・SIM完全ガイド【2026年版】</h3>
-        <div class="date">2026-03-16</div>
-      </a>
-      <a href="/shotsim/ja/articles/sim-guide-southeast-asia.html" class="article-card">
-        <div class="tag">国別ガイド</div>
-        <h3>タイ・ベトナム旅行のeSIM比較【2026年版】</h3>
-        <div class="date">2026-03-16</div>
-      </a>
-      <a href="/shotsim/ja/articles/top5-destinations-2024.html" class="article-card">
-        <div class="tag">調査・データ</div>
-        <h3>2024年版：日本人が最も多く訪れた海外旅行先TOP5</h3>
-        <div class="date">2026-03-15</div>
-      </a>
+    <div class="articles-columns">
+      <div class="articles-col">
+        <h2>最新記事</h2>
+        <div id="latest-articles"></div>
+      </div>
+      <div class="articles-col">
+        <h2>HOT情報</h2>
+        <div id="hot-articles"></div>
+      </div>
     </div>
     <div style="text-align: right; margin-top: 16px;">
       <a href="/shotsim/ja/articles/" style="color: #1a73e8; font-size: 0.9rem; text-decoration: none;">記事一覧を見る →</a>
@@ -125,5 +102,38 @@
   </footer>
 
   <script src="/shotsim/assets/js/main.js"></script>
+  <script>
+    fetch('data/articles.json')
+      .then(r => r.json())
+      .then(articles => {
+        // 日付降順
+        articles.sort((a, b) => b.date.localeCompare(a.date));
+
+        // 最新記事：直近5件
+        const latest = articles.slice(0, 5);
+        // HOT情報：国別ガイド・基礎知識系から5件
+        const hot = articles.filter(a =>
+          a.tags.includes('国別ガイド') || a.tags.includes('基礎知識') || a.tags.includes('比較')
+        ).slice(0, 5);
+
+        function renderList(items, containerId) {
+          const container = document.getElementById(containerId);
+          items.forEach(article => {
+            const a = document.createElement('a');
+            a.href = article.url;
+            a.className = 'article-card';
+            a.innerHTML = `
+              <div class="tag">${article.tags[0]}</div>
+              <h3>${article.title}</h3>
+              <div class="date">${article.date}</div>
+            `;
+            container.appendChild(a);
+          });
+        }
+
+        renderList(latest, 'latest-articles');
+        renderList(hot, 'hot-articles');
+      });
+  </script>
 </body>
 </html>
