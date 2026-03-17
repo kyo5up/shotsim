@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓国eSIMの設定方法【2026年版】iPhone・Android別に手順を徹底解説 | ShotSIM</title>
+  <meta name="description" content="韓国旅行前にeSIMを購入したけど設定方法がわからない方向け。iPhone（QRコード・手動入力）とAndroid（Samsung Galaxy・Google Pixel）の設定手順を画面遷移に沿って解説。出発前・現地どちらで設定すべきかやトラブル対処法も紹介。">
+  <!-- OGP -->
+  <meta property="og:title" content="韓国eSIMの設定方法【2026年版】iPhone・Android別に手順を徹底解説">
+  <meta property="og:description" content="韓国旅行前にeSIMを購入したけど設定方法がわからない方向け。iPhone（QRコード・手動入力）とAndroid（Samsung Galaxy・Google Pixel）の設定手順を画面遷移に沿って解説。出発前・現地どちらで設定すべきかやトラブル対処法も紹介。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shotsim.net/ja/articles/korea-esim-setup.html">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/shotsim/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .article-body { max-width: 760px; margin: 40px auto; padding: 0 24px 60px; }
+    .article-body h1 { font-size: 1.6rem; margin-bottom: 8px; line-height: 1.4; }
+    .article-meta { font-size: 0.85rem; color: #999; margin-bottom: 32px; }
+    .article-body h2 { font-size: 1.2rem; margin: 32px 0 12px; padding-left: 12px; border-left: 4px solid #1a73e8; }
+    .article-body h3 { font-size: 1.05rem; margin: 24px 0 10px; color: #333; }
+    .article-body p { line-height: 1.8; margin-bottom: 16px; }
+    .ranking-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+    .ranking-table th, .ranking-table td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; }
+    .ranking-table th { background: #f0f4ff; font-weight: 600; }
+    .ranking-table tr:nth-child(even) td { background: #fafafa; }
+    .source { font-size: 0.8rem; color: #999; margin-top: 40px; padding-top: 16px; border-top: 1px solid #eee; }
+    .step-list { list-style: none; padding: 0; margin: 0 0 24px; counter-reset: step-counter; }
+    .step-list li { counter-increment: step-counter; position: relative; padding: 10px 10px 10px 48px; margin-bottom: 10px; background: #f8f9ff; border-radius: 6px; line-height: 1.7; }
+    .step-list li::before { content: counter(step-counter); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; background: #1a73e8; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; }
+    .alert-box { background: #fff8e1; border-left: 4px solid #ffc107; padding: 12px 16px; margin: 0 0 24px; border-radius: 0 4px 4px 0; }
+    .alert-box p { margin: 0; line-height: 1.7; }
+    .check-list { list-style: none; padding: 0; margin: 0 0 24px; }
+    .check-list li { padding: 6px 0 6px 28px; position: relative; line-height: 1.7; }
+    .check-list li::before { content: "✓"; position: absolute; left: 0; color: #1a73e8; font-weight: 700; }
+    .trouble-item { border: 1px solid #e0e0e0; border-radius: 6px; padding: 14px 16px; margin-bottom: 16px; }
+    .trouble-item .trouble-q { font-weight: 600; color: #c0392b; margin-bottom: 6px; }
+    .trouble-item .trouble-a { margin: 0; line-height: 1.7; }
+    .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 20px 0 32px; }
+    .related-links a { display: block; padding: 12px 16px; background: #f0f4ff; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #1a73e8; font-weight: 600; transition: background 0.2s; font-size: 0.9rem; }
+    .related-links a:hover { background: #e8eef7; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/shotsim/" class="logo">📡 ShotSIM</a>
+  </header>
+  <div class="article-body">
+    <h1>韓国eSIMの設定方法【2026年版】iPhone・Android別に手順を徹底解説</h1>
+    <div class="article-meta">基礎知識・韓国・eSIM｜2026-03-17</div>
+
+    <p>結論から言います。韓国eSIMの設定は、<strong>QRコードを読み込んでプランを有効化するだけ</strong>です。難しい操作は一切ありません。ただし、事前に確認しておくべき条件がいくつかあります。この記事では、iPhoneとAndroid（Samsung Galaxy・Google Pixel）それぞれの設定手順を、ステップ形式でわかりやすく解説します。</p>
+
+    <div class="alert-box">
+      <p><strong>この記事でわかること</strong>：SIMロック解除の確認方法 / iPhoneのQRコード・手動入力での設定手順 / Androidの設定手順 / 出発前と現地どちらで設定すべきか / よくあるトラブルの対処法</p>
+    </div>
+
+    <h2>eSIM設定前の確認事項</h2>
+
+    <p>設定を始める前に、以下の2点を必ず確認してください。これをスキップすると、現地でeSIMが使えないトラブルになりかねません。</p>
+
+    <h3>1. SIMロックが解除されているか</h3>
+
+    <p>日本で購入したスマートフォンは、キャリア（ドコモ・au・ソフトバンクなど）によってSIMロックがかかっている場合があります。SIMロックがかかったままでは、海外のeSIMを設定しても通信できません。</p>
+
+    <p>2021年10月以降に発売された端末は、法律の改正によりSIMロックがかかっていません。それ以前の端末を使っている場合は、各キャリアのWebサイトや店頭でSIMロック解除の手続きをおこなってください。手数料は無料のキャリアがほとんどです。</p>
+
+    <h3>2. 端末がeSIMに対応しているか</h3>
+
+    <p>すべてのスマートフォンがeSIMに対応しているわけではありません。主な対応機種の目安は以下のとおりです。</p>
+
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>メーカー</th>
+          <th>対応モデルの目安</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>iPhone</td>
+          <td>iPhone XS / XS Max / XR 以降（2018年以降）</td>
+        </tr>
+        <tr>
+          <td>Samsung Galaxy</td>
+          <td>Galaxy S20以降（一部モデルを除く）</td>
+        </tr>
+        <tr>
+          <td>Google Pixel</td>
+          <td>Pixel 3以降</td>
+        </tr>
+        <tr>
+          <td>その他Android</td>
+          <td>機種ごとにメーカーサイトで要確認</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>自分の端末がeSIM対応かどうか迷ったら、<a href="/shotsim/ja/articles/esim-compatible-phones.html">eSIM対応機種の確認方法【2026年版】</a>を先にご覧ください。iPhoneとAndroid別の確認手順を詳しく解説しています。</p>
+
+    <h2>iPhoneでの設定手順</h2>
+
+    <p>iPhoneのeSIM設定には、「QRコード読み込み方式」と「手動入力方式」の2種類があります。eSIM購入時にQRコードが届いた場合は前者、アクティベーションコードが届いた場合は後者を使います。</p>
+
+    <h3>QRコード方式（もっとも一般的）</h3>
+
+    <ol class="step-list">
+      <li>「設定」アプリを開く</li>
+      <li>「モバイル通信」をタップ</li>
+      <li>「モバイル通信プランを追加」をタップ</li>
+      <li>カメラが起動するので、購入したeSIMのQRコードを読み込む</li>
+      <li>「モバイル通信プランを追加」の確認画面が表示されたら「続ける」をタップ</li>
+      <li>プランのラベル（名前）を設定する（例：「韓国eSIM」）</li>
+      <li>デフォルト回線の選択画面では「主回線」（日本の番号）をそのまま維持する</li>
+      <li>「完了」をタップして設定終了</li>
+    </ol>
+
+    <div class="alert-box">
+      <p><strong>注意</strong>：QRコードは1回しか使えません。スクリーンショットで保存しておくか、別のデバイスでQRコードを表示しながら読み込む必要があります。同じスマホで表示しながら読み込むことはできません。</p>
+    </div>
+
+    <h3>手動入力方式（アクティベーションコードが届いた場合）</h3>
+
+    <ol class="step-list">
+      <li>「設定」アプリを開く</li>
+      <li>「モバイル通信」→「モバイル通信プランを追加」をタップ</li>
+      <li>カメラ起動後、画面下部の「詳細情報を手動で入力」をタップ</li>
+      <li>SM-DP+アドレスとアクティベーションコードを入力する</li>
+      <li>「次へ」をタップし、あとはQRコード方式と同じ手順で進める</li>
+    </ol>
+
+    <p>手動入力のコードはeSIM購入後にメールで届くことが多いです。コードが見当たらない場合は、迷惑メールフォルダも確認してみてください。</p>
+
+    <h2>Androidでの設定手順</h2>
+
+    <p>Androidはメーカーによって設定の画面遷移が異なります。ここでは、韓国旅行者に多い「Samsung Galaxy」と「Google Pixel」の手順を紹介します。</p>
+
+    <h3>Samsung Galaxyの場合</h3>
+
+    <ol class="step-list">
+      <li>「設定」→「接続」→「SIMカードマネージャー」を開く</li>
+      <li>「モバイルプランの追加」または「eSIMを追加」をタップ</li>
+      <li>「QRコードをスキャン」を選択してeSIMのQRコードを読み込む</li>
+      <li>「確認」をタップして内容を確認する</li>
+      <li>「追加」または「アクティベート」をタップして完了</li>
+    </ol>
+
+    <p>機種や One UI のバージョンによって表記が異なる場合があります。「SIMカードマネージャー」が見当たらない場合は「設定」の検索欄に「eSIM」と入力すると見つかります。</p>
+
+    <h3>Google Pixelの場合</h3>
+
+    <ol class="step-list">
+      <li>「設定」→「ネットワークとインターネット」を開く</li>
+      <li>「SIM」または「モバイルネットワーク」をタップ</li>
+      <li>「SIMを追加」または「＋」ボタンをタップ</li>
+      <li>「代わりに SIM をダウンロードしますか？」の画面でカメラが起動するのでQRコードを読み込む</li>
+      <li>「アクティベート」をタップして完了</li>
+    </ol>
+
+    <p>Pixel 6以降のモデルはeSIMのみ対応（物理SIMスロットなし）の機種もあります。自分のモデルを事前に確認しておきましょう。</p>
+
+    <h2>出発前に設定すべきか・現地で設定すべきか</h2>
+
+    <p>「eSIMはいつ設定すればよいのか」というのは、よく聞かれる質問のひとつです。結論は、<strong>日本にいる間にeSIMのインストールだけ済ませておくのがベスト</strong>です。</p>
+
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>タイミング</th>
+          <th>メリット</th>
+          <th>デメリット</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>出発前（日本で）</td>
+          <td>Wi-Fi環境でゆっくり設定できる。現地到着後すぐに使える</td>
+          <td>eSIMの有効期限が早まる場合がある（プランによる）</td>
+        </tr>
+        <tr>
+          <td>現地到着後</td>
+          <td>有効期限を無駄にしない</td>
+          <td>Wi-Fiがないと設定しにくい。空港でのネット接続に手間がかかる</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>多くのeSIMは「アクティベートしてから〇日間有効」という仕組みです。インストール（設定）とアクティベート（有効化）が別になっているプランでは、日本でインストールだけ済ませて現地でアクティベートするという方法も使えます。購入したeSIMの仕様を確認してみてください。</p>
+
+    <p>なお、機内モードにしている間はeSIMのデータ通信は発生しません。フライト中は機内モードをオンにしておくと、有効期限の無駄遣いを防ぐことができます。</p>
+
+    <h2>よくあるトラブルと対処法</h2>
+
+    <p>eSIMの設定でつまずきやすいポイントを、Q&A形式でまとめました。</p>
+
+    <div class="trouble-item">
+      <p class="trouble-q">Q. QRコードを読み込んでも「このコードは無効です」と表示される</p>
+      <p class="trouble-a">QRコードはすでに使用済みか、有効期限切れの可能性があります。eSIM購入先のサポートに連絡して、コードの再発行を依頼してください。多くのサービスはメール対応しています。</p>
+    </div>
+
+    <div class="trouble-item">
+      <p class="trouble-q">Q. eSIMを設定したのに韓国で電波が立たない</p>
+      <p class="trouble-a">まずeSIMのプランが「有効（アクティブ）」になっているか確認してください。Androidは特に「デフォルトSIM」の設定が日本のSIMのままになっていることがあります。データ通信のデフォルトSIMを韓国eSIMに切り替えてください。</p>
+    </div>
+
+    <div class="trouble-item">
+      <p class="trouble-q">Q. 日本のSIMと韓国eSIMを同時に使いたい</p>
+      <p class="trouble-a">デュアルSIM対応端末であれば可能です。通話やSMSは日本のSIM、データ通信は韓国eSIMに割り当てると、日本の番号でも着信しながら韓国の回線でネットを使えます。設定は「SIMカードマネージャー（Android）」または「モバイル通信（iPhone）」で変更できます。</p>
+    </div>
+
+    <div class="trouble-item">
+      <p class="trouble-q">Q. 「モバイル通信プランを追加」の項目が表示されない（iPhone）</p>
+      <p class="trouble-a">SIMロックが解除されていない可能性があります。また、iOS 16以降では「デバイスのeSIM転送」設定が必要な場合もあります。キャリアにSIMロック解除の手続きをしてから再度試してください。</p>
+    </div>
+
+    <div class="trouble-item">
+      <p class="trouble-q">Q. eSIMを削除してしまった。再インストールできるか</p>
+      <p class="trouble-a">eSIMを端末から削除すると、基本的に再インストールはできません。削除前に必ず購入先に確認してください。一部のサービスでは有償で再発行に対応しています。</p>
+    </div>
+
+    <h2>まとめ</h2>
+
+    <p>韓国eSIMの設定は、SIMロック解除と対応機種の確認さえできていれば、あとはQRコードを読み込むだけで完了します。</p>
+
+    <ul class="check-list">
+      <li>SIMロック解除を事前に確認する（2021年10月以降の端末は不要）</li>
+      <li>iPhoneはQRコードを「設定 → モバイル通信」から読み込む</li>
+      <li>SamsungはSIMカードマネージャー、PixelはネットワークのSIM設定から追加する</li>
+      <li>出発前にインストールだけ済ませておくとスムーズ</li>
+      <li>現地で電波が立たない場合はデフォルトSIMの設定を確認する</li>
+    </ul>
+
+    <p>韓国eSIMをまだ購入していない方は、こちらの比較記事も参考にしてみてください。</p>
+
+    <div class="related-links">
+      <a href="/shotsim/ja/articles/best-sim-for-korea-2026.html">韓国旅行おすすめSIM比較【2026年版】</a>
+      <a href="/shotsim/ja/articles/sim-guide-korea.html">韓国旅行のeSIM・SIM完全ガイド</a>
+      <a href="/shotsim/ja/articles/esim-compatible-phones.html">eSIM対応機種の確認方法</a>
+      <a href="/shotsim/ja/articles/esim-vs-physical-sim.html">eSIMと物理SIM、どっちがお得？</a>
+    </div>
+
+    <div class="source">
+      本サイトはAmazonアソシエイトプログラムに参加しており、適格販売により収入を得ています。
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2026 ShotSIM. 本サイトはAmazonアソシエイトプログラムに参加しています。</p>
+  </footer>
+</body>
+</html>
