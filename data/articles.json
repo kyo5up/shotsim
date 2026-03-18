@@ -6,7 +6,7 @@
       "調査・データ"
     ],
     "date": "2026-03-15",
-    "url": "/ja/articles/top5-destinations-2024.html",
+    "url": "/shotsim/ja/articles/top5-destinations-2024.html",
     "summary": "JTB総合研究所・各国政府観光局のデータをもとに、2024年の日本人海外旅行先TOP5をランキング形式で紹介。",
     "created": "2026-03-15 00:00",
     "updated": "2026-03-15 00:00"
@@ -19,7 +19,7 @@
       "eSIM"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/esim-vs-physical-sim.html",
+    "url": "/shotsim/ja/articles/esim-vs-physical-sim.html",
     "summary": "eSIMと物理SIMの違いを価格・手間・対応機種の観点で比較。韓国・台湾・タイの価格例も交えながら、どちらが自分に合っているかをわかりやすく解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -31,7 +31,7 @@
       "基礎知識"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/how-much-data-do-i-need.html",
+    "url": "/shotsim/ja/articles/how-much-data-do-i-need.html",
     "summary": "地図・SNS・動画・テレワーク別のデータ消費量の目安と、旅行日数ごとのおすすめ容量を解説。データ節約術や容量が足りなくなった時の対処法も紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -44,7 +44,7 @@
       "eSIM"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/how-to-choose-sim.html",
+    "url": "/shotsim/ja/articles/how-to-choose-sim.html",
     "summary": "eSIMと物理SIMの違い、データ量・日数・価格の選び方、Amazonで買うメリットをわかりやすく解説。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -58,7 +58,7 @@
       "eSIM"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/sim-guide-korea.html",
+    "url": "/shotsim/ja/articles/sim-guide-korea.html",
     "summary": "韓国旅行で使えるeSIM・SIMをおすすめ3選で紹介。SKテレコム系・無制限プランの比較も。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -72,7 +72,7 @@
       "eSIM"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/sim-guide-hawaii.html",
+    "url": "/shotsim/ja/articles/sim-guide-hawaii.html",
     "summary": "ハワイ旅行で使えるT-Mobile正規eSIMをおすすめ3選で紹介。5日・7日・10日プランを比較。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -86,7 +86,7 @@
       "eSIM"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/sim-guide-taiwan.html",
+    "url": "/shotsim/ja/articles/sim-guide-taiwan.html",
     "summary": "台湾旅行で使えるeSIMをおすすめ3選で紹介。中華電信正規品・完全無制限プランを比較。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -101,7 +101,7 @@
       "eSIM"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/sim-guide-southeast-asia.html",
+    "url": "/shotsim/ja/articles/sim-guide-southeast-asia.html",
     "summary": "タイ・ベトナム旅行向けeSIMを各3選で比較。AIS正規品・Binafon正規品を中心に解説。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -114,7 +114,7 @@
       "日本"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-01-overview.html",
     "summary": "ドコモ・au・ソフトバンク・楽天の4大キャリアを旅程別に比較。訪日旅行者向けSIM選びの全体マップ。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -128,7 +128,7 @@
       "ドコモ"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-carrier-02-docomo.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-02-docomo.html",
     "summary": "ドコモは日本最大シェア39.7%・人口カバー率99%超。地方旅行者に強い理由とau・ソフトバンクとの違いを解説。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -142,7 +142,7 @@
       "au"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-carrier-03-au.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-03-au.html",
     "summary": "auはOpensignal都市部通信品質1位。直営プリペイドSIMは廃止済みだがMVNO経由で高速回線が使える。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -156,7 +156,7 @@
       "ソフトバンク"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-carrier-04-softbank.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-04-softbank.html",
     "summary": "ソフトバンクは都市部5G速度が強みで公式Prepaid SIM for Travelも提供。空港購入可能。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -170,7 +170,7 @@
       "楽天モバイル"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-carrier-05-rakuten.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-05-rakuten.html",
     "summary": "楽天モバイルは外国人利用シェア1位・料金最安。ただし短期旅行者向けプリペイドSIMは未提供。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -184,7 +184,7 @@
       "MVNO"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-carrier-06-mvno.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-06-mvno.html",
     "summary": "MVNOは大手回線を借りた格安SIM。ドコモ系・au系・SB系の違いと訪日旅行者におすすめのMVNOを解説。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -198,7 +198,7 @@
       "滞在期間"
     ],
     "date": "2026-03-16",
-    "url": "/ja/articles/carriers/japan/japan-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/carriers/japan/japan-stay-duration-sim.html",
     "summary": "1〜3日の超短期から3ヶ月以上の長期滞在まで、滞在期間ごとに最適なSIMを解説。パスポートのみでOKか・契約要件も詳しく紹介。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-16 00:00"
@@ -211,7 +211,7 @@
       "韓国"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/carriers/korea/korea-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-01-overview.html",
     "summary": "SKT・KT・LG U+の3大キャリアを旅程別に比較。日本から韓国に旅行する人向けSIM選びの全体マップ。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -225,7 +225,7 @@
       "SKT"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/carriers/korea/korea-carrier-02-skt.html",
+    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-02-skt.html",
     "summary": "SKTは韓国シェア50%超の最大手。カバレッジ最強・日本語スタッフ常駐で旅行者に人気。入手方法と注意点を解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -239,7 +239,7 @@
       "KT"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/carriers/korea/korea-carrier-03-kt.html",
+    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-03-kt.html",
     "summary": "KTは韓国シェア2位・5G可用性No.1（45.9%）。世界初の全国規模5G商用化を実現したキャリアの実力を解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -253,7 +253,7 @@
       "LG U+"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/carriers/korea/korea-carrier-04-lgu.html",
+    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-04-lgu.html",
     "summary": "LG U+は韓国3位・最安値キャリア。都市部のカバレッジはSKT・KTと遜色なし。コスパ重視の方向けに詳しく解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -267,7 +267,7 @@
       "MVNO"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/carriers/korea/korea-carrier-05-mvno.html",
+    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-05-mvno.html",
     "summary": "韓国のMVNOはWoori MobileやEG SIMが旅行者に人気。大手3社より安く、コンビニでも購入可能な特徴と注意点を解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -281,7 +281,7 @@
       "滞在期間"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/carriers/korea/korea-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/carriers/korea/korea-stay-duration-sim.html",
     "summary": "1〜3日の超短期から長期滞在まで、滞在期間ごとに最適な韓国SIMを解説。パスポートのみでOKか・仁川空港での購入方法も紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -295,7 +295,7 @@
       "空港"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/korea-incheon-airport-sim.html",
+    "url": "/shotsim/ja/articles/korea-incheon-airport-sim.html",
     "summary": "仁川空港のSIM購入を完全解説。ターミナル1・2別の販売場所、SKT・KT・LG U+の料金比較（5日間プラン約1,100円〜）、パスポートだけで買える手順、深夜早朝の注意点、コンビニ・Amazon事前購入との比較も紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -308,7 +308,7 @@
       "韓国"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/korea-convenience-store-sim.html",
+    "url": "/shotsim/ja/articles/korea-convenience-store-sim.html",
     "summary": "韓国旅行中にコンビニでSIMを購入する方法を完全解説。CU・GS25・セブンイレブンの取り扱いSIM、購入手順、料金目安、空港購入との違いまで紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -322,7 +322,7 @@
       "空港"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/taiwan-taoyuan-airport-sim.html",
+    "url": "/shotsim/ja/articles/taiwan-taoyuan-airport-sim.html",
     "summary": "台湾・桃園国際空港でSIMを購入する方法を徹底解説。第1・第2ターミナルの販売場所、中華電信・台灣大哥大・遠傳電信の料金目安、購入手順と注意点まで完全ガイド。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -336,7 +336,7 @@
       "空港"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/thailand-suvarnabhumi-airport-sim.html",
+    "url": "/shotsim/ja/articles/thailand-suvarnabhumi-airport-sim.html",
     "summary": "スワンナプーム国際空港でSIMを購入する方法を徹底解説。到着ロビーのカウンター場所、AIS・DTAC・True Move Hの料金目安、購入手順、深夜到着時の注意点も紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -350,7 +350,7 @@
       "比較"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/best-esim-ranking.html",
+    "url": "/shotsim/ja/articles/best-esim-ranking.html",
     "summary": "韓国・台湾・タイ・ベトナム・ハワイのeSIMを国別ランキングで紹介。選び方の3つのポイント（対応回線・容量・価格）とeSIMの設定手順も解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -363,7 +363,7 @@
       "eSIM"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/esim-compatible-phones.html",
+    "url": "/shotsim/ja/articles/esim-compatible-phones.html",
     "summary": "自分のスマホがeSIM対応か確認する方法を解説。iPhoneはXS以降、Google PixelはPixel 3以降が基本対応。Samsung Galaxyの対応状況や非対応時の代替手段も紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -377,7 +377,7 @@
       "eSIM"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/korea-esim-setup.html",
+    "url": "/shotsim/ja/articles/korea-esim-setup.html",
     "summary": "韓国旅行前にeSIMを購入したが設定方法がわからない方向け。SIMロック解除の確認からiPhone・Androidの設定手順、出発前vs現地どちらで設定すべきか、トラブル対処法まで徹底解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 22:42"
@@ -391,7 +391,7 @@
       "比較"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/best-sim-for-korea-2026.html",
+    "url": "/shotsim/ja/articles/best-sim-for-korea-2026.html",
     "summary": "韓国旅行のSIM選びを短期・中期・コスパ重視・通信品質重視の4タイプ別に解説。Amazon事前購入・仁川空港・コンビニの購入場所比較とよくある質問も網羅。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -404,7 +404,7 @@
       "韓国"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/korea-sim-vs-pocket-wifi.html",
+    "url": "/shotsim/ja/articles/korea-sim-vs-pocket-wifi.html",
     "summary": "韓国旅行の通信手段としてSIMとポケットWi-Fiを正直に比較。料金・手軽さ・シーン別のおすすめを日数別料金表と判断基準でわかりやすく解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
@@ -417,7 +417,7 @@
       "韓国"
     ],
     "date": "2026-03-17",
-    "url": "/ja/articles/korea-network-coverage.html",
+    "url": "/shotsim/ja/articles/korea-network-coverage.html",
     "summary": "韓国旅行での電波事情をエリア別に解説。ソウル・釜山・済州島・地方山間部の通信状況、SKT・KT・LG U+のカバレッジ比較、地下鉄・KTX新幹線での繋がりやすさも紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-17 00:00"
