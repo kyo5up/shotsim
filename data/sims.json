@@ -1,0 +1,187 @@
+[
+  {
+    "country": "korea",
+    "country_name": "韓国",
+    "flag": "🇰🇷",
+    "sims": [
+      {
+        "name": "韓国 eSIM 4日間完全無制限（低速なし）当日発行可・データ専用",
+        "brand": "DeSiM系",
+        "type": "eSIM",
+        "data": "完全無制限",
+        "days": 4,
+        "price_min": 1200,
+        "price_max": 1500,
+        "asin": "B0D8VNS6Z6"
+      },
+      {
+        "name": "【SKTelecom公式認証】韓国 eSIM 3日間 電話番号付き 高速無制限",
+        "brand": "SKTelecom / KLP SIM",
+        "type": "eSIM",
+        "data": "無制限",
+        "days": 3,
+        "price_min": 1430,
+        "price_max": 1680,
+        "asin": "B0BLGD6S4P"
+      },
+      {
+        "name": "韓国 eSIM 4日間 高速2GB/日・低速無制限 データ専用",
+        "brand": "mewfi",
+        "type": "eSIM",
+        "data": "2GB/日（超過後低速無制限）",
+        "days": 4,
+        "price_min": 1200,
+        "price_max": 1400,
+        "asin": "B0CH6YJZYC"
+      }
+    ]
+  },
+  {
+    "country": "usa",
+    "country_name": "アメリカ・ハワイ",
+    "flag": "🇺🇸",
+    "sims": [
+      {
+        "name": "【T-Mobile正規品】eSIM版 アメリカ ハワイ SIM 7日間 使い放題・電話番号付き",
+        "brand": "T-Mobile",
+        "type": "eSIM",
+        "data": "無制限（5G/4G LTE）",
+        "days": 7,
+        "price_min": 2180,
+        "price_max": 2180,
+        "asin": "B0BW69P7DP"
+      },
+      {
+        "name": "【T-Mobile正規品】eSIM版 アメリカ ハワイ SIM 10日間 使い放題・電話番号付き",
+        "brand": "T-Mobile",
+        "type": "eSIM",
+        "data": "無制限（5G/4G LTE）",
+        "days": 10,
+        "price_min": 2800,
+        "price_max": 3200,
+        "asin": "B0BW683D4J"
+      },
+      {
+        "name": "【T-Mobile正規品】eSIM版 アメリカ ハワイ SIM 5日間 使い放題・電話番号付き",
+        "brand": "T-Mobile",
+        "type": "eSIM",
+        "data": "無制限（5G/4G LTE）",
+        "days": 5,
+        "price_min": 1800,
+        "price_max": 2200,
+        "asin": "B0BW683K66"
+      }
+    ]
+  },
+  {
+    "country": "taiwan",
+    "country_name": "台湾",
+    "flag": "🇹🇼",
+    "sims": [
+      {
+        "name": "【台湾 eSIM】3日間完全無制限（低速なし）当日発行・データ専用",
+        "brand": "DeSiM認定卸",
+        "type": "eSIM",
+        "data": "完全無制限",
+        "days": 3,
+        "price_min": 900,
+        "price_max": 1200,
+        "asin": "B0CSZ4PTK6"
+      },
+      {
+        "name": "【World eSIM】台湾 eSIM 4日間 高速無制限 中華電信正規品",
+        "brand": "World eSIM（Chunghwa Telecom）",
+        "type": "eSIM",
+        "data": "無制限",
+        "days": 4,
+        "price_min": 1200,
+        "price_max": 1500,
+        "asin": "B0DQD83JR4"
+      },
+      {
+        "name": "【台湾 eSIM】4日間完全無制限（低速なし）当日発行・データ専用",
+        "brand": "DeSiM系",
+        "type": "eSIM",
+        "data": "完全無制限",
+        "days": 4,
+        "price_min": 1100,
+        "price_max": 1400,
+        "asin": "B0D8VZBRPN"
+      }
+    ]
+  },
+  {
+    "country": "thailand",
+    "country_name": "タイ",
+    "flag": "🇹🇭",
+    "sims": [
+      {
+        "name": "AIS タイ eSIM 7日間(168時間) AIS正規発行 データ使い放題 電話番号付き 5G/4G対応",
+        "brand": "Wise SIM（AIS正規）",
+        "type": "eSIM",
+        "data": "無制限",
+        "days": 7,
+        "price_min": 1500,
+        "price_max": 1900,
+        "asin": "B0CXJ8LMWJ"
+      },
+      {
+        "name": "タイ eSIM 7日間 15GB 高速データ 当日発行可・電話番号付き",
+        "brand": "AIS系",
+        "type": "eSIM",
+        "data": "15GB高速（超過後低速無制限）",
+        "days": 7,
+        "price_min": 1200,
+        "price_max": 1600,
+        "asin": "B0C6D2QGJD"
+      },
+      {
+        "name": "【タイ eSIM】8日間 データ通信無制限（高速50GBまで）AIS正規品 メール発行",
+        "brand": "AIS正規",
+        "type": "eSIM",
+        "data": "無制限（高速50GBまで）",
+        "days": 8,
+        "price_min": 1500,
+        "price_max": 2000,
+        "asin": "B0DKTV296W"
+      }
+    ]
+  },
+  {
+    "country": "vietnam",
+    "country_name": "ベトナム",
+    "flag": "🇻🇳",
+    "sims": [
+      {
+        "name": "【ベトナム eSIM】5日間 Binafon正規 高速データ無制限 通話・SMS受信可",
+        "brand": "Binafon",
+        "type": "eSIM",
+        "data": "無制限",
+        "days": 5,
+        "price_min": 900,
+        "price_max": 1300,
+        "asin": "B0BMXVH26T"
+      },
+      {
+        "name": "【ベトナム eSIM】7日間 Binafon正規 高速データ無制限 通話・SMS受信可",
+        "brand": "Binafon",
+        "type": "eSIM",
+        "data": "無制限",
+        "days": 7,
+        "price_min": 1100,
+        "price_max": 1500,
+        "asin": "B0BMXTM1BQ"
+      },
+      {
+        "name": "ベトナム eSIM 3日間 1GB高速データ 低速無制限 当日発行可",
+        "brand": "不明",
+        "type": "eSIM",
+        "data": "1GB高速＋低速無制限",
+        "days": 3,
+        "price_min": 600,
+        "price_max": 900,
+        "asin": "B0BY7TJDY7"
+      }
+    ]
+  }
+]
