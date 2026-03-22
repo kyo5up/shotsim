@@ -447,5 +447,85 @@
     "summary": "韓国ウォン・台湾ドル・タイバーツ・ベトナムドン・米ドルの為替レート目安と計算方法を旅行者向けに解説。1万円でいくら両替できるか、SIMカード費用の現地価格感覚も紹介。",
     "created": "2026-03-18 00:00",
     "updated": "2026-03-18 16:04"
+  },
+  {
+    "id": "taiwan-carrier-01-overview",
+    "title": "台湾の通信キャリア事情【台湾旅行者向け完全ガイド】中華電信・台灣大哥大・遠傳電信を解説",
+    "tags": [
+      "キャリア解説",
+      "台湾"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-01-overview.html",
+    "summary": "台湾の3大キャリア（中華電信・台灣大哥大・遠傳電信）の特徴をまとめた全体マップ。日本から台湾に旅行する人向けにSIM選びの判断基準を解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 15:42"
+  },
+  {
+    "id": "taiwan-carrier-02-cht",
+    "title": "中華電信（Chunghwa Telecom）とは？台湾最大手キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "台湾"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-02-cht.html",
+    "summary": "台湾最大手キャリア・中華電信（CHT）の特徴、カバレッジ、旅行者向けプリペイドSIM・価格帯を解説。山岳地帯・離島でも繋がる台湾No.1の安定感。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 15:42"
+  },
+  {
+    "id": "taiwan-carrier-03-twm",
+    "title": "台灣大哥大（Taiwan Mobile）とは？台湾第2位キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "台湾"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-03-twm.html",
+    "summary": "台湾第2位キャリア・台灣大哥大（TWM）の特徴、都市部での5G速度、旅行者向けプリペイドSIM・価格帯を解説。2023年台灣之星と合併し5G体制を強化。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 15:42"
+  },
+  {
+    "id": "taiwan-carrier-04-fet",
+    "title": "遠傳電信（Far EasTone）とは？台湾第3位キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "台湾"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-04-fet.html",
+    "summary": "台湾第3位キャリア・遠傳電信（FET）の特徴、価格競争力、旅行者向けプリペイドSIM・電話番号付きプランを解説。台湾初のGSM事業者の実績も紹介。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 15:42"
+  },
+  {
+    "id": "taiwan-carrier-05-mvno",
+    "title": "台湾旅行のeSIM・格安SIM（MVNO）まとめ【Airalo・Holafly等】価格と特徴を比較",
+    "tags": [
+      "キャリア解説",
+      "台湾",
+      "eSIM"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-05-mvno.html",
+    "summary": "台湾旅行で使えるeSIM・格安SIM（MVNO）を徹底比較。Airalo・Holaflyの価格・容量・メリット・デメリットを解説。現地SIMとの違いも整理。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 15:42"
+  },
+  {
+    "id": "taiwan-stay-duration-sim",
+    "title": "滞在期間別・台湾おすすめSIMガイド【2026年版】1日〜長期まで最適プランを解説",
+    "tags": [
+      "キャリア解説",
+      "台湾",
+      "滞在期間別"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-stay-duration-sim.html",
+    "summary": "台湾旅行の滞在日数別に最適なSIM・eSIMを解説。1〜2日のトランジットから1ヶ月以上の長期滞在まで、中華電信・台灣大哥大・Airaloの中から最適な選択肢を提案。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 15:42"
   }
 ]
