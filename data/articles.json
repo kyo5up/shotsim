@@ -527,5 +527,238 @@
     "summary": "台湾旅行の滞在日数別に最適なSIM・eSIMを解説。1〜2日のトランジットから1ヶ月以上の長期滞在まで、中華電信・台灣大哥大・Airaloの中から最適な選択肢を提案。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
+  },
+  {
+    "id": "thailand-carrier-01-overview",
+    "title": "タイの通信キャリア事情【タイ旅行者向け完全ガイド】AIS・True Corporationを解説",
+    "tags": [
+      "キャリア解説",
+      "タイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-01-overview.html",
+    "summary": "タイの2大キャリア（AIS・True Corporation）の特徴をまとめた全体マップ。2023年のDTAC合併後の最新体制を解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "thailand-carrier-02-ais",
+    "title": "AIS（Advanced Info Service）とは？タイ最大手キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "タイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-02-ais.html",
+    "summary": "タイ最大手キャリア・AISの特徴、全国カバレッジ、旅行者向けプリペイドSIMの価格帯を解説。山岳・地方でも繋がるタイNo.1の安定感。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "thailand-carrier-03-true",
+    "title": "True Corporation（旧DTAC統合）とは？タイ第2位キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "タイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-03-true.html",
+    "summary": "2023年にDTACと合併したTrue Corporationの特徴、都市部のネットワーク品質、旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "thailand-carrier-04-mvno",
+    "title": "タイ旅行のeSIM・格安SIM（MVNO）まとめ【Airalo・Holafly等】価格と特徴を比較",
+    "tags": [
+      "キャリア解説",
+      "タイ",
+      "eSIM"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-04-mvno.html",
+    "summary": "タイ旅行で使えるeSIM・格安SIMを比較。Airalo・Holaflyの価格・容量を解説。現地SIMとの違いや選び方も整理。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "thailand-stay-duration-sim",
+    "title": "滞在期間別・タイおすすめSIMガイド【2026年版】1日〜長期まで最適プランを解説",
+    "tags": [
+      "キャリア解説",
+      "タイ",
+      "滞在期間別"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/thailand/thailand-stay-duration-sim.html",
+    "summary": "タイ旅行の滞在日数別に最適なSIM・eSIMを解説。AIS・True・Airaloの中から最適な選択肢を提案。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "vietnam-carrier-01-overview",
+    "title": "ベトナムの通信キャリア事情【ベトナム旅行者向け完全ガイド】Viettel・MobiFone・Vinaphoneを解説",
+    "tags": [
+      "キャリア解説",
+      "ベトナム"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-01-overview.html",
+    "summary": "ベトナムの3大キャリア（Viettel・MobiFone・Vinaphone）の特徴をまとめた全体マップ。すべて国営企業で市場シェア約98%を占める。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "vietnam-carrier-02-viettel",
+    "title": "Viettelとは？ベトナム最大手キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "ベトナム"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-02-viettel.html",
+    "summary": "ベトナム最大手キャリア・Viettelの特徴、市場シェア57.6%の圧倒的カバレッジ、旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "vietnam-carrier-03-mobifone",
+    "title": "MobiFoneとは？ベトナム第2位キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "ベトナム"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-03-mobifone.html",
+    "summary": "ベトナム第2位キャリア・MobiFoneの特徴、市場シェア22.52%、都市部での安定した通信品質と旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "vietnam-carrier-04-vinaphone",
+    "title": "Vinaphoneとは？ベトナム第3位キャリアの特徴・旅行者向けSIMを解説",
+    "tags": [
+      "キャリア解説",
+      "ベトナム"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-04-vinaphone.html",
+    "summary": "ベトナム第3位キャリア・Vinaphoneの特徴、ベトナム初の3G/4G/5G事業者としての実績、旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "vietnam-carrier-05-mvno",
+    "title": "ベトナム旅行のeSIM・格安SIM（MVNO）まとめ【Airalo等】価格と特徴を比較",
+    "tags": [
+      "キャリア解説",
+      "ベトナム",
+      "eSIM"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-05-mvno.html",
+    "summary": "ベトナム旅行で使えるeSIM・格安SIMを比較。Airaloの価格・容量を解説。現地SIMとの違いや選び方も整理。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "vietnam-stay-duration-sim",
+    "title": "滞在期間別・ベトナムおすすめSIMガイド【2026年版】1日〜長期まで最適プランを解説",
+    "tags": [
+      "キャリア解説",
+      "ベトナム",
+      "滞在期間別"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-stay-duration-sim.html",
+    "summary": "ベトナム旅行の滞在日数別に最適なSIM・eSIMを解説。Viettel・MobiFone・Airaloの中から最適な選択肢を提案。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "usa-carrier-01-overview",
+    "title": "アメリカ・ハワイの通信キャリア事情【旅行者向け完全ガイド】Verizon・AT&T・T-Mobileを解説",
+    "tags": [
+      "キャリア解説",
+      "アメリカ",
+      "ハワイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-01-overview.html",
+    "summary": "アメリカの3大キャリア（Verizon・AT&T・T-Mobile）の特徴をまとめた全体マップ。ハワイ旅行を含むアメリカ旅行のSIM選びに。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "usa-carrier-02-verizon",
+    "title": "Verizonとは？アメリカ最大手キャリアの特徴・旅行者向けSIMを解説【ハワイ対応】",
+    "tags": [
+      "キャリア解説",
+      "アメリカ",
+      "ハワイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-02-verizon.html",
+    "summary": "アメリカ最大手キャリア・Verizonの特徴、全米最広カバレッジ、ハワイでの対応状況、旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "usa-carrier-03-att",
+    "title": "AT&Tとは？アメリカ第2位キャリアの特徴・旅行者向けSIMを解説【ハワイ対応】",
+    "tags": [
+      "キャリア解説",
+      "アメリカ",
+      "ハワイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-03-att.html",
+    "summary": "アメリカ第2位キャリア・AT&Tの特徴、都市部の安定したカバレッジ、ハワイでの対応状況、旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "usa-carrier-04-tmobile",
+    "title": "T-Mobileとは？アメリカ第3位キャリアの特徴・旅行者向けSIMを解説【5G最速】",
+    "tags": [
+      "キャリア解説",
+      "アメリカ",
+      "ハワイ"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-04-tmobile.html",
+    "summary": "アメリカ第3位キャリア・T-Mobileの特徴、5G展開の速さ、価格競争力、旅行者向けプリペイドSIMを解説。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "usa-carrier-05-mvno",
+    "title": "アメリカ・ハワイ旅行のeSIM・格安SIM（MVNO）まとめ【Airalo・T-Mobile等】価格と特徴を比較",
+    "tags": [
+      "キャリア解説",
+      "アメリカ",
+      "ハワイ",
+      "eSIM"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-05-mvno.html",
+    "summary": "アメリカ・ハワイ旅行で使えるeSIM・格安SIMを比較。Airalo・Holaflyの価格・容量を解説。現地SIMとの違いや選び方も整理。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
+  },
+  {
+    "id": "usa-stay-duration-sim",
+    "title": "滞在期間別・アメリカ・ハワイおすすめSIMガイド【2026年版】1日〜長期まで解説",
+    "tags": [
+      "キャリア解説",
+      "アメリカ",
+      "ハワイ",
+      "滞在期間別"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/carriers/usa/usa-stay-duration-sim.html",
+    "summary": "アメリカ・ハワイ旅行の滞在日数別に最適なSIM・eSIMを解説。ハワイのみ・都市部・全米ロードトリップなど旅程パターン別に提案。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 16:46"
   }
 ]
