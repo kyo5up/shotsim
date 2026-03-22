@@ -114,7 +114,7 @@
       "日本"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/japan-carrier-01-overview.html",
     "summary": "ドコモ・au・ソフトバンク・楽天の4大キャリアを旅程別に比較。訪日旅行者向けSIM選びの全体マップ。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -128,7 +128,7 @@
       "ドコモ"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-02-docomo.html",
+    "url": "/shotsim/ja/articles/japan-carrier-02-docomo.html",
     "summary": "ドコモは日本最大シェア39.7%・人口カバー率99%超。地方旅行者に強い理由とau・ソフトバンクとの違いを解説。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -142,7 +142,7 @@
       "au"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-03-au.html",
+    "url": "/shotsim/ja/articles/japan-carrier-03-au.html",
     "summary": "auはOpensignal都市部通信品質1位。直営プリペイドSIMは廃止済みだがMVNO経由で高速回線が使える。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -156,7 +156,7 @@
       "ソフトバンク"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-04-softbank.html",
+    "url": "/shotsim/ja/articles/japan-carrier-04-softbank.html",
     "summary": "ソフトバンクは都市部5G速度が強みで公式Prepaid SIM for Travelも提供。空港購入可能。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -170,7 +170,7 @@
       "楽天モバイル"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-05-rakuten.html",
+    "url": "/shotsim/ja/articles/japan-carrier-05-rakuten.html",
     "summary": "楽天モバイルは外国人利用シェア1位・料金最安。ただし短期旅行者向けプリペイドSIMは未提供。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -184,7 +184,7 @@
       "MVNO"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-carrier-06-mvno.html",
+    "url": "/shotsim/ja/articles/japan-carrier-06-mvno.html",
     "summary": "MVNOは大手回線を借りた格安SIM。ドコモ系・au系・SB系の違いと訪日旅行者におすすめのMVNOを解説。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -198,7 +198,7 @@
       "滞在期間"
     ],
     "date": "2026-03-16",
-    "url": "/shotsim/ja/articles/carriers/japan/japan-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/japan-stay-duration-sim.html",
     "summary": "1〜3日の超短期から3ヶ月以上の長期滞在まで、滞在期間ごとに最適なSIMを解説。パスポートのみでOKか・契約要件も詳しく紹介。",
     "created": "2026-03-16 00:00",
     "updated": "2026-03-18 16:04"
@@ -211,7 +211,7 @@
       "韓国"
     ],
     "date": "2026-03-17",
-    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/korea-carrier-01-overview.html",
     "summary": "SKT・KT・LG U+の3大キャリアを旅程別に比較。日本から韓国に旅行する人向けSIM選びの全体マップ。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-18 16:04"
@@ -225,7 +225,7 @@
       "SKT"
     ],
     "date": "2026-03-17",
-    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-02-skt.html",
+    "url": "/shotsim/ja/articles/korea-carrier-02-skt.html",
     "summary": "SKTは韓国シェア50%超の最大手。カバレッジ最強・日本語スタッフ常駐で旅行者に人気。入手方法と注意点を解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-18 16:04"
@@ -239,7 +239,7 @@
       "KT"
     ],
     "date": "2026-03-17",
-    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-03-kt.html",
+    "url": "/shotsim/ja/articles/korea-carrier-03-kt.html",
     "summary": "KTは韓国シェア2位・5G可用性No.1（45.9%）。世界初の全国規模5G商用化を実現したキャリアの実力を解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-18 16:04"
@@ -253,7 +253,7 @@
       "LG U+"
     ],
     "date": "2026-03-17",
-    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-04-lgu.html",
+    "url": "/shotsim/ja/articles/korea-carrier-04-lgu.html",
     "summary": "LG U+は韓国3位・最安値キャリア。都市部のカバレッジはSKT・KTと遜色なし。コスパ重視の方向けに詳しく解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-18 16:04"
@@ -267,7 +267,7 @@
       "MVNO"
     ],
     "date": "2026-03-17",
-    "url": "/shotsim/ja/articles/carriers/korea/korea-carrier-05-mvno.html",
+    "url": "/shotsim/ja/articles/korea-carrier-05-mvno.html",
     "summary": "韓国のMVNOはWoori MobileやEG SIMが旅行者に人気。大手3社より安く、コンビニでも購入可能な特徴と注意点を解説。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-18 16:04"
@@ -281,7 +281,7 @@
       "滞在期間"
     ],
     "date": "2026-03-17",
-    "url": "/shotsim/ja/articles/carriers/korea/korea-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/korea-stay-duration-sim.html",
     "summary": "1〜3日の超短期から長期滞在まで、滞在期間ごとに最適な韓国SIMを解説。パスポートのみでOKか・仁川空港での購入方法も紹介。",
     "created": "2026-03-17 00:00",
     "updated": "2026-03-18 16:04"
@@ -298,7 +298,7 @@
     "url": "/shotsim/ja/articles/korea-incheon-airport-sim.html",
     "summary": "仁川空港のSIM購入を完全解説。ターミナル1・2別の販売場所、SKT・KT・LG U+の料金比較（5日間プラン約1,100円〜）、パスポートだけで買える手順、深夜早朝の注意点、コンビニ・Amazon事前購入との比較も紹介。",
     "created": "2026-03-17 00:00",
-    "updated": "2026-03-18 16:04"
+    "updated": "2026-03-22 17:34"
   },
   {
     "id": "korea-convenience-store-sim",
@@ -311,7 +311,7 @@
     "url": "/shotsim/ja/articles/korea-convenience-store-sim.html",
     "summary": "韓国旅行中にコンビニでSIMを購入する方法を完全解説。CU・GS25・セブンイレブンの取り扱いSIM、購入手順、料金目安、空港購入との違いまで紹介。",
     "created": "2026-03-17 00:00",
-    "updated": "2026-03-18 16:04"
+    "updated": "2026-03-22 17:34"
   },
   {
     "id": "taiwan-taoyuan-airport-sim",
@@ -394,7 +394,7 @@
     "url": "/shotsim/ja/articles/best-sim-for-korea-2026.html",
     "summary": "韓国旅行のSIM選びを短期・中期・コスパ重視・通信品質重視の4タイプ別に解説。Amazon事前購入・仁川空港・コンビニの購入場所比較とよくある質問も網羅。",
     "created": "2026-03-17 00:00",
-    "updated": "2026-03-18 16:04"
+    "updated": "2026-03-22 17:34"
   },
   {
     "id": "korea-sim-vs-pocket-wifi",
@@ -420,7 +420,7 @@
     "url": "/shotsim/ja/articles/korea-network-coverage.html",
     "summary": "韓国旅行での電波事情をエリア別に解説。ソウル・釜山・済州島・地方山間部の通信状況、SKT・KT・LG U+のカバレッジ比較、地下鉄・KTX新幹線での繋がりやすさも紹介。",
     "created": "2026-03-17 00:00",
-    "updated": "2026-03-18 16:04"
+    "updated": "2026-03-22 17:34"
   },
   {
     "id": "airport-vs-advance-purchase",
@@ -456,7 +456,7 @@
       "台湾"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/taiwan-carrier-01-overview.html",
     "summary": "台湾の3大キャリア（中華電信・台灣大哥大・遠傳電信）の特徴をまとめた全体マップ。日本から台湾に旅行する人向けにSIM選びの判断基準を解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
@@ -469,7 +469,7 @@
       "台湾"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-02-cht.html",
+    "url": "/shotsim/ja/articles/taiwan-carrier-02-cht.html",
     "summary": "台湾最大手キャリア・中華電信（CHT）の特徴、カバレッジ、旅行者向けプリペイドSIM・価格帯を解説。山岳地帯・離島でも繋がる台湾No.1の安定感。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
@@ -482,7 +482,7 @@
       "台湾"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-03-twm.html",
+    "url": "/shotsim/ja/articles/taiwan-carrier-03-twm.html",
     "summary": "台湾第2位キャリア・台灣大哥大（TWM）の特徴、都市部での5G速度、旅行者向けプリペイドSIM・価格帯を解説。2023年台灣之星と合併し5G体制を強化。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
@@ -495,7 +495,7 @@
       "台湾"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-04-fet.html",
+    "url": "/shotsim/ja/articles/taiwan-carrier-04-fet.html",
     "summary": "台湾第3位キャリア・遠傳電信（FET）の特徴、価格競争力、旅行者向けプリペイドSIM・電話番号付きプランを解説。台湾初のGSM事業者の実績も紹介。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
@@ -509,7 +509,7 @@
       "eSIM"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-carrier-05-mvno.html",
+    "url": "/shotsim/ja/articles/taiwan-carrier-05-mvno.html",
     "summary": "台湾旅行で使えるeSIM・格安SIM（MVNO）を徹底比較。Airalo・Holaflyの価格・容量・メリット・デメリットを解説。現地SIMとの違いも整理。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
@@ -523,7 +523,7 @@
       "滞在期間別"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/taiwan/taiwan-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/taiwan-stay-duration-sim.html",
     "summary": "台湾旅行の滞在日数別に最適なSIM・eSIMを解説。1〜2日のトランジットから1ヶ月以上の長期滞在まで、中華電信・台灣大哥大・Airaloの中から最適な選択肢を提案。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 15:42"
@@ -536,7 +536,7 @@
       "タイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/thailand-carrier-01-overview.html",
     "summary": "タイの2大キャリア（AIS・True Corporation）の特徴をまとめた全体マップ。2023年のDTAC合併後の最新体制を解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -549,7 +549,7 @@
       "タイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-02-ais.html",
+    "url": "/shotsim/ja/articles/thailand-carrier-02-ais.html",
     "summary": "タイ最大手キャリア・AISの特徴、全国カバレッジ、旅行者向けプリペイドSIMの価格帯を解説。山岳・地方でも繋がるタイNo.1の安定感。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -562,7 +562,7 @@
       "タイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-03-true.html",
+    "url": "/shotsim/ja/articles/thailand-carrier-03-true.html",
     "summary": "2023年にDTACと合併したTrue Corporationの特徴、都市部のネットワーク品質、旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -576,7 +576,7 @@
       "eSIM"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/thailand/thailand-carrier-04-mvno.html",
+    "url": "/shotsim/ja/articles/thailand-carrier-04-mvno.html",
     "summary": "タイ旅行で使えるeSIM・格安SIMを比較。Airalo・Holaflyの価格・容量を解説。現地SIMとの違いや選び方も整理。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -590,7 +590,7 @@
       "滞在期間別"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/thailand/thailand-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/thailand-stay-duration-sim.html",
     "summary": "タイ旅行の滞在日数別に最適なSIM・eSIMを解説。AIS・True・Airaloの中から最適な選択肢を提案。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -603,7 +603,7 @@
       "ベトナム"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/vietnam-carrier-01-overview.html",
     "summary": "ベトナムの3大キャリア（Viettel・MobiFone・Vinaphone）の特徴をまとめた全体マップ。すべて国営企業で市場シェア約98%を占める。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -616,7 +616,7 @@
       "ベトナム"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-02-viettel.html",
+    "url": "/shotsim/ja/articles/vietnam-carrier-02-viettel.html",
     "summary": "ベトナム最大手キャリア・Viettelの特徴、市場シェア57.6%の圧倒的カバレッジ、旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -629,7 +629,7 @@
       "ベトナム"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-03-mobifone.html",
+    "url": "/shotsim/ja/articles/vietnam-carrier-03-mobifone.html",
     "summary": "ベトナム第2位キャリア・MobiFoneの特徴、市場シェア22.52%、都市部での安定した通信品質と旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -642,7 +642,7 @@
       "ベトナム"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-04-vinaphone.html",
+    "url": "/shotsim/ja/articles/vietnam-carrier-04-vinaphone.html",
     "summary": "ベトナム第3位キャリア・Vinaphoneの特徴、ベトナム初の3G/4G/5G事業者としての実績、旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -656,7 +656,7 @@
       "eSIM"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-carrier-05-mvno.html",
+    "url": "/shotsim/ja/articles/vietnam-carrier-05-mvno.html",
     "summary": "ベトナム旅行で使えるeSIM・格安SIMを比較。Airaloの価格・容量を解説。現地SIMとの違いや選び方も整理。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -670,7 +670,7 @@
       "滞在期間別"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/vietnam/vietnam-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/vietnam-stay-duration-sim.html",
     "summary": "ベトナム旅行の滞在日数別に最適なSIM・eSIMを解説。Viettel・MobiFone・Airaloの中から最適な選択肢を提案。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -684,7 +684,7 @@
       "ハワイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-01-overview.html",
+    "url": "/shotsim/ja/articles/usa-carrier-01-overview.html",
     "summary": "アメリカの3大キャリア（Verizon・AT&T・T-Mobile）の特徴をまとめた全体マップ。ハワイ旅行を含むアメリカ旅行のSIM選びに。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -698,7 +698,7 @@
       "ハワイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-02-verizon.html",
+    "url": "/shotsim/ja/articles/usa-carrier-02-verizon.html",
     "summary": "アメリカ最大手キャリア・Verizonの特徴、全米最広カバレッジ、ハワイでの対応状況、旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -712,7 +712,7 @@
       "ハワイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-03-att.html",
+    "url": "/shotsim/ja/articles/usa-carrier-03-att.html",
     "summary": "アメリカ第2位キャリア・AT&Tの特徴、都市部の安定したカバレッジ、ハワイでの対応状況、旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -726,7 +726,7 @@
       "ハワイ"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-04-tmobile.html",
+    "url": "/shotsim/ja/articles/usa-carrier-04-tmobile.html",
     "summary": "アメリカ第3位キャリア・T-Mobileの特徴、5G展開の速さ、価格競争力、旅行者向けプリペイドSIMを解説。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -741,7 +741,7 @@
       "eSIM"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/usa/usa-carrier-05-mvno.html",
+    "url": "/shotsim/ja/articles/usa-carrier-05-mvno.html",
     "summary": "アメリカ・ハワイ旅行で使えるeSIM・格安SIMを比較。Airalo・Holaflyの価格・容量を解説。現地SIMとの違いや選び方も整理。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
@@ -756,7 +756,7 @@
       "滞在期間別"
     ],
     "date": "2026-03-22",
-    "url": "/shotsim/ja/articles/carriers/usa/usa-stay-duration-sim.html",
+    "url": "/shotsim/ja/articles/usa-stay-duration-sim.html",
     "summary": "アメリカ・ハワイ旅行の滞在日数別に最適なSIM・eSIMを解説。ハワイのみ・都市部・全米ロードトリップなど旅程パターン別に提案。",
     "created": "2026-03-22 00:00",
     "updated": "2026-03-22 16:46"
