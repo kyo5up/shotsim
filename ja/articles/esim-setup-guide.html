@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eSIM設定方法｜iPhone・Android別ステップバイステップガイド | ShotSIM</title>
+    <meta name="description" content="eSIMの設定方法を、iPhone・Android別に詳しく解説。QRコードのスキャンから認証完了まで、海外旅行前でも出発夜に設定できます。トラブル対処法も完備。" />
+    <!-- OGP -->
+    <meta property="og:title" content="eSIM設定方法｜iPhone・Android別ステップバイステップガイド" />
+    <meta property="og:description" content="eSIMの設定方法を、iPhone・Android別に詳しく解説。QRコードのスキャンから認証完了まで、海外旅行前でも出発夜に設定できます。" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shotsim.net/ja/articles/esim-setup-guide.html" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      .article-body { max-width: 760px; margin: 40px auto; padding: 0 24px 60px; }
+      .article-body h1 { font-size: 1.6rem; margin-bottom: 8px; line-height: 1.4; }
+      .article-meta { font-size: 0.85rem; color: #999; margin-bottom: 32px; }
+      .article-body h2 { font-size: 1.2rem; margin: 32px 0 12px; padding-left: 12px; border-left: 4px solid #1a73e8; }
+      .article-body h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+      .article-body p { line-height: 1.8; margin-bottom: 16px; }
+      .article-body ol, .article-body ul { line-height: 1.8; margin-bottom: 16px; padding-left: 1.5em; }
+      .article-body li { margin-bottom: 6px; }
+      .ranking-table { width: 100%; border-collapse: collapse; margin: 16px 0 32px; }
+      .ranking-table th, .ranking-table td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; }
+      .ranking-table th { background: #f0f4ff; font-weight: 600; }
+      .ranking-table tr:nth-child(even) td { background: #fafafa; }
+      .source { font-size: 0.8rem; color: #999; margin-top: 40px; padding-top: 16px; border-top: 1px solid #eee; }
+      .verdict-box { background: #f0f4ff; border: 1px solid #c0d0f0; border-radius: 6px; padding: 20px 24px; margin: 0 0 32px; }
+      .verdict-box p { margin-bottom: 8px; }
+      .verdict-box p:last-child { margin-bottom: 0; }
+      .trouble-box { background: #fff8f0; border: 1px solid #f0d0b0; border-radius: 6px; padding: 20px 24px; margin: 0 0 32px; }
+      .related-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 20px 0 32px; }
+      .related-links a { display: block; padding: 12px 16px; background: #f0f4ff; border: 1px solid #ddd; border-radius: 4px; text-decoration: none; color: #1a73e8; font-weight: 600; transition: background 0.2s; }
+      .related-links a:hover { background: #e8eef7; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/shotsim/" class="logo">📡 ShotSIM</a>
+    </header>
+    <div class="article-body">
+      <h1>eSIM設定方法｜iPhone・Android別ステップバイステップガイド</h1>
+      <p class="article-meta">公開日：2026年3月22日</p>
+
+      <div class="verdict-box">
+        <p><strong>結論：eSIMは出発前夜でも5〜10分で設定できます。</strong>QRコードをスキャンして、キャリアの認証を待つだけ。海外旅行直前でも焦らず対応可能です。</p>
+      </div>
+
+      <h2>eSIM設定が必要な理由と流れ</h2>
+      <p>eSIM（組み込みSIM）はスマートフォンに内蔵されたeUICCチップに電子的にプロファイルをダウンロードして使う方式です。従来の物理SIMと違い、以下のメリットがあります：</p>
+      <ul>
+        <li><strong>即座に切り替え可能</strong>：QRコードをスキャンして数分でプロファイルが有効化</li>
+        <li><strong>複数プロファイル保有</strong>：最大20以上のプロファイルを保存でき、ホーム国の番号を保持したまま海外SIMを追加可能</li>
+        <li><strong>デュアルSIM運用</strong>：eSIM+物理SIM、またはeSIM+eSIMで同時に複数回線利用</li>
+        <li><strong>物理SIMスロット不要</strong>：より薄いデバイス設計が可能</li>
+      </ul>
+
+      <p>eSIM設定の基本フロー：</p>
+      <ol>
+        <li>キャリア（または海外SIM業者）からQRコード入手</li>
+        <li>スマートフォンの設定画面でeSIM追加オプション選択</li>
+        <li>QRコードをカメラでスキャン</li>
+        <li>プロファイルダウンロード開始（キャリアサーバーと通信）</li>
+        <li>認証・確認プロセス（通常数秒〜数分）</li>
+        <li>プロファイル有効化・通信開始</li>
+      </ol>
+
+      <h2>iPhone対応機種と設定前の確認</h2>
+      <p>iPhoneのeSIM対応は意外と古く、2018年から始まっています。</p>
+      <ul>
+        <li><strong>2018年以降全機種対応</strong>：iPhone XS、iPhone XS Max、iPhone XR以降はeSIM利用可能</li>
+        <li><strong>デュアルeSIM対応</strong>：iPhone 13以降はeSIM×2（DESA）が利用可能。つまり物理SIMなしで、eSIMだけで2回線同時利用が可能</li>
+        <li><strong>米国版特例</strong>：iPhone 14以降の米国版はeSIM専用（物理SIMスロットなし）</li>
+      </ul>
+
+      <p>設定前に以下を確認してください：</p>
+      <ul>
+        <li>Wi-Fiまたは物理SIMで接続可能な通信環境</li>
+        <li>iPhoneがWi-Fiに接続済み（QRコード取得～スキャン時に通信が必要）</li>
+        <li>iOS 13.1以降にアップデート済み</li>
+        <li>新規eSIM設定の場合は「機能制限」がないか確認</li>
+      </ul>
+
+      <h2>iPhoneでのeSIM設定手順</h2>
+      <p><strong>所要時間：5〜10分</strong></p>
+
+      <h3>ステップ1：eSIM用QRコード取得</h3>
+      <p>キャリアまたは海外SIM業者（例：Airalo、Simfly、2Skyなど）のウェブサイトやアプリから、あなたの宛先国や利用予定期間に合わせてeSIMプランを購入します。購入完了後、</p>
+      <ol>
+        <li>登録メールアドレスに確認メールが届く</li>
+        <li>メール内のリンクをクリック、またはアプリで「QRコード表示」をタップ</li>
+        <li>QRコードをスクリーンショットで保存（SIMが届く前に確認したい場合）、または画面のまま次ステップへ</li>
+      </ol>
+
+      <h3>ステップ2：iPhoneの設定を開く</h3>
+      <ol>
+        <li>設定アプリを開く</li>
+        <li>「モバイル通信」を選択</li>
+        <li>「eSIMを追加」をタップ（または「別の番号を追加」）</li>
+      </ol>
+
+      <p><strong>注記：</strong>この画面が見当たらない場合は、iOS 13.1未満の古いバージョンの可能性があります。App Storeの「更新」タブから最新iOSを確認しましょう。</p>
+
+      <h3>ステップ3：QRコードをスキャン</h3>
+      <ol>
+        <li>「QRコードを使用」をタップ</li>
+        <li>カメラが起動し、QRコード読み込み画面へ</li>
+        <li>QRコードをフレーム内に収め、自動スキャンを待つ（通常1〜2秒）</li>
+        <li>「モバイルプランを追加」または類似の確認画面が表示</li>
+      </ol>
+
+      <p><strong>手動入力の代替方法：</strong>QRコードが読めない場合は、キャリアから提供される長い英数字コード（SM-DP+アドレスとアクティベーションコード）を手動で入力できます（後述の「よくあるトラブル」参照）。</p>
+
+      <h3>ステップ4：プロファイルのダウンロードと認証</h3>
+      <ol>
+        <li>スキャン後、iPhone がキャリアサーバーと通信を開始</li>
+        <li>「ダウンロード中」というメッセージが表示</li>
+        <li>通常30秒〜5分でダウンロード完了（キャリアの混雑状況に依存）</li>
+        <li>場合によっては本人確認メール（キャリアから）が届き、リンクをクリック確認が必要</li>
+      </ol>
+
+      <h3>ステップ5：eSIMを有効化</h3>
+      <ol>
+        <li>ダウンロード完了後、「モバイルプランを有効化」をタップ</li>
+        <li>デュアルSIM環境では「プライマリラインの設定」画面で、どちらを主回線にするか選択（後から変更可）</li>
+        <li>「完了」をタップ</li>
+      </ol>
+
+      <p>これで設定完了です。海外到着後、モバイル通信スイッチをオンにして、新しいeSIMプランが有効化されていることを確認しましょう。</p>
+
+      <h2>Androidでのモバイル通信対応機種と事前確認</h2>
+      <p>AndroidのディバイスメーカーはiPhoneより多いため、eSIM対応状況は機種によってばらつきがあります。</p>
+      <ul>
+        <li><strong>Google Pixel 2（2017年）が最初のeSIM対応機</strong></li>
+        <li><strong>2018年以降の主要フラッグシップ機種はほぼ対応</strong>：Pixel 3以降、Galaxy S20以降、OnePlus 7T以降など</li>
+        <li><strong>対応確認方法</strong>：メーカーのサポートページで「eSIM」と検索、または設定→モバイル通信→SIMの管理などで「eSIM」表示があるか確認</li>
+      </ul>
+
+      <p>設定前に以下を確認：</p>
+      <ul>
+        <li>Wi-Fiまたは物理SIMで接続可能な通信環境（QRコード入手～スキャンに通信が必要）</li>
+        <li>AndroidのOS バージョン 5.1以上（通常、2018年以降の機種は該当）</li>
+        <li>eSIM対応機種であることを確認</li>
+      </ul>
+
+      <h2>Androidでのモバイル通信設定手順</h2>
+      <p><strong>所要時間：5〜10分</strong></p>
+
+      <p><strong>注記：</strong>Android の画面表示はメーカー・OS バージョンで異なる場合があります。以下は一般的な Google Pixel および標準 Android の例です。Samsung Galaxy などは「加入者」「SIM管理」などのメニュー項目が異なることがあります。</p>
+
+      <h3>ステップ1：eSIM用QRコード取得</h3>
+      <p>iPhoneと同様に、海外SIM業者のサイト／アプリから購入し、QRコードを入手します。</p>
+
+      <h3>ステップ2：設定を開く</h3>
+      <ol>
+        <li>設定アプリを開く</li>
+        <li>「ネットワークとインターネット」を選択</li>
+        <li>「SIM と eSIM」をタップ（またはメーカーによっては「モバイル通信」「加入者」など異なる名称）</li>
+      </ol>
+
+      <h3>ステップ3：「eSIMを追加」を選択</h3>
+      <ol>
+        <li>画面上の「＋」ボタンまたは「eSIM を追加」をタップ</li>
+        <li>「別の方法で接続」または「代わりに別の方法を使用」という選択肢が表示されることがあります（デフォルトは「QRコードをスキャンする」）</li>
+        <li>「QRコードをスキャンする」を選択</li>
+      </ol>
+
+      <h3>ステップ4：QRコードをスキャン</h3>
+      <ol>
+        <li>カメラが起動</li>
+        <li>QRコードをフレーム内に収める</li>
+        <li>自動認識後、確認画面が表示</li>
+      </ol>
+
+      <h3>ステップ5：プロファイルのダウンロードと設定</h3>
+      <ol>
+        <li>「ダウンロード」をタップ</li>
+        <li>キャリアサーバーとの通信が開始（通常30秒〜5分）</li>
+        <li>完了後、「SIM 2」または「eSIM」として表示</li>
+        <li>データ通信や音声通話を、新eSIMに切り替えたい場合は「デフォルト SIM」として設定</li>
+      </ol>
+
+      <p>これで設定完了です。アクティブなSIM / eSIMが切り替わったことを、ステータスバーで確認できます。</p>
+
+      <h2>デュアルSIM環境でのプロファイル管理</h2>
+      <p>eSIMの最大の利点は、複数プロファイルを保有でき、海外旅行時に現地SIMを追加しながらホーム国の電話番号を保持できることです。</p>
+
+      <h3>デュアルSIM の2つのタイプ</h3>
+      <ul>
+        <li><strong>DSDS（Dual SIM Dual Standby）</strong>：eSIM+物理SIM で2回線待受け可能。通話は1回線ずつだが、データ通信は片方のみ利用可能</li>
+        <li><strong>DESA（Dual eSIM Dual Active）</strong>：eSIM×2で2回線待受け可能。iPhone 13以降対応。データ通信も両回線で可能な場合があります</li>
+      </ul>
+
+      <h3>プロファイル切り替え手順</h3>
+      <p><strong>iPhone の場合：</strong></p>
+      <ol>
+        <li>設定→モバイル通信</li>
+        <li>各プロファイル（「プライマリライン」「セカンダリライン」など）をタップ</li>
+        <li>データ通信・音声通話のオン/オフを個別に切り替え可能</li>
+      </ol>
+
+      <p><strong>Android の場合：</strong></p>
+      <ol>
+        <li>設定→ネットワークとインターネット→SIM と eSIM</li>
+        <li>各SIM/eSIMを選択</li>
+        <li>「使用」をタップして有効/無効を切り替え</li>
+      </ol>
+
+      <h2>よくあるトラブルと対処法</h2>
+
+      <h3>トラブル1：QRコードが読めない</h3>
+      <div class="trouble-box">
+        <p><strong>原因：</strong>光が反射している、コントラストが低い、カメラが古い、などが考えられます。</p>
+        <p><strong>対処法：</strong></p>
+        <ul>
+          <li>QRコードの周囲の反射物を除去（ラップをはがすなど）</li>
+          <li>スマートフォンのカメラをQRコードに垂直に向け、ゆっくり近づける（通常 10cm 程度）</li>
+          <li>照明を調整（暗すぎないか、逆光でないか確認）</li>
+          <li><strong>手動入力：</strong>QRコード下に記載されている SM-DP+ アドレスとアクティベーションコードを手動で入力。キャリアのサイトで「手動で追加」「別の方法で接続」などのオプションから入力できます</li>
+        </ul>
+      </div>
+
+      <h3>トラブル2：「ダウンロード中」のまま進まない</h3>
+      <div class="trouble-box">
+        <p><strong>原因：</strong>キャリアサーバーの混雑、通信不安定、認証待機中など。</p>
+        <p><strong>対処法：</strong></p>
+        <ul>
+          <li>数分待機（通常 5 分以内に完了）</li>
+          <li>Wi-Fi を再接続（設定→Wi-Fi から同じネットワークを一度オフにして再接続）</li>
+          <li>機内モードをオン→オフで通信をリセット</li>
+          <li>eSIM設定をキャンセルして、10 分後に再スキャン</li>
+          <li>キャリアのサポート連絡先に、アクティベーションコードを伝えて進行状況確認</li>
+        </ul>
+      </div>
+
+      <h3>トラブル3：設定完了後、通信ができない</h3>
+      <div class="trouble-box">
+        <p><strong>原因：</strong>eSIM が無効化状態、データ通信設定が異なるSIMを参照している、キャリア側の有効化待機中など。</p>
+        <p><strong>対処法：</strong></p>
+        <ul>
+          <li><strong>iPhone：</strong>設定→モバイル通信→新しいプロファイルをタップ→「この回線で通話・SMS・データを使用」をオン</li>
+          <li><strong>Android：</strong>設定→ネットワークとインターネット→SIM と eSIM→新しい eSIM をタップ→「使用」をオン</li>
+          <li>データ通信のデフォルト SIM を確認：iPhone では設定→モバイル通信→「モバイルデータ」で選択、Android では設定→ネットワークとインターネット→「デフォルト SIM」で設定</li>
+          <li>キャリアの有効化タイムラグ（通常即座だが、稀に 30 分程度必要）を待つ</li>
+        </ul>
+      </div>
+
+      <h3>トラブル4：複数のeSIMプロファイルがある場合、どれを有効化する？</h3>
+      <div class="trouble-box">
+        <p><strong>状況：</strong>前回の旅行で保存したeSIMプロファイルと、今回のプロファイルが両方存在する。</p>
+        <p><strong>対処法：</strong></p>
+        <ul>
+          <li><strong>iPhone：</strong>不要なプロファイルを削除：設定→モバイル通信→不要なプロファイル→削除（または「その他」→「このプロファイルを削除」）</li>
+          <li><strong>Android：</strong>不要なeSIMを削除：設定→ネットワークとインターネット→SIM と eSIM→不要なeSIM→削除</li>
+          <li>今回のプロファイルをアクティブに切り替え</li>
+        </ul>
+      </div>
+
+      <h3>トラブル5：ホームキャリアのプロファイルを間違えて削除した</h3>
+      <div class="trouble-box">
+        <p><strong>原因：</strong>削除したプロファイルはキャリアのサーバー上に存在し、アクティベーションコードまたはQRコードで復元可能です。</p>
+        <p><strong>対処法：</strong></p>
+        <ul>
+          <li>ホームキャリアのサポートサイト（My Page、アプリなど）で、eSIM プロファイルの再発行リクエスト</li>
+          <li>新しいQRコード/アクティベーションコードが発行される（通常即座または数分以内）</li>
+          <li>新しいコードで再スキャン・再インストール</li>
+        </ul>
+      </div>
+
+      <h2>eSIM設定前の最終チェックリスト</h2>
+      <p>海外出発前夜の設定でも、焦らず以下を確認して進めましょう：</p>
+      <ul>
+        <li>☐ iPhone / Android 対応機種であることを確認</li>
+        <li>☐ Wi-Fi が利用可能か、または物理 SIM で通信可能か確認</li>
+        <li>☐ eSIM プロバイダー（キャリア / 海外 SIM 業者）から QRコード / アクティベーションコードを取得</li>
+        <li>☐ iOS / Android が最新版にアップデート済みか確認</li>
+        <li>☐ 既存のプロファイルがある場合、削除対象・保持対象を整理</li>
+        <li>☐ 有効化後、設定メニューで新eSIMが表示されているか確認</li>
+        <li>☐ 海外到着後、機内モードをオフにしてモバイル通信をオンに</li>
+      </ul>
+
+      <h2>まとめ：eSIM設定は出発夜でも間に合う</h2>
+      <p><strong>「海外eSIM設定は複雑」という心配は不要です。</strong>QRコードをスキャンして、キャリアの認証を待つだけ。5〜10分で完了し、海外到着後は即座に通信開始可能。</p>
+
+      <p>最大のメリットは、ホーム国の電話番号を保持しながら、現地の安いデータプランを追加できることです。複数プロファイルが保存できるため、頻繁に海外出張・旅行する方は、毎回新規購入の手間が減ります。</p>
+
+      <p>出発前夜でもプロバイダのサイト・アプリから数分で購入でき、QRコードはメール /アプリで即座に入手できます。「計画的に」が理想ですが、万が一設定を忘れても、空港の待機時間で設定可能です。</p>
+
+      <h2>関連記事</h2>
+      <div class="related-links">
+        <a href="/shotsim/ja/articles/esim-vs-physical-sim.html">eSIM vs 物理SIM 徹底比較</a>
+        <a href="/shotsim/ja/articles/esim-compatible-phones.html">eSIM対応機種一覧</a>
+        <a href="/shotsim/ja/articles/sim-card-sizes.html">SIMカードサイズの種類</a>
+      </div>
+
+      <div id="related-articles" data-article-id="esim-setup-guide"></div>
+      <div class="source">
+        本サイトはAmazonアソシエイトプログラムに参加しており、適格販売により収入を得ています。
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2026 ShotSIM. 本サイトはAmazonアソシエイトプログラムに参加しています。</p>
+    </footer>
+  </body>
+</html>

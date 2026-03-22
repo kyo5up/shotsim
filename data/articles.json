@@ -1,5 +1,31 @@
 [
   {
+    "id": "sim-card-sizes",
+    "title": "SIMカードのサイズ一覧｜nano・micro・標準SIMの違いと確認方法【2026年版】",
+    "tags": [
+      "基礎知識",
+      "物理SIM"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/sim-card-sizes.html",
+    "summary": "nano・micro・標準SIMのサイズの違いを図解で解説。自分のスマホのSIMサイズの確認方法、アダプターの使い方と注意点もわかりやすく紹介。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 18:59"
+  },
+  {
+    "id": "esim-setup-guide",
+    "title": "eSIMの設定方法を解説｜iPhone・Android別の手順とトラブル対処法【2026年版】",
+    "tags": [
+      "基礎知識",
+      "eSIM"
+    ],
+    "date": "2026-03-22",
+    "url": "/shotsim/ja/articles/esim-setup-guide.html",
+    "summary": "eSIMの設定手順をiPhone・Android別にステップバイステップで解説。QRコードの読み込み方から、よくあるトラブルの対処法まで網羅。出発前夜でも5分で設定できます。",
+    "created": "2026-03-22 00:00",
+    "updated": "2026-03-22 18:59"
+  },
+  {
     "id": "top5-destinations-2024",
     "title": "2024年版：日本人が最も多く訪れた海外旅行先TOP5",
     "tags": [
@@ -394,7 +420,7 @@
     "url": "/shotsim/ja/articles/best-sim-for-korea-2026.html",
     "summary": "韓国旅行のSIM選びを短期・中期・コスパ重視・通信品質重視の4タイプ別に解説。Amazon事前購入・仁川空港・コンビニの購入場所比較とよくある質問も網羅。",
     "created": "2026-03-17 00:00",
-    "updated": "2026-03-22 17:34"
+    "updated": "2026-03-22 18:59"
   },
   {
     "id": "korea-sim-vs-pocket-wifi",
