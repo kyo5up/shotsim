@@ -426,7 +426,7 @@
               <th>商品</th>
               <th>価格</th>
               <th>購入</th>
-              <th>種別</th>
+              <th>種別<br /><small>物理SIMサイズ</small></th>
               <th>高速データ</th>
               <th>低速無制限</th>
               <th>期間</th>
@@ -434,7 +434,6 @@
               <th>SMS</th>
               <th>テザリング</th>
               <th>対応国</th>
-              <th>物理SIMサイズ<br /><small>nano / micro / 標準</small></th>
               <th>現地キャリア<br /><small>（韓国）</small></th>
               <th>通信規格</th>
               <th>レビュー</th>
@@ -474,53 +473,39 @@
       function renderBool(val) {
         if (val === true) return '<span class="ok">○</span>';
         if (val === false) return '<span class="ng">✕</span>';
-        return '<span class="unknown">-</span>';
+        return '<span class="unknown">不明</span>';
       }
 
-      function renderSimSizes(sizes, type) {
-        if (!type || type.includes("eSIM"))
-          return '<span class="unknown">-</span>';
-        if (
-          !sizes ||
-          (sizes.nano === null &&
-            sizes.micro === null &&
-            sizes.standard === null)
-        ) {
-          return '<span class="unknown">不明</span>';
+      function renderTypeWithSize(sim) {
+        const type = sim.type || "";
+        let badge = "";
+        if (type.includes("eSIM"))
+          badge = `<span class="badge badge-esim">eSIM</span>`;
+        else if (type.includes("両対応"))
+          badge = `<span class="badge badge-both">両対応</span>`;
+        else if (type.includes("物理"))
+          badge = `<span class="badge badge-physical">物理SIM</span>`;
+        else
+          badge = `<span class="badge">${type}</span>`;
+
+        // eSIMはサイズ不要
+        if (type.includes("eSIM")) return badge;
+
+        const sizes = sim.sim_sizes;
+        if (!sizes || (sizes.nano === null && sizes.micro === null && sizes.standard === null)) {
+          return badge + `<br><small class="unknown">サイズ不明</small>`;
         }
-        const nano =
-          sizes.nano === true
-            ? '<span class="ok">○</span>'
-            : sizes.nano === false
-              ? '<span class="ng">✕</span>'
-              : '<span class="unknown">-</span>';
-        const micro =
-          sizes.micro === true
-            ? '<span class="ok">○</span>'
-            : sizes.micro === false
-              ? '<span class="ng">✕</span>'
-              : '<span class="unknown">-</span>';
-        const std =
-          sizes.standard === true
-            ? '<span class="ok">○</span>'
-            : sizes.standard === false
-              ? '<span class="ng">✕</span>'
-              : '<span class="unknown">-</span>';
-        return `${nano} / ${micro} / ${std}`;
+        const fmt = (v) =>
+          v === true ? '<span class="ok">○</span>'
+          : v === false ? '<span class="ng">✕</span>'
+          : '<span class="unknown">不明</span>';
+        return badge + `<br><small>nano ${fmt(sizes.nano)} / micro ${fmt(sizes.micro)} / 標準 ${fmt(sizes.standard)}</small>`;
       }
 
       function renderCountries(countries) {
         if (!countries || countries.length === 0)
-          return '<span class="unknown">-</span>';
-        const MAX_SHOW = 4;
-        const shown = countries.slice(0, MAX_SHOW);
-        const rest = countries.length - MAX_SHOW;
-        let html = shown
-          .map((c) => `<span class="country-tag">${c}</span>`)
-          .join("");
-        if (rest > 0)
-          html += `<span class="country-tag-more"> 他${rest}カ国</span>`;
-        return `<div class="countries-cell">${html}</div>`;
+          return '<span class="unknown">不明</span>';
+        return `<div class="countries-cell">${countries.map((c) => `<span class="country-tag">${c}</span>`).join("")}</div>`;
       }
 
       function renderNetwork(nets) {
@@ -664,7 +649,7 @@
           <td>${renderProduct(sim)}</td>
           <td>${renderPrice(sim)}</td>
           <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-          <td style="text-align:center">${renderType(sim.type)}</td>
+          <td style="text-align:center">${renderTypeWithSize(sim)}</td>
           <td style="text-align:center">${renderDataHigh(sim)}</td>
           <td style="text-align:center">${renderDataLow(sim)}</td>
           <td style="text-align:center;white-space:nowrap">${sim.days}日間</td>
@@ -672,7 +657,6 @@
           <td style="text-align:center">${renderBool(sim.sms)}</td>
           <td style="text-align:center">${renderBool(sim.tethering)}</td>
           <td>${renderCountries(sim.countries)}</td>
-          <td style="text-align:center">${renderSimSizes(sim.sim_sizes, sim.type)}</td>
           <td style="text-align:center">${renderCarrier(sim)}</td>
           <td>${renderNetwork(sim.network)}</td>
           <td>${renderReview(sim)}</td>
@@ -702,7 +686,7 @@
         const group = data.find((g) => g.country === COUNTRY_KEY);
         if (!group) {
           document.getElementById("sim-tbody").innerHTML =
-            '<tr><td colspan="20">データが見つかりません</td></tr>';
+            '<tr><td colspan="19">データが見つかりません</td></tr>';
           return;
         }
         const sims = group.sims || [];
