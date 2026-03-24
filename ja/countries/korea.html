@@ -153,55 +153,34 @@
         padding: 10px 12px;
         vertical-align: middle;
       }
-      /* 偶数行・ホバー（固定列以外） */
-      .sim-table tr:nth-child(even) td:not(:nth-child(1)):not(:nth-child(2)) {
-        background: #fafafa;
-      }
-      .sim-table tr:hover td:not(:nth-child(1)):not(:nth-child(2)) {
-        background: #f5f8ff;
-      }
+      /* 偶数行・ホバー（通常列） */
+      .sim-table tr:nth-child(even) td { background: #fafafa; }
+      .sim-table tr:hover td { background: #f5f8ff; }
 
       /* #列（1列目）：左固定 */
       .sim-table th:nth-child(1),
       .sim-table td:nth-child(1) {
         position: sticky;
         left: 0;
-        z-index: 2;
-        width: 36px;
-        min-width: 36px;
-        max-width: 36px;
+        z-index: 3;
         background: #fff;
       }
-      .sim-table th:nth-child(1) {
-        background: #f0f4ff;
-        z-index: 4;
-      }
-      .sim-table tr:nth-child(even) td:nth-child(1) {
-        background: #fafafa;
-      }
-      .sim-table tr:hover td:nth-child(1) {
-        background: #f5f8ff;
-      }
+      .sim-table th:nth-child(1) { background: #f0f4ff; z-index: 5; }
+      .sim-table tr:nth-child(even) td:nth-child(1) { background: #fafafa; }
+      .sim-table tr:hover td:nth-child(1) { background: #f5f8ff; }
 
-      /* 商品列（2列目）：左固定 */
+      /* 商品列（2列目）：左固定（leftはJSで動的設定） */
       .sim-table th:nth-child(2),
       .sim-table td:nth-child(2) {
         position: sticky;
-        left: 36px;
-        z-index: 2;
+        left: 0;
+        z-index: 3;
         background: #fff;
-        border-right: 2px solid #ddd;
+        border-right: 2px solid #ccc;
       }
-      .sim-table th:nth-child(2) {
-        background: #f0f4ff;
-        z-index: 4;
-      }
-      .sim-table tr:nth-child(even) td:nth-child(2) {
-        background: #fafafa;
-      }
-      .sim-table tr:hover td:nth-child(2) {
-        background: #f5f8ff;
-      }
+      .sim-table th:nth-child(2) { background: #f0f4ff; z-index: 5; }
+      .sim-table tr:nth-child(even) td:nth-child(2) { background: #fafafa; }
+      .sim-table tr:hover td:nth-child(2) { background: #f5f8ff; }
 
       /* 商品名セル */
       .product-cell {
@@ -633,7 +612,7 @@
           .map(
             (sim, idx) => `
         <tr>
-          <td style="text-align:center;color:#aaa;font-size:0.8rem">${idx + 1}</td>
+          <td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx + 1}</td>
           <td>${renderProduct(sim)}</td>
           <td style="text-align:center">${renderType(sim.type)}</td>
           <td style="text-align:center">${renderSimSizes(sim.sim_sizes, sim.type)}</td>
@@ -652,6 +631,16 @@
       `,
           )
           .join("");
+
+        // #列の実幅を測り、商品列のleftを動的にセット
+        requestAnimationFrame(() => {
+          const firstTh = document.querySelector('.sim-table th:nth-child(1)');
+          if (!firstTh) return;
+          const w = firstTh.offsetWidth;
+          document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
+            el.style.left = w + 'px';
+          });
+        });
       }
 
       async function init() {
