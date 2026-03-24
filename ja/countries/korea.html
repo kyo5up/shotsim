@@ -424,17 +424,22 @@
             <tr>
               <th>#</th>
               <th>商品</th>
+              <th>価格</th>
+              <th>購入</th>
               <th>種別</th>
-              <th>物理SIMサイズ<br /><small>nano / micro / 標準</small></th>
-              <th>対応国</th>
-              <th>現地キャリア<br /><small>（韓国）</small></th>
-              <th>通信規格</th>
-              <th>データ</th>
+              <th>高速データ</th>
+              <th>低速無制限</th>
               <th>期間</th>
               <th>通話</th>
               <th>SMS</th>
               <th>テザリング</th>
+              <th>対応国</th>
+              <th>物理SIMサイズ<br /><small>nano / micro / 標準</small></th>
+              <th>現地キャリア<br /><small>（韓国）</small></th>
+              <th>通信規格</th>
               <th>レビュー</th>
+              <th>会社名</th>
+              <th>ブランド</th>
               <th>価格</th>
               <th>購入</th>
             </tr>
@@ -594,6 +599,31 @@
         return `<span style="font-size:0.82rem">${kr}</span>`;
       }
 
+      function renderDataHigh(sim) {
+        const v = sim.data_high;
+        if (v === null || v === undefined) return '<span class="unknown">-</span>';
+        return `<span style="white-space:nowrap">${v}</span>`;
+      }
+
+      function renderDataLow(sim) {
+        const v = sim.data_low;
+        if (v === null || v === undefined) return '<span class="unknown">-</span>';
+        if (v === "情報不明") return '<span class="unknown">?</span>';
+        return `<span style="white-space:nowrap;font-size:0.82rem">${v}</span>`;
+      }
+
+      function renderCompany(sim) {
+        const local = sim.company && sim.company.local ? sim.company.local : null;
+        if (!local) return '<span class="unknown">-</span>';
+        return `<span style="font-size:0.82rem">${local}</span>`;
+      }
+
+      function renderBrand(sim) {
+        const local = sim.brand && sim.brand.local ? sim.brand.local : null;
+        if (!local) return '<span class="unknown">-</span>';
+        return `<span style="font-size:0.82rem">${local}</span>`;
+      }
+
       function applyFilters(sims) {
         const typeVal = document.getElementById("filter-type").value;
         const daysVal = document.getElementById("filter-days").value;
@@ -632,17 +662,22 @@
         <tr>
           <td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx + 1}</td>
           <td>${renderProduct(sim)}</td>
+          <td>${renderPrice(sim)}</td>
+          <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
           <td style="text-align:center">${renderType(sim.type)}</td>
-          <td style="text-align:center">${renderSimSizes(sim.sim_sizes, sim.type)}</td>
-          <td>${renderCountries(sim.countries)}</td>
-          <td style="text-align:center">${renderCarrier(sim)}</td>
-          <td>${renderNetwork(sim.network)}</td>
-          <td style="text-align:center;white-space:nowrap">${sim.data || "-"}</td>
+          <td style="text-align:center">${renderDataHigh(sim)}</td>
+          <td style="text-align:center">${renderDataLow(sim)}</td>
           <td style="text-align:center;white-space:nowrap">${sim.days}日間</td>
           <td style="text-align:center">${renderBool(sim.voice_call)}</td>
           <td style="text-align:center">${renderBool(sim.sms)}</td>
           <td style="text-align:center">${renderBool(sim.tethering)}</td>
+          <td>${renderCountries(sim.countries)}</td>
+          <td style="text-align:center">${renderSimSizes(sim.sim_sizes, sim.type)}</td>
+          <td style="text-align:center">${renderCarrier(sim)}</td>
+          <td>${renderNetwork(sim.network)}</td>
           <td>${renderReview(sim)}</td>
+          <td style="text-align:center">${renderCompany(sim)}</td>
+          <td style="text-align:center">${renderBrand(sim)}</td>
           <td>${renderPrice(sim)}</td>
           <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
         </tr>
@@ -667,7 +702,7 @@
         const group = data.find((g) => g.country === COUNTRY_KEY);
         if (!group) {
           document.getElementById("sim-tbody").innerHTML =
-            '<tr><td colspan="15">データが見つかりません</td></tr>';
+            '<tr><td colspan="20">データが見つかりません</td></tr>';
           return;
         }
         const sims = group.sims || [];
