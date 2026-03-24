@@ -415,6 +415,7 @@
           <option value="0">データのみ</option>
         </select>
         <span class="filter-count" id="filter-count"></span>
+        <button id="btn-expand" onclick="toggleExpand()" style="margin-left:8px;padding:5px 12px;font-size:0.82rem;border:1px solid #ccc;border-radius:4px;cursor:pointer;background:#fff;">⛶ 全画面</button>
       </div>
 
       <div class="sim-table-wrap">
@@ -444,6 +445,19 @@
     </div>
 
     <script>
+      function toggleExpand() {
+        const page = document.querySelector('.country-page');
+        const btn = document.getElementById('btn-expand');
+        if (page.style.maxWidth === 'none') {
+          page.style.maxWidth = '';
+          btn.textContent = '⛶ 全画面';
+        } else {
+          page.style.maxWidth = 'none';
+          page.style.padding = '0 12px 60px';
+          btn.textContent = '⊡ 枠あり';
+        }
+      }
+
       const COUNTRY_KEY = "korea";
 
       function renderBool(val) {
