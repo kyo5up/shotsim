@@ -166,6 +166,9 @@
       .sim-table tr:nth-child(even) td:nth-child(1) {
         background: #fafafa;
       }
+      .sim-table tr:hover td:nth-child(1) {
+        background: #f5f8ff;
+      }
       /* 商品列（2列目）：左固定（#列の右隣） */
       .sim-table th:nth-child(2),
       .sim-table td:nth-child(2) {
@@ -173,6 +176,8 @@
         left: 40px;
         z-index: 1;
         background: #f0f4ff;
+        /* スクロール時に右側コンテンツが透けて見えないよう影で境界を明示 */
+        box-shadow: 3px 0 6px -2px rgba(0,0,0,0.15);
       }
       .sim-table td:nth-child(2) {
         background: #fff;
@@ -180,10 +185,17 @@
       .sim-table tr:nth-child(even) td:nth-child(2) {
         background: #fafafa;
       }
+      .sim-table tr:hover td:nth-child(2) {
+        background: #f5f8ff;
+      }
       /* ヘッダー左固定セルはz-index高めに（上+左の交差部分） */
       .sim-table th:nth-child(1),
       .sim-table th:nth-child(2) {
         z-index: 3;
+        box-shadow: 3px 0 6px -2px rgba(0,0,0,0.15);
+      }
+      .sim-table th:nth-child(1) {
+        box-shadow: none;
       }
       .sim-table tr:nth-child(even) td {
         background: #fafafa;
