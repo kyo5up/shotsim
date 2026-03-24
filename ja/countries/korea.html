@@ -127,13 +127,15 @@
 
       /* テーブル */
       .sim-table-wrap {
-        overflow-x: auto;
+        overflow: auto;
+        max-height: 80vh;
       }
       .sim-table {
         width: 100%;
         border-collapse: collapse;
         font-size: 0.88rem;
       }
+      /* ヘッダー行：上固定 */
       .sim-table th {
         background: #f0f4ff;
         font-weight: 600;
@@ -141,11 +143,47 @@
         border: 1px solid #ddd;
         white-space: nowrap;
         text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 2;
       }
       .sim-table td {
         border: 1px solid #ddd;
         padding: 10px 12px;
         vertical-align: middle;
+      }
+      /* #列（1列目）：左固定 */
+      .sim-table th:nth-child(1),
+      .sim-table td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        background: #f0f4ff;
+      }
+      .sim-table td:nth-child(1) {
+        background: #fff;
+      }
+      .sim-table tr:nth-child(even) td:nth-child(1) {
+        background: #fafafa;
+      }
+      /* 商品列（2列目）：左固定（#列の右隣） */
+      .sim-table th:nth-child(2),
+      .sim-table td:nth-child(2) {
+        position: sticky;
+        left: 40px;
+        z-index: 1;
+        background: #f0f4ff;
+      }
+      .sim-table td:nth-child(2) {
+        background: #fff;
+      }
+      .sim-table tr:nth-child(even) td:nth-child(2) {
+        background: #fafafa;
+      }
+      /* ヘッダー左固定セルはz-index高めに（上+左の交差部分） */
+      .sim-table th:nth-child(1),
+      .sim-table th:nth-child(2) {
+        z-index: 3;
       }
       .sim-table tr:nth-child(even) td {
         background: #fafafa;
