@@ -5,597 +5,2359 @@
     "flag": "🇰🇷",
     "sims": [
       {
-        "name": "【韓国 eSIM】3日間 高速データ完全無制限 高速データ使い放題 韓国SIMカード 韓国e-sim プリペイドSIM｜5G/4G-LTE データ専用｜当日発行可能｜SK Telecom正規認証品｜TikTok·ChatGPT·テザリング対応（72時間）",
-        "brand": "onetone",
+        "id": "KR-001",
+        "asin": "B0G4W1L6VJ",
+        "product_name": "【韓国 eSIM】3日間 高速データ完全無制限 高速データ使い放題 韓国SIMカード 韓国e-sim プリペイドSIM｜5G/4G-LTE データ専用｜当日発行可能｜SK Telecom正規認証品｜TikTok·ChatGPT·テザリング対応（72時間）",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "onetone",
+          "original": null,
+          "en": "onetone"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "（推測）SK Telecom"
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
         "data": "完全無制限",
         "days": 3,
+        "voice_call": false,
+        "sms": null,
+        "tethering": true,
         "price_min": 750,
         "price_max": 750,
-        "asin": "B0G4W1L6VJ",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0G4W1L6VJ?tag=shotsim-22"
       },
       {
-        "name": "【韓国SIM】SKテレコム正規 5日間 1GB/日 韓国SIMカード データ無制限 SKテレコム正規 プリペイド sim 高速データ | データ通信専用 契約不要 3 in 1 - 標準マイクロナノ LINE相談受付中 (5日間)",
-        "brand": "LBDCIOT",
+        "id": "KR-002",
+        "asin": "B0DG54B6X7",
+        "product_name": "【韓国SIM】SKテレコム正規 5日間 1GB/日 韓国SIMカード データ無制限 SKテレコム正規 プリペイド sim 高速データ | データ通信専用 契約不要 3 in 1 - 標準マイクロナノ LINE相談受付中 (5日間)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "LBDCIOT",
+          "original": null,
+          "en": "LBDCIOT"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": true,
+          "micro": true,
+          "standard": true
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "（推測）SK Telecom"
+        },
+        "network": null,
         "data": "1GB/日（超過後低速無制限）",
         "days": 5,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 780,
         "price_max": 780,
-        "asin": "B0DG54B6X7",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DG54B6X7?tag=shotsim-22"
       },
       {
-        "name": "【韓国eSIM】3日間無制限高速データ｜SK Telecom回線｜5G対応｜QRコード簡単設定｜即日メール配送｜テザリング対応｜日本語ガイド付き｜LINEサポート｜TikTok・ChatGPT対応 韓国SIMカード 韓国e-sim sim (eSIM 3日間完全無制限)",
-        "brand": "Billion Connect",
+        "id": "KR-003",
+        "asin": "B0F32VR2QT",
+        "product_name": "【韓国eSIM】3日間無制限高速データ｜SK Telecom回線｜5G対応｜QRコード簡単設定｜即日メール配送｜テザリング対応｜日本語ガイド付き｜LINEサポート｜TikTok・ChatGPT対応 韓国SIMカード 韓国e-sim sim (eSIM 3日間完全無制限)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Billion Connect",
+          "original": null,
+          "en": "Billion Connect"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "日本"
+        ],
+        "carrier": {
+          "韓国": "（推測）SK Telecom"
+        },
+        "network": [
+          "5G"
+        ],
         "data": "完全無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
         "price_min": 800,
         "price_max": 800,
-        "asin": "B0F32VR2QT"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0F32VR2QT?tag=shotsim-22"
       },
       {
-        "name": "韓国SIM 利用日数 3日間 データ通信使い放題 開通手続き不要 韓国プリペイドSIM ローミングSIM SIMピン付",
-        "brand": "Wise SIM",
-        "type": "SIM",
+        "id": "KR-004",
+        "asin": "B0CHCCVWJ1",
+        "product_name": "韓国SIM 利用日数 3日間 データ通信使い放題 開通手続き不要 韓国プリペイドSIM ローミングSIM SIMピン付",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Wise SIM",
+          "original": null,
+          "en": "Wise SIM"
+        },
+        "type": "（推測）物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 820,
         "price_max": 820,
-        "asin": "B0CHCCVWJ1"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0CHCCVWJ1?tag=shotsim-22"
       },
       {
-        "name": "[SK韓国] 韓国 4G-LTE データ通信 使い放題 プリペイドSIMカード (3日間)",
-        "brand": "mewfi",
+        "id": "KR-005",
+        "asin": "B07RHMQBRD",
+        "product_name": "[SK韓国] 韓国 4G-LTE データ通信 使い放題 プリペイドSIMカード (3日間)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "mewfi",
+          "original": null,
+          "en": "mewfi"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "4G",
+          "LTE"
+        ],
         "data": "完全無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 840,
         "price_max": 840,
-        "asin": "B07RHMQBRD"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B07RHMQBRD?tag=shotsim-22"
       },
       {
-        "name": "[SKTelecom] 韓国 4G-LTE データ通信 完全使い放題 プリペイドSIMカード… (3日間)",
-        "brand": "mewfi",
+        "id": "KR-006",
+        "asin": "B083F2VQ87",
+        "product_name": "[SKTelecom] 韓国 4G-LTE データ通信 完全使い放題 プリペイドSIMカード… (3日間)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "mewfi",
+          "original": null,
+          "en": "mewfi"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": [
+          "4G",
+          "LTE"
+        ],
         "data": "完全無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 890,
         "price_max": 890,
-        "asin": "B083F2VQ87",
-        "carrier": "SK Telecom"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B083F2VQ87?tag=shotsim-22"
       },
       {
-        "name": "【韓国eSIM】3日間完全無制限（低速なし） LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム simless",
-        "brand": "DeSiM",
+        "id": "KR-007",
+        "asin": "B0DS1YZVX8",
+        "product_name": "【韓国eSIM】3日間完全無制限（低速なし） LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム simless",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DeSiM",
+          "original": null,
+          "en": "DeSiM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 3,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 940,
         "price_max": 940,
-        "asin": "B0DS1YZVX8",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DS1YZVX8?tag=shotsim-22"
       },
       {
-        "name": "韓国 simcard Korea sim card 4G-LTE 高速データ通信 プリペイド SIMカード ソウル prepaid simcard (4日間3GB)",
-        "brand": "bigconnect",
+        "id": "KR-008",
+        "asin": "B0C7KVR1ZR",
+        "product_name": "韓国 simcard Korea sim card 4G-LTE 高速データ通信 プリペイド SIMカード ソウル prepaid simcard (4日間3GB)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "bigconnect",
+          "original": null,
+          "en": "bigconnect"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "4G",
+          "LTE",
+          "3G"
+        ],
         "data": "3GB",
         "days": 4,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 970,
         "price_max": 970,
-        "asin": "B0C7KVR1ZR"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0C7KVR1ZR?tag=shotsim-22"
       },
       {
-        "name": "[SKTelecom] 韓国 4G-LTE データ通信 完全使い放題 プリペイドSIMカード… (4日間)",
-        "brand": "mewfi",
+        "id": "KR-009",
+        "asin": "B083F32923",
+        "product_name": "[SKTelecom] 韓国 4G-LTE データ通信 完全使い放題 プリペイドSIMカード… (4日間)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "mewfi",
+          "original": null,
+          "en": "mewfi"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": [
+          "4G",
+          "LTE"
+        ],
         "data": "完全無制限",
         "days": 4,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 980,
         "price_max": 980,
-        "asin": "B083F32923",
-        "carrier": "SK Telecom"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B083F32923?tag=shotsim-22"
       },
       {
-        "name": "【正規日本語版】韓国 5日間 データ/音声通話 SIMカード １０GBデータ通信【中国聯通香港 China unicom】",
-        "brand": "China unicom中国联通",
-        "type": "物理SIM",
-        "data": "１０GB",
-        "days": 5,
-        "price_min": 980,
-        "price_max": 980,
+        "id": "KR-010",
         "asin": "B0CV536DCL",
-        "voice_call": true
+        "product_name": "【正規日本語版】韓国 5日間 データ/音声通話 SIMカード １０GBデータ通信【中国聯通香港 China unicom】",
+        "image_url": null,
+        "company": {
+          "local": "中国聯通香港",
+          "original": "中国联通（香港）",
+          "en": "China Unicom (Hong Kong)"
+        },
+        "brand": {
+          "local": "China Unicom",
+          "original": "中国联通",
+          "en": "China Unicom"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "日本",
+          "中国",
+          "香港"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "10GB",
+        "days": 5,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 980,
+        "price_max": 980,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0CV536DCL?tag=shotsim-22"
       },
       {
-        "name": "【Almond SIM】韓国 Korea プリペイドSIMカード 3日間 データ無制限 5G/4G対応 高速通信 使い放題 korea simcard 24時間多言語サポート (3日間（24時間×3）)",
-        "brand": "bigconnect",
+        "id": "KR-011",
+        "asin": "B0GJ2LKKXN",
+        "product_name": "【Almond SIM】韓国 Korea プリペイドSIMカード 3日間 データ無制限 5G/4G対応 高速通信 使い放題 korea simcard 24時間多言語サポート (3日間（24時間×3）)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "bigconnect",
+          "original": null,
+          "en": "bigconnect"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G"
+        ],
         "data": "完全無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 980,
         "price_max": 980,
-        "asin": "B0GJ2LKKXN"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0GJ2LKKXN?tag=shotsim-22"
       },
       {
-        "name": "韓国 esim 4日間 無制限 simカード データ使い放題 ジェットシム 韓国 sim jet sim 韓国 4日",
-        "brand": "JETSIM",
+        "id": "KR-012",
+        "asin": "B0DC2LSC7W",
+        "product_name": "韓国 esim 4日間 無制限 simカード データ使い放題 ジェットシム 韓国 sim jet sim 韓国 4日",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 4,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 1026,
         "price_max": 1026,
-        "asin": "B0DC2LSC7W"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DC2LSC7W?tag=shotsim-22"
       },
       {
-        "name": "【韓国SIM】 韓国SIMカード 3日間 999GB 高速データ SKテレコム正規 プリペイドsim データ無制限 | データ通信専用契約不要 3 in 1 - 標準マイクロナノ LINE相談受付中 (3日間 999GB)",
-        "brand": "LBDCIOT",
+        "id": "KR-013",
+        "asin": "B0FLDHXKJN",
+        "product_name": "【韓国SIM】 韓国SIMカード 3日間 999GB 高速データ SKテレコム正規 プリペイドsim データ無制限 | データ通信専用契約不要 3 in 1 - 標準マイクロナノ LINE相談受付中 (3日間 999GB)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "LBDCIOT",
+          "original": null,
+          "en": "LBDCIOT"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": true,
+          "micro": true,
+          "standard": true
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "（推測）SK Telecom"
+        },
+        "network": null,
         "data": "無制限",
         "days": 3,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1080,
         "price_max": 1080,
-        "asin": "B0FLDHXKJN",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0FLDHXKJN?tag=shotsim-22"
       },
       {
-        "name": "【韓国eSIM】5日間 5GB 超高速データ通信｜到着後すぐ利用可能・ローミング不要｜ホットスポット対応・複数端末接続可｜旅行・出張に最適｜LINE相談受付中｜SIMカード・契約不要",
-        "brand": "generic",
+        "id": "KR-014",
+        "asin": "B0DNFFTXFC",
+        "product_name": "【韓国eSIM】5日間 5GB 超高速データ通信｜到着後すぐ利用可能・ローミング不要｜ホットスポット対応・複数端末接続可｜旅行・出張に最適｜LINE相談受付中｜SIMカード・契約不要",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G"
+        ],
         "data": "5GB",
         "days": 5,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
         "price_min": 1099,
         "price_max": 1099,
-        "asin": "B0DNFFTXFC"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DNFFTXFC?tag=shotsim-22"
       },
       {
-        "name": "【韓国eSIM】4日間完全無制限（低速なし） LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム simless",
-        "brand": "DeSiM",
+        "id": "KR-015",
+        "asin": "B0DS1XVQMV",
+        "product_name": "【韓国eSIM】4日間完全無制限（低速なし） LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム simless",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DeSiM",
+          "original": null,
+          "en": "DeSiM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 4,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1100,
         "price_max": 1100,
-        "asin": "B0DS1XVQMV",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DS1XVQMV?tag=shotsim-22"
       },
       {
-        "name": "韓国 Korea sim card 4G-LTE 高速データ通信 プリペイド SIMカード ソウル simcard (7日間5GB)",
-        "brand": "bigconnect",
+        "id": "KR-016",
+        "asin": "B0C52L1ZFK",
+        "product_name": "韓国 Korea sim card 4G-LTE 高速データ通信 プリペイド SIMカード ソウル simcard (7日間5GB)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "bigconnect",
+          "original": null,
+          "en": "bigconnect"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
         "data": "5GB",
         "days": 7,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 1180,
         "price_max": 1180,
-        "asin": "B0C52L1ZFK"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0C52L1ZFK?tag=shotsim-22"
       },
       {
-        "name": "韓国プリペイドSIM 利用日数5日 データ通信使い放題 データ通信専用 韓国プリペイドSIM 4G ローミングSIM prepaid sim korea sim",
-        "brand": "Wise SIM",
-        "type": "SIM",
+        "id": "KR-017",
+        "asin": "B0BY361TGM",
+        "product_name": "韓国プリペイドSIM 利用日数5日 データ通信使い放題 データ通信専用 韓国プリペイドSIM 4G ローミングSIM prepaid sim korea sim",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Wise SIM",
+          "original": null,
+          "en": "Wise SIM"
+        },
+        "type": "（推測）物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "4G"
+        ],
         "data": "完全無制限",
         "days": 5,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1250,
         "price_max": 1250,
-        "asin": "B0BY361TGM",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0BY361TGM?tag=shotsim-22"
       },
       {
-        "name": "【韓国eSIM】5日間完全無制限（低速なし） LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム simless",
-        "brand": "DeSiM",
+        "id": "KR-018",
+        "asin": "B0DS1Z42ZW",
+        "product_name": "【韓国eSIM】5日間完全無制限（低速なし） LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム simless",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DeSiM",
+          "original": null,
+          "en": "DeSiM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 5,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1270,
         "price_max": 1270,
-        "asin": "B0DS1Z42ZW",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DS1Z42ZW?tag=shotsim-22"
       },
       {
-        "name": "【韓国SIM（KT正規品）】3日間（72時間）使えるプリペイドSIMカード！高速データ無制限/旅行や出張に人気/ご利用にはパスポート情報の登録必須（有効期限：購入日から60日）",
-        "brand": "ノーブランド品",
+        "id": "KR-019",
+        "asin": "B0CCNLN8YC",
+        "product_name": "【韓国SIM（KT正規品）】3日間（72時間）使えるプリペイドSIMカード！高速データ無制限/旅行や出張に人気/ご利用にはパスポート情報の登録必須（有効期限：購入日から60日）",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "（推測）KT"
+        },
+        "network": null,
         "data": "無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 1330,
         "price_max": 1330,
-        "asin": "B0CCNLN8YC"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0CCNLN8YC?tag=shotsim-22"
       },
       {
-        "name": "【Almond sim】 韓国 3日間 完全無制限 eSIM プラン 高速データ使い放題 LINE相談で当日発行可能 本人確認不要 simカード認証不要 SKT キャリア ソウル プリペイド Korea SIM 大韓民国 esim (3日間)",
-        "brand": "bigconnect",
+        "id": "KR-020",
+        "asin": "B0D78VR3VZ",
+        "product_name": "【Almond sim】 韓国 3日間 完全無制限 eSIM プラン 高速データ使い放題 LINE相談で当日発行可能 本人確認不要 simカード認証不要 SKT キャリア ソウル プリペイド Korea SIM 大韓民国 esim (3日間)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "bigconnect",
+          "original": null,
+          "en": "bigconnect"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 3,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 1380,
         "price_max": 1380,
-        "asin": "B0D78VR3VZ",
-        "carrier": "SK Telecom"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0D78VR3VZ?tag=shotsim-22"
       },
       {
-        "name": "【韓国 eSIM】4日間完全無制限（低速なし） | 当日発行可能 |データ通信専用（電話番号なし） simフリー端末のみ対応 説明書付 LINEで年中無休・24時間サポート (eSIM | 4日間完全無制限)",
-        "brand": "PLUG TO GO",
+        "id": "KR-021",
+        "asin": "B0D7TZMQ8K",
+        "product_name": "【韓国 eSIM】4日間完全無制限（低速なし） | 当日発行可能 |データ通信専用（電話番号なし） simフリー端末のみ対応 説明書付 LINEで年中無休・24時間サポート (eSIM | 4日間完全無制限)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "PLUG TO GO",
+          "original": null,
+          "en": "PLUG TO GO"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 4,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1420,
         "price_max": 1420,
-        "asin": "B0D7TZMQ8K",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0D7TZMQ8K?tag=shotsim-22"
       },
       {
-        "name": "【3日間 eSIM】韓国eSIM 高速データ通信は無制限 データ通信専用 当日発行可能 メール登録で納品 お急ぎの方（LINE相談受付中）QR簡单設定 mewfi",
-        "brand": "mewfi",
+        "id": "KR-022",
+        "asin": "B0CSJSYV57",
+        "product_name": "【3日間 eSIM】韓国eSIM 高速データ通信は無制限 データ通信専用 当日発行可能 メール登録で納品 お急ぎの方（LINE相談受付中）QR簡单設定 mewfi",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "mewfi",
+          "original": null,
+          "en": "mewfi"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "無制限",
         "days": 3,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1480,
         "price_max": 1480,
-        "asin": "B0CSJSYV57",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0CSJSYV57?tag=shotsim-22"
       },
       {
-        "name": "【韓国 eSIM】3日間完全無制限（低速なし） | 当日発行可能 |データ通信専用（電話番号なし） 説明書付 LINEで年中無休・24時間サポート 韓国 SIM (eSIM | 3日間完全無制限)",
-        "brand": "アーモンド　ＳＩｍ　ｃａｒｄ",
+        "id": "KR-023",
+        "asin": "B0D8VNNPBG",
+        "product_name": "【韓国 eSIM】3日間完全無制限（低速なし） | 当日発行可能 |データ通信専用（電話番号なし） 説明書付 LINEで年中無休・24時間サポート 韓国 SIM (eSIM | 3日間完全無制限)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Almond SIM",
+          "original": null,
+          "en": "Almond SIM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 3,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 1480,
         "price_max": 1480,
-        "asin": "B0D8VNNPBG",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0D8VNNPBG?tag=shotsim-22"
       },
       {
-        "name": "KT Japan 韓国旅行用 正規eSIM 3日間 (72時間) 高速データ通信無制限 010電話番号付き 音声通話・SMS対応 QRコード即時発行 有効期限120日 日本語サポート",
-        "brand": "KT",
+        "id": "KR-024",
+        "asin": "B0DSF8PBBJ",
+        "product_name": "KT Japan 韓国旅行用 正規eSIM 3日間 (72時間) 高速データ通信無制限 010電話番号付き 音声通話・SMS対応 QRコード即時発行 有効期限120日 日本語サポート",
+        "image_url": null,
+        "company": {
+          "local": "KT（韓国通信）",
+          "original": "KT 주식회사",
+          "en": "KT Corporation"
+        },
+        "brand": {
+          "local": "KT Japan",
+          "original": "KT",
+          "en": "KT"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "日本"
+        ],
+        "carrier": {
+          "韓国": "KT"
+        },
+        "network": null,
         "data": "無制限",
         "days": 3,
+        "voice_call": true,
+        "sms": true,
+        "tethering": null,
         "price_min": 1580,
         "price_max": 1580,
-        "asin": "B0DSF8PBBJ",
-        "voice_call": true,
-        "carrier": "KT"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DSF8PBBJ?tag=shotsim-22"
       },
       {
-        "name": "【正規日本語版】韓国 8日間 データ/音声通話 SIMカード ２０GBデータ通信【中国聯通香港 China unicom】",
-        "brand": "China unicom中国联通",
-        "type": "物理SIM",
-        "data": "２０GB",
-        "days": 8,
-        "price_min": 1650,
-        "price_max": 1650,
+        "id": "KR-025",
         "asin": "B019SQ0Q6Y",
-        "voice_call": true
-      },
-      {
-        "name": "【eSIM】韓国 8日間 データ/音声通話 SIM ２０GBデータ通信【中国聯通香港 China unicom】 ※この商品は通常のSIMカードタイプではございません。ダウンロード版のeSIMですのでご購入の前に対応機種を改めてご確認ください。■納期・ダウンロード方法に関しまして必ず商品説明をご確認ください。",
-        "brand": "China unicom中国联通",
-        "type": "eSIM",
-        "data": "２０GB",
-        "days": 8,
-        "price_min": 1650,
-        "price_max": 1650,
-        "asin": "B0B1J1478Z",
-        "voice_call": true
-      },
-      {
-        "name": "【SKTelecoｍ公式認証】 韓国eSIM 3日間 (72時間) 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) お急ぎの方即時発行可(LINE相談受付中) 有効期限／ご購入日より120日以内 現地空港サポート(SKTelecomローミングセンター) SKテレコム正規品 韓国SIMカードタイプではありません",
-        "brand": "KLP",
-        "type": "eSIM",
-        "data": "無制限",
-        "days": 3,
-        "price_min": 1680,
-        "price_max": 1680,
-        "asin": "B0BLGD6S4P",
-        "voice_call": true,
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "【韓国SIMカード】 3日間 (72時間) SKテレコム正規 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) 有効期限 / ご購入日より120日以内 韓国SIM",
-        "brand": "KLP",
+        "product_name": "【正規日本語版】韓国 8日間 データ/音声通話 SIMカード ２０GBデータ通信【中国聯通香港 China unicom】",
+        "image_url": null,
+        "company": {
+          "local": "中国聯通香港",
+          "original": "中国联通（香港）",
+          "en": "China Unicom (Hong Kong)"
+        },
+        "brand": {
+          "local": "China Unicom",
+          "original": "中国联通",
+          "en": "China Unicom"
+        },
         "type": "物理SIM",
-        "data": "無制限",
-        "days": 3,
-        "price_min": 1680,
-        "price_max": 1680,
-        "asin": "B0BLW1FNHM",
-        "voice_call": true
-      },
-      {
-        "name": "【韓国 eSIM】4日間完全無制限（低速なし） | 当日発行可能 |データ通信専用（電話番号なし） 説明書付 LINEで年中無休・24時間サポート 韓国 SIM (eSIM | 4日間完全無制限)",
-        "brand": "アーモンド　ＳＩｍ　ｃａｒｄ",
-        "type": "eSIM",
-        "data": "完全無制限",
-        "days": 4,
-        "price_min": 1680,
-        "price_max": 1680,
-        "asin": "B0D8VNS6Z6",
-        "voice_call": false
-      },
-      {
-        "name": "【韓国eSIM】4日間 (96時間) 高速無制限データ TikTokとChatGPT対応 QR簡单設定 メール登録で納品 韓国SIM 即日発行 緊急利用（Lineまで連絡）Korea esim (4日間 高速無制限)",
-        "brand": "ＭＥＷＭＥＷホーム",
-        "type": "eSIM",
-        "data": "無制限",
-        "days": 4,
-        "price_min": 1780,
-        "price_max": 1780,
-        "asin": "B0CXDVY696"
-      },
-      {
-        "name": "【韓国 無制限 sim】韓国 ソウル SIMカード 4日間 高速データ通信 完全使い放題 4G-LTE対応 SKT回線利用 完全無制限 Korea Prepaid Simcard seoul sim korea sim (4日間使い放題)",
-        "brand": "アーモンド　ＳＩｍ　ｃａｒｄ",
-        "type": "物理SIM",
-        "data": "完全無制限",
-        "days": 4,
-        "price_min": 1880,
-        "price_max": 1880,
-        "asin": "B0CTY613PC",
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "アジア35ヵ国プリペイドSIMカード 利用期間10日間 データ容量6GB 高速データ通信 データSIM Asia prepaid SIM travel SIM 利用国：インド、インドネシア、オーストラリア、 韓国、グアム、サウジアラビア、シンガポール、スリランカ、台湾、中国、トルコ、日本、ネパール、フィリピン、ベトナム、香港、マカオ、マレーシア、モンゴル等",
-        "brand": "Wise SIM",
-        "type": "物理SIM",
-        "data": "6GB",
-        "days": 10,
-        "price_min": 1950,
-        "price_max": 1950,
-        "asin": "B0D4DRLSM7"
-      },
-      {
-        "name": "プリペイドsim 日本 simカード 180日間 10GB sim ドコモ通信網 docomo データ通信専用 4G LTE 3in1 (標準/マイクロ/ナノ) simフリー 端末のみ対応 多言語マニュアル付【Nippon SIM for Japan】",
-        "brand": "Nippon SIM",
-        "type": "物理SIM",
-        "data": "10GB",
-        "days": 180,
-        "price_min": 1980,
-        "price_max": 1980,
-        "asin": "B0DRCM2HQG",
-        "voice_call": false
-      },
-      {
-        "name": "プリペイドSIM プリペイドeSIM 10GB 180日 国内データ通信専用 (eSIM10gb180day)",
-        "brand": "88mobile",
-        "type": "eSIM",
-        "data": "10GB",
-        "days": 180,
-        "price_min": 1980,
-        "price_max": 1980,
-        "asin": "B0DSNSFRX6",
-        "voice_call": false
-      },
-      {
-        "name": "【SKTelecoｍ公式認証】 韓国eSIM 4日間 (96時間) 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) お急ぎの方即時発行可(LINE相談受付中) 有効期限／ご購入日より120日以内 現地空港サポート(SKTelecomローミングセンター) SKテレコム正規品 韓国SIMカードタイプではありません",
-        "brand": "KLP",
-        "type": "eSIM",
-        "data": "無制限",
-        "days": 4,
-        "price_min": 2080,
-        "price_max": 2080,
-        "asin": "B0D4ZKY68Z",
-        "voice_call": true,
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "ヨーロッパ 38カ国 SIMカード 10日間 無制限 SIM データ使い放題 10GBまで高速 テザリング可 jet sim ジェットシム 海外sim イギリス フランス ドイツ 10日",
-        "brand": "JETSIM",
-        "type": "物理SIM",
-        "data": "完全無制限",
-        "days": 10,
-        "price_min": 2166,
-        "price_max": 2166,
-        "asin": "B0DNDM6ZZL"
-      },
-      {
-        "name": "[Skt 韓国」 韓国 GB定額 高速テータ、プリペイドSIMカード (30日間10GB)",
-        "brand": "mewfi",
-        "type": "物理SIM",
-        "data": "10GB",
-        "days": 30,
-        "price_min": 2190,
-        "price_max": 2190,
-        "asin": "B08WQ6CGGC",
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "【韓国SIMカード】 4日間 (96時間) SKテレコム正規 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) 有効期限 / ご購入日より120日以内 韓国SIM",
-        "brand": "KLP",
-        "type": "物理SIM",
-        "data": "無制限",
-        "days": 4,
-        "price_min": 2200,
-        "price_max": 2200,
-        "asin": "B0DFLZX6Q6",
-        "voice_call": true
-      },
-      {
-        "name": "【SKTelecoｍ公式認証】 韓国eSIM 5日間 (120時間) 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) お急ぎの方即時発行可(LINE相談受付中) 有効期限／ご購入日より120日以内 現地空港サポート(SKTelecomローミングセンター) SKテレコム正規品 韓国SIMカードタイプではありません",
-        "brand": "KLP",
-        "type": "eSIM",
-        "data": "無制限",
-        "days": 5,
-        "price_min": 2490,
-        "price_max": 2490,
-        "asin": "B0BLGPQ568",
-        "voice_call": true,
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "【韓国eSIM】4日間完全無制限（三泊四日 使い放題） DeSiM正規卸 | LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム desim",
-        "brand": "DeSiM",
-        "type": "eSIM",
-        "data": "完全無制限",
-        "days": 4,
-        "price_min": 2960,
-        "price_max": 2960,
-        "asin": "B0DL8Z7T32",
-        "voice_call": false
-      },
-      {
-        "name": "プリペイドsim 日本 simカード 180日間 15GB sim ドコモ通信網 docomo データ通信専用 4G LTE 3in1 (標準/マイクロ/ナノ) simフリー 端末のみ対応 多言語マニュアル付【Nippon SIM for Japan】",
-        "brand": "Nippon SIM",
-        "type": "物理SIM",
-        "data": "15GB",
-        "days": 180,
-        "price_min": 2980,
-        "price_max": 2980,
-        "asin": "B08THP6HNK",
-        "voice_call": false
-      },
-      {
-        "name": "韓国 eSIM | 7日間 完全無制限 | 高速データ使い放題 | 即日発行可能｜SKT キャリア データ通信専用（電話番号なし）| 韓国 sim 韓国 SIMカード LINEで24時間サポート イーシム (7日間)",
-        "brand": "アーモンド　ＳＩｍ　ｃａｒｄ",
-        "type": "eSIM",
-        "data": "完全無制限",
-        "days": 7,
-        "price_min": 2980,
-        "price_max": 2980,
-        "asin": "B0DV4BQ5JV",
-        "voice_call": false,
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "【韓国eSIM】14日間 10GB（十三泊十四日 コスパ重視） DeSiM正規卸 | LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム desim",
-        "brand": "DeSiM",
-        "type": "eSIM",
-        "data": "10GB",
-        "days": 14,
-        "price_min": 2988,
-        "price_max": 2988,
-        "asin": "B0DMV4NTNG",
-        "voice_call": false
-      },
-      {
-        "name": "【韓国 eSIM】 7日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (7日間 無制限)",
-        "brand": "アーモンド　ＳＩｍ　ｃａｒｄ",
-        "type": "eSIM",
-        "data": "完全無制限",
-        "days": 7,
-        "price_min": 3000,
-        "price_max": 3000,
-        "asin": "B0DTY1F19N",
-        "voice_call": false,
-        "carrier": "SK Telecom"
-      },
-      {
-        "name": "【2枚セット】【正規日本語版】4G高速データ通信 韓国 8日間 データ/音声通話 SIMカード 20GB プリペイドSIM（セットが安い）(20GB×2枚)【中国聯通香港 China unicom】",
-        "brand": "China unicom中国联通",
-        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "日本",
+          "中国",
+          "香港"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "20GB",
         "days": 8,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1650,
+        "price_max": 1650,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B019SQ0Q6Y?tag=shotsim-22"
+      },
+      {
+        "id": "KR-026",
+        "asin": "B0B1J1478Z",
+        "product_name": "【eSIM】韓国 8日間 データ/音声通話 SIM ２０GBデータ通信【中国聯通香港 China unicom】 ※この商品は通常のSIMカードタイプではございません。ダウンロード版のeSIMですのでご購入の前に対応機種を改めてご確認ください。■納期・ダウンロード方法に関しまして必ず商品説明をご確認ください。",
+        "image_url": null,
+        "company": {
+          "local": "中国聯通香港",
+          "original": "中国联通（香港）",
+          "en": "China Unicom (Hong Kong)"
+        },
+        "brand": {
+          "local": "China Unicom",
+          "original": "中国联通",
+          "en": "China Unicom"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "タイ",
+          "中国",
+          "香港"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "20GB",
+        "days": 8,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1650,
+        "price_max": 1650,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0B1J1478Z?tag=shotsim-22"
+      },
+      {
+        "id": "KR-027",
+        "asin": "B0BLGD6S4P",
+        "product_name": "【SKTelecoｍ公式認証】 韓国eSIM 3日間 (72時間) 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) お急ぎの方即時発行可(LINE相談受付中) 有効期限／ご購入日より120日以内 現地空港サポート(SKTelecomローミングセンター) SKテレコム正規品 韓国SIMカードタイプではありません",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "KLP",
+          "original": null,
+          "en": "KLP"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "タイ"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": null,
+        "data": "無制限",
+        "days": 3,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1680,
+        "price_max": 1680,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0BLGD6S4P?tag=shotsim-22"
+      },
+      {
+        "id": "KR-028",
+        "asin": "B0BLW1FNHM",
+        "product_name": "【韓国SIMカード】 3日間 (72時間) SKテレコム正規 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) 有効期限 / ご購入日より120日以内 韓国SIM",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "KLP",
+          "original": null,
+          "en": "KLP"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "（推測）SK Telecom"
+        },
+        "network": null,
+        "data": "無制限",
+        "days": 3,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1680,
+        "price_max": 1680,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0BLW1FNHM?tag=shotsim-22"
+      },
+      {
+        "id": "KR-029",
+        "asin": "B0D8VNS6Z6",
+        "product_name": "【韓国 eSIM】4日間完全無制限（低速なし） | 当日発行可能 |データ通信専用（電話番号なし） 説明書付 LINEで年中無休・24時間サポート 韓国 SIM (eSIM | 4日間完全無制限)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Almond SIM",
+          "original": null,
+          "en": "Almond SIM"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "完全無制限",
+        "days": 4,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1680,
+        "price_max": 1680,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0D8VNS6Z6?tag=shotsim-22"
+      },
+      {
+        "id": "KR-030",
+        "asin": "B0CXDVY696",
+        "product_name": "【韓国eSIM】4日間 (96時間) 高速無制限データ TikTokとChatGPT対応 QR簡单設定 メール登録で納品 韓国SIM 即日発行 緊急利用（Lineまで連絡）Korea esim (4日間 高速無制限)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "MEWMEW",
+          "original": null,
+          "en": "MEWMEW"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "無制限",
+        "days": 4,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1780,
+        "price_max": 1780,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0CXDVY696?tag=shotsim-22"
+      },
+      {
+        "id": "KR-031",
+        "asin": "B0CTY613PC",
+        "product_name": "【韓国 無制限 sim】韓国 ソウル SIMカード 4日間 高速データ通信 完全使い放題 4G-LTE対応 SKT回線利用 完全無制限 Korea Prepaid Simcard seoul sim korea sim (4日間使い放題)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Almond SIM",
+          "original": null,
+          "en": "Almond SIM"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": [
+          "4G",
+          "LTE"
+        ],
+        "data": "完全無制限",
+        "days": 4,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1880,
+        "price_max": 1880,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0CTY613PC?tag=shotsim-22"
+      },
+      {
+        "id": "KR-032",
+        "asin": "B0D4DRLSM7",
+        "product_name": "アジア35ヵ国プリペイドSIMカード 利用期間10日間 データ容量6GB 高速データ通信 データSIM Asia prepaid SIM travel SIM 利用国：インド、インドネシア、オーストラリア、 韓国、グアム、サウジアラビア、シンガポール、スリランカ、台湾、中国、トルコ、日本、ネパール、フィリピン、ベトナム、香港、マカオ、マレーシア、モンゴル等",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Wise SIM",
+          "original": null,
+          "en": "Wise SIM"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "日本",
+          "台湾",
+          "ベトナム",
+          "インド",
+          "インドネシア",
+          "オーストラリア",
+          "グアム",
+          "サウジアラビア",
+          "シンガポール",
+          "スリランカ",
+          "中国",
+          "トルコ",
+          "ネパール",
+          "フィリピン",
+          "香港",
+          "マカオ",
+          "マレーシア",
+          "モンゴル"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "6GB",
+        "days": 10,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1950,
+        "price_max": 1950,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0D4DRLSM7?tag=shotsim-22"
+      },
+      {
+        "id": "KR-033",
+        "asin": "B0DRCM2HQG",
+        "product_name": "プリペイドsim 日本 simカード 180日間 10GB sim ドコモ通信網 docomo データ通信専用 4G LTE 3in1 (標準/マイクロ/ナノ) simフリー 端末のみ対応 多言語マニュアル付【Nippon SIM for Japan】",
+        "image_url": null,
+        "company": {
+          "local": "（推測）株式会社テレコムスクエア",
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Nippon SIM",
+          "original": null,
+          "en": "Nippon SIM"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": true,
+          "micro": true,
+          "standard": true
+        },
+        "countries": [
+          "日本"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "4G",
+          "LTE"
+        ],
+        "data": "10GB",
+        "days": 180,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1980,
+        "price_max": 1980,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DRCM2HQG?tag=shotsim-22"
+      },
+      {
+        "id": "KR-034",
+        "asin": "B0DSNSFRX6",
+        "product_name": "プリペイドSIM プリペイドeSIM 10GB 180日 国内データ通信専用 (eSIM10gb180day)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "88mobile",
+          "original": null,
+          "en": "88mobile"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "10GB",
+        "days": 180,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1980,
+        "price_max": 1980,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DSNSFRX6?tag=shotsim-22"
+      },
+      {
+        "id": "KR-035",
+        "asin": "B0D4ZKY68Z",
+        "product_name": "【SKTelecoｍ公式認証】 韓国eSIM 4日間 (96時間) 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) お急ぎの方即時発行可(LINE相談受付中) 有効期限／ご購入日より120日以内 現地空港サポート(SKTelecomローミングセンター) SKテレコム正規品 韓国SIMカードタイプではありません",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "KLP",
+          "original": null,
+          "en": "KLP"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "タイ"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": null,
+        "data": "無制限",
+        "days": 4,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2080,
+        "price_max": 2080,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0D4ZKY68Z?tag=shotsim-22"
+      },
+      {
+        "id": "KR-036",
+        "asin": "B0DNDM6ZZL",
+        "product_name": "ヨーロッパ 38カ国 SIMカード 10日間 無制限 SIM データ使い放題 10GBまで高速 テザリング可 jet sim ジェットシム 海外sim イギリス フランス ドイツ 10日",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "ヨーロッパ",
+          "イギリス",
+          "フランス",
+          "ドイツ",
+          "イタリア",
+          "スペイン",
+          "オランダ",
+          "ベルギー",
+          "スイス",
+          "オーストリア",
+          "ポルトガル",
+          "スウェーデン",
+          "ノルウェー",
+          "デンマーク",
+          "フィンランド",
+          "ポーランド",
+          "チェコ",
+          "ハンガリー",
+          "ルーマニア",
+          "ギリシャ",
+          "クロアチア"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "完全無制限",
+        "days": 10,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
+        "price_min": 2166,
+        "price_max": 2166,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DNDM6ZZL?tag=shotsim-22"
+      },
+      {
+        "id": "KR-037",
+        "asin": "B08WQ6CGGC",
+        "product_name": "[Skt 韓国」 韓国 GB定額 高速テータ、プリペイドSIMカード (30日間10GB)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "mewfi",
+          "original": null,
+          "en": "mewfi"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": null,
+        "data": "10GB",
+        "days": 30,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2190,
+        "price_max": 2190,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B08WQ6CGGC?tag=shotsim-22"
+      },
+      {
+        "id": "KR-038",
+        "asin": "B0DFLZX6Q6",
+        "product_name": "【韓国SIMカード】 4日間 (96時間) SKテレコム正規 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) 有効期限 / ご購入日より120日以内 韓国SIM",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "KLP",
+          "original": null,
+          "en": "KLP"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "（推測）SK Telecom"
+        },
+        "network": null,
+        "data": "無制限",
+        "days": 4,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2200,
+        "price_max": 2200,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DFLZX6Q6?tag=shotsim-22"
+      },
+      {
+        "id": "KR-039",
+        "asin": "B0BLGPQ568",
+        "product_name": "【SKTelecoｍ公式認証】 韓国eSIM 5日間 (120時間) 電話番号付き 超高速データ無制限 最初の5分発信無料(韓国国内) お急ぎの方即時発行可(LINE相談受付中) 有効期限／ご購入日より120日以内 現地空港サポート(SKTelecomローミングセンター) SKテレコム正規品 韓国SIMカードタイプではありません",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "KLP",
+          "original": null,
+          "en": "KLP"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "タイ"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": null,
+        "data": "無制限",
+        "days": 5,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2490,
+        "price_max": 2490,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0BLGPQ568?tag=shotsim-22"
+      },
+      {
+        "id": "KR-040",
+        "asin": "B0DL8Z7T32",
+        "product_name": "【韓国eSIM】4日間完全無制限（三泊四日 使い放題） DeSiM正規卸 | LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム desim",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DeSiM",
+          "original": null,
+          "en": "DeSiM"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "完全無制限",
+        "days": 4,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2960,
+        "price_max": 2960,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DL8Z7T32?tag=shotsim-22"
+      },
+      {
+        "id": "KR-041",
+        "asin": "B08THP6HNK",
+        "product_name": "プリペイドsim 日本 simカード 180日間 15GB sim ドコモ通信網 docomo データ通信専用 4G LTE 3in1 (標準/マイクロ/ナノ) simフリー 端末のみ対応 多言語マニュアル付【Nippon SIM for Japan】",
+        "image_url": null,
+        "company": {
+          "local": "（推測）株式会社テレコムスクエア",
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Nippon SIM",
+          "original": null,
+          "en": "Nippon SIM"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": true,
+          "micro": true,
+          "standard": true
+        },
+        "countries": [
+          "日本"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "data": "15GB",
+        "days": 180,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2980,
+        "price_max": 2980,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B08THP6HNK?tag=shotsim-22"
+      },
+      {
+        "id": "KR-042",
+        "asin": "B0DV4BQ5JV",
+        "product_name": "韓国 eSIM | 7日間 完全無制限 | 高速データ使い放題 | 即日発行可能｜SKT キャリア データ通信専用（電話番号なし）| 韓国 sim 韓国 SIMカード LINEで24時間サポート イーシム (7日間)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Almond SIM",
+          "original": null,
+          "en": "Almond SIM"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": null,
+        "data": "完全無制限",
+        "days": 7,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2980,
+        "price_max": 2980,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DV4BQ5JV?tag=shotsim-22"
+      },
+      {
+        "id": "KR-043",
+        "asin": "B0DMV4NTNG",
+        "product_name": "【韓国eSIM】14日間 10GB（十三泊十四日 コスパ重視） DeSiM正規卸 | LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム desim",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DeSiM",
+          "original": null,
+          "en": "DeSiM"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
+        "data": "10GB",
+        "days": 14,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2988,
+        "price_max": 2988,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DMV4NTNG?tag=shotsim-22"
+      },
+      {
+        "id": "KR-044",
+        "asin": "B0DTY1F19N",
+        "product_name": "【韓国 eSIM】 7日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (7日間 無制限)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "Almond SIM",
+          "original": null,
+          "en": "Almond SIM"
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": "SK Telecom"
+        },
+        "network": [
+          "5G",
+          "4G"
+        ],
+        "data": "完全無制限",
+        "days": 7,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 3000,
+        "price_max": 3000,
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTY1F19N?tag=shotsim-22"
+      },
+      {
+        "id": "KR-045",
+        "asin": "B08QS2DNBM",
+        "product_name": "【2枚セット】【正規日本語版】4G高速データ通信 韓国 8日間 データ/音声通話 SIMカード 20GB プリペイドSIM（セットが安い）(20GB×2枚)【中国聯通香港 China unicom】",
+        "image_url": null,
+        "company": {
+          "local": "中国聯通香港",
+          "original": "中国联通（香港）",
+          "en": "China Unicom (Hong Kong)"
+        },
+        "brand": {
+          "local": "China Unicom",
+          "original": "中国联通",
+          "en": "China Unicom"
+        },
+        "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国",
+          "日本",
+          "中国",
+          "香港"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "4G"
+        ],
+        "data": "20GB",
+        "days": 8,
+        "voice_call": true,
+        "sms": null,
+        "tethering": null,
         "price_min": 3250,
         "price_max": 3250,
-        "asin": "B08QS2DNBM",
-        "voice_call": true
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B08QS2DNBM?tag=shotsim-22"
       },
       {
-        "name": "ヨーロッパ 38カ国 esim 15日間 無制限 SIMカード データ使い放題 20GBまで高速 テザリング可 jet sim ジェットシム 海外sim イギリス フランス ドイツ 15日",
-        "brand": "JETSIM",
+        "id": "KR-046",
+        "asin": "B0DC2SYYDS",
+        "product_name": "ヨーロッパ 38カ国 esim 15日間 無制限 SIMカード データ使い放題 20GBまで高速 テザリング可 jet sim ジェットシム 海外sim イギリス フランス ドイツ 15日",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "ヨーロッパ",
+          "イギリス",
+          "フランス",
+          "ドイツ",
+          "イタリア",
+          "スペイン",
+          "オランダ",
+          "ベルギー",
+          "スイス",
+          "オーストリア",
+          "ポルトガル",
+          "スウェーデン",
+          "ノルウェー",
+          "デンマーク",
+          "フィンランド",
+          "ポーランド",
+          "チェコ",
+          "ハンガリー",
+          "ルーマニア",
+          "ギリシャ",
+          "クロアチア"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 15,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
         "price_min": 3306,
         "price_max": 3306,
-        "asin": "B0DC2SYYDS"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DC2SYYDS?tag=shotsim-22"
       },
       {
-        "name": "【アメリカ カナダ eSIM 】6日間 無制限 SIMカード データ使い放題 8GBまで高速 テザリング可 JetSim ジェットシム",
-        "brand": "JETSIM",
+        "id": "KR-047",
+        "asin": "B0DCFYL6M5",
+        "product_name": "【アメリカ カナダ eSIM 】6日間 無制限 SIMカード データ使い放題 8GBまで高速 テザリング可 JetSim ジェットシム",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "アメリカ",
+          "カナダ"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 6,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
         "price_min": 3480,
         "price_max": 3480,
-        "asin": "B0DCFYL6M5"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DCFYL6M5?tag=shotsim-22"
       },
       {
-        "name": "【アメリカ カナダ eSIM 】10日間 無制限 SIMカード データ使い放題 10GBまで高速 テザリング可 JetSim ジェットシム",
-        "brand": "JETSIM",
+        "id": "KR-048",
+        "asin": "B0DCFYL6LS",
+        "product_name": "【アメリカ カナダ eSIM 】10日間 無制限 SIMカード データ使い放題 10GBまで高速 テザリング可 JetSim ジェットシム",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "アメリカ",
+          "カナダ"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 10,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
         "price_min": 3781,
         "price_max": 3781,
-        "asin": "B0DCFYL6LS"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DCFYL6LS?tag=shotsim-22"
       },
       {
-        "name": "アメリカ カナダ SIMカード 10日間 データ使い放題 10GBまで高速 Jet Sim 物理SIM 無制限 10日 ジェットシム",
-        "brand": "JETSIM",
+        "id": "KR-049",
+        "asin": "B0DMDKM52R",
+        "product_name": "アメリカ カナダ SIMカード 10日間 データ使い放題 10GBまで高速 Jet Sim 物理SIM 無制限 10日 ジェットシム",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "アメリカ",
+          "カナダ"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 10,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 3980,
         "price_max": 3980,
-        "asin": "B0DMDKM52R"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DMDKM52R?tag=shotsim-22"
       },
       {
-        "name": "【韓国eSIM】6日間完全無制限（五泊六日 使い放題） DeSiM正規卸 | LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム DeSiM",
-        "brand": "DeSiM",
+        "id": "KR-050",
+        "asin": "B0DL91V8XP",
+        "product_name": "【韓国eSIM】6日間完全無制限（五泊六日 使い放題） DeSiM正規卸 | LINE相談受付中｜データ通信専用（電話番号なし） | simフリー端末のみ対応 説明書付 イーシム DeSiM",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DeSiM",
+          "original": null,
+          "en": "DeSiM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 6,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 4170,
         "price_max": 4170,
-        "asin": "B0DL91V8XP",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DL91V8XP?tag=shotsim-22"
       },
       {
-        "name": "【純正 RAKUTEN SIM】 360日間 50GB 大容量 日本 プリペイド SIM 5G 4G-LTE対応 データ専用 契約不要 Rakuten sim (360日間・50GB)",
-        "brand": "PLUG TO GO",
-        "type": "SIM",
+        "id": "KR-051",
+        "asin": "B0DCFTQ1PG",
+        "product_name": "【純正 RAKUTEN SIM】 360日間 50GB 大容量 日本 プリペイド SIM 5G 4G-LTE対応 データ専用 契約不要 Rakuten sim (360日間・50GB)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "PLUG TO GO",
+          "original": null,
+          "en": "PLUG TO GO"
+        },
+        "type": "（推測）物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "日本"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
         "data": "50GB",
         "days": 360,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 4880,
         "price_max": 4880,
-        "asin": "B0DCFTQ1PG",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DCFTQ1PG?tag=shotsim-22"
       },
       {
-        "name": "ヨーロッパ 38カ国 esim 15日間 高速データ無制限 SIMカード データ使い放題 テザリング可 jet sim ジェットシム 海外sim イギリス フランス ドイツ 15日",
-        "brand": "JETSIM",
+        "id": "KR-052",
+        "asin": "B0DCFNSNZJ",
+        "product_name": "ヨーロッパ 38カ国 esim 15日間 高速データ無制限 SIMカード データ使い放題 テザリング可 jet sim ジェットシム 海外sim イギリス フランス ドイツ 15日",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "JETSIM",
+          "original": null,
+          "en": "JETSIM"
+        },
         "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "ヨーロッパ",
+          "イギリス",
+          "フランス",
+          "ドイツ",
+          "イタリア",
+          "スペイン",
+          "オランダ",
+          "ベルギー",
+          "スイス",
+          "オーストリア",
+          "ポルトガル",
+          "スウェーデン",
+          "ノルウェー",
+          "デンマーク",
+          "フィンランド",
+          "ポーランド",
+          "チェコ",
+          "ハンガリー",
+          "ルーマニア",
+          "ギリシャ",
+          "クロアチア"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "完全無制限",
         "days": 15,
+        "voice_call": null,
+        "sms": null,
+        "tethering": true,
         "price_min": 5681,
         "price_max": 5681,
-        "asin": "B0DCFNSNZJ"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DCFNSNZJ?tag=shotsim-22"
       },
       {
-        "name": "【リチャージSIM】日本 100ギガ 365日 物理SIMカード 契約不要 月額0円 ギガリチャージで繰り返し利用可能 4G LTE/5G/docomo/NTTドコモ データSIM プリペイド 格安 SIM 1年【物理SIM-100GB/365日】",
-        "brand": "リチャージSIM",
+        "id": "KR-053",
+        "asin": "B0DNQ33556",
+        "product_name": "【リチャージSIM】日本 100ギガ 365日 物理SIMカード 契約不要 月額0円 ギガリチャージで繰り返し利用可能 4G LTE/5G/docomo/NTTドコモ データSIM プリペイド 格安 SIM 1年【物理SIM-100GB/365日】",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "リチャージSIM",
+          "original": null,
+          "en": null
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "日本"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
         "data": "100GB",
         "days": 365,
+        "voice_call": null,
+        "sms": null,
+        "tethering": null,
         "price_min": 12980,
         "price_max": 12980,
-        "asin": "B0DNQ33556"
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DNQ33556?tag=shotsim-22"
       },
       {
-        "name": "【Docomo回線】365日間100GB 5G/4G/LTE対応 プリペイドSIM リチャージ可 期間延長可 残量確認可 契約不要 日本国内用 データ通信専用 物理SIM 大容量 ピン付き 設定簡単 年中無休 多言語安心サポート sim card japan【DXHUB】",
-        "brand": "ＤＸＨＵＢ",
+        "id": "KR-054",
+        "asin": "B093WJ26L4",
+        "product_name": "【Docomo回線】365日間100GB 5G/4G/LTE対応 プリペイドSIM リチャージ可 期間延長可 残量確認可 契約不要 日本国内用 データ通信専用 物理SIM 大容量 ピン付き 設定簡単 年中無休 多言語安心サポート sim card japan【DXHUB】",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "DXHUB",
+          "original": null,
+          "en": "DXHUB"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "日本"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
         "data": "100GB",
         "days": 365,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
         "price_min": 15580,
         "price_max": 15580,
-        "asin": "B093WJ26L4",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B093WJ26L4?tag=shotsim-22"
       },
       {
-        "name": "1日の容量無制限タイプ // キャリア データSIM/格安SIMカード/プリペイド / [ SMS対応SIM/データ通信専用SIM] prepaid DATA SIM(100GBプラン, 12ヶ月,SIMのみ)",
-        "brand": "AICOM DATA SIM",
+        "id": "KR-055",
+        "asin": "B083K83RTZ",
+        "product_name": "1日の容量無制限タイプ // キャリア データSIM/格安SIMカード/プリペイド / [ SMS対応SIM/データ通信専用SIM] prepaid DATA SIM(100GBプラン, 12ヶ月,SIMのみ)",
+        "image_url": null,
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "AICOM DATA SIM",
+          "original": null,
+          "en": "AICOM DATA SIM"
+        },
         "type": "物理SIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "タイ"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": null,
         "data": "無制限",
         "days": 1,
+        "voice_call": false,
+        "sms": true,
+        "tethering": null,
         "price_min": 49880,
         "price_max": 49880,
-        "asin": "B083K83RTZ",
-        "voice_call": false
+        "price_fetched_at": "2026-03-24",
+        "review_score": null,
+        "review_count": null,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B083K83RTZ?tag=shotsim-22"
       }
     ]
   },
