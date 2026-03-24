@@ -1,4 +1,6 @@
 /* ShotSIM - メインスタイルシート */
+/* カラーパレット: #1A3263 / #547792 / #EFD2B0 / #FFC570 */
+/* https://colorhunt.co/palette/ffc570efd2b05477921a3263 */
 
 * {
   margin: 0;
@@ -14,7 +16,7 @@ body {
 
 /* ヘッダー */
 header {
-  background: #1a73e8;
+  background: #1A3263;
   color: #fff;
   padding: 16px 24px;
   display: flex;
@@ -53,7 +55,7 @@ header .logo {
 
 /* 検索エリア */
 .search-section {
-  background: #1a73e8;
+  background: #1A3263;
   padding: 40px 24px 60px;
   text-align: center;
   color: #fff;
@@ -86,7 +88,7 @@ header .logo {
 
 .search-box button {
   padding: 12px 20px;
-  background: #fbbc04;
+  background: #FFC570;
   color: #333;
   border: none;
   border-radius: 0 4px 4px 0;
@@ -173,7 +175,7 @@ header .logo {
 
 .article-card .tag {
   font-size: 0.75rem;
-  color: #1a73e8;
+  color: #547792;
   font-weight: 600;
   margin-bottom: 8px;
 }
