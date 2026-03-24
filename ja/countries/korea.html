@@ -606,7 +606,7 @@
       }
 
       async function init() {
-        const res = await fetch("/data/sims.json");
+        const res = await fetch("/shotsim/data/sims.json");
         const data = await res.json();
         const group = data.find((g) => g.country === COUNTRY_KEY);
         if (!group) {
@@ -634,3 +634,4 @@
     </script>
   </body>
 </html>
+
