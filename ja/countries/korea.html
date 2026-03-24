@@ -495,11 +495,12 @@
         if (!sizes || (sizes.nano === null && sizes.micro === null && sizes.standard === null)) {
           return badge + `<br><small class="unknown">サイズ不明</small>`;
         }
-        const fmt = (v) =>
-          v === true ? '<span class="ok">○</span>'
-          : v === false ? '<span class="ng">✕</span>'
-          : '<span class="unknown">不明</span>';
-        return badge + `<br><small>nano ${fmt(sizes.nano)} / micro ${fmt(sizes.micro)} / 標準 ${fmt(sizes.standard)}</small>`;
+        const supported = [];
+        if (sizes.nano === true) supported.push("nano");
+        if (sizes.micro === true) supported.push("micro");
+        if (sizes.standard === true) supported.push("標準");
+        const sizeStr = supported.length > 0 ? supported.join(" / ") : '<span class="unknown">不明</span>';
+        return badge + `<br><small>${sizeStr}</small>`;
       }
 
       function renderCountries(countries) {
