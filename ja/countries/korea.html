@@ -568,7 +568,7 @@
 
       function renderProduct(sim) {
         const imgHtml = sim.image_url
-          ? `<div class="product-img"><img data-src="${sim.image_url}" alt="${sim.product_name}" loading="lazy"></div>`
+          ? `<div class="product-img"><img src="${sim.image_url}" alt="${sim.product_name}" loading="lazy"></div>`
           : `<div class="product-img">準備中</div>`;
         const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : "";
         const companyLocal = sim.company && sim.company.local ? ` / ${sim.company.local}` : "";
@@ -746,10 +746,11 @@
           renderTable();
         });
 
-        // 国別JSONから取得（全国まとめJSONより高速）
-        const res = await fetch("/shotsim/data/sims_" + COUNTRY_KEY + ".json");
-        const group = await res.json();
-        if (!group || !group.sims) {
+        // sims.jsonから対象国を取得
+        const res = await fetch('/shotsim/data/sims.json');
+        const data = await res.json();
+        const group = data.find(g => g.country === COUNTRY_KEY);
+        if (!group) {
           document.getElementById("sim-tbody").innerHTML = '<tr><td colspan="22">データが見つかりません</td></tr>';
           return;
         }
@@ -761,28 +762,6 @@
       }
 
       init();
-
-      // ------- 画像 lazy-load（IntersectionObserver） -------
-      const imgObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            if (img.dataset.src) {
-              img.src = img.dataset.src;
-              delete img.dataset.src;
-            }
-            imgObserver.unobserve(img);
-          }
-        });
-      }, { rootMargin: '200px' });
-
-      // renderTable後に呼ぶ（MutationObserverで自動検知）
-      const tbodyObserver = new MutationObserver(() => {
-        document.querySelectorAll('#sim-tbody img[data-src]').forEach(img => {
-          imgObserver.observe(img);
-        });
-      });
-      tbodyObserver.observe(document.getElementById('sim-tbody'), { childList: true });
     </script>
 
     <div style="max-width:1100px;margin:0 auto 60px;padding:0 24px;">
