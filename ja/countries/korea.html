@@ -746,11 +746,10 @@
           renderTable();
         });
 
-        // sims.jsonから対象国を取得
-        const res = await fetch('/shotsim/data/sims.json');
-        const data = await res.json();
-        const group = data.find(g => g.country === COUNTRY_KEY);
-        if (!group) {
+        // 国別JSONから取得（全国まとめJSONより高速）
+        const res = await fetch('/shotsim/data/sims_korea.json');
+        const group = await res.json();
+        if (!group || !group.sims) {
           document.getElementById("sim-tbody").innerHTML = '<tr><td colspan="22">データが見つかりません</td></tr>';
           return;
         }
