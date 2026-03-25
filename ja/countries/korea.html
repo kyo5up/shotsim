@@ -3,77 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/shotsim/assets/img/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/shotsim/assets/img/favicon-16x16.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/shotsim/assets/img/apple-touch-icon.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>韓国のSIM比較 | ShotSIM</title>
-    <meta
-      name="description"
-      content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。"
-    />
+    <meta name="description" content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
     <!-- OGP -->
     <meta property="og:title" content="韓国のSIM比較 | ShotSIM" />
-    <meta
-      property="og:description"
-      content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。"
-    />
+    <meta property="og:description" content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://shotsim.net/ja/countries/korea.html" />
     <meta property="og:image" content="https://shotsim.net/assets/img/ogp/ogp-site.png">
     <meta property="og:locale" content="ja" />
     <meta name="twitter:card" content="summary" />
     <!-- hreflang -->
-    <link
-      rel="alternate"
-      hreflang="ja"
-      href="https://shotsim.net/ja/countries/korea.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href="https://shotsim.net/en/countries/korea.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="zh-TW"
-      href="https://shotsim.net/zh-tw/countries/korea.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="zh-CN"
-      href="https://shotsim.net/zh-cn/countries/korea.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="ko"
-      href="https://shotsim.net/ko/countries/korea.html"
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href="https://shotsim.net/ja/countries/korea.html"
-    />
+    <link rel="alternate" hreflang="ja" href="https://shotsim.net/ja/countries/korea.html" />
+    <link rel="alternate" hreflang="en" href="https://shotsim.net/en/countries/korea.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://shotsim.net/zh-tw/countries/korea.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://shotsim.net/zh-cn/countries/korea.html" />
+    <link rel="alternate" hreflang="ko" href="https://shotsim.net/ko/countries/korea.html" />
+    <link rel="alternate" hreflang="x-default" href="https://shotsim.net/ja/countries/korea.html" />
     <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
       .country-page {
         max-width: 1100px;
@@ -86,42 +39,98 @@
         gap: 16px;
         margin-bottom: 8px;
       }
-      .country-header .flag {
-        font-size: 3rem;
-      }
-      .country-header h1 {
-        font-size: 1.8rem;
-      }
+      .country-header .flag { font-size: 3rem; }
+      .country-header h1 { font-size: 1.8rem; }
       .data-note {
         font-size: 0.8rem;
         color: #888;
         margin-bottom: 24px;
       }
 
-      /* フィルター */
+      /* フィルターバー */
       .filter-bar {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 20px;
-        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+        align-items: flex-start;
       }
-      .filter-bar label {
-        font-size: 0.85rem;
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .filter-group-label {
+        font-size: 0.78rem;
         font-weight: 600;
         color: #555;
       }
-      .filter-bar select {
+      .filter-group select {
         padding: 6px 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 0.85rem;
       }
+      /* ボタン式フィルター */
+      .btn-filter-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .btn-filter {
+        padding: 4px 12px;
+        border: 1px solid #ccc;
+        border-radius: 14px;
+        font-size: 0.82rem;
+        cursor: pointer;
+        background: #fff;
+        color: #444;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+        white-space: nowrap;
+      }
+      .btn-filter.active {
+        background: #1A3263;
+        color: #fff;
+        border-color: #1A3263;
+      }
+      .btn-filter:hover:not(.active) {
+        background: #f0f4ff;
+        border-color: #1A3263;
+        color: #1A3263;
+      }
+
+      /* フィルター下段（件数・操作ボタン） */
+      .filter-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
       .filter-count {
         font-size: 0.85rem;
         color: #888;
-        margin-left: auto;
+        margin-right: auto;
       }
+      .action-btn {
+        padding: 5px 14px;
+        font-size: 0.82rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #fff;
+      }
+      .action-btn:hover { background: #f5f5f5; }
+      .action-btn.btn-clear {
+        border-color: #e44;
+        color: #e44;
+      }
+      .action-btn.btn-clear:hover { background: #fff0f0; }
+      .action-btn.btn-undo {
+        border-color: #888;
+        color: #555;
+      }
+      #btn-expand { border-color: #aaa; color: #444; }
 
       /* テーブル */
       .sim-table-wrap {
@@ -167,7 +176,7 @@
       .sim-table tr:nth-child(even) td:nth-child(1) { background: #fafafa; }
       .sim-table tr:hover td:nth-child(1) { background: #f5f8ff; }
 
-      /* 商品列（2列目）：左固定（leftはJSで動的設定） */
+      /* 商品名列（2列目）：左固定 */
       .sim-table th:nth-child(2),
       .sim-table td:nth-child(2) {
         position: sticky;
@@ -207,12 +216,7 @@
         height: 100%;
         object-fit: contain;
       }
-      .product-info {
-      }
-      .product-id {
-        font-size: 0.72rem;
-        color: #aaa;
-      }
+      .product-id { font-size: 0.72rem; color: #aaa; }
       .product-name {
         font-size: 0.82rem;
         line-height: 1.4;
@@ -221,11 +225,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
-      .product-brand {
-        font-size: 0.78rem;
-        color: #555;
-        margin-top: 2px;
-      }
+      .product-brand { font-size: 0.78rem; color: #555; margin-top: 2px; }
 
       /* バッジ */
       .badge {
@@ -236,37 +236,17 @@
         font-weight: 600;
         white-space: nowrap;
       }
-      .badge-esim {
-        background: #e8f0fe;
-        color: #1A3263;
-      }
-      .badge-physical {
-        background: #fce8e6;
-        color: #c5221f;
-      }
-      .badge-both {
-        background: #e6f4ea;
-        color: #1e7e34;
-      }
+      .badge-esim { background: #e8f0fe; color: #1A3263; }
+      .badge-physical { background: #fce8e6; color: #c5221f; }
+      .badge-both { background: #e6f4ea; color: #1e7e34; }
 
       /* ○✕ */
-      .ok {
-        color: #1a7a4a;
-        font-weight: 700;
-      }
-      .ng {
-        color: #c5221f;
-      }
-      .unknown {
-        color: #aaa;
-        font-size: 0.8rem;
-      }
+      .ok { color: #1a7a4a; font-weight: 700; }
+      .ng { color: #c5221f; }
+      .unknown { color: #aaa; font-size: 0.8rem; }
 
       /* 対応国タグ */
-      .countries-cell {
-        min-width: 120px;
-        max-width: 200px;
-      }
+      .countries-cell { min-width: 120px; max-width: 200px; }
       .country-tag {
         display: inline-block;
         background: #f0f4ff;
@@ -276,15 +256,9 @@
         margin: 1px;
         white-space: nowrap;
       }
-      .country-tag-more {
-        color: #888;
-        font-size: 0.72rem;
-      }
 
       /* 通信規格 */
-      .network-cell {
-        white-space: nowrap;
-      }
+      .network-cell { white-space: nowrap; }
       .net-tag {
         display: inline-block;
         padding: 1px 5px;
@@ -292,47 +266,19 @@
         font-size: 0.72rem;
         margin: 1px;
       }
-      .net-5g {
-        background: #e8f0fe;
-        color: #1A3263;
-      }
-      .net-4g {
-        background: #e6f4ea;
-        color: #1e7e34;
-      }
-      .net-lte {
-        background: #fff3e0;
-        color: #e65100;
-      }
-      .net-3g {
-        background: #fce8e6;
-        color: #c5221f;
-      }
+      .net-5g { background: #e8f0fe; color: #1A3263; }
+      .net-4g { background: #e6f4ea; color: #1e7e34; }
+      .net-lte { background: #fff3e0; color: #e65100; }
+      .net-3g { background: #fce8e6; color: #c5221f; }
 
       /* 価格 */
-      .price-cell {
-        white-space: nowrap;
-        text-align: right;
-      }
-      .price-val {
-        font-weight: 700;
-        font-size: 1rem;
-      }
-      .price-date {
-        font-size: 0.7rem;
-        color: #aaa;
-        display: block;
-      }
+      .price-cell { white-space: nowrap; text-align: right; }
+      .price-val { font-weight: 700; font-size: 1rem; }
+      .price-date { font-size: 0.7rem; color: #aaa; display: block; }
 
       /* レビュー */
-      .review-cell {
-        white-space: nowrap;
-        text-align: center;
-      }
-      .stars {
-        color: #f5a623;
-        font-size: 0.85rem;
-      }
+      .review-cell { white-space: nowrap; text-align: center; }
+      .stars { color: #f5a623; font-size: 0.85rem; }
 
       /* Amazonボタン */
       .amazon-btn {
@@ -346,27 +292,32 @@
         font-weight: 600;
         white-space: nowrap;
       }
-      .amazon-btn:hover {
-        background: #e68900;
-      }
+      .amazon-btn:hover { background: #e68900; }
 
-      /* 会社・キャリア */
-      .company-cell {
-        font-size: 0.82rem;
-        min-width: 100px;
+      /* ソートボタン */
+      .sort-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.7rem;
+        color: #aaa;
+        padding: 0 2px;
+        vertical-align: middle;
       }
-      .company-original {
-        font-size: 0.72rem;
-        color: #888;
+      .sort-btn.active-asc,
+      .sort-btn.active-desc { color: #1A3263; font-weight: 700; }
+
+      /* 型番・ASIN */
+      .mono-cell {
+        font-family: monospace;
+        font-size: 0.78rem;
+        color: #666;
+        white-space: nowrap;
       }
 
       @media (max-width: 768px) {
-        .sim-table {
-          font-size: 0.78rem;
-        }
-        .product-cell {
-          min-width: 160px;
-        }
+        .sim-table { font-size: 0.78rem; }
+        .product-cell { min-width: 160px; }
       }
     </style>
   </head>
@@ -385,37 +336,47 @@
     <div class="country-page">
       <div class="country-header">
         <div class="flag">🇰🇷</div>
-        <div>
-          <h1>韓国のSIM比較</h1>
-        </div>
+        <div><h1>韓国のSIM比較</h1></div>
       </div>
       <p class="data-note" id="data-note">読み込み中...</p>
 
       <!-- フィルター -->
       <div class="filter-bar">
-        <label>種別:</label>
-        <select id="filter-type">
-          <option value="">すべて</option>
-          <option value="eSIM">eSIM</option>
-          <option value="物理SIM">物理SIM</option>
-        </select>
-        <label>期間:</label>
-        <select id="filter-days">
-          <option value="">すべて</option>
-          <option value="3">〜3日</option>
-          <option value="7">〜7日</option>
-          <option value="14">〜14日</option>
-          <option value="30">〜30日</option>
-          <option value="999">30日以上</option>
-        </select>
-        <label>通話:</label>
-        <select id="filter-voice">
-          <option value="">すべて</option>
-          <option value="1">通話あり</option>
-          <option value="0">データのみ</option>
-        </select>
+        <div class="filter-group">
+          <div class="filter-group-label">種別</div>
+          <div class="btn-filter-group" id="filter-type-group">
+            <button class="btn-filter active" data-value="">すべて</button>
+            <button class="btn-filter" data-value="eSIM">eSIM</button>
+            <button class="btn-filter" data-value="物理SIM">物理SIM</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">期間</div>
+          <select id="filter-days">
+            <option value="">すべて</option>
+            <option value="3">〜3日</option>
+            <option value="7">〜7日</option>
+            <option value="14">〜14日</option>
+            <option value="30">〜30日</option>
+            <option value="999">30日以上</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">通話</div>
+          <div class="btn-filter-group" id="filter-voice-group">
+            <button class="btn-filter active" data-value="">すべて</button>
+            <button class="btn-filter" data-value="1">通話あり</button>
+            <button class="btn-filter" data-value="0">データのみ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 件数・操作ボタン -->
+      <div class="filter-actions">
         <span class="filter-count" id="filter-count"></span>
-        <button id="btn-expand" onclick="toggleExpand()" style="margin-left:8px;padding:5px 12px;font-size:0.82rem;border:1px solid #ccc;border-radius:4px;cursor:pointer;background:#fff;">⛶ 全画面</button>
+        <button class="action-btn btn-clear" onclick="clearFilters()">クリア</button>
+        <button class="action-btn btn-undo" onclick="undoFilters()">戻す</button>
+        <button class="action-btn" id="btn-expand" onclick="toggleExpand()">⛶ 全画面</button>
       </div>
 
       <div class="sim-table-wrap">
@@ -423,23 +384,26 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>商品</th>
-              <th>価格</th>
+              <th>商品名</th>
+              <th>価格 <button class="sort-btn" data-col="price_min" onclick="sortTable('price_min')">▲▼</button></th>
               <th>購入</th>
               <th>種別<br /><small>物理SIMサイズ</small></th>
-              <th>高速データ</th>
+              <th>高速データ <button class="sort-btn" data-col="data_high" onclick="sortTable('data_high')">▲▼</button></th>
               <th>低速無制限</th>
-              <th>期間</th>
+              <th>期間 <button class="sort-btn" data-col="days" onclick="sortTable('days')">▲▼</button></th>
               <th>通話</th>
               <th>SMS</th>
               <th>テザリング</th>
               <th>対応国</th>
               <th>現地キャリア<br /><small>（韓国）</small></th>
               <th>通信規格</th>
-              <th>レビュー</th>
+              <th>☆平均 <button class="sort-btn" data-col="review_score" onclick="sortTable('review_score')">▲▼</button></th>
+              <th>レビュー件数 <button class="sort-btn" data-col="review_count" onclick="sortTable('review_count')">▲▼</button></th>
               <th>会社名</th>
               <th>ブランド</th>
-              <th>価格</th>
+              <th>型番</th>
+              <th>ASIN</th>
+              <th>価格 <button class="sort-btn" data-col="price_min" onclick="sortTable('price_min')">▲▼</button></th>
               <th>購入</th>
             </tr>
           </thead>
@@ -449,6 +413,17 @@
     </div>
 
     <script>
+      const COUNTRY_KEY = "korea";
+      let allSims = [];
+      let filteredSims = [];
+      let sortCol = null;
+      let sortDir = 1; // 1=昇順, -1=降順
+
+      // フィルター状態
+      let currentFilters = { type: "", days: "", voice: "" };
+      let prevFilters = { type: "", days: "", voice: "" };
+
+      // ------- トグル（元の動作を維持）-------
       function toggleExpand() {
         const page = document.querySelector('.country-page');
         const wrap = document.querySelector('.sim-table-wrap');
@@ -456,20 +431,93 @@
         if (page.style.maxWidth === 'none') {
           page.style.maxWidth = '';
           page.style.padding = '';
-          wrap.style.maxHeight = '80vh';
-          wrap.style.overflow = 'auto';
+          wrap.style.maxHeight = '';
+          wrap.style.overflow = '';
           btn.textContent = '⛶ 全画面';
         } else {
           page.style.maxWidth = 'none';
           page.style.padding = '0 12px 60px';
-          wrap.style.maxHeight = 'calc(100vh - 120px)';
-          wrap.style.overflow = 'auto';
+          wrap.style.maxHeight = 'none';
+          wrap.style.overflow = 'visible';
           btn.textContent = '⊡ 枠あり';
         }
       }
 
-      const COUNTRY_KEY = "korea";
+      // ------- ボタン式フィルター -------
+      function initBtnFilter(groupId, filterKey) {
+        const group = document.getElementById(groupId);
+        group.querySelectorAll('.btn-filter').forEach(btn => {
+          btn.addEventListener('click', () => {
+            group.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            prevFilters = { ...currentFilters };
+            currentFilters[filterKey] = btn.dataset.value;
+            renderTable();
+          });
+        });
+      }
 
+      function clearFilters() {
+        prevFilters = { ...currentFilters };
+        currentFilters = { type: "", days: "", voice: "" };
+        applyFilterUI();
+        renderTable();
+      }
+
+      function undoFilters() {
+        const tmp = { ...currentFilters };
+        currentFilters = { ...prevFilters };
+        prevFilters = tmp;
+        applyFilterUI();
+        renderTable();
+      }
+
+      function applyFilterUI() {
+        // ボタン式
+        ['filter-type-group', 'filter-voice-group'].forEach((groupId, i) => {
+          const key = ['type', 'voice'][i];
+          const group = document.getElementById(groupId);
+          group.querySelectorAll('.btn-filter').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.value === currentFilters[key]);
+          });
+        });
+        // セレクト
+        document.getElementById('filter-days').value = currentFilters.days;
+      }
+
+      // ------- ソート -------
+      function sortTable(col) {
+        if (sortCol === col) {
+          sortDir *= -1;
+        } else {
+          sortCol = col;
+          sortDir = 1;
+        }
+        // ボタン表示更新
+        document.querySelectorAll('.sort-btn').forEach(b => {
+          b.classList.remove('active-asc', 'active-desc');
+          if (b.dataset.col === col) {
+            b.classList.add(sortDir === 1 ? 'active-asc' : 'active-desc');
+          }
+        });
+        renderTable();
+      }
+
+      function sortSims(sims) {
+        if (!sortCol) return sims;
+        return [...sims].sort((a, b) => {
+          let va = a[sortCol], vb = b[sortCol];
+          if (va === null || va === undefined) va = sortDir === 1 ? Infinity : -Infinity;
+          if (vb === null || vb === undefined) vb = sortDir === 1 ? Infinity : -Infinity;
+          if (typeof va === 'string') va = va.replace(/[^0-9.]/g, '') || va;
+          if (typeof vb === 'string') vb = vb.replace(/[^0-9.]/g, '') || vb;
+          const na = parseFloat(va), nb = parseFloat(vb);
+          if (!isNaN(na) && !isNaN(nb)) return (na - nb) * sortDir;
+          return String(va).localeCompare(String(vb)) * sortDir;
+        });
+      }
+
+      // ------- 描画ヘルパー -------
       function renderBool(val) {
         if (val === true) return '<span class="ok">○</span>';
         if (val === false) return '<span class="ng">✕</span>';
@@ -479,18 +527,11 @@
       function renderTypeWithSize(sim) {
         const type = sim.type || "";
         let badge = "";
-        if (type.includes("eSIM"))
-          badge = `<span class="badge badge-esim">eSIM</span>`;
-        else if (type.includes("両対応"))
-          badge = `<span class="badge badge-both">両対応</span>`;
-        else if (type.includes("物理"))
-          badge = `<span class="badge badge-physical">物理SIM</span>`;
-        else
-          badge = `<span class="badge">${type}</span>`;
-
-        // eSIMはサイズ不要
+        if (type.includes("eSIM")) badge = `<span class="badge badge-esim">eSIM</span>`;
+        else if (type.includes("両対応")) badge = `<span class="badge badge-both">両対応</span>`;
+        else if (type.includes("物理")) badge = `<span class="badge badge-physical">物理SIM</span>`;
+        else badge = `<span class="badge">${type}</span>`;
         if (type.includes("eSIM")) return badge;
-
         const sizes = sim.sim_sizes;
         if (!sizes || (sizes.nano === null && sizes.micro === null && sizes.standard === null)) {
           return badge + `<br><small class="unknown">サイズ不明</small>`;
@@ -504,38 +545,19 @@
       }
 
       function renderCountries(countries) {
-        if (!countries || countries.length === 0)
-          return '<span class="unknown">不明</span>';
-        return `<div class="countries-cell">${countries.map((c) => `<span class="country-tag">${c}</span>`).join("")}</div>`;
+        if (!countries || countries.length === 0) return '<span class="unknown">不明</span>';
+        return `<div class="countries-cell">${countries.map(c => `<span class="country-tag">${c}</span>`).join("")}</div>`;
       }
 
       function renderNetwork(nets) {
         if (!nets || nets.length === 0) return '<span class="unknown">-</span>';
-        return (
-          '<span class="network-cell">' +
-          nets
-            .map((n) => {
-              if (n === "5G") return `<span class="net-tag net-5g">5G</span>`;
-              if (n === "4G") return `<span class="net-tag net-4g">4G</span>`;
-              if (n === "LTE")
-                return `<span class="net-tag net-lte">LTE</span>`;
-              if (n === "3G") return `<span class="net-tag net-3g">3G</span>`;
-              return `<span class="net-tag">${n}</span>`;
-            })
-            .join("") +
-          "</span>"
-        );
-      }
-
-      function renderType(type) {
-        const t = type || "";
-        if (t.includes("eSIM"))
-          return `<span class="badge badge-esim">eSIM</span>`;
-        if (t.includes("両対応"))
-          return `<span class="badge badge-both">両対応</span>`;
-        if (t.includes("物理"))
-          return `<span class="badge badge-physical">物理SIM</span>`;
-        return `<span class="badge">${t}</span>`;
+        return '<span class="network-cell">' + nets.map(n => {
+          if (n === "5G") return `<span class="net-tag net-5g">5G</span>`;
+          if (n === "4G") return `<span class="net-tag net-4g">4G</span>`;
+          if (n === "LTE") return `<span class="net-tag net-lte">LTE</span>`;
+          if (n === "3G") return `<span class="net-tag net-3g">3G</span>`;
+          return `<span class="net-tag">${n}</span>`;
+        }).join("") + "</span>";
       }
 
       function renderProduct(sim) {
@@ -543,44 +565,47 @@
           ? `<div class="product-img"><img src="${sim.image_url}" alt="${sim.product_name}" loading="lazy"></div>`
           : `<div class="product-img">準備中</div>`;
         const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : "";
-        const companyLocal =
-          sim.company && sim.company.local ? ` / ${sim.company.local}` : "";
+        const companyLocal = sim.company && sim.company.local ? ` / ${sim.company.local}` : "";
         return `<div class="product-cell">
-        ${imgHtml}
-        <div class="product-info">
-          <div class="product-id">${sim.id}</div>
-          <div class="product-name">${sim.product_name}</div>
-          <div class="product-brand">${brandLocal}${companyLocal}</div>
-        </div>
-      </div>`;
+          ${imgHtml}
+          <div class="product-info">
+            <div class="product-id">${sim.id}</div>
+            <div class="product-name">${sim.product_name}</div>
+            <div class="product-brand">${brandLocal}${companyLocal}</div>
+          </div>
+        </div>`;
       }
 
       function renderPrice(sim) {
-        const price =
-          sim.price_min === sim.price_max
-            ? `¥${sim.price_min.toLocaleString()}`
-            : `¥${sim.price_min.toLocaleString()}〜`;
+        if (sim.price_min === null || sim.price_min === undefined) return '<span class="unknown">-</span>';
+        const price = sim.price_min === sim.price_max
+          ? `¥${sim.price_min.toLocaleString()}`
+          : `¥${sim.price_min.toLocaleString()}〜`;
         const date = sim.price_fetched_at
           ? `<span class="price-date">${sim.price_fetched_at} 時点</span>`
           : "";
         return `<div class="price-cell"><span class="price-val">${price}</span>${date}</div>`;
       }
 
-      function renderReview(sim) {
-        if (!sim.review_score && !sim.review_count)
+      function renderReviewScore(sim) {
+        // データ取得できていない（null）→ -
+        if (sim.review_score === null || sim.review_score === undefined) {
           return '<span class="unknown">-</span>';
-        const stars = sim.review_score
-          ? `<span class="stars">★${sim.review_score.toFixed(1)}</span>`
-          : "";
-        const count = sim.review_count
-          ? `<br><small>(${sim.review_count}件)</small>`
-          : "";
-        return `<div class="review-cell">${stars}${count}</div>`;
+        }
+        return `<span class="stars">★${sim.review_score.toFixed(1)}</span>`;
+      }
+
+      function renderReviewCount(sim) {
+        // データ取得できていない（null）→ -
+        if (sim.review_count === null || sim.review_count === undefined) {
+          return '<span class="unknown">-</span>';
+        }
+        // 取得できていて0件 → (0件)
+        return `<span style="font-size:0.82rem">(${sim.review_count.toLocaleString()}件)</span>`;
       }
 
       function renderCarrier(sim) {
-        const kr =
-          sim.carrier && sim.carrier["韓国"] ? sim.carrier["韓国"] : null;
+        const kr = sim.carrier && sim.carrier["韓国"] ? sim.carrier["韓国"] : null;
         if (!kr) return '<span class="unknown">-</span>';
         return `<span style="font-size:0.82rem">${kr}</span>`;
       }
@@ -610,71 +635,76 @@
         return `<span style="font-size:0.82rem">${local}</span>`;
       }
 
+      function renderModelNumber(sim) {
+        const v = sim.model_number || null;
+        if (!v) return '<span class="unknown">-</span>';
+        return `<span class="mono-cell">${v}</span>`;
+      }
+
+      function renderAsin(sim) {
+        if (!sim.asin) return '<span class="unknown">-</span>';
+        return `<span class="mono-cell">${sim.asin}</span>`;
+      }
+
+      // ------- フィルター適用 -------
       function applyFilters(sims) {
-        const typeVal = document.getElementById("filter-type").value;
-        const daysVal = document.getElementById("filter-days").value;
-        const voiceVal = document.getElementById("filter-voice").value;
-        return sims.filter((s) => {
-          // 対応国フィルター（韓国を含むもののみ表示）
-          const countries = s.countries || [];
-          if (!countries.includes("韓国")) return false;
+        return sims.filter(s => {
+          // 対応国フィルター（韓国を含むもののみ）
+          if (!(s.countries || []).includes("韓国")) return false;
           // 種別
-          if (typeVal && !s.type.includes(typeVal)) return false;
+          if (currentFilters.type && !s.type.includes(currentFilters.type)) return false;
           // 期間
-          if (daysVal) {
-            const d = parseInt(daysVal);
-            if (d === 999) {
-              if (s.days <= 30) return false;
-            } else {
-              if (s.days > d) return false;
-            }
+          if (currentFilters.days) {
+            const d = parseInt(currentFilters.days);
+            if (d === 999) { if (s.days <= 30) return false; }
+            else { if (s.days > d) return false; }
           }
           // 通話
-          if (voiceVal === "1" && s.voice_call !== true) return false;
-          if (voiceVal === "0" && s.voice_call !== false) return false;
+          if (currentFilters.voice === "1" && s.voice_call !== true) return false;
+          if (currentFilters.voice === "0" && s.voice_call !== false) return false;
           return true;
         });
       }
 
-      function renderTable(sims) {
-        const filtered = applyFilters(sims);
+      // ------- テーブル描画 -------
+      function renderTable() {
+        filteredSims = applyFilters(allSims);
+        const sorted = sortSims(filteredSims);
         const tbody = document.getElementById("sim-tbody");
-        document.getElementById("filter-count").textContent =
-          `${filtered.length}件表示`;
+        document.getElementById("filter-count").textContent = `${sorted.length}件表示`;
 
-        tbody.innerHTML = filtered
-          .map(
-            (sim, idx) => `
-        <tr>
-          <td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx + 1}</td>
-          <td>${renderProduct(sim)}</td>
-          <td>${renderPrice(sim)}</td>
-          <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-          <td style="text-align:center">${renderTypeWithSize(sim)}</td>
-          <td style="text-align:center">${renderDataHigh(sim)}</td>
-          <td style="text-align:center">${renderDataLow(sim)}</td>
-          <td style="text-align:center;white-space:nowrap">${sim.days}日間</td>
-          <td style="text-align:center">${renderBool(sim.voice_call)}</td>
-          <td style="text-align:center">${renderBool(sim.sms)}</td>
-          <td style="text-align:center">${renderBool(sim.tethering)}</td>
-          <td>${renderCountries(sim.countries)}</td>
-          <td style="text-align:center">${renderCarrier(sim)}</td>
-          <td>${renderNetwork(sim.network)}</td>
-          <td>${renderReview(sim)}</td>
-          <td style="text-align:center">${renderCompany(sim)}</td>
-          <td style="text-align:center">${renderBrand(sim)}</td>
-          <td>${renderPrice(sim)}</td>
-          <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-        </tr>
-      `,
-          )
-          .join("");
+        tbody.innerHTML = sorted.map((sim, idx) => `
+          <tr>
+            <td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx + 1}</td>
+            <td>${renderProduct(sim)}</td>
+            <td>${renderPrice(sim)}</td>
+            <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
+            <td style="text-align:center">${renderTypeWithSize(sim)}</td>
+            <td style="text-align:center">${renderDataHigh(sim)}</td>
+            <td style="text-align:center">${renderDataLow(sim)}</td>
+            <td style="text-align:center;white-space:nowrap">${sim.days != null ? sim.days + '日間' : '<span class="unknown">-</span>'}</td>
+            <td style="text-align:center">${renderBool(sim.voice_call)}</td>
+            <td style="text-align:center">${renderBool(sim.sms)}</td>
+            <td style="text-align:center">${renderBool(sim.tethering)}</td>
+            <td>${renderCountries(sim.countries)}</td>
+            <td style="text-align:center">${renderCarrier(sim)}</td>
+            <td>${renderNetwork(sim.network)}</td>
+            <td style="text-align:center">${renderReviewScore(sim)}</td>
+            <td style="text-align:center">${renderReviewCount(sim)}</td>
+            <td style="text-align:center">${renderCompany(sim)}</td>
+            <td style="text-align:center">${renderBrand(sim)}</td>
+            <td style="text-align:center">${renderModelNumber(sim)}</td>
+            <td style="text-align:center">${renderAsin(sim)}</td>
+            <td>${renderPrice(sim)}</td>
+            <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
+          </tr>
+        `).join("");
 
-        // #列の実幅を測り、商品列のleftを動的にセット
+        // #列の実幅を測り、商品名列のleftを動的にセット
         requestAnimationFrame(() => {
           const firstTh = document.querySelector('.sim-table th:nth-child(1)');
           if (!firstTh) return;
-          const w = firstTh.offsetWidth;
+          const w = firstTh.getBoundingClientRect().width;
           document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
             el.style.left = w + 'px';
           });
@@ -682,28 +712,27 @@
       }
 
       async function init() {
+        // ボタン式フィルター初期化
+        initBtnFilter('filter-type-group', 'type');
+        initBtnFilter('filter-voice-group', 'voice');
+        document.getElementById('filter-days').addEventListener('change', e => {
+          prevFilters = { ...currentFilters };
+          currentFilters.days = e.target.value;
+          renderTable();
+        });
+
         const res = await fetch("/shotsim/data/sims.json");
         const data = await res.json();
-        const group = data.find((g) => g.country === COUNTRY_KEY);
+        const group = data.find(g => g.country === COUNTRY_KEY);
         if (!group) {
-          document.getElementById("sim-tbody").innerHTML =
-            '<tr><td colspan="19">データが見つかりません</td></tr>';
+          document.getElementById("sim-tbody").innerHTML = '<tr><td colspan="22">データが見つかりません</td></tr>';
           return;
         }
-        const sims = group.sims || [];
-        const fetched =
-          sims[0] && sims[0].price_fetched_at
-            ? sims[0].price_fetched_at
-            : "不明";
+        allSims = group.sims || [];
+        const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
         document.getElementById("data-note").textContent =
           `価格は ${fetched} 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。`;
-        // フィルター変更イベント
-        ["filter-type", "filter-days", "filter-voice"].forEach((id) => {
-          document
-            .getElementById(id)
-            .addEventListener("change", () => renderTable(sims));
-        });
-        renderTable(sims);
+        renderTable();
       }
 
       init();
@@ -722,4 +751,3 @@
     </footer>
   </body>
 </html>
-
