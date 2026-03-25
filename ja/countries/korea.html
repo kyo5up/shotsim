@@ -860,6 +860,20 @@
           wrap.style.overflow = 'visible';
           btn.textContent = '⊡ 枠あり';
         }
+        // テーブルを一時的にvisibility:hiddenにしてリレイアウトコストを削減
+        const table = document.getElementById('sim-table');
+        table.style.visibility = 'hidden';
+        stickyLeft = null;
+        requestAnimationFrame(() => {
+          const firstTh = document.querySelector('.sim-table th:nth-child(1)');
+          if (firstTh) {
+            stickyLeft = firstTh.getBoundingClientRect().width;
+            document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
+              el.style.left = stickyLeft + 'px';
+            });
+          }
+          table.style.visibility = '';
+        });
       }
 
       // ------- ■ラジオ式フィルター -------
