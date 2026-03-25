@@ -746,9 +746,14 @@
           renderTable();
         });
 
-        // 国別JSONを直接ロード（全カ国分を読まない）
-        const res = await fetch(`/data/sims_${COUNTRY_KEY}.json`);
-        const group = await res.json();
+        // sims.jsonから対象国を取得
+        const res = await fetch('/shotsim/data/sims.json');
+        const data = await res.json();
+        const group = data.find(g => g.country === COUNTRY_KEY);
+        if (!group) {
+          document.getElementById("sim-tbody").innerHTML = '<tr><td colspan="22">データが見つかりません</td></tr>';
+          return;
+        }
         allSims = group.sims || [];
         const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
         document.getElementById("data-note").textContent =
