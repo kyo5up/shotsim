@@ -673,52 +673,71 @@
       }
 
       // ------- テーブル描画 -------
+      let stickyLeft = null; // 初回のみ計算
+
       function renderTable() {
         filteredSims = applyFilters(allSims);
         const sorted = sortSims(filteredSims);
         const tbody = document.getElementById("sim-tbody");
         document.getElementById("filter-count").textContent = `${sorted.length}件表示`;
 
-        tbody.innerHTML = sorted.map((sim, idx) => `
-          <tr>
-            <td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx + 1}</td>
-            <td>${renderProduct(sim)}</td>
-            <td>${renderPrice(sim)}</td>
-            <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-            <td style="text-align:center">${renderTypeWithSize(sim)}</td>
-            <td style="text-align:center">${renderDataHigh(sim)}</td>
-            <td style="text-align:center">${renderDataLow(sim)}</td>
-            <td style="text-align:center;white-space:nowrap">${sim.days != null ? sim.days + '日間' : '<span class="unknown">-</span>'}</td>
-            <td style="text-align:center">${renderBool(sim.voice_call)}</td>
-            <td style="text-align:center">${renderBool(sim.sms)}</td>
-            <td style="text-align:center">${renderBool(sim.tethering)}</td>
-            <td>${renderCountries(sim.countries)}</td>
-            <td style="text-align:center">${renderCarrier(sim)}</td>
-            <td>${renderNetwork(sim.network)}</td>
-            <td style="text-align:center">${renderReviewScore(sim)}</td>
-            <td style="text-align:center">${renderReviewCount(sim)}</td>
-            <td style="text-align:center">${renderCompany(sim)}</td>
-            <td style="text-align:center">${renderBrand(sim)}</td>
-            <td style="text-align:center">${renderModelNumber(sim)}</td>
-            <td style="text-align:center">${renderAsin(sim)}</td>
-            <td>${renderPrice(sim)}</td>
-            <td><a href="${sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-          </tr>
-        `).join("");
-
-        // #列の実幅を測り、商品名列のleftを動的にセット
-        requestAnimationFrame(() => {
-          const firstTh = document.querySelector('.sim-table th:nth-child(1)');
-          if (!firstTh) return;
-          const w = firstTh.getBoundingClientRect().width;
-          document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
-            el.style.left = w + 'px';
-          });
+        // DocumentFragmentで一括構築（DOM操作を最小化）
+        const frag = document.createDocumentFragment();
+        sorted.forEach((sim, idx) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = buildRow(sim, idx + 1);
+          frag.appendChild(tr);
         });
+        tbody.textContent = ''; // innerHTML=''より軽量
+        tbody.appendChild(frag);
+
+        // sticky幅は初回のみ計算
+        if (stickyLeft === null) {
+          requestAnimationFrame(() => {
+            const firstTh = document.querySelector('.sim-table th:nth-child(1)');
+            if (!firstTh) return;
+            stickyLeft = firstTh.getBoundingClientRect().width;
+            document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
+              el.style.left = stickyLeft + 'px';
+            });
+          });
+        } else {
+          tbody.querySelectorAll('td:nth-child(2)').forEach(el => {
+            el.style.left = stickyLeft + 'px';
+          });
+        }
+      }
+
+      function buildRow(sim, n) {
+        const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
+        const amazonBtn = `<a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a>`;
+        const price = renderPrice(sim);
+        return `
+          <td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${n}</td>
+          <td>${renderProduct(sim)}</td>
+          <td>${price}</td>
+          <td>${amazonBtn}</td>
+          <td style="text-align:center">${renderTypeWithSize(sim)}</td>
+          <td style="text-align:center">${renderDataHigh(sim)}</td>
+          <td style="text-align:center">${renderDataLow(sim)}</td>
+          <td style="text-align:center;white-space:nowrap">${sim.days != null ? sim.days + '日間' : '<span class="unknown">-</span>'}</td>
+          <td style="text-align:center">${renderBool(sim.voice_call)}</td>
+          <td style="text-align:center">${renderBool(sim.sms)}</td>
+          <td style="text-align:center">${renderBool(sim.tethering)}</td>
+          <td>${renderCountries(sim.countries)}</td>
+          <td style="text-align:center">${renderCarrier(sim)}</td>
+          <td>${renderNetwork(sim.network)}</td>
+          <td style="text-align:center">${renderReviewScore(sim)}</td>
+          <td style="text-align:center">${renderReviewCount(sim)}</td>
+          <td style="text-align:center">${renderCompany(sim)}</td>
+          <td style="text-align:center">${renderBrand(sim)}</td>
+          <td style="text-align:center">${renderModelNumber(sim)}</td>
+          <td style="text-align:center">${renderAsin(sim)}</td>
+          <td>${price}</td>
+          <td>${amazonBtn}</td>`;
       }
 
       async function init() {
-        // ボタン式フィルター初期化
         initBtnFilter('filter-type-group', 'type');
         initBtnFilter('filter-voice-group', 'voice');
         document.getElementById('filter-days').addEventListener('change', e => {
@@ -727,13 +746,9 @@
           renderTable();
         });
 
-        const res = await fetch("/shotsim/data/sims.json");
-        const data = await res.json();
-        const group = data.find(g => g.country === COUNTRY_KEY);
-        if (!group) {
-          document.getElementById("sim-tbody").innerHTML = '<tr><td colspan="22">データが見つかりません</td></tr>';
-          return;
-        }
+        // 国別JSONを直接ロード（全カ国分を読まない）
+        const res = await fetch(`/data/sims_${COUNTRY_KEY}.json`);
+        const group = await res.json();
         allSims = group.sims || [];
         const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
         document.getElementById("data-note").textContent =
