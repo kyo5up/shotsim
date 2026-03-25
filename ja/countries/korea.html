@@ -47,89 +47,95 @@
         margin-bottom: 24px;
       }
 
-      /* フィルターバー */
-      .filter-bar {
+      /* フィルターパネル */
+      .filter-panel {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        margin-bottom: 16px;
-        align-items: flex-start;
+        align-items: flex-end;
       }
       .filter-group {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 5px;
       }
       .filter-group-label {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         font-weight: 600;
-        color: #555;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
       }
       .filter-group select {
-        padding: 6px 10px;
+        padding: 5px 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 0.85rem;
+        background: #fafafa;
       }
-      /* ボタン式フィルター */
-      .btn-filter-group {
+      /* ■ラジオ式フィルター */
+      .radio-filter-group {
         display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
+        flex-direction: column;
+        gap: 3px;
       }
-      .btn-filter {
-        padding: 4px 12px;
-        border: 1px solid #ccc;
-        border-radius: 14px;
-        font-size: 0.82rem;
-        cursor: pointer;
-        background: #fff;
-        color: #444;
-        transition: background 0.15s, color 0.15s, border-color 0.15s;
-        white-space: nowrap;
-      }
-      .btn-filter.active {
-        background: #1A3263;
-        color: #fff;
-        border-color: #1A3263;
-      }
-      .btn-filter:hover:not(.active) {
-        background: #f0f4ff;
-        border-color: #1A3263;
-        color: #1A3263;
-      }
-
-      /* フィルター下段（件数・操作ボタン） */
-      .filter-actions {
+      .radio-filter {
         display: flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 12px;
-        flex-wrap: wrap;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        color: #444;
+        user-select: none;
+      }
+      .radio-filter .radio-box {
+        width: 12px;
+        height: 12px;
+        background: #ddd;
+        border-radius: 2px;
+        flex-shrink: 0;
+        transition: background 0.12s;
+      }
+      .radio-filter.active .radio-box {
+        background: #1A3263;
+      }
+      .radio-filter:hover:not(.active) .radio-box {
+        background: #aab8d8;
+      }
+
+      /* フィルター右端：件数＋操作ボタン */
+      .filter-meta {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
       }
       .filter-count {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         color: #888;
-        margin-right: auto;
+      }
+      .filter-btns {
+        display: flex;
+        gap: 6px;
       }
       .action-btn {
-        padding: 5px 14px;
-        font-size: 0.82rem;
+        padding: 4px 12px;
+        font-size: 0.8rem;
         border: 1px solid #ccc;
         border-radius: 4px;
         cursor: pointer;
-        background: #fff;
-      }
-      .action-btn:hover { background: #f5f5f5; }
-      .action-btn.btn-clear {
-        border-color: #e44;
-        color: #e44;
-      }
-      .action-btn.btn-clear:hover { background: #fff0f0; }
-      .action-btn.btn-undo {
-        border-color: #888;
+        background: #fafafa;
         color: #555;
       }
+      .action-btn:hover { background: #f0f0f0; }
+      .action-btn.btn-clear { border-color: #d44; color: #d44; }
+      .action-btn.btn-clear:hover { background: #fff0f0; }
       #btn-expand { border-color: #aaa; color: #444; }
 
       /* テーブル */
@@ -340,14 +346,14 @@
       </div>
       <p class="data-note" id="data-note">読み込み中...</p>
 
-      <!-- フィルター -->
-      <div class="filter-bar">
+      <!-- フィルターパネル -->
+      <div class="filter-panel">
         <div class="filter-group">
           <div class="filter-group-label">種別</div>
-          <div class="btn-filter-group" id="filter-type-group">
-            <button class="btn-filter active" data-value="">すべて</button>
-            <button class="btn-filter" data-value="eSIM">eSIM</button>
-            <button class="btn-filter" data-value="物理SIM">物理SIM</button>
+          <div class="radio-filter-group" id="filter-type-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="eSIM"><span class="radio-box"></span>eSIM</label>
+            <label class="radio-filter" data-value="物理SIM"><span class="radio-box"></span>物理SIM</label>
           </div>
         </div>
         <div class="filter-group">
@@ -363,20 +369,20 @@
         </div>
         <div class="filter-group">
           <div class="filter-group-label">通話</div>
-          <div class="btn-filter-group" id="filter-voice-group">
-            <button class="btn-filter active" data-value="">すべて</button>
-            <button class="btn-filter" data-value="1">通話あり</button>
-            <button class="btn-filter" data-value="0">データのみ</button>
+          <div class="radio-filter-group" id="filter-voice-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="1"><span class="radio-box"></span>通話あり</label>
+            <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
           </div>
         </div>
-      </div>
-
-      <!-- 件数・操作ボタン -->
-      <div class="filter-actions">
-        <span class="filter-count" id="filter-count"></span>
-        <button class="action-btn btn-clear" onclick="clearFilters()">クリア</button>
-        <button class="action-btn btn-undo" onclick="undoFilters()">戻す</button>
-        <button class="action-btn" id="btn-expand" onclick="toggleExpand()">⛶ 全画面</button>
+        <div class="filter-meta">
+          <span class="filter-count" id="filter-count"></span>
+          <div class="filter-btns">
+            <button class="action-btn btn-clear" onclick="clearFilters()">クリア</button>
+            <button class="action-btn btn-undo" onclick="undoFilters()">戻す</button>
+            <button class="action-btn" id="btn-expand" onclick="toggleExpand()">⛶ 全画面</button>
+          </div>
+        </div>
       </div>
 
       <div class="sim-table-wrap">
@@ -443,15 +449,15 @@
         }
       }
 
-      // ------- ボタン式フィルター -------
+      // ------- ■ラジオ式フィルター -------
       function initBtnFilter(groupId, filterKey) {
         const group = document.getElementById(groupId);
-        group.querySelectorAll('.btn-filter').forEach(btn => {
-          btn.addEventListener('click', () => {
-            group.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        group.querySelectorAll('.radio-filter').forEach(label => {
+          label.addEventListener('click', () => {
+            group.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
+            label.classList.add('active');
             prevFilters = { ...currentFilters };
-            currentFilters[filterKey] = btn.dataset.value;
+            currentFilters[filterKey] = label.dataset.value;
             renderTable();
           });
         });
@@ -473,12 +479,12 @@
       }
 
       function applyFilterUI() {
-        // ボタン式
+        // ■ラジオ式
         ['filter-type-group', 'filter-voice-group'].forEach((groupId, i) => {
           const key = ['type', 'voice'][i];
           const group = document.getElementById(groupId);
-          group.querySelectorAll('.btn-filter').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.value === currentFilters[key]);
+          group.querySelectorAll('.radio-filter').forEach(label => {
+            label.classList.toggle('active', label.dataset.value === currentFilters[key]);
           });
         });
         // セレクト
