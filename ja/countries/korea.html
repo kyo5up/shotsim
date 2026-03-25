@@ -747,7 +747,7 @@
         });
 
         // 国別JSONから取得（全国まとめJSONより高速）
-        const res = await fetch(`/data/sims_${COUNTRY_KEY}.json`);
+        const res = await fetch("/shotsim/data/sims_" + COUNTRY_KEY + ".json");
         const group = await res.json();
         if (!group || !group.sims) {
           document.getElementById("sim-tbody").innerHTML = '<tr><td colspan="22">データが見つかりません</td></tr>';
