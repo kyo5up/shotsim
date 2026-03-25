@@ -321,14 +321,20 @@
 
       /* フィルターパネル：ロード中グレーアウト */
       .filter-panel.loading {
-        opacity: 0.4;
         pointer-events: none;
+        position: relative;
       }
       .filter-panel.loading::after {
         content: "データ読み込み中…";
         position: absolute;
-        font-size: 0.8rem;
-        color: #888;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        color: #555;
+        border-radius: 6px;
       }
 
       @media (max-width: 768px) {
