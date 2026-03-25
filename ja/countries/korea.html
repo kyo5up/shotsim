@@ -1169,7 +1169,8 @@
         renderTable();
       }
 
-      init();
+      // 静的HTMLを先に表示してから2秒後にfetch・差し替えを開始
+      setTimeout(init, 2000);
     </script>
 
     <div style="max-width:1100px;margin:0 auto 60px;padding:0 24px;">
