@@ -456,14 +456,14 @@
         if (page.style.maxWidth === 'none') {
           page.style.maxWidth = '';
           page.style.padding = '';
-          wrap.style.maxHeight = '';
-          wrap.style.overflow = '';
+          wrap.style.maxHeight = '80vh';
+          wrap.style.overflow = 'auto';
           btn.textContent = '⛶ 全画面';
         } else {
           page.style.maxWidth = 'none';
           page.style.padding = '0 12px 60px';
-          wrap.style.maxHeight = 'none';
-          wrap.style.overflow = 'visible';
+          wrap.style.maxHeight = 'calc(100vh - 120px)';
+          wrap.style.overflow = 'auto';
           btn.textContent = '⊡ 枠あり';
         }
       }
