@@ -2413,6 +2413,382 @@
         "affiliate_url": "https://www.amazon.co.jp/dp/B083K83RTZ?tag=shotsim-22",
         "data_high": "無制限",
         "data_low": null
+      },
+      {
+        "id": "KR-056",
+        "asin": "B0DTY91RMV",
+        "product_name": "【韓国 eSIM】 1日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (1日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/71WIVQ-fRIL._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 1,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 880,
+        "price_max": 880,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTY91RMV?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-057",
+        "asin": "B0DTYG4WMH",
+        "product_name": "【韓国 eSIM】 2日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (2日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/71zJUzffo2L._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 2,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1280,
+        "price_max": 1280,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTYG4WMH?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-058",
+        "asin": "B0DTYKZPKB",
+        "product_name": "【韓国 eSIM】 3日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (3日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/715WXNhwg9L._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 3,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 1680,
+        "price_max": 1680,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTYKZPKB?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-059",
+        "asin": "B0DTYCLSCG",
+        "product_name": "【韓国 eSIM】 4日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (4日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/718FU11G2DL._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 4,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2080,
+        "price_max": 2080,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTYCLSCG?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-060",
+        "asin": "B0DTYL9LVC",
+        "product_name": "【韓国 eSIM】 5日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (5日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/71-tNPmln+L._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 5,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2480,
+        "price_max": 2480,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTYL9LVC?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-061",
+        "asin": "B0DTYQC8D8",
+        "product_name": "【韓国 eSIM】6日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (6日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/71KRRfvZJxL._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 6,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 2680,
+        "price_max": 2680,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0DTYQC8D8?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-062",
+        "asin": "B0FPBC31MJ",
+        "product_name": "【韓国 eSIM】12日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (12日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/71jjaaS9roL._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 12,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 4300,
+        "price_max": 4300,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0FPBC31MJ?tag=shotsim-22",
+        "official_url": null
+      },
+      {
+        "id": "KR-063",
+        "asin": "B0FPBDK1ST",
+        "product_name": "【韓国 eSIM】15日間 高速データ 完全無制限 即日発行可能｜SKTキャリア 5G/4G データ専用（電話番号なし）｜LINEで24時間サポート 韓国SIMカード 韓国 esim 韓国 sim (15日間 無制限)",
+        "image_url": "https://m.media-amazon.com/images/I/71ydcIfmwrL._AC_SX522_.jpg",
+        "company": {
+          "local": null,
+          "original": null,
+          "en": null
+        },
+        "brand": {
+          "local": "アーモンド　ＳＩｍ　ｃａｒｄ",
+          "original": null,
+          "en": null
+        },
+        "type": "eSIM",
+        "sim_sizes": {
+          "nano": null,
+          "micro": null,
+          "standard": null
+        },
+        "countries": [
+          "韓国"
+        ],
+        "carrier": {
+          "韓国": null
+        },
+        "network": [
+          "5G",
+          "4G",
+          "LTE"
+        ],
+        "bands": null,
+        "data_high": "無制限",
+        "data_low": null,
+        "days": 15,
+        "voice_call": false,
+        "sms": null,
+        "tethering": null,
+        "price_min": 4600,
+        "price_max": 4600,
+        "price_fetched_at": "2026-03-25",
+        "review_score": 5.0,
+        "review_count": 85,
+        "affiliate_url": "https://www.amazon.co.jp/dp/B0FPBDK1ST?tag=shotsim-22",
+        "official_url": null
       }
     ]
   },
