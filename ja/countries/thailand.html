@@ -1,347 +1,539 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>タイのSIM比較 | ShotSIM</title>
-  <meta name="description" content="タイ旅行で使えるSIM・eSIMを比較。Amazonで購入できる商品を掲載しています。">
-  <!-- OGP -->
-  <meta property="og:title" content="タイのSIM比較 | ShotSIM">
-  <meta property="og:description" content="タイ旅行で使えるSIM・eSIMを比較。Amazonで購入できる商品を掲載しています。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shotsim.net/ja/countries/thailand.html">
-  <meta property="og:image" content="https://shotsim.net/assets/img/ogp/ogp-site.png">
-  <meta property="og:locale" content="ja">
-  <meta name="twitter:card" content="summary">
-  <!-- hreflang -->
-  <link rel="alternate" hreflang="ja" href="https://shotsim.net/ja/countries/thailand.html">
-  <link rel="alternate" hreflang="en" href="https://shotsim.net/en/countries/thailand.html">
-  <link rel="alternate" hreflang="zh-TW" href="https://shotsim.net/zh-tw/countries/thailand.html">
-  <link rel="alternate" hreflang="zh-CN" href="https://shotsim.net/zh-cn/countries/thailand.html">
-  <link rel="alternate" hreflang="ko" href="https://shotsim.net/ko/countries/thailand.html">
-  <link rel="alternate" hreflang="x-default" href="https://shotsim.net/ja/countries/thailand.html">
-  <link rel="stylesheet" href="/shotsim/assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    .country-page { max-width: 900px; margin: 40px auto; padding: 0 24px 60px; }
-    .country-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
-    .country-header .flag { font-size: 3rem; }
-    .country-header h1 { font-size: 1.8rem; }
-    .sim-table { width: 100%; border-collapse: collapse; margin-top: 24px; margin-bottom: 16px; }
-    .sim-table th, .sim-table td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; vertical-align: middle; }
-    .sim-table th { background: #f0f4ff; font-weight: 600; }
-    .sim-table tr:nth-child(even) td { background: #fafafa; }
-    .amazon-btn { display: inline-block; padding: 6px 14px; background: #ff9900; color: #fff; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
-    .amazon-btn:hover { background: #e68900; }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>タイのSIM比較 | ShotSIM</title>
+    <meta name="description" content="タイ旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
+    <!-- OGP -->
+    <meta property="og:title" content="タイのSIM比較 | ShotSIM" />
+    <meta property="og:description" content="タイ旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shotsim.net/ja/countries/thailand.html" />
+    <meta property="og:image" content="https://shotsim.net/assets/img/ogp/ogp-site.png">
+    <meta property="og:locale" content="ja" />
+    <meta name="twitter:card" content="summary" />
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ja" href="https://shotsim.net/ja/countries/thailand.html" />
+    <link rel="alternate" hreflang="en" href="https://shotsim.net/en/countries/thailand.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://shotsim.net/zh-tw/countries/thailand.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://shotsim.net/zh-cn/countries/thailand.html" />
+    <link rel="alternate" hreflang="ko" href="https://shotsim.net/ko/countries/thailand.html" />
+    <link rel="alternate" hreflang="x-default" href="https://shotsim.net/ja/countries/thailand.html" />
+    <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
+    <style>
+      .country-page {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 24px 60px;
+      }
+      .country-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+      .country-header .flag { font-size: 3rem; }
+      .country-header h1 { font-size: 1.8rem; }
+      .data-note {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 24px;
+      }
+      .filter-panel {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-end;
+      }
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .filter-group-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .filter-group select {
+        padding: 5px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        background: #fafafa;
+      }
+      .radio-filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .radio-filter {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        color: #444;
+        user-select: none;
+      }
+      .radio-filter .radio-box {
+        width: 12px;
+        height: 12px;
+        background: #ddd;
+        border-radius: 2px;
+        flex-shrink: 0;
+        transition: background 0.12s;
+      }
+      .radio-filter.active .radio-box { background: #1A3263; }
+      .radio-filter:hover:not(.active) .radio-box { background: #aab8d8; }
+      .filter-meta {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+      }
+      .filter-count { font-size: 0.82rem; color: #888; }
+      .filter-btns { display: flex; gap: 6px; }
+      .action-btn {
+        padding: 4px 12px;
+        font-size: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #fafafa;
+        color: #555;
+      }
+      .action-btn:hover { background: #f0f0f0; }
+      .action-btn.btn-clear { border-color: #d44; color: #d44; }
+      .action-btn.btn-clear:hover { background: #fff0f0; }
+      .sim-table-wrap {
+        overflow: auto;
+        max-height: 80vh;
+      }
+      .sim-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.88rem;
+      }
+      .sim-table th {
+        background: #f0f4ff;
+        font-weight: 600;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        white-space: nowrap;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+      }
+      .sim-table td {
+        border: 1px solid #ddd;
+        padding: 10px 12px;
+        vertical-align: middle;
+      }
+      .sim-table tr:nth-child(even) td { background: #fafafa; }
+      .sim-table tr:hover td { background: #f5f8ff; }
+      .sim-table th:nth-child(1),
+      .sim-table td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background: #fff;
+      }
+      .sim-table th:nth-child(1) { background: #f0f4ff; z-index: 5; }
+      .sim-table tr:nth-child(even) td:nth-child(1) { background: #fafafa; }
+      .sim-table tr:hover td:nth-child(1) { background: #f5f8ff; }
+      .sim-table th:nth-child(2),
+      .sim-table td:nth-child(2) {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background: #fff;
+        border-right: 2px solid #ccc;
+      }
+      .sim-table th:nth-child(2) { background: #f0f4ff; z-index: 5; }
+      .sim-table tr:nth-child(even) td:nth-child(2) { background: #fafafa; }
+      .sim-table tr:hover td:nth-child(2) { background: #f5f8ff; }
+      .product-cell {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        min-width: 240px;
+        max-width: 380px;
+      }
+      .product-img {
+        width: 60px;
+        height: 60px;
+        background: #f5f5f5;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bbb;
+        font-size: 0.7rem;
+      }
+      .product-id { font-size: 0.72rem; color: #aaa; }
+      .product-name {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .product-brand { font-size: 0.78rem; color: #555; margin-top: 2px; }
+      .badge {
+        display: inline-block;
+        padding: 2px 7px;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .badge-esim { background: #e8f0fe; color: #1A3263; }
+      .badge-physical { background: #fce8e6; color: #c5221f; }
+      .badge-both { background: #e6f4ea; color: #1e7e34; }
+      .ok { color: #1a7a4a; font-weight: 700; }
+      .ng { color: #c5221f; }
+      .unknown { color: #aaa; font-size: 0.8rem; }
+      .countries-cell { min-width: 120px; max-width: 200px; }
+      .country-tag {
+        display: inline-block;
+        background: #f0f4ff;
+        border-radius: 3px;
+        padding: 1px 5px;
+        font-size: 0.72rem;
+        margin: 1px;
+        white-space: nowrap;
+      }
+      .network-cell { white-space: nowrap; }
+      .net-tag {
+        display: inline-block;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.72rem;
+        margin: 1px;
+      }
+      .net-5g { background: #e8f0fe; color: #1A3263; }
+      .net-4g { background: #e6f4ea; color: #1e7e34; }
+      .net-lte { background: #fff3e0; color: #e65100; }
+      .net-3g { background: #fce8e6; color: #c5221f; }
+      .price-cell { white-space: nowrap; text-align: right; }
+      .price-val { font-weight: 700; font-size: 1rem; }
+      .price-date { font-size: 0.7rem; color: #aaa; display: block; }
+      .stars { color: #f5a623; font-size: 0.85rem; }
+      .amazon-btn {
+        display: inline-block;
+        padding: 6px 14px;
+        background: #ff9900;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .amazon-btn:hover { background: #e68900; }
+      .mono-cell { font-family: monospace; font-size: 0.78rem; }
+      .filter-panel.loading { opacity: 0.5; pointer-events: none; }
+      @media (max-width: 768px) {
+        .sim-table { font-size: 0.78rem; }
+        .product-cell { min-width: 160px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/shotsim/" class="logo">&#x1F4E1; ShotSIM</a>
+      <nav class="lang-nav">
+        <a href="/shotsim/ja/countries/thailand.html" class="active">&#x65E5;&#x672C;&#x8A9E;</a>
+        <a href="/shotsim/en/countries/thailand.html">English</a>
+        <a href="/shotsim/zh-tw/countries/thailand.html">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+        <a href="/shotsim/zh-cn/countries/thailand.html">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a>
+        <a href="/shotsim/ko/countries/thailand.html">&#xD55C;&#xAD6D;&#xC5B4;</a>
+      </nav>
+    </header>
 
-  <header>
-    <a href="/shotsim/" class="logo">📡 ShotSIM</a>
-    <nav class="lang-nav">
-    <a href="/shotsim/ja/countries/thailand.html" class="active">日本語</a>
-    <a href="/shotsim/en/countries/thailand.html">English</a>
-    <a href="/shotsim/zh-tw/countries/thailand.html">繁體中文</a>
-    <a href="/shotsim/zh-cn/countries/thailand.html">简体中文</a>
-    <a href="/shotsim/ko/countries/thailand.html">한국어</a>
-    </nav>
-  </header>
+    <div class="country-page">
+      <div class="country-header">
+        <div class="flag">🇹🇭</div>
+        <div><h1>タイのSIM比較</h1></div>
+      </div>
+      <p class="data-note" id="data-note">価格は None 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。</p>
 
-  <div class="country-page">
-    <div class="country-header">
-      <div class="flag">🇹🇭</div>
-      <div>
-        <h1>タイのSIM比較</h1>
+      <div class="filter-panel loading" id="filter-panel">
+        <div class="filter-group">
+          <div class="filter-group-label">種別</div>
+          <div class="radio-filter-group" id="filter-type-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="eSIM"><span class="radio-box"></span>eSIM</label>
+            <label class="radio-filter" data-value="物理SIM"><span class="radio-box"></span>物理SIM</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">期間</div>
+          <select id="filter-days">
+            <option value="">すべて</option>
+            <option value="3">〜3日</option>
+            <option value="7">〜7日</option>
+            <option value="14">〜14日</option>
+            <option value="30">〜30日</option>
+            <option value="999">30日以上</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">通話</div>
+          <div class="radio-filter-group" id="filter-voice-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="1"><span class="radio-box"></span>通話あり</label>
+            <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
+          </div>
+        </div>
+        <div class="filter-meta">
+          <span class="filter-count" id="filter-count">8件表示</span>
+          <div class="filter-btns">
+            <button class="action-btn btn-clear" id="btn-clear">クリア</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sim-table-wrap" id="table-wrap">
+        <table class="sim-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>商品名</th>
+              <th>価格</th>
+              <th>購入</th>
+              <th>種別</th>
+              <th>高速<br>データ量</th>
+              <th>低速時</th>
+              <th>有効<br>日数</th>
+              <th>通話</th>
+              <th>SMS</th>
+              <th>テザ<br>リング</th>
+              <th>対応国</th>
+              <th>キャリア</th>
+              <th>通信<br>規格</th>
+              <th>評価</th>
+              <th>レビュー<br>件数</th>
+              <th>メーカー</th>
+              <th>ブランド</th>
+              <th>ASIN</th>
+              <th>価格</th>
+              <th>購入</th>
+            </tr>
+          </thead>
+          <tbody id="sim-tbody" data-static="true">
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">1</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-001</div><div class="product-name">韓国 プリペイド SIM データ容量 5GB 利用日数 8日 データ通信専用 SIMカード ローミング通信 韓国SIMカード 韓国SIMピン付き travelSIM prepaid sim Korea travel with sim pin</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0BJKZ47WV?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-physical">物理SIM</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">5GB</span></td><td style="text-align:center"><span style="white-space:nowrap;font-size:0.82rem">128kbps</span></td><td style="text-align:center;white-space:nowrap">8日間</td><td style="text-align:center"><span class="ng">✕</span></td><td style="text-align:center"><span class="ng">✕</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td><div class="countries-cell"><span class="country-tag">韓国</span><span class="country-tag">タイ</span></div></td><td style="text-align:center"><span class="unknown">-</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(256件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B0BJKZ47WV</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0BJKZ47WV?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">2</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-002</div><div class="product-name">1日の容量無制限タイプ // キャリア データSIM/格安SIMカード/プリペイド / [ SMS対応SIM/データ通信専用SIM] prepaid DATA SIM(100GBプラン, 12ヶ月,SIMのみ)</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B083K83RTZ?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-physical">物理SIM</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">無制限</span></td><td style="text-align:center"><span style="white-space:nowrap;font-size:0.82rem">128kbps</span></td><td style="text-align:center;white-space:nowrap">1日間</td><td style="text-align:center"><span class="ng">✕</span></td><td style="text-align:center"><span class="ng">✕</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span></div></td><td style="text-align:center"><span class="unknown">-</span></td><td><span class="network-cell"><span class="net-tag net-4g">4G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(108件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B083K83RTZ</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B083K83RTZ?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">3</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-003</div><div class="product-name">アジア太平洋11カ国 シンガポール・タイ・ベトナム・マレーシア eSIM 7日間 データ使い放題 7GBまで高速 Jet Sim 無制限 7日 ジェットシム</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0DXYMC4YC?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-both">両対応</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">無制限</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center;white-space:nowrap">7日間</td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="ok">○</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span><span class="country-tag">ベトナム</span></div></td><td style="text-align:center"><span style="font-size:0.82rem">Vinaphone</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(32件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B0DXYMC4YC</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0DXYMC4YC?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">4</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-004</div><div class="product-name">アジア太平洋11カ国 シンガポール・タイ・ベトナム・マレーシア eSIM 10日間 高速データ使い放題Jet Sim 無制限 10日 ジェットシム</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0FL1J28Z6?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-both">両対応</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">無制限</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center;white-space:nowrap">10日間</td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="ok">○</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span><span class="country-tag">ベトナム</span></div></td><td style="text-align:center"><span style="font-size:0.82rem">Vinaphone</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(16件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B0FL1J28Z6</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0FL1J28Z6?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">5</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-005</div><div class="product-name">アジア太平洋11カ国 シンガポール・タイ・ベトナム・マレーシア SIMカード 7日間 高速データ使い放題Jet Sim 物理SIM 無制限 7日 ジェットシム</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0FL1HZZX8?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-physical">物理SIM</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">無制限</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center;white-space:nowrap">7日間</td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="ok">○</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span><span class="country-tag">ベトナム</span></div></td><td style="text-align:center"><span style="font-size:0.82rem">TrueMove</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(3件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B0FL1HZZX8</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0FL1HZZX8?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">6</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-006</div><div class="product-name">【eSIM】《正規日本語版》タイ 8日間 5GBデータ通信 プリペイドeSIM 20分無料電話付 【中国聯通香港 China unicom】※面倒な本人登録・パスポート登録は不要です。※この商品は通常のSIMカードタイプではございません。ダウンロード版のeSIMですのでご購入の前に対応機種を改めてご確認ください。■納期・ダウンロード方法に関しまして必ず商品説明をご確認ください。</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0GHMQD3YZ?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-both">両対応</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">5GB</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center;white-space:nowrap">8日間</td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span></div></td><td style="text-align:center"><span class="unknown">-</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span><span class="net-tag net-3g">3G</span></span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B0GHMQD3YZ</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0GHMQD3YZ?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">7</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-007</div><div class="product-name">《正規日本語版》タイ 8日間 5GBデータ通信 プリペイドSIMカード 20分無料電話付 【中国聯通香港 China unicom】※面倒な本人登録・パスポート登録は不要です。</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0CV5FL8YW?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-physical">物理SIM</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">5GB</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center;white-space:nowrap">8日間</td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span></div></td><td style="text-align:center"><span class="unknown">-</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span><span class="net-tag net-3g">3G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(47件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B0CV5FL8YW</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B0CV5FL8YW?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        <tr><td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">8</td><td><div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">TH-008</div><div class="product-name">《正規日本語版》【ローミングSIM】東南アジア・マカオ・ベトナム・シンガポール・タイ・マレーシア・ラオス・インドネシア・フィリピン・カンボジア・スリランカの全10ヵ国 8日間 5GB ※面倒な本人登録・パスポート登録は不要です。このSIMカードは中国ではご利用できません。</div><div class="product-brand"></div></div></div></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B07DKH2SF3?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td><td style="text-align:center"><span class="badge badge-physical">物理SIM</span><br><small class="unknown">サイズ不明</small></td><td style="text-align:center"><span style="white-space:nowrap">5GB</span></td><td style="text-align:center"><span style="white-space:nowrap;font-size:0.82rem">256kbps</span></td><td style="text-align:center;white-space:nowrap">8日間</td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td style="text-align:center"><span class="unknown">不明</span></td><td><div class="countries-cell"><span class="country-tag">タイ</span><span class="country-tag">ベトナム</span></div></td><td style="text-align:center"><span class="unknown">-</span></td><td><span class="network-cell"><span class="net-tag net-5g">5G</span><span class="net-tag net-4g">4G</span><span class="net-tag net-3g">3G</span></span></td><td style="text-align:center"><span class="stars">★5.0</span></td><td style="text-align:center"><span style="font-size:0.82rem">(1,011件)</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="unknown">-</span></td><td style="text-align:center"><span class="mono-cell">B07DKH2SF3</span></td><td><span class="unknown">-</span></td><td><a href="https://www.amazon.co.jp/dp/B07DKH2SF3?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td></tr>
+        </tbody>
+        </table>
       </div>
     </div>
 
-    <p>旅行で使えるSIM・eSIMを比較しています。Amazonで購入できる商品を中心に掲載しています。</p>
+    <script>
+      const COUNTRY_NAME = "タイ";
+      let allSims = [];
+      let filteredSims = [];
+      let currentFilters = { type: "", days: "", voice: "" };
+      let sortCol = null;
+      let sortDir = 1;
 
-    <table class="sim-table">
-      <tr>
-        <th>商品名</th>
-        <th>種別</th>
-        <th>データ容量</th>
-        <th>期間</th>
-        <th>価格（目安）</th>
-        <th>購入</th>
-      </tr>
-      <tr>
-        <td>【タイ eSIM】4G-LTE 高速データ通信 データ無制限 データ通信専用【DTAC キャリア】タイ プリペイド simカード Thailand esim 当日発行可能 (1日間 高速データ)</td>
-        <td>eSIM</td>
-        <td>無制限</td>
-        <td>1日間</td>
-        <td>約690円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0D4QM8BY6?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【esim】タイ simカード【DTAC】4G-LTE 高速データ通信 当日発行可能 データ使い放題 Thailand esim データ通信専用 タイプリペイドSIMカード (3日間 高速データ)</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>3日間</td>
-        <td>約880円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CLKGP9H1?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>《正規日本語版》タイ 8日間 5GBデータ通信 プリペイドSIMカード 20分無料電話付 【中国聯通香港 China unicom】※面倒な本人登録・パスポート登録は不要です。</td>
-        <td>物理SIM</td>
-        <td>5GB</td>
-        <td>8日間</td>
-        <td>約890円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CV5FL8YW?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>東南アジア4ヵ国周遊SIM 利用期間 8日 データ容量5GB 4Gデータ通信 プリペイドSIM ローミングSIM シンガポール・タイ・マレーシア・ベトナム</td>
-        <td>SIM</td>
-        <td>5GB</td>
-        <td>8日間</td>
-        <td>約980円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0BXT5DZ96?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>東南アジア 5ヵ国周遊SIM 利用期間 8日 データ容量5GB 4Gデータ通信 プリペイドSIM ローミングSIM インドネシア・シンガポール・タイ・ベトナム・マレーシア</td>
-        <td>SIM</td>
-        <td>5GB</td>
-        <td>8日間</td>
-        <td>約980円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CJ4RL7T6?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【Almond eSIM】 タイ esim 7日間 15GB高速データ通信 データ使い放題 当日発行可能 LINEで24時間サポート バンコク プリペイド eSIM Thailand esim sim   (7日間15GB 1枚分)</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約990円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CS391HSR?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>AIS NET SIM タイ プリペイドSIM タイSIMカード 利用期間7日間 速度が一定で使い放題 データ通信用SIM ※SIMカード有効期限2026年6月30日まで</td>
-        <td>物理SIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約995円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B09RG11K86?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイSIM AIS タイプリペイドSIM 利用期間7日間 速度が一定で使い放題 データSIM ※SIMカード有効期限2026年6月30日まで</td>
-        <td>物理SIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約995円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0BZRF12NW?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>AIS タイ eSIM 7日間 (168時間) AIS正規発行 データ通信 使い放題 5G/4G対応 / タイESIM タイ旅行 タイ国内用 ESIM Prepaid esim/タイSIM カード タイプリペイド SIM ※eSIMの為、物理SIMの発送はありません</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約1,100円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CXJ8LMWJ?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【タイeSIM】利用期間7日間 データ通信 使い放題/タイプリペイドSIM AIS正規発行/急な相談もLINEでOK/タイ ESIM eSIM esim / ※esimの為、物理SIMの発送はありません。タイ SIM タイプリペイドSIM</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約1,100円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DG31QQGY?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイesim タイ国内用プリペイドESIM 7日間15GB高速データ通信 当日発行可能 Thailand ESIM (7日間15GB)</td>
-        <td>eSIM</td>
-        <td>15GB</td>
-        <td>7日間</td>
-        <td>約1,180円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0C6D2QGJD?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイ eSIM 5日間 データ通信使い放題 5G/4G対応 当日納品可能 QR簡单設定 緊急利用（Lineまで連絡）mewfi</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>5日間</td>
-        <td>約1,180円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CSJTNJR3?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイ eSIM 7日間 | 高速データ使い放題 | データ通信専用 | 24時間以内にQRコード送付 | テザリング・ホットスポット対応 | 5G/4G対応</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約1,189円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DJW7CP7F?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【タイeSIM】 7日間 (168時間) データ通信無制限 お急ぎの方即日対応(LINE相談受付中) 有効期限 / ご購入日より90日以内 タイSIMカードタイプではありません バンコク</td>
-        <td>eSIM</td>
-        <td>無制限</td>
-        <td>7日間</td>
-        <td>約1,250円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CSNNF6CB?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイ sim card 10日間(240時間) 利用可能 タイ国内用プリペイドSIM 5G 4G高速データ容量50ＧＢ タイ プリペイドSIMカード (TRUEMOVE10日間50GB)</td>
-        <td>物理SIM</td>
-        <td>50GB</td>
-        <td>10日間</td>
-        <td>約1,280円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CGPL8SCW?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【タイ SIM】Turemove 正規品 10日間 高速データ無制限 5G/4G対応 タイ プリペイドSIMカード タイsim 24時間多言語サポート</td>
-        <td>物理SIM</td>
-        <td>無制限</td>
-        <td>10日間</td>
-        <td>約1,280円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CZL8SGFV?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【タイeSIM】TRUE MOVE/Dtac回線 利用日数10日 データ通信 データ容量50GB/タイプリペイドSIM TRUE MOVE/Dtac/タイ ESIM eSIM esim / ※esimの為、物理SIMの発送はありません。</td>
-        <td>eSIM</td>
-        <td>50GB</td>
-        <td>10日間</td>
-        <td>約1,290円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DMP18921?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>《正規日本語版》【ローミングSIM】東南アジア・マカオ・ベトナム・シンガポール・タイ・マレーシア・ラオス・インドネシア・フィリピン・カンボジア・スリランカの全10ヵ国 8日間 5GB ※面倒な本人登録・パスポート登録は不要です。このSIMカードは中国ではご利用できません。</td>
-        <td>物理SIM</td>
-        <td>5GB</td>
-        <td>8日間</td>
-        <td>約1,300円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B07DKH2SF3?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【TRUE MOVE】タイSIM データ容量50GB データ利用期間10日間(240時間) タイ国内用 プリペイドSIM データSIM タイSIM prepaid sim Thailand travel</td>
-        <td>SIM</td>
-        <td>50GB</td>
-        <td>10日間</td>
-        <td>約1,350円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CZXBHH48?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイ eSIM 7日間 データ通信使い放題 5G/4G対応 当日納品可能 QR簡单設定 緊急利用（Lineまで連絡）mewfi</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約1,380円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CSJTMSLV?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【タイeSIM】 10日間 (240時間) データ通信無制限 お急ぎの方即日対応(LINE相談受付中) 有効期限 / ご購入日より90日以内 タイSIMカードタイプではありません バンコク</td>
-        <td>eSIM</td>
-        <td>無制限</td>
-        <td>10日間</td>
-        <td>約1,470円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DLPXZT7R?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイ eSIM 10日間 データ通信使い放題 5G/4G対応 DTAC回線利用 当日納品可能 QR簡单設定 緊急利用（Lineまで連絡）mewfi</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>10日間</td>
-        <td>約1,580円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CSJTQKVL?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【ヨーロッパSIM】8日間 1GB/毎日 DeSiM正規卸 | ヨーロッパ43ヵ国でも利用可能 | LINE相談受付中 | simフリー端末のみ対応 説明書付 イーシム/物理SIM</td>
-        <td>eSIM</td>
-        <td>1GB</td>
-        <td>8日間</td>
-        <td>約1,680円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DJ1J1BS4?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>アジア4カ国SIM データ容量15GB 利用期間30日 4Gデータ通信 プリペイドSIM ローミングSIM prepaidSIM 利用可能国：インドネシア・シンガポール・タイ・マレーシア</td>
-        <td>SIM</td>
-        <td>15GB</td>
-        <td>30日間</td>
-        <td>約1,800円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CYCJ582Y?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【 ヨーロッパ SIMカード 】 ヨーロッパ sim 30日間 高速データ通信 10GB ヨーロッパ esim Orange sim 正規品 （有効期限 : 購入日から60日）</td>
-        <td>eSIM</td>
-        <td>10GB</td>
-        <td>30日間</td>
-        <td>約1,870円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0D8T9S5B2?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【日本 sim】日本 プリペイドSIM 10GB 大容量 Rakutenキャリア使用 プリペイドSIMカード 日本国内用 SIMカード Prepaid SIM プリペイド データ専用 4GLTE対応 (360日間10GB（楽天回線）)</td>
-        <td>物理SIM</td>
-        <td>10GB</td>
-        <td>360日間</td>
-        <td>約1,930円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0D138PK57?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【ヨーロッパSIM】6日間 2GB/毎日 DeSiM正規卸 | ヨーロッパ43ヵ国でも利用可能 | LINE相談受付中 | simフリー端末のみ対応 説明書付 イーシム/物理SIM</td>
-        <td>eSIM</td>
-        <td>2GB</td>
-        <td>6日間</td>
-        <td>約2,080円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DJ1LRDD8?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【トルコ eSIM】15日間 5GB（十四泊十五日 コスパ重視） DeSiM正規卸 |LINE相談受付中 | 当日発行可能 |データ通信専用（電話番号なし） simフリー端末のみ対応 説明書付 イーシム</td>
-        <td>eSIM</td>
-        <td>5GB</td>
-        <td>15日間</td>
-        <td>約2,136円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DCSZJRLJ?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>タイesim タイ国内用プリペイドESIM 30日間10GB高速データ通信 25分間現地通話付き 当日発行可能 Thailand ESIM (30日間10GB+25分間現地通話)</td>
-        <td>eSIM</td>
-        <td>10GB</td>
-        <td>30日間</td>
-        <td>約2,880円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0DLJH4ZT5?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【タイ eSIM】 高速データ 使い放題 即日発行可能 【DTAC キャリア】 タイ プリペイド simカード プーケット バンコク タイ esim タイsim Thailand eSIM (30日間20GB)</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>30日間</td>
-        <td>約2,990円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0CXNVNK7V?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【東南アジア４カ国 eSIM】7日間 20GB（六泊七日 コスパ重視） DeSiM正規卸 | タイ シンガポール マレーシア インドネシアの4ヵ国 利用可能 |LINE相談受付中 | 当日発行可能 |データ通信専用（電話番号なし） simフリー端末のみ対応 説明書付 イーシム</td>
-        <td>eSIM</td>
-        <td>20GB</td>
-        <td>7日間</td>
-        <td>約3,570円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0D6NHVXTY?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【ギリシャeSIM】7日間 完全無制限（六泊七日 使い放題） DeSiM正規卸 |LINE相談受付中 | 当日発行可能 |データ通信専用（電話番号なし） simフリー端末のみ対応 説明書付 イーシム</td>
-        <td>eSIM</td>
-        <td>完全無制限</td>
-        <td>7日間</td>
-        <td>約5,496円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B0D8TW38CS?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-      <tr>
-        <td>【Docomo回線】365日間100GB 5G/4G/LTE対応 プリペイドSIM リチャージ可 期間延長可 残量確認可 契約不要 日本国内用 データ通信専用 物理SIM 大容量 ピン付き 設定簡単 年中無休 多言語安心サポート sim card japan【DXHUB】</td>
-        <td>物理SIM</td>
-        <td>100GB</td>
-        <td>365日間</td>
-        <td>約15,580円</td>
-        <td><a href="https://www.amazon.co.jp/dp/B093WJ26L4?tag=shotsim-22" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></td>
-      </tr>
-    </table>
-  </div>
+      function initBtnFilter(groupId, filterKey) {
+        const group = document.getElementById(groupId);
+        if (!group) return;
+        group.querySelectorAll('.radio-filter').forEach(label => {
+          label.addEventListener('click', () => {
+            group.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
+            label.classList.add('active');
+            currentFilters[filterKey] = label.dataset.value;
+            renderTable();
+          });
+        });
+      }
 
-  <footer>
-    <p>&copy; 2026 ShotSIM. 本サイトはAmazonアソシエイトプログラムに参加しています。</p>
-  </footer>
+      function sortSims(sims) {
+        if (!sortCol) return sims;
+        return [...sims].sort((a, b) => {
+          const va = a[sortCol] ?? -Infinity;
+          const vb = b[sortCol] ?? -Infinity;
+          return (va < vb ? -1 : va > vb ? 1 : 0) * sortDir;
+        });
+      }
 
-</body>
+      function renderBool(v) {
+        if (v === true) return '<span class="ok">○</span>';
+        if (v === false) return '<span class="ng">✕</span>';
+        return '<span class="unknown">不明</span>';
+      }
+      function renderBadge(t) {
+        if (!t) return '';
+        if (t.includes('eSIM')) return '<span class="badge badge-esim">eSIM</span>';
+        if (t.includes('両対応')) return '<span class="badge badge-both">両対応</span>';
+        if (t.includes('物理')) return '<span class="badge badge-physical">物理SIM</span>';
+        return `<span class="badge">${t}</span>`;
+      }
+      function renderTypeWithSize(sim) {
+        const t = sim.type || '';
+        const badge = renderBadge(t);
+        if (t.includes('eSIM')) return badge;
+        const sizes = sim.sim_sizes;
+        if (!sizes || Object.values(sizes).every(v => !v)) return badge + '<br><small class="unknown">サイズ不明</small>';
+        const supported = [];
+        if (sizes.nano) supported.push('nano');
+        if (sizes.micro) supported.push('micro');
+        if (sizes.standard) supported.push('標準');
+        return badge + `<br><small>${supported.length ? supported.join(' / ') : '<span class="unknown">不明</span>'}</small>`;
+      }
+      function renderPrice(sim) {
+        if (sim.price_min == null) return '<span class="unknown">-</span>';
+        const priceStr = sim.price_min === sim.price_max
+          ? `¥${sim.price_min.toLocaleString()}`
+          : `¥${sim.price_min.toLocaleString()}〜`;
+        const dateStr = sim.price_fetched_at ? `<span class="price-date">${sim.price_fetched_at} 時点</span>` : '';
+        return `<div class="price-cell"><span class="price-val">${priceStr}</span>${dateStr}</div>`;
+      }
+      function renderProduct(sim) {
+        const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
+        const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
+        const companyStr = companyLocal ? ` / ${companyLocal}` : '';
+        return `<div class="product-cell"><div class="product-img">準備中</div><div class="product-info"><div class="product-id">${sim.id || ''}</div><div class="product-name">${sim.product_name || ''}</div><div class="product-brand">${brandLocal}${companyStr}</div></div></div>`;
+      }
+      function renderCountries(countries) {
+        if (!countries || !countries.length) return '<span class="unknown">不明</span>';
+        return '<div class="countries-cell">' + countries.map(c => `<span class="country-tag">${c}</span>`).join('') + '</div>';
+      }
+      function renderNetwork(nets) {
+        if (!nets || !nets.length) return '<span class="unknown">-</span>';
+        const m = { '5G': 'net-5g', '4G': 'net-4g', 'LTE': 'net-lte', '3G': 'net-3g' };
+        return '<span class="network-cell">' + nets.map(n => `<span class="net-tag ${m[n] || ''}">${n}</span>`).join('') + '</span>';
+      }
+      function renderCarrier(sim) {
+        const d = sim.carrier;
+        if (!d) return '<span class="unknown">-</span>';
+        const v = Object.values(d)[0];
+        return v ? `<span style="font-size:0.82rem">${v}</span>` : '<span class="unknown">-</span>';
+      }
+
+      function applyFilters(sims) {
+        return sims.filter(s => {
+          if (!(s.countries || []).includes(COUNTRY_NAME)) return false;
+          if (currentFilters.type && !(s.type || '').includes(currentFilters.type)) return false;
+          if (currentFilters.days) {
+            const d = parseInt(currentFilters.days);
+            if (d === 999) { if (s.days <= 30) return false; }
+            else { if (s.days > d) return false; }
+          }
+          if (currentFilters.voice === "1" && s.voice_call !== true) return false;
+          if (currentFilters.voice === "0" && s.voice_call !== false) return false;
+          return true;
+        });
+      }
+
+      let stickyLeft = null;
+
+      function renderTable() {
+        filteredSims = applyFilters(allSims);
+        const sorted = sortSims(filteredSims);
+        const tbody = document.getElementById("sim-tbody");
+        document.getElementById("filter-count").textContent = `${sorted.length}件表示`;
+
+        const frag = document.createDocumentFragment();
+        sorted.forEach((sim, idx) => {
+          const tr = document.createElement('tr');
+          const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
+          const btn = `<a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a>`;
+          const price = renderPrice(sim);
+          const dh = sim.data_high != null ? `<span style="white-space:nowrap">${sim.data_high}</span>` : '<span class="unknown">-</span>';
+          const dl = sim.data_low == null ? '<span class="unknown">-</span>' : sim.data_low === "情報不明" ? '<span class="unknown">?</span>' : `<span style="white-space:nowrap;font-size:0.82rem">${sim.data_low}</span>`;
+          const days = sim.days != null ? sim.days + '日間' : '<span class="unknown">-</span>';
+          const rs = sim.review_score != null ? `<span class="stars">&#x2605;${sim.review_score.toFixed(1)}</span>` : '<span class="unknown">-</span>';
+          const rc = sim.review_count != null ? `<span style="font-size:0.82rem">(${sim.review_count.toLocaleString()}件)</span>` : '<span class="unknown">-</span>';
+          const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
+          const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
+          const company = companyLocal ? `<span style="font-size:0.82rem">${companyLocal}</span>` : '<span class="unknown">-</span>';
+          const brand = brandLocal ? `<span style="font-size:0.82rem">${brandLocal}</span>` : '<span class="unknown">-</span>';
+          const asin = sim.asin ? `<span class="mono-cell">${sim.asin}</span>` : '<span class="unknown">-</span>';
+          tr.innerHTML = `<td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx+1}</td><td>${renderProduct(sim)}</td><td>${price}</td><td>${btn}</td><td style="text-align:center">${renderTypeWithSize(sim)}</td><td style="text-align:center">${dh}</td><td style="text-align:center">${dl}</td><td style="text-align:center;white-space:nowrap">${days}</td><td style="text-align:center">${renderBool(sim.voice_call)}</td><td style="text-align:center">${renderBool(sim.sms)}</td><td style="text-align:center">${renderBool(sim.tethering)}</td><td>${renderCountries(sim.countries)}</td><td style="text-align:center">${renderCarrier(sim)}</td><td>${renderNetwork(sim.network)}</td><td style="text-align:center">${rs}</td><td style="text-align:center">${rc}</td><td style="text-align:center">${company}</td><td style="text-align:center">${brand}</td><td style="text-align:center">${asin}</td><td>${price}</td><td>${btn}</td>`;
+          frag.appendChild(tr);
+        });
+        tbody.textContent = '';
+        tbody.appendChild(frag);
+
+        if (stickyLeft === null) {
+          requestAnimationFrame(() => {
+            const firstTh = document.querySelector('.sim-table th:nth-child(1)');
+            if (!firstTh) return;
+            stickyLeft = firstTh.getBoundingClientRect().width;
+            document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
+              el.style.left = stickyLeft + 'px';
+            });
+          });
+        } else {
+          tbody.querySelectorAll('td:nth-child(2)').forEach(el => {
+            el.style.left = stickyLeft + 'px';
+          });
+        }
+      }
+
+      async function init() {
+        initBtnFilter('filter-type-group', 'type');
+        initBtnFilter('filter-voice-group', 'voice');
+        document.getElementById('filter-days').addEventListener('change', e => {
+          currentFilters.days = e.target.value;
+          renderTable();
+        });
+        document.getElementById('btn-clear').addEventListener('click', () => {
+          currentFilters = { type: "", days: "", voice: "" };
+          document.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
+          document.querySelectorAll('.radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
+          document.getElementById('filter-days').value = '';
+          renderTable();
+        });
+
+        try {
+          const res = await fetch('/shotsim/data/sims_th.json');
+          const group = await res.json();
+          if (!group || !group.sims) throw new Error('no sims');
+          allSims = group.sims || [];
+          const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
+          document.getElementById("data-note").textContent =
+            `価格は ${fetched} 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。`;
+          document.getElementById("filter-panel").classList.remove("loading");
+          renderTable();
+        } catch (e) {
+          document.getElementById("filter-panel").classList.remove("loading");
+        }
+      }
+
+      setTimeout(init, 2000);
+    </script>
+
+    <footer>
+      <p>&copy; 2026 ShotSIM. 本サイトはAmazonアソシエイトプログラムに参加しています。</p>
+    </footer>
+  </body>
 </html>
