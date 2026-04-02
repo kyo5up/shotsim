@@ -689,20 +689,14 @@
         tbody.textContent = '';
         tbody.appendChild(frag);
 
-        if (stickyLeft === null) {
-          requestAnimationFrame(() => {
-            const firstTh = document.querySelector('.sim-table th:nth-child(1)');
-            if (!firstTh) return;
-            stickyLeft = firstTh.getBoundingClientRect().width;
-            document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
-              el.style.left = stickyLeft + 'px';
-            });
-          });
-        } else {
-          tbody.querySelectorAll('td:nth-child(2)').forEach(el => {
+        requestAnimationFrame(() => {
+          const firstTh = document.querySelector('.sim-table th:nth-child(1)');
+          if (!firstTh) return;
+          stickyLeft = firstTh.getBoundingClientRect().width;
+          document.querySelectorAll('.sim-table th:nth-child(2), .sim-table td:nth-child(2)').forEach(el => {
             el.style.left = stickyLeft + 'px';
           });
-        }
+        });
       }
 
       async function init() {
