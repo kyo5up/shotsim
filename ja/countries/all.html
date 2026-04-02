@@ -289,6 +289,12 @@
             <option value="all">すべて表示</option>
           </select>
         </div>
+        <div class="filter-group">
+          <div class="filter-group-label">画像</div>
+          <label class="radio-filter active" id="toggle-images" style="cursor:pointer;">
+            <span class="radio-box" id="toggle-images-box"></span>表示する
+          </label>
+        </div>
         <div class="filter-meta">
           <span class="filter-count" id="filter-count">1687件表示</span>
           <div class="filter-btns">
@@ -2029,6 +2035,7 @@
       let sortDir = 1;
       let currentPage = 1;
       let pageSize = 100; // 100 or Infinity
+      let showImages = true;
 
       function initBtnFilter(groupId, filterKey) {
         const group = document.getElementById(groupId);
@@ -2089,9 +2096,9 @@
         const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
         const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
         const companyStr = companyLocal ? ` / ${companyLocal}` : '';
-        const imgHtml = sim.image_url
+        const imgHtml = (showImages && sim.image_url)
           ? `<div class="product-img"><img src="${sim.image_url}" alt="" loading="lazy" width="60" height="60" style="object-fit:contain;" /></div>`
-          : '<div class="product-img">準備中</div>';
+          : '<div class="product-img" style="display:none;"></div>';
         return `<div class="product-cell">${imgHtml}<div class="product-info"><div class="product-id">${sim.id || ''}</div><div class="product-name">${sim.product_name || ''}</div><div class="product-brand">${brandLocal}${companyStr}</div></div></div>`;
       }
       function renderCountries(countries) {
@@ -2222,6 +2229,14 @@
         document.getElementById('select-pagesize').addEventListener('change', e => {
           pageSize = e.target.value === 'all' ? Infinity : parseInt(e.target.value);
           currentPage = 1;
+          renderTable();
+        });
+        document.getElementById('toggle-images').addEventListener('click', () => {
+          showImages = !showImages;
+          const el = document.getElementById('toggle-images');
+          const box = document.getElementById('toggle-images-box');
+          el.classList.toggle('active', showImages);
+          el.childNodes[1].nodeValue = showImages ? '表示する' : 'オフ';
           renderTable();
         });
 
