@@ -282,6 +282,13 @@
             <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
           </div>
         </div>
+        <div class="filter-group">
+          <div class="filter-group-label">表示件数</div>
+          <select id="select-pagesize">
+            <option value="100" selected>100件ずつ</option>
+            <option value="all">すべて表示</option>
+          </select>
+        </div>
         <div class="filter-meta">
           <span class="filter-count" id="filter-count">1687件表示</span>
           <div class="filter-btns">
@@ -289,6 +296,8 @@
           </div>
         </div>
       </div>
+
+      <div id="pagination" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;"></div>
 
       <div class="sim-table-wrap" id="table-wrap">
         <table class="sim-table">
@@ -2008,6 +2017,8 @@
         </tbody>
         </table>
       </div>
+
+      <div id="pagination-bottom" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;"></div>
     </div>
 
     <script>
@@ -2016,6 +2027,8 @@
       let currentFilters = { type: "", days: "", voice: "" };
       let sortCol = null;
       let sortDir = 1;
+      let currentPage = 1;
+      let pageSize = 100; // 100 or Infinity
 
       function initBtnFilter(groupId, filterKey) {
         const group = document.getElementById(groupId);
@@ -2025,6 +2038,7 @@
             group.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
             label.classList.add('active');
             currentFilters[filterKey] = label.dataset.value;
+            currentPage = 1;
             renderTable();
           });
         });
@@ -2076,7 +2090,7 @@
         const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
         const companyStr = companyLocal ? ` / ${companyLocal}` : '';
         const imgHtml = sim.image_url
-          ? `<div class="product-img"><img src="${sim.image_url}" alt="" loading="lazy" style="width:60px;height:60px;object-fit:contain;" /></div>`
+          ? `<div class="product-img"><img src="${sim.image_url}" alt="" loading="lazy" width="60" height="60" style="object-fit:contain;" /></div>`
           : '<div class="product-img">準備中</div>';
         return `<div class="product-cell">${imgHtml}<div class="product-info"><div class="product-id">${sim.id || ''}</div><div class="product-name">${sim.product_name || ''}</div><div class="product-brand">${brandLocal}${companyStr}</div></div></div>`;
       }
@@ -2110,16 +2124,48 @@
         });
       }
 
+      function renderPagination(total) {
+        const containers = [document.getElementById('pagination'), document.getElementById('pagination-bottom')];
+        if (pageSize === Infinity) {
+          containers.forEach(c => { if (c) c.innerHTML = ''; });
+          return;
+        }
+        const totalPages = Math.ceil(total / pageSize);
+        const btns = [];
+        if (totalPages <= 1) {
+          containers.forEach(c => { if (c) c.innerHTML = ''; });
+          return;
+        }
+        for (let i = 1; i <= totalPages; i++) {
+          const active = i === currentPage ? ' style="font-weight:700;border-color:#1A3263;color:#1A3263;"' : '';
+          btns.push(`<button class="action-btn" onclick="goPage(${i})"${active}>${i}</button>`);
+        }
+        const html = btns.join('');
+        containers.forEach(c => { if (c) c.innerHTML = html; });
+      }
+
+      function goPage(p) {
+        currentPage = p;
+        renderTable();
+        document.getElementById('table-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
       let stickyLeft = null;
 
       function renderTable() {
         filteredSims = applyFilters(allSims);
         const sorted = sortSims(filteredSims);
+        const total = sorted.length;
+        const start = pageSize === Infinity ? 0 : (currentPage - 1) * pageSize;
+        const end = pageSize === Infinity ? total : Math.min(start + pageSize, total);
+        const pageSims = sorted.slice(start, end);
+
         const tbody = document.getElementById("sim-tbody");
-        document.getElementById("filter-count").textContent = `${sorted.length}件表示`;
+        const labelSuffix = pageSize === Infinity ? '' : ` (${start+1}〜${end})`;
+        document.getElementById("filter-count").textContent = `${total}件中${pageSims.length}件表示${labelSuffix}`;
 
         const frag = document.createDocumentFragment();
-        sorted.forEach((sim, idx) => {
+        pageSims.forEach((sim, idx) => {
           const tr = document.createElement('tr');
           const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
           const btn = `<a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a>`;
@@ -2134,11 +2180,12 @@
           const company = companyLocal ? `<span style="font-size:0.82rem">${companyLocal}</span>` : '<span class="unknown">-</span>';
           const brand = brandLocal ? `<span style="font-size:0.82rem">${brandLocal}</span>` : '<span class="unknown">-</span>';
           const asin = sim.asin ? `<span class="mono-cell">${sim.asin}</span>` : '<span class="unknown">-</span>';
-          tr.innerHTML = `<td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${idx+1}</td><td>${renderProduct(sim)}</td><td>${price}</td><td>${btn}</td><td style="text-align:center">${renderTypeWithSize(sim)}</td><td style="text-align:center">${dh}</td><td style="text-align:center">${dl}</td><td style="text-align:center;white-space:nowrap">${days}</td><td style="text-align:center">${renderBool(sim.voice_call)}</td><td style="text-align:center">${renderBool(sim.sms)}</td><td style="text-align:center">${renderBool(sim.tethering)}</td><td>${renderCountries(sim.countries)}</td><td style="text-align:center">${renderCarrier(sim)}</td><td>${renderNetwork(sim.network)}</td><td style="text-align:center">${rs}</td><td style="text-align:center">${rc}</td><td style="text-align:center">${company}</td><td style="text-align:center">${brand}</td><td style="text-align:center">${asin}</td><td>${price}</td><td>${btn}</td>`;
+          tr.innerHTML = `<td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${start+idx+1}</td><td>${renderProduct(sim)}</td><td>${price}</td><td>${btn}</td><td style="text-align:center">${renderTypeWithSize(sim)}</td><td style="text-align:center">${dh}</td><td style="text-align:center">${dl}</td><td style="text-align:center;white-space:nowrap">${days}</td><td style="text-align:center">${renderBool(sim.voice_call)}</td><td style="text-align:center">${renderBool(sim.sms)}</td><td style="text-align:center">${renderBool(sim.tethering)}</td><td>${renderCountries(sim.countries)}</td><td style="text-align:center">${renderCarrier(sim)}</td><td>${renderNetwork(sim.network)}</td><td style="text-align:center">${rs}</td><td style="text-align:center">${rc}</td><td style="text-align:center">${company}</td><td style="text-align:center">${brand}</td><td style="text-align:center">${asin}</td><td>${price}</td><td>${btn}</td>`;
           frag.appendChild(tr);
         });
         tbody.textContent = '';
         tbody.appendChild(frag);
+        renderPagination(total);
 
         if (stickyLeft === null) {
           requestAnimationFrame(() => {
@@ -2161,6 +2208,7 @@
         initBtnFilter('filter-voice-group', 'voice');
         document.getElementById('filter-days').addEventListener('change', e => {
           currentFilters.days = e.target.value;
+          currentPage = 1;
           renderTable();
         });
         document.getElementById('btn-clear').addEventListener('click', () => {
@@ -2168,6 +2216,12 @@
           document.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
           document.querySelectorAll('.radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
           document.getElementById('filter-days').value = '';
+          currentPage = 1;
+          renderTable();
+        });
+        document.getElementById('select-pagesize').addEventListener('change', e => {
+          pageSize = e.target.value === 'all' ? Infinity : parseInt(e.target.value);
+          currentPage = 1;
           renderTable();
         });
 
