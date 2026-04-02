@@ -287,15 +287,29 @@
           </div>
         </div>
         <div class="filter-group">
-          <div class="filter-group-label">期間</div>
+          <div class="filter-group-label">日数</div>
           <select id="filter-days">
             <option value="">すべて</option>
             <option value="3">〜3日</option>
+            <option value="5">〜5日</option>
             <option value="7">〜7日</option>
+            <option value="10">〜10日</option>
             <option value="14">〜14日</option>
             <option value="30">〜30日</option>
-            <option value="999">30日以上</option>
+            <option value="60">〜60日</option>
+            <option value="90">〜90日</option>
+            <option value="999">90日以上</option>
           </select>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">通信規格</div>
+          <div class="radio-filter-group" id="filter-network-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="5G"><span class="radio-box"></span>5G</label>
+            <label class="radio-filter" data-value="4G"><span class="radio-box"></span>4G</label>
+            <label class="radio-filter" data-value="LTE"><span class="radio-box"></span>LTE</label>
+            <label class="radio-filter" data-value="3G"><span class="radio-box"></span>3G</label>
+          </div>
         </div>
         <div class="filter-group">
           <div class="filter-group-label">通話</div>
@@ -593,7 +607,7 @@
       const COUNTRY_NAME = "アメリカ";
       let allSims = [];
       let filteredSims = [];
-      let currentFilters = { type: "", days: "", voice: "" };
+      let currentFilters = { type: "", days: "", network: "", voice: "" };
       let sortCol = null;
       let sortDir = 1;
 
@@ -685,6 +699,7 @@
             if (d === 999) { if (s.days <= 30) return false; }
             else { if (s.days > d) return false; }
           }
+          if (currentFilters.network && !(s.network || []).includes(currentFilters.network)) return false;
           if (currentFilters.voice === "1" && s.voice_call !== true) return false;
           if (currentFilters.voice === "0" && s.voice_call !== false) return false;
           return true;
@@ -733,13 +748,14 @@
 
       async function init() {
         initBtnFilter('filter-type-group', 'type');
+        initBtnFilter('filter-network-group', 'network');
         initBtnFilter('filter-voice-group', 'voice');
         document.getElementById('filter-days').addEventListener('change', e => {
           currentFilters.days = e.target.value;
           renderTable();
         });
         document.getElementById('btn-clear').addEventListener('click', () => {
-          currentFilters = { type: "", days: "", voice: "" };
+          currentFilters = { type: "", days: "", network: "", voice: "" };
           document.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
           document.querySelectorAll('.radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
           document.getElementById('filter-days').value = '';
