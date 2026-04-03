@@ -321,8 +321,8 @@
         <div class="filter-group">
           <div class="filter-group-label">表示件数</div>
           <select id="select-pagesize">
-            <option value="100" selected>100件ずつ</option>
-            <option value="all">すべて表示</option>
+            <option value="100">100件ずつ</option>
+            <option value="all" selected>すべて表示</option>
           </select>
         </div>
         <div class="filter-group">
@@ -384,7 +384,7 @@
       let sortCol = null;
       let sortDir = 1;
       let currentPage = 1;
-      let pageSize = 100;
+      let pageSize = Infinity;
       let showImages = true;
 
       function initBtnFilter(groupId, filterKey) {
