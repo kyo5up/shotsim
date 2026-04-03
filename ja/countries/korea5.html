@@ -2,14 +2,612 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>韓国のSIM比較（v5） | ShotSIM</title>
+    <title>韓国のSIM比較 | ShotSIM</title>
+    <meta name="description" content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
+    <!-- OGP -->
+    <meta property="og:title" content="韓国のSIM比較 | ShotSIM" />
+    <meta property="og:description" content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shotsim.net/ja/countries/korea.html" />
+    <meta property="og:image" content="https://shotsim.net/assets/img/ogp/ogp-site.png">
+    <meta property="og:locale" content="ja" />
+    <meta name="twitter:card" content="summary" />
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="ja" href="https://shotsim.net/ja/countries/korea.html" />
+    <link rel="alternate" hreflang="en" href="https://shotsim.net/en/countries/korea.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://shotsim.net/zh-tw/countries/korea.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://shotsim.net/zh-cn/countries/korea.html" />
+    <link rel="alternate" hreflang="ko" href="https://shotsim.net/ko/countries/korea.html" />
+    <link rel="alternate" hreflang="x-default" href="https://shotsim.net/ja/countries/korea.html" />
     <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
+    <style>
+      .country-page {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 24px 60px;
+      }
+      .country-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+      .country-header .flag { font-size: 3rem; }
+      .country-header h1 { font-size: 1.8rem; }
+      .data-note {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 24px;
+      }
+      .filter-panel {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-end;
+      }
+      .filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .filter-group-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .filter-group select {
+        padding: 5px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        background: #fafafa;
+      }
+      .radio-filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .radio-filter {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        color: #444;
+        user-select: none;
+      }
+      .radio-filter .radio-box {
+        width: 12px;
+        height: 12px;
+        background: #ddd;
+        border-radius: 2px;
+        flex-shrink: 0;
+        transition: background 0.12s;
+      }
+      .radio-filter.active .radio-box { background: #1A3263; }
+      .radio-filter:hover:not(.active) .radio-box { background: #aab8d8; }
+      .filter-meta {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+      }
+      .filter-count { font-size: 0.82rem; color: #888; }
+      .filter-btns { display: flex; gap: 6px; }
+      .action-btn {
+        padding: 4px 12px;
+        font-size: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #fafafa;
+        color: #555;
+      }
+      .action-btn:hover { background: #f0f0f0; }
+      .action-btn.btn-clear { border-color: #d44; color: #d44; }
+      .action-btn.btn-clear:hover { background: #fff0f0; }
+      .sim-table-wrap {
+        overflow: auto;
+        max-height: 80vh;
+      }
+      .sim-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.88rem;
+      }
+      .sim-table th {
+        background: #f0f4ff;
+        font-weight: 600;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        white-space: nowrap;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+      }
+      .sim-table td {
+        border: 1px solid #ddd;
+        padding: 10px 12px;
+        vertical-align: middle;
+      }
+      .sim-table tr:nth-child(even) td { background: #fafafa; }
+      .sim-table tr:hover td { background: #f5f8ff; }
+      .sim-table th:nth-child(1),
+      .sim-table td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        z-index: 3;
+        background: #fff;
+      }
+      .sim-table th:nth-child(1) { background: #f0f4ff; z-index: 5; }
+      .sim-table tr:nth-child(even) td:nth-child(1) { background: #fafafa; }
+      .sim-table tr:hover td:nth-child(1) { background: #f5f8ff; }
+      .sim-table th:nth-child(2),
+      .sim-table td:nth-child(2) {
+        position: sticky;
+        left: var(--sticky-col1-width, 0px);
+        z-index: 3;
+        background: #fff;
+        border-right: 2px solid #ccc;
+      }
+      .sim-table th:nth-child(2) { background: #f0f4ff; z-index: 5; }
+      .sim-table tr:nth-child(even) td:nth-child(2) { background: #fafafa; }
+      .sim-table tr:hover td:nth-child(2) { background: #f5f8ff; }
+      .product-cell {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        min-width: 240px;
+        max-width: 380px;
+      }
+      .product-img {
+        width: 60px;
+        height: 60px;
+        background: #f5f5f5;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #bbb;
+        font-size: 0.7rem;
+      }
+      .product-id { font-size: 0.72rem; color: #aaa; }
+      .product-name {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .product-brand { font-size: 0.78rem; color: #555; margin-top: 2px; }
+      .badge {
+        display: inline-block;
+        padding: 2px 7px;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .badge-esim { background: #e8f0fe; color: #1A3263; }
+      .badge-physical { background: #fce8e6; color: #c5221f; }
+      .badge-both { background: #e6f4ea; color: #1e7e34; }
+      .ok { color: #1a7a4a; font-weight: 700; }
+      .ng { color: #c5221f; }
+      .unknown { color: #aaa; font-size: 0.8rem; }
+      .countries-cell { min-width: 120px; max-width: 200px; }
+      .country-tag {
+        display: inline-block;
+        background: #f0f4ff;
+        border-radius: 3px;
+        padding: 1px 5px;
+        font-size: 0.72rem;
+        margin: 1px;
+        white-space: nowrap;
+      }
+      .network-cell { white-space: nowrap; }
+      .net-tag {
+        display: inline-block;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.72rem;
+        margin: 1px;
+      }
+      .net-5g { background: #e8f0fe; color: #1A3263; }
+      .net-4g { background: #e6f4ea; color: #1e7e34; }
+      .net-lte { background: #fff3e0; color: #e65100; }
+      .net-3g { background: #fce8e6; color: #c5221f; }
+      .price-cell { white-space: nowrap; text-align: right; }
+      .price-val { font-weight: 700; font-size: 1rem; }
+      .price-date { font-size: 0.7rem; color: #aaa; display: block; }
+      .stars { color: #f5a623; font-size: 0.85rem; }
+      .amazon-btn {
+        display: inline-block;
+        padding: 6px 14px;
+        background: #ff9900;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .amazon-btn:hover { background: #e68900; }
+      .mono-cell { font-family: monospace; font-size: 0.78rem; }
+      .filter-panel.loading { opacity: 0.5; pointer-events: none; }
+      @media (max-width: 768px) {
+        .sim-table { font-size: 0.78rem; }
+        .product-cell { min-width: 160px; }
+      }
+    </style>
   </head>
   <body>
-    <header><a href="/shotsim/" class="logo">📡 ShotSIM</a></header>
-    <div style="max-width:800px;margin:80px auto;padding:0 24px;text-align:center;">
-      <h1>韓国 v5（準備中）</h1>
+    <header>
+      <a href="/shotsim/" class="logo">&#x1F4E1; ShotSIM</a>
+      <nav class="lang-nav">
+        <a href="/shotsim/ja/countries/korea.html" class="active">&#x65E5;&#x672C;&#x8A9E;</a>
+        <a href="/shotsim/en/countries/korea.html">English</a>
+        <a href="/shotsim/zh-tw/countries/korea.html">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+        <a href="/shotsim/zh-cn/countries/korea.html">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a>
+        <a href="/shotsim/ko/countries/korea.html">&#xD55C;&#xAD6D;&#xC5B4;</a>
+      </nav>
+    </header>
+    <div class="country-page">
+      <div class="country-header">
+        <div class="flag">🇰🇷</div>
+        <div><h1>韓国のSIM比較</h1></div>
+      </div>
+      <p class="data-note" id="data-note">価格は None 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。</p>
+
+      <div class="filter-panel loading" id="filter-panel">
+        <div class="filter-group">
+          <div class="filter-group-label">種別</div>
+          <div class="radio-filter-group" id="filter-type-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="eSIM"><span class="radio-box"></span>eSIM</label>
+            <label class="radio-filter" data-value="物理SIM"><span class="radio-box"></span>物理SIM</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">日数</div>
+          <select id="filter-days">
+            <option value="">すべて</option>
+            <option value="3">〜3日</option>
+            <option value="5">〜5日</option>
+            <option value="7">〜7日</option>
+            <option value="10">〜10日</option>
+            <option value="14">〜14日</option>
+            <option value="30">〜30日</option>
+            <option value="60">〜60日</option>
+            <option value="90">〜90日</option>
+            <option value="999">90日以上</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">通信規格</div>
+          <div class="radio-filter-group" id="filter-network-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="5G"><span class="radio-box"></span>5G</label>
+            <label class="radio-filter" data-value="4G"><span class="radio-box"></span>4G</label>
+            <label class="radio-filter" data-value="LTE"><span class="radio-box"></span>LTE</label>
+            <label class="radio-filter" data-value="3G"><span class="radio-box"></span>3G</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">通話</div>
+          <div class="radio-filter-group" id="filter-voice-group">
+            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+            <label class="radio-filter" data-value="1"><span class="radio-box"></span>通話あり</label>
+            <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">表示件数</div>
+          <select id="select-pagesize">
+            <option value="100" selected>100件ずつ</option>
+            <option value="all">すべて表示</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <div class="filter-group-label">画像</div>
+          <label class="radio-filter active" id="toggle-images" style="cursor:pointer;">
+            <span class="radio-box" id="toggle-images-box"></span>表示する
+          </label>
+        </div>
+        <div class="filter-meta">
+          <span class="filter-count" id="filter-count">531件表示</span>
+          <div class="filter-btns">
+            <button class="action-btn btn-clear" id="btn-clear">クリア</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="pagination" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;"></div>
+
+      <div class="sim-table-wrap" id="table-wrap">
+        <table class="sim-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>商品名</th>
+              <th>価格</th>
+              <th>購入</th>
+              <th>種別</th>
+              <th>高速<br>データ量</th>
+              <th>低速時</th>
+              <th>有効<br>日数</th>
+              <th>通話</th>
+              <th>SMS</th>
+              <th>テザ<br>リング</th>
+              <th>対応国</th>
+              <th>キャリア</th>
+              <th>通信<br>規格</th>
+              <th>評価</th>
+              <th>レビュー<br>件数</th>
+              <th>メーカー</th>
+              <th>ブランド</th>
+              <th>ASIN</th>
+              <th>価格</th>
+              <th>購入</th>
+            </tr>
+          </thead>
+          <tbody id="sim-tbody"></tbody>
+        </table>
+      </div>
+
+      <div id="pagination-bottom" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;"></div>
     </div>
+
+    <script>
+      const COUNTRY_NAME = "韓国";
+      const JSON_PATH = "/shotsim/data/sims_kr.json";
+      let allSims = [];
+      let filteredSims = [];
+      let currentFilters = { type: "", days: "", network: "", voice: "" };
+      let sortCol = null;
+      let sortDir = 1;
+      let currentPage = 1;
+      let pageSize = 100;
+      let showImages = true;
+
+      function initBtnFilter(groupId, filterKey) {
+        const group = document.getElementById(groupId);
+        if (!group) return;
+        group.querySelectorAll('.radio-filter').forEach(label => {
+          label.addEventListener('click', () => {
+            group.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
+            label.classList.add('active');
+            currentFilters[filterKey] = label.dataset.value;
+            currentPage = 1;
+            renderTable();
+          });
+        });
+      }
+
+      function sortSims(sims) {
+        if (!sortCol) return sims;
+        return [...sims].sort((a, b) => {
+          const va = a[sortCol] ?? -Infinity;
+          const vb = b[sortCol] ?? -Infinity;
+          return (va < vb ? -1 : va > vb ? 1 : 0) * sortDir;
+        });
+      }
+
+      function renderBool(v) {
+        if (v === true) return '<span class="ok">○</span>';
+        if (v === false) return '<span class="ng">✕</span>';
+        return '<span class="unknown">不明</span>';
+      }
+      function renderBadge(t) {
+        if (!t) return '';
+        if (t.includes('eSIM')) return '<span class="badge badge-esim">eSIM</span>';
+        if (t.includes('両対応')) return '<span class="badge badge-both">両対応</span>';
+        if (t.includes('物理')) return '<span class="badge badge-physical">物理SIM</span>';
+        return `<span class="badge">${t}</span>`;
+      }
+      function renderTypeWithSize(sim) {
+        const t = sim.type || '';
+        const badge = renderBadge(t);
+        if (t.includes('eSIM')) return badge;
+        const sizes = sim.sim_sizes;
+        if (!sizes || Object.values(sizes).every(v => !v)) return badge + '<br><small class="unknown">サイズ不明</small>';
+        const supported = [];
+        if (sizes.nano) supported.push('nano');
+        if (sizes.micro) supported.push('micro');
+        if (sizes.standard) supported.push('標準');
+        return badge + `<br><small>${supported.length ? supported.join(' / ') : '<span class="unknown">不明</span>'}</small>`;
+      }
+      function renderPrice(sim) {
+        if (sim.price_min == null) return '<span class="unknown">-</span>';
+        const priceStr = sim.price_min === sim.price_max
+          ? `¥${sim.price_min.toLocaleString()}`
+          : `¥${sim.price_min.toLocaleString()}〜`;
+        const dateStr = sim.price_fetched_at ? `<span class="price-date">${sim.price_fetched_at} 時点</span>` : '';
+        return `<div class="price-cell"><span class="price-val">${priceStr}</span>${dateStr}</div>`;
+      }
+      function renderProduct(sim) {
+        const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
+        const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
+        const companyStr = companyLocal ? ` / ${companyLocal}` : '';
+        const imgHtml = (showImages && sim.image_url)
+          ? `<div class="product-img"><img src="${sim.image_url}" alt="" loading="lazy" width="60" height="60" style="object-fit:contain;" /></div>`
+          : '<div class="product-img" style="display:none;"></div>';
+        return `<div class="product-cell">${imgHtml}<div class="product-info"><div class="product-id">${sim.id || ''}</div><div class="product-name">${sim.product_name || ''}</div><div class="product-brand">${brandLocal}${companyStr}</div></div></div>`;
+      }
+      function renderCountries(countries) {
+        if (!countries || !countries.length) return '<span class="unknown">不明</span>';
+        return '<div class="countries-cell">' + countries.map(c => `<span class="country-tag">${c}</span>`).join('') + '</div>';
+      }
+      function renderNetwork(nets) {
+        if (!nets || !nets.length) return '<span class="unknown">-</span>';
+        const m = { '5G': 'net-5g', '4G': 'net-4g', 'LTE': 'net-lte', '3G': 'net-3g' };
+        return '<span class="network-cell">' + nets.map(n => `<span class="net-tag ${m[n] || ''}">${n}</span>`).join('') + '</span>';
+      }
+      function renderCarrier(sim) {
+        const d = sim.carrier;
+        if (!d) return '<span class="unknown">-</span>';
+        const v = Object.values(d)[0];
+        return v ? `<span style="font-size:0.82rem">${v}</span>` : '<span class="unknown">-</span>';
+      }
+
+      function applyFilters(sims) {
+        return sims.filter(s => {
+          if (COUNTRY_NAME && !(s.countries || []).includes(COUNTRY_NAME)) return false;
+          if (currentFilters.type && !(s.type || '').includes(currentFilters.type)) return false;
+          if (currentFilters.days) {
+            const d = parseInt(currentFilters.days);
+            if (d === 999) { if (s.days <= 30) return false; }
+            else { if (s.days > d) return false; }
+          }
+          if (currentFilters.network && !(s.network || []).includes(currentFilters.network)) return false;
+          if (currentFilters.voice === "1" && s.voice_call !== true) return false;
+          if (currentFilters.voice === "0" && s.voice_call !== false) return false;
+          return true;
+        });
+      }
+
+      function renderPagination(total) {
+        const containers = [document.getElementById('pagination'), document.getElementById('pagination-bottom')];
+        if (pageSize === Infinity) {
+          containers.forEach(c => { if (c) c.innerHTML = ''; });
+          return;
+        }
+        const totalPages = Math.ceil(total / pageSize);
+        if (totalPages <= 1) {
+          containers.forEach(c => { if (c) c.innerHTML = ''; });
+          return;
+        }
+        const btns = [];
+        for (let i = 1; i <= totalPages; i++) {
+          const active = i === currentPage ? ' style="font-weight:700;border-color:#1A3263;color:#1A3263;"' : '';
+          btns.push(`<button class="action-btn" onclick="goPage(${i})"${active}>${i}</button>`);
+        }
+        const html = btns.join('');
+        containers.forEach(c => { if (c) c.innerHTML = html; });
+      }
+
+      function goPage(p) {
+        currentPage = p;
+        renderTable();
+        document.getElementById('table-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      let stickyLeft = null;
+
+      function renderTable() {
+        filteredSims = applyFilters(allSims);
+        const sorted = sortSims(filteredSims);
+        const total = sorted.length;
+        const start = pageSize === Infinity ? 0 : (currentPage - 1) * pageSize;
+        const end = pageSize === Infinity ? total : Math.min(start + pageSize, total);
+        const pageSims = sorted.slice(start, end);
+
+        const tbody = document.getElementById("sim-tbody");
+        const labelSuffix = pageSize === Infinity ? '' : ` (${start+1}〜${end})`;
+        document.getElementById("filter-count").textContent = `${total}件中${pageSims.length}件表示${labelSuffix}`;
+
+        const frag = document.createDocumentFragment();
+        pageSims.forEach((sim, idx) => {
+          const tr = document.createElement('tr');
+          const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
+          const btn = `<a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a>`;
+          const price = renderPrice(sim);
+          const dh = sim.data_high != null ? `<span style="white-space:nowrap">${sim.data_high}</span>` : '<span class="unknown">-</span>';
+          const dl = sim.data_low == null ? '<span class="unknown">-</span>' : sim.data_low === "情報不明" ? '<span class="unknown">?</span>' : `<span style="white-space:nowrap;font-size:0.82rem">${sim.data_low}</span>`;
+          const days = sim.days != null ? sim.days + '日間' : '<span class="unknown">-</span>';
+          const rs = sim.review_score != null ? `<span class="stars">&#x2605;${sim.review_score.toFixed(1)}</span>` : '<span class="unknown">-</span>';
+          const rc = sim.review_count != null ? `<span style="font-size:0.82rem">(${sim.review_count.toLocaleString()}件)</span>` : '<span class="unknown">-</span>';
+          const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
+          const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
+          const company = companyLocal ? `<span style="font-size:0.82rem">${companyLocal}</span>` : '<span class="unknown">-</span>';
+          const brand = brandLocal ? `<span style="font-size:0.82rem">${brandLocal}</span>` : '<span class="unknown">-</span>';
+          const asin = sim.asin ? `<span class="mono-cell">${sim.asin}</span>` : '<span class="unknown">-</span>';
+          tr.innerHTML = `<td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${start+idx+1}</td><td>${renderProduct(sim)}</td><td>${price}</td><td>${btn}</td><td style="text-align:center">${renderTypeWithSize(sim)}</td><td style="text-align:center">${dh}</td><td style="text-align:center">${dl}</td><td style="text-align:center;white-space:nowrap">${days}</td><td style="text-align:center">${renderBool(sim.voice_call)}</td><td style="text-align:center">${renderBool(sim.sms)}</td><td style="text-align:center">${renderBool(sim.tethering)}</td><td>${renderCountries(sim.countries)}</td><td style="text-align:center">${renderCarrier(sim)}</td><td>${renderNetwork(sim.network)}</td><td style="text-align:center">${rs}</td><td style="text-align:center">${rc}</td><td style="text-align:center">${company}</td><td style="text-align:center">${brand}</td><td style="text-align:center">${asin}</td><td>${price}</td><td>${btn}</td>`;
+          frag.appendChild(tr);
+        });
+        tbody.textContent = '';
+        tbody.appendChild(frag);
+        renderPagination(total);
+
+        requestAnimationFrame(() => {
+          const firstTh = document.querySelector('.sim-table th:nth-child(1)');
+          if (!firstTh) return;
+          stickyLeft = firstTh.getBoundingClientRect().width;
+          document.querySelector('.sim-table').style.setProperty('--sticky-col1-width', stickyLeft + 'px');
+        });
+      }
+
+      async function init() {
+        initBtnFilter('filter-type-group', 'type');
+        initBtnFilter('filter-network-group', 'network');
+        initBtnFilter('filter-voice-group', 'voice');
+        document.getElementById('filter-days').addEventListener('change', e => {
+          currentFilters.days = e.target.value;
+          currentPage = 1;
+          renderTable();
+        });
+        document.getElementById('btn-clear').addEventListener('click', () => {
+          currentFilters = { type: "", days: "", network: "", voice: "" };
+          document.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
+          document.querySelectorAll('.radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
+          document.getElementById('filter-days').value = '';
+          currentPage = 1;
+          renderTable();
+        });
+        document.getElementById('select-pagesize').addEventListener('change', e => {
+          pageSize = e.target.value === 'all' ? Infinity : parseInt(e.target.value);
+          currentPage = 1;
+          renderTable();
+        });
+        document.getElementById('toggle-images').addEventListener('click', () => {
+          showImages = !showImages;
+          const el = document.getElementById('toggle-images');
+          el.classList.toggle('active', showImages);
+          el.childNodes[1].nodeValue = showImages ? '表示する' : 'オフ';
+          renderTable();
+        });
+
+        try {
+          const res = await fetch(JSON_PATH);
+          const data = await res.json();
+          // 国別: {country, sims: [...]} / 全国: [{country, sims: [...]}, ...]
+          if (Array.isArray(data)) {
+            allSims = data.flatMap(g => g.sims || []);
+          } else {
+            allSims = data.sims || [];
+          }
+          const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
+          document.getElementById("data-note").textContent =
+            `価格は ${fetched} 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。`;
+          document.getElementById("filter-panel").classList.remove("loading");
+          renderTable();
+        } catch (e) {
+          document.getElementById("filter-panel").classList.remove("loading");
+        }
+      }
+
+      init();
+    </script>
+
+    <footer>
+      <p>&copy; 2026 ShotSIM. 本サイトはAmazonアソシエイトプログラムに参加しています。</p>
+    </footer>
   </body>
 </html>
