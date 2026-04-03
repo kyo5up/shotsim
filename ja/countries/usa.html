@@ -27,9 +27,22 @@
     <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
     <style>
       .country-page {
-        max-width: 1100px;
+        max-width: 1300px;
         margin: 40px auto;
         padding: 0 24px 60px;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .filter-sidebar {
+        width: 220px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 16px;
+      }
+      .main-area {
+        flex: 1;
+        min-width: 0;
       }
       .country-header {
         display: flex;
@@ -51,9 +64,8 @@
         padding: 12px 16px;
         margin-bottom: 12px;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 16px;
-        align-items: flex-end;
       }
       .filter-group {
         display: flex;
@@ -98,15 +110,26 @@
       }
       .radio-filter.active .radio-box { background: #1A3263; }
       .radio-filter:hover:not(.active) .radio-box { background: #aab8d8; }
-      .filter-meta {
-        margin-left: auto;
+      .price-slider-wrap {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        gap: 4px;
+      }
+      .price-slider-labels {
+        font-size: 0.82rem;
+        color: #444;
+      }
+      .price-slider-wrap input[type=range] {
+        width: 100%;
+        accent-color: #1A3263;
+      }
+      .filter-meta {
+        display: flex;
+        flex-direction: column;
         gap: 6px;
       }
       .filter-count { font-size: 0.82rem; color: #888; }
-      .filter-btns { display: flex; gap: 6px; }
+      .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
       .action-btn {
         padding: 4px 12px;
         font-size: 0.8rem;
@@ -253,6 +276,8 @@
       .mono-cell { font-family: monospace; font-size: 0.78rem; }
       .filter-panel.loading { opacity: 0.5; pointer-events: none; }
       @media (max-width: 768px) {
+        .country-page { flex-direction: column; }
+        .filter-sidebar { width: 100%; position: static; }
         .sim-table { font-size: 0.78rem; }
         .product-cell { min-width: 160px; }
       }
@@ -270,109 +295,133 @@
       </nav>
     </header>
     <div class="country-page">
+      <div class="filter-sidebar">
+        <div class="filter-panel loading" id="filter-panel">
+          <div class="filter-group">
+            <div class="filter-group-label">種別</div>
+            <div class="radio-filter-group" id="filter-type-group">
+              <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+              <label class="radio-filter" data-value="eSIM"><span class="radio-box"></span>eSIM</label>
+              <label class="radio-filter" data-value="物理SIM"><span class="radio-box"></span>物理SIM</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">日数</div>
+            <div class="radio-filter-group" id="filter-days-group">
+              <label class="radio-filter" data-value="3"><span class="radio-box"></span>3日以内</label>
+              <label class="radio-filter" data-value="5"><span class="radio-box"></span>5日以内</label>
+              <label class="radio-filter" data-value="7"><span class="radio-box"></span>7日以内</label>
+              <label class="radio-filter" data-value="10"><span class="radio-box"></span>10日以内</label>
+              <label class="radio-filter" data-value="14"><span class="radio-box"></span>14日以内</label>
+              <label class="radio-filter" data-value="30"><span class="radio-box"></span>30日以内</label>
+              <label class="radio-filter" data-value="over30"><span class="radio-box"></span>30日超</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">通信規格</div>
+            <div class="radio-filter-group" id="filter-network-group">
+              <label class="radio-filter" data-value="5G"><span class="radio-box"></span>5G</label>
+              <label class="radio-filter" data-value="4G"><span class="radio-box"></span>4G</label>
+              <label class="radio-filter" data-value="LTE"><span class="radio-box"></span>LTE</label>
+              <label class="radio-filter" data-value="3G"><span class="radio-box"></span>3G</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">価格</div>
+            <div class="price-slider-wrap">
+              <div class="price-slider-labels" id="price-slider-labels">¥0 〜 ¥--</div>
+              <input type="range" id="price-range-min" min="0" max="99999" value="0" step="100" />
+              <input type="range" id="price-range-max" min="0" max="99999" value="99999" step="100" />
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">データ量</div>
+            <div class="radio-filter-group" id="filter-data-group">
+              <label class="radio-filter" data-value="500mb"><span class="radio-box"></span>〜500MB</label>
+              <label class="radio-filter" data-value="1gb"><span class="radio-box"></span>〜1GB</label>
+              <label class="radio-filter" data-value="3gb"><span class="radio-box"></span>〜3GB</label>
+              <label class="radio-filter" data-value="10gb"><span class="radio-box"></span>〜10GB</label>
+              <label class="radio-filter" data-value="over10gb"><span class="radio-box"></span>10GB超</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">通話</div>
+            <div class="radio-filter-group" id="filter-voice-group">
+              <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
+              <label class="radio-filter" data-value="1"><span class="radio-box"></span>通話あり</label>
+              <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">テザリング</div>
+            <div class="radio-filter-group" id="filter-tethering-group">
+              <label class="radio-filter" id="filter-tethering-label"><span class="radio-box"></span>テザリングあり</label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">表示件数</div>
+            <select id="select-pagesize">
+              <option value="100" selected>100件ずつ</option>
+              <option value="all">すべて表示</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-label">画像</div>
+            <label class="radio-filter active" id="toggle-images" style="cursor:pointer;">
+              <span class="radio-box" id="toggle-images-box"></span>表示する
+            </label>
+          </div>
+          <div class="filter-meta">
+            <span class="filter-count" id="filter-count">243件</span>
+            <div class="filter-btns">
+              <button class="action-btn btn-clear" id="btn-clear">クリア</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-area">
       <div class="country-header">
         <div class="flag">🇺🇸</div>
         <div><h1>アメリカのSIM比較</h1></div>
       </div>
-      <p class="data-note" id="data-note">価格は 2026-04-03 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。</p>
+        <p class="data-note" id="data-note">価格は 2026-04-03 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。</p>
 
-      <div class="filter-panel loading" id="filter-panel">
-        <div class="filter-group">
-          <div class="filter-group-label">種別</div>
-          <div class="radio-filter-group" id="filter-type-group">
-            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
-            <label class="radio-filter" data-value="eSIM"><span class="radio-box"></span>eSIM</label>
-            <label class="radio-filter" data-value="物理SIM"><span class="radio-box"></span>物理SIM</label>
-          </div>
+        <div id="pagination" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;"></div>
+
+        <div class="sim-table-wrap" id="table-wrap">
+          <table class="sim-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>商品名</th>
+                <th>価格</th>
+                <th>購入</th>
+                <th>種別</th>
+                <th>高速<br>データ量</th>
+                <th>低速時</th>
+                <th>有効<br>日数</th>
+                <th>通話</th>
+                <th>SMS</th>
+                <th>テザ<br>リング</th>
+                <th>対応国</th>
+                <th>キャリア</th>
+                <th>通信<br>規格</th>
+                <th>評価</th>
+                <th>レビュー<br>件数</th>
+                <th>メーカー</th>
+                <th>ブランド</th>
+                <th>ASIN</th>
+                <th>価格</th>
+                <th>購入</th>
+              </tr>
+            </thead>
+            <tbody id="sim-tbody"></tbody>
+          </table>
         </div>
-        <div class="filter-group">
-          <div class="filter-group-label">日数</div>
-          <select id="filter-days">
-            <option value="">すべて</option>
-            <option value="3">〜3日</option>
-            <option value="5">〜5日</option>
-            <option value="7">〜7日</option>
-            <option value="10">〜10日</option>
-            <option value="14">〜14日</option>
-            <option value="30">〜30日</option>
-            <option value="60">〜60日</option>
-            <option value="90">〜90日</option>
-            <option value="999">90日以上</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <div class="filter-group-label">通信規格</div>
-          <div class="radio-filter-group" id="filter-network-group">
-            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
-            <label class="radio-filter" data-value="5G"><span class="radio-box"></span>5G</label>
-            <label class="radio-filter" data-value="4G"><span class="radio-box"></span>4G</label>
-            <label class="radio-filter" data-value="LTE"><span class="radio-box"></span>LTE</label>
-            <label class="radio-filter" data-value="3G"><span class="radio-box"></span>3G</label>
-          </div>
-        </div>
-        <div class="filter-group">
-          <div class="filter-group-label">通話</div>
-          <div class="radio-filter-group" id="filter-voice-group">
-            <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
-            <label class="radio-filter" data-value="1"><span class="radio-box"></span>通話あり</label>
-            <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
-          </div>
-        </div>
-        <div class="filter-group">
-          <div class="filter-group-label">表示件数</div>
-          <select id="select-pagesize">
-            <option value="100" selected>100件ずつ</option>
-            <option value="all">すべて表示</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <div class="filter-group-label">画像</div>
-          <label class="radio-filter active" id="toggle-images" style="cursor:pointer;">
-            <span class="radio-box" id="toggle-images-box"></span>表示する
-          </label>
-        </div>
-        <div class="filter-meta">
-          <span class="filter-count" id="filter-count">243件表示</span>
-          <div class="filter-btns">
-            <button class="action-btn btn-clear" id="btn-clear">クリア</button>
-          </div>
-        </div>
+
+        <div id="pagination-bottom" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;"></div>
       </div>
-
-      <div id="pagination" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;"></div>
-
-      <div class="sim-table-wrap" id="table-wrap">
-        <table class="sim-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>商品名</th>
-              <th>価格</th>
-              <th>購入</th>
-              <th>種別</th>
-              <th>高速<br>データ量</th>
-              <th>低速時</th>
-              <th>有効<br>日数</th>
-              <th>通話</th>
-              <th>SMS</th>
-              <th>テザ<br>リング</th>
-              <th>対応国</th>
-              <th>キャリア</th>
-              <th>通信<br>規格</th>
-              <th>評価</th>
-              <th>レビュー<br>件数</th>
-              <th>メーカー</th>
-              <th>ブランド</th>
-              <th>ASIN</th>
-              <th>価格</th>
-              <th>購入</th>
-            </tr>
-          </thead>
-          <tbody id="sim-tbody"></tbody>
-        </table>
-      </div>
-
-      <div id="pagination-bottom" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;"></div>
     </div>
 
     <script>
@@ -380,13 +429,18 @@
       const JSON_PATH = "/shotsim/data/sims_us.json";
       let allSims = [];
       let filteredSims = [];
-      let currentFilters = { type: "", days: "", network: "", voice: "" };
+      let currentFilters = { type: "", days: [], network: [], dataRange: [], tethering: false, voice: "" };
+      let priceFilterMin = 0;
+      let priceFilterMax = Infinity;
+      let priceDataMin = 0;
+      let priceDataMax = 0;
       let sortCol = null;
       let sortDir = 1;
       let currentPage = 1;
       let pageSize = 100;
       let showImages = true;
 
+      // ラジオ風フィルター（単一選択）の初期化
       function initBtnFilter(groupId, filterKey) {
         const group = document.getElementById(groupId);
         if (!group) return;
@@ -399,6 +453,38 @@
             renderTable();
           });
         });
+      }
+
+      // チェックボックス風フィルター（複数選択・OR条件）の初期化
+      function initCheckFilter(groupId, filterKey) {
+        const group = document.getElementById(groupId);
+        if (!group) return;
+        group.querySelectorAll('.radio-filter').forEach(label => {
+          label.addEventListener('click', () => {
+            label.classList.toggle('active');
+            const val = label.dataset.value;
+            const idx = currentFilters[filterKey].indexOf(val);
+            if (idx === -1) {
+              currentFilters[filterKey].push(val);
+            } else {
+              currentFilters[filterKey].splice(idx, 1);
+            }
+            currentPage = 1;
+            renderTable();
+          });
+        });
+      }
+
+      // data_highをGB換算する
+      function parseDataHighGB(dataHigh) {
+        if (dataHigh == null) return null;
+        const s = String(dataHigh).trim();
+        if (s === '無制限' || s === 'Unlimited' || s === 'unlimited') return Infinity;
+        const mbMatch = s.match(/^([\d.]+)\s*MB$/i);
+        if (mbMatch) return parseFloat(mbMatch[1]) / 1024;
+        const gbMatch = s.match(/^([\d.]+)\s*GB$/i);
+        if (gbMatch) return parseFloat(gbMatch[1]);
+        return null;
       }
 
       function sortSims(sims) {
@@ -471,16 +557,50 @@
         return sims.filter(s => {
           if (COUNTRY_NAME && !(s.countries || []).includes(COUNTRY_NAME)) return false;
           if (currentFilters.type && !(s.type || '').includes(currentFilters.type)) return false;
-          if (currentFilters.days) {
-            const d = parseInt(currentFilters.days);
-            if (d === 999) { if (s.days <= 30) return false; }
-            else { if (s.days > d) return false; }
+          // 日数: OR条件（複数チェック可）
+          if (currentFilters.days.length > 0) {
+            const days = s.days;
+            const match = currentFilters.days.some(d => {
+              if (d === 'over30') return days != null && days > 30;
+              return days != null && days <= parseInt(d);
+            });
+            if (!match) return false;
           }
-          if (currentFilters.network && !(s.network || []).includes(currentFilters.network)) return false;
+          // 通信規格: OR条件（複数チェック可）
+          if (currentFilters.network.length > 0) {
+            if (!currentFilters.network.some(n => (s.network || []).includes(n))) return false;
+          }
+          // 価格フィルター
+          const price = s.price_min != null ? s.price_min : 0;
+          if (price < priceFilterMin || price > priceFilterMax) return false;
+          // データ量: OR条件（複数チェック可）
+          if (currentFilters.dataRange.length > 0) {
+            const gb = parseDataHighGB(s.data_high);
+            if (gb !== null) {
+              const match = currentFilters.dataRange.some(d => {
+                if (d === '500mb') return gb <= 0.5;
+                if (d === '1gb') return gb <= 1;
+                if (d === '3gb') return gb <= 3;
+                if (d === '10gb') return gb <= 10;
+                if (d === 'over10gb') return gb > 10;
+                return false;
+              });
+              if (!match) return false;
+            }
+          }
+          // テザリング
+          if (currentFilters.tethering && s.tethering !== true) return false;
           if (currentFilters.voice === "1" && s.voice_call !== true) return false;
           if (currentFilters.voice === "0" && s.voice_call !== false) return false;
           return true;
         });
+      }
+
+      function updatePriceLabel() {
+        const minVal = parseInt(document.getElementById('price-range-min').value);
+        const maxVal = parseInt(document.getElementById('price-range-max').value);
+        const maxLabel = maxVal >= priceDataMax ? `¥${maxVal.toLocaleString()}+` : `¥${maxVal.toLocaleString()}`;
+        document.getElementById('price-slider-labels').textContent = `¥${minVal.toLocaleString()} 〜 ${maxLabel}`;
       }
 
       function renderPagination(total) {
@@ -520,8 +640,11 @@
         const pageSims = sorted.slice(start, end);
 
         const tbody = document.getElementById("sim-tbody");
-        const labelSuffix = pageSize === Infinity ? '' : ` (${start+1}〜${end})`;
-        document.getElementById("filter-count").textContent = `${total}件中${pageSims.length}件表示${labelSuffix}`;
+        if (pageSize === Infinity) {
+          document.getElementById("filter-count").textContent = `${total}件`;
+        } else {
+          document.getElementById("filter-count").textContent = `${total}件中 ${pageSims.length}件表示`;
+        }
 
         const frag = document.createDocumentFragment();
         pageSims.forEach((sim, idx) => {
@@ -556,18 +679,54 @@
 
       async function init() {
         initBtnFilter('filter-type-group', 'type');
-        initBtnFilter('filter-network-group', 'network');
         initBtnFilter('filter-voice-group', 'voice');
-        document.getElementById('filter-days').addEventListener('change', e => {
-          currentFilters.days = e.target.value;
+        initCheckFilter('filter-days-group', 'days');
+        initCheckFilter('filter-network-group', 'network');
+        initCheckFilter('filter-data-group', 'dataRange');
+
+        // テザリングフィルター
+        const tetheringLabel = document.getElementById('filter-tethering-label');
+        if (tetheringLabel) {
+          tetheringLabel.addEventListener('click', () => {
+            currentFilters.tethering = !currentFilters.tethering;
+            tetheringLabel.classList.toggle('active', currentFilters.tethering);
+            currentPage = 1;
+            renderTable();
+          });
+        }
+
+        // 価格スライダー
+        const rangeMin = document.getElementById('price-range-min');
+        const rangeMax = document.getElementById('price-range-max');
+        rangeMin.addEventListener('input', () => {
+          if (parseInt(rangeMin.value) > parseInt(rangeMax.value)) {
+            rangeMin.value = rangeMax.value;
+          }
+          priceFilterMin = parseInt(rangeMin.value);
+          updatePriceLabel();
           currentPage = 1;
           renderTable();
         });
+        rangeMax.addEventListener('input', () => {
+          if (parseInt(rangeMax.value) < parseInt(rangeMin.value)) {
+            rangeMax.value = rangeMin.value;
+          }
+          priceFilterMax = parseInt(rangeMax.value) >= priceDataMax ? Infinity : parseInt(rangeMax.value);
+          updatePriceLabel();
+          currentPage = 1;
+          renderTable();
+        });
+
         document.getElementById('btn-clear').addEventListener('click', () => {
-          currentFilters = { type: "", days: "", network: "", voice: "" };
+          currentFilters = { type: "", days: [], network: [], dataRange: [], tethering: false, voice: "" };
           document.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
-          document.querySelectorAll('.radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
-          document.getElementById('filter-days').value = '';
+          document.querySelectorAll('#filter-type-group .radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
+          document.querySelectorAll('#filter-voice-group .radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
+          priceFilterMin = priceDataMin;
+          priceFilterMax = Infinity;
+          rangeMin.value = priceDataMin;
+          rangeMax.value = priceDataMax;
+          updatePriceLabel();
           currentPage = 1;
           renderTable();
         });
@@ -596,6 +755,21 @@
           const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
           document.getElementById("data-note").textContent =
             `価格は ${fetched} 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。`;
+
+          // 価格スライダーの初期化（データ範囲に合わせる）
+          const prices = allSims.map(s => s.price_min != null ? s.price_min : 0).filter(p => p > 0);
+          priceDataMin = 0;
+          priceDataMax = prices.length > 0 ? Math.max(...prices) : 99999;
+          priceFilterMin = priceDataMin;
+          priceFilterMax = Infinity;
+          rangeMin.min = priceDataMin;
+          rangeMin.max = priceDataMax;
+          rangeMin.value = priceDataMin;
+          rangeMax.min = priceDataMin;
+          rangeMax.max = priceDataMax;
+          rangeMax.value = priceDataMax;
+          updatePriceLabel();
+
           document.getElementById("filter-panel").classList.remove("loading");
           renderTable();
         } catch (e) {
