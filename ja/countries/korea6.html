@@ -28,7 +28,7 @@
       .page-wrap {
         display: flex;
         gap: 0;
-        padding: 0 0 60px;
+        padding: 0 24px 60px;
         align-items: flex-start;
       }
 
@@ -506,9 +506,16 @@
           ? `<img src="${sim.image_url}" alt="" loading="lazy">`
           : '<span style="font-size:0.65rem;color:#ccc;">NO<br>IMG</span>';
 
-        const daysStr  = sim.days      != null ? `${sim.days}日間`   : '-';
+        const daysStr  = sim.days      != null ? `${sim.days}日`      : '-';
         const dataStr  = sim.data_high != null ? sim.data_high        : '-';
         const dataLow  = sim.data_low  != null ? sim.data_low         : '-';
+
+        // 短縮表示名: brand / Xday / XGB / 主要国名 / X国 / type
+        const brandPart   = (sim.brand?.ja || sim.brand?.en || sim.brand?.original) || null;
+        const mainCountry = (sim.countries && sim.countries.length > 0) ? sim.countries[0] : null;
+        const countryPart = sim.countries && sim.countries.length > 1 ? `${sim.countries.length}カ国` : null;
+        const nameParts   = [brandPart, daysStr, dataStr, mainCountry, countryPart, sim.type].filter(Boolean);
+        const shortName   = nameParts.join(' / ');
         const priceStr = sim.price_min != null
           ? (sim.price_min === sim.price_max
               ? `¥${sim.price_min.toLocaleString()}`
@@ -526,7 +533,7 @@
             <div class="product-thumb">${thumbHtml}</div>
             <div class="product-main">
               <div class="product-id">${sim.id || ''}</div>
-              <div class="product-name">${sim.product_name || ''}</div>
+              <div class="product-name">${shortName}</div>
               <div class="product-specs">
                 ${badge(sim.type)}
                 <span class="spec-sep">|</span>
