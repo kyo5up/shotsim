@@ -184,28 +184,35 @@
       .product-main {
         flex: 1;
         min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .product-name-col {
+        width: 200px;
+        flex-shrink: 0;
       }
       .product-id {
-        font-size: 0.7rem;
+        font-size: 0.68rem;
         color: #bbb;
-        margin-bottom: 1px;
       }
       .product-name {
-        font-size: 0.88rem;
+        font-size: 0.85rem;
         font-weight: 600;
         color: #222;
-        line-height: 1.35;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
+        line-height: 1.3;
+        white-space: nowrap;
         overflow: hidden;
-        margin-bottom: 5px;
+        text-overflow: ellipsis;
       }
       .product-specs {
+        flex: 1;
+        min-width: 0;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 4px 8px;
         align-items: center;
+        overflow: hidden;
       }
       .spec-item {
         font-size: 0.78rem;
@@ -532,8 +539,10 @@
             <span class="product-rank">${rank}</span>
             <div class="product-thumb">${thumbHtml}</div>
             <div class="product-main">
-              <div class="product-id">${sim.id || ''}</div>
-              <div class="product-name">${shortName}</div>
+              <div class="product-name-col">
+                <div class="product-name">${shortName}</div>
+                <div class="product-id">${sim.id || ''}</div>
+              </div>
               <div class="product-specs">
                 ${badge(sim.type)}
                 <span class="spec-sep">|</span>
