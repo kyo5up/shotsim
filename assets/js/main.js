@@ -48,7 +48,7 @@ searchInput?.addEventListener('keydown', (e) => {
 
   const currentId = container.dataset.articleId;
 
-  fetch('/data/articles.json')
+  fetch('/shotsim/data/articles.json')
     .then(r => r.json())
     .then(articles => {
       const current = articles.find(a => a.id === currentId);
