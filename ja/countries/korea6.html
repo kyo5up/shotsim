@@ -2,14 +2,613 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/shotsim/assets/img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/shotsim/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/shotsim/assets/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/shotsim/assets/img/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>韓国のSIM比較（v5） | ShotSIM</title>
+    <title>韓国のSIM比較 | ShotSIM</title>
+    <meta name="description" content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
+    <meta property="og:title" content="韓国のSIM比較 | ShotSIM" />
+    <meta property="og:description" content="韓国旅行で使えるSIM・eSIMを比較。対応国・通信規格・SIMサイズ・価格を一覧で確認できます。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shotsim.net/ja/countries/korea.html" />
+    <meta property="og:image" content="https://shotsim.net/assets/img/ogp/ogp-site.png">
+    <meta property="og:locale" content="ja" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="alternate" hreflang="ja" href="https://shotsim.net/ja/countries/korea.html" />
+    <link rel="alternate" hreflang="en" href="https://shotsim.net/en/countries/korea.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://shotsim.net/zh-tw/countries/korea.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://shotsim.net/zh-cn/countries/korea.html" />
+    <link rel="alternate" hreflang="ko" href="https://shotsim.net/ko/countries/korea.html" />
+    <link rel="alternate" hreflang="x-default" href="https://shotsim.net/ja/countries/korea.html" />
     <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
+    <style>
+      /* ===== レイアウト ===== */
+      .page-wrap {
+        display: flex;
+        gap: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px 60px;
+        align-items: flex-start;
+      }
+
+      /* ===== サイドバー ===== */
+      .sidebar {
+        width: 200px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 16px;
+        max-height: calc(100vh - 32px);
+        overflow-y: auto;
+        padding: 16px 0;
+      }
+      .sidebar::-webkit-scrollbar { width: 4px; }
+      .sidebar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+      .filter-section {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 0;
+      }
+      .filter-section:last-child { border-bottom: none; }
+      .filter-section-title {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 6px;
+        padding: 0 4px;
+      }
+      .filter-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 3px 4px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        color: #333;
+        user-select: none;
+      }
+      .filter-option:hover { background: #f5f5f5; }
+      .filter-option input[type="radio"] {
+        width: 14px;
+        height: 14px;
+        accent-color: #1A3263;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .filter-option.active { color: #1A3263; font-weight: 600; }
+
+      .btn-clear-all {
+        width: 100%;
+        margin-top: 12px;
+        padding: 6px 0;
+        font-size: 0.8rem;
+        border: 1px solid #d44;
+        border-radius: 4px;
+        background: #fff;
+        color: #d44;
+        cursor: pointer;
+      }
+      .btn-clear-all:hover { background: #fff0f0; }
+
+      /* ===== メインコンテンツ ===== */
+      .main-content {
+        flex: 1;
+        min-width: 0;
+        padding: 16px 0 0 24px;
+      }
+      .main-header {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 4px;
+      }
+      .main-header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .result-count {
+        font-size: 0.85rem;
+        color: #666;
+      }
+      .data-note {
+        font-size: 0.75rem;
+        color: #999;
+        margin-bottom: 12px;
+      }
+
+      /* ===== リストコントロール ===== */
+      .list-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #1A3263;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 6px 0;
+        margin-bottom: 0;
+      }
+      .sort-wrap, .pagesize-wrap {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+        color: #555;
+      }
+      .sort-wrap select, .pagesize-wrap select {
+        font-size: 0.8rem;
+        padding: 2px 6px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fafafa;
+      }
+
+      /* ===== 商品カード ===== */
+      .product-list { list-style: none; margin: 0; padding: 0; }
+      .product-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #e8e8e8;
+        padding: 10px 4px;
+        transition: background 0.1s;
+      }
+      .product-item:hover { background: #f8f9ff; }
+
+      .product-rank {
+        width: 24px;
+        text-align: center;
+        font-size: 0.78rem;
+        color: #bbb;
+        flex-shrink: 0;
+      }
+      .product-thumb {
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
+        background: #f5f5f5;
+        border: 1px solid #eee;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .product-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .product-main {
+        flex: 1;
+        min-width: 0;
+      }
+      .product-id {
+        font-size: 0.7rem;
+        color: #bbb;
+        margin-bottom: 1px;
+      }
+      .product-name {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #222;
+        line-height: 1.35;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 5px;
+      }
+      .product-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        align-items: center;
+      }
+      .spec-item {
+        font-size: 0.78rem;
+        color: #555;
+        white-space: nowrap;
+      }
+      .spec-label { color: #999; margin-right: 2px; }
+      .spec-sep { color: #ddd; font-size: 0.78rem; }
+
+      /* バッジ */
+      .badge {
+        display: inline-block;
+        padding: 1px 6px;
+        border-radius: 10px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .badge-esim     { background: #e8f0fe; color: #1A3263; }
+      .badge-physical { background: #fce8e6; color: #c5221f; }
+      .badge-both     { background: #e6f4ea; color: #1e7e34; }
+
+      /* 通信規格タグ */
+      .net-tag { display: inline-block; padding: 0 4px; border-radius: 3px; font-size: 0.7rem; }
+      .net-5g  { background: #e8f0fe; color: #1A3263; }
+      .net-4g  { background: #e6f4ea; color: #1e7e34; }
+      .net-lte { background: #fff3e0; color: #e65100; }
+      .net-3g  { background: #fce8e6; color: #c5221f; }
+
+      .ok  { color: #1a7a4a; font-weight: 700; }
+      .ng  { color: #c5221f; }
+      .unk { color: #bbb; }
+
+      /* 右側：価格＋ボタン */
+      .product-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+        flex-shrink: 0;
+        min-width: 120px;
+      }
+      .price-val {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #111;
+        white-space: nowrap;
+      }
+      .price-date { font-size: 0.68rem; color: #aaa; }
+      .amazon-btn {
+        display: inline-block;
+        padding: 6px 14px;
+        background: #ff9900;
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .amazon-btn:hover { background: #e68900; }
+
+      /* ===== ページネーション ===== */
+      .pagination { display: flex; flex-wrap: wrap; gap: 4px; margin: 10px 0; }
+      .page-btn {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fafafa;
+        cursor: pointer;
+        color: #444;
+      }
+      .page-btn:hover { background: #f0f0f0; }
+      .page-btn.active { border-color: #1A3263; color: #1A3263; font-weight: 700; background: #fff; }
+
+      .loading-msg { text-align: center; padding: 40px; color: #aaa; font-size: 0.9rem; }
+
+      @media (max-width: 768px) {
+        .page-wrap { flex-direction: column; padding: 0 8px 40px; }
+        .sidebar { width: 100%; position: static; max-height: none; }
+        .main-content { padding: 12px 0 0; }
+        .product-thumb { width: 48px; height: 48px; }
+        .product-right { min-width: 90px; }
+        .price-val { font-size: 0.9rem; }
+      }
+    </style>
   </head>
   <body>
-    <header><a href="/shotsim/" class="logo">📡 ShotSIM</a></header>
-    <div style="max-width:800px;margin:80px auto;padding:0 24px;text-align:center;">
-      <h1>韓国 v6（準備中）</h1>
+    <header>
+      <a href="/shotsim/" class="logo">&#x1F4E1; ShotSIM</a>
+      <nav class="lang-nav">
+        <a href="/shotsim/ja/countries/korea.html" class="active">&#x65E5;&#x672C;&#x8A9E;</a>
+        <a href="/en/countries/korea.html">English</a>
+        <a href="/zh-tw/countries/korea.html">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a>
+        <a href="/zh-cn/countries/korea.html">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a>
+        <a href="/ko/countries/korea.html">&#xD55C;&#xAD6D;&#xC5B4;</a>
+      </nav>
+    </header>
+
+    <div class="page-wrap">
+      <!-- ===== サイドバー ===== -->
+      <aside class="sidebar">
+        <div class="filter-section">
+          <div class="filter-section-title">種別</div>
+          <label class="filter-option active" data-filter="type" data-value=""><input type="radio" name="type" checked> すべて</label>
+          <label class="filter-option" data-filter="type" data-value="eSIM"><input type="radio" name="type"> eSIM</label>
+          <label class="filter-option" data-filter="type" data-value="物理SIM"><input type="radio" name="type"> 物理SIM</label>
+          <label class="filter-option" data-filter="type" data-value="両対応"><input type="radio" name="type"> 両対応</label>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">有効日数</div>
+          <label class="filter-option active" data-filter="days" data-value=""><input type="radio" name="days" checked> すべて</label>
+          <label class="filter-option" data-filter="days" data-value="3"><input type="radio" name="days"> 〜3日</label>
+          <label class="filter-option" data-filter="days" data-value="5"><input type="radio" name="days"> 〜5日</label>
+          <label class="filter-option" data-filter="days" data-value="7"><input type="radio" name="days"> 〜7日</label>
+          <label class="filter-option" data-filter="days" data-value="10"><input type="radio" name="days"> 〜10日</label>
+          <label class="filter-option" data-filter="days" data-value="14"><input type="radio" name="days"> 〜14日</label>
+          <label class="filter-option" data-filter="days" data-value="30"><input type="radio" name="days"> 〜30日</label>
+          <label class="filter-option" data-filter="days" data-value="999"><input type="radio" name="days"> 30日以上</label>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">通信規格</div>
+          <label class="filter-option active" data-filter="network" data-value=""><input type="radio" name="network" checked> すべて</label>
+          <label class="filter-option" data-filter="network" data-value="5G"><input type="radio" name="network"> 5G</label>
+          <label class="filter-option" data-filter="network" data-value="4G"><input type="radio" name="network"> 4G</label>
+          <label class="filter-option" data-filter="network" data-value="LTE"><input type="radio" name="network"> LTE</label>
+          <label class="filter-option" data-filter="network" data-value="3G"><input type="radio" name="network"> 3G</label>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">通話</div>
+          <label class="filter-option active" data-filter="voice" data-value=""><input type="radio" name="voice" checked> すべて</label>
+          <label class="filter-option" data-filter="voice" data-value="1"><input type="radio" name="voice"> 通話あり</label>
+          <label class="filter-option" data-filter="voice" data-value="0"><input type="radio" name="voice"> データのみ</label>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">テザリング</div>
+          <label class="filter-option active" data-filter="tethering" data-value=""><input type="radio" name="tethering" checked> すべて</label>
+          <label class="filter-option" data-filter="tethering" data-value="1"><input type="radio" name="tethering"> あり</label>
+        </div>
+
+        <button class="btn-clear-all" id="btn-clear">フィルターをリセット</button>
+      </aside>
+
+      <!-- ===== メイン ===== -->
+      <main class="main-content">
+        <div class="main-header">
+          <h1>🇰🇷 韓国のSIM比較</h1>
+          <span class="result-count" id="result-count"></span>
+        </div>
+        <p class="data-note" id="data-note">読み込み中...</p>
+
+        <div class="list-controls">
+          <div class="sort-wrap">
+            並び順:
+            <select id="select-sort">
+              <option value="price_asc">価格が安い順</option>
+              <option value="price_desc">価格が高い順</option>
+              <option value="days_asc">日数が少ない順</option>
+              <option value="days_desc">日数が多い順</option>
+              <option value="review_desc">評価が高い順</option>
+            </select>
+          </div>
+          <div class="pagesize-wrap">
+            表示件数:
+            <select id="select-pagesize">
+              <option value="50">50件</option>
+              <option value="100" selected>100件</option>
+              <option value="all">すべて</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pagination" id="pagination-top"></div>
+        <ul class="product-list" id="product-list">
+          <li class="loading-msg">読み込み中...</li>
+        </ul>
+        <div class="pagination" id="pagination-bottom"></div>
+      </main>
     </div>
+
+    <script>
+      const COUNTRY_NAME = "韓国";
+      const JSON_PATH = "/shotsim/data/sims_kr.json";
+
+      let allSims = [];
+      let filteredSims = [];
+      let currentFilters = { type: "", days: "", network: "", voice: "", tethering: "" };
+      let sortKey = "price_asc";
+      let currentPage = 1;
+      let pageSize = 100;
+
+      // ===== フィルター =====
+      document.querySelectorAll('.filter-option').forEach(label => {
+        label.addEventListener('click', () => {
+          const filterKey = label.dataset.filter;
+          document.querySelectorAll(`[data-filter="${filterKey}"]`).forEach(l => {
+            l.classList.remove('active');
+            l.querySelector('input').checked = false;
+          });
+          label.classList.add('active');
+          label.querySelector('input').checked = true;
+          currentFilters[filterKey] = label.dataset.value;
+          currentPage = 1;
+          render();
+        });
+      });
+
+      document.getElementById('btn-clear').addEventListener('click', () => {
+        currentFilters = { type: "", days: "", network: "", voice: "", tethering: "" };
+        document.querySelectorAll('.filter-option').forEach(l => {
+          l.classList.remove('active');
+          l.querySelector('input').checked = false;
+        });
+        document.querySelectorAll('.filter-option[data-value=""]').forEach(l => {
+          l.classList.add('active');
+          l.querySelector('input').checked = true;
+        });
+        currentPage = 1;
+        render();
+      });
+
+      document.getElementById('select-sort').addEventListener('change', e => {
+        sortKey = e.target.value;
+        currentPage = 1;
+        render();
+      });
+
+      document.getElementById('select-pagesize').addEventListener('change', e => {
+        pageSize = e.target.value === 'all' ? Infinity : parseInt(e.target.value);
+        currentPage = 1;
+        render();
+      });
+
+      // ===== フィルター適用 =====
+      function applyFilters(sims) {
+        return sims.filter(s => {
+          if (COUNTRY_NAME && !(s.countries || []).includes(COUNTRY_NAME)) return false;
+          if (currentFilters.type) {
+            const t = s.type || '';
+            if (currentFilters.type === 'eSIM'   && !t.includes('eSIM'))    return false;
+            if (currentFilters.type === '物理SIM' && (t.includes('eSIM') || t.includes('両対応'))) return false;
+            if (currentFilters.type === '両対応'  && !t.includes('両対応')) return false;
+          }
+          if (currentFilters.days) {
+            const d = parseInt(currentFilters.days);
+            if (d === 999) { if ((s.days || 0) <= 30) return false; }
+            else           { if ((s.days || 9999) > d) return false; }
+          }
+          if (currentFilters.network && !(s.network || []).includes(currentFilters.network)) return false;
+          if (currentFilters.voice === "1" && s.voice_call !== true)  return false;
+          if (currentFilters.voice === "0" && s.voice_call !== false) return false;
+          if (currentFilters.tethering === "1" && s.tethering !== true) return false;
+          return true;
+        });
+      }
+
+      // ===== ソート =====
+      function sortSims(sims) {
+        return [...sims].sort((a, b) => {
+          switch (sortKey) {
+            case 'price_asc':   return (a.price_min ?? 999999) - (b.price_min ?? 999999);
+            case 'price_desc':  return (b.price_min ?? 0) - (a.price_min ?? 0);
+            case 'days_asc':    return (a.days ?? 9999) - (b.days ?? 9999);
+            case 'days_desc':   return (b.days ?? 0) - (a.days ?? 0);
+            case 'review_desc': return (b.review_score ?? 0) - (a.review_score ?? 0);
+            default: return 0;
+          }
+        });
+      }
+
+      // ===== レンダリングヘルパー =====
+      function badge(t) {
+        if (!t) return '<span class="badge badge-physical">物理SIM</span>';
+        if (t.includes('両')) return '<span class="badge badge-both">両対応</span>';
+        if (t.includes('eSIM')) return '<span class="badge badge-esim">eSIM</span>';
+        return '<span class="badge badge-physical">物理SIM</span>';
+      }
+      function bool(v) {
+        if (v === true)  return '<span class="ok">○</span>';
+        if (v === false) return '<span class="ng">✕</span>';
+        return '<span class="unk">-</span>';
+      }
+      function netTags(nets) {
+        if (!nets || !nets.length) return '<span class="unk">-</span>';
+        const m = { '5G': 'net-5g', '4G': 'net-4g', 'LTE': 'net-lte', '3G': 'net-3g' };
+        return nets.map(n => `<span class="net-tag ${m[n] || ''}">${n}</span>`).join(' ');
+      }
+
+      // ===== カード生成 =====
+      function buildCard(sim, rank) {
+        const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
+        const thumbHtml = sim.image_url
+          ? `<img src="${sim.image_url}" alt="" loading="lazy">`
+          : '<span style="font-size:0.65rem;color:#ccc;">NO<br>IMG</span>';
+
+        const daysStr  = sim.days      != null ? `${sim.days}日間`   : '-';
+        const dataStr  = sim.data_high != null ? sim.data_high        : '-';
+        const dataLow  = sim.data_low  != null ? sim.data_low         : '-';
+        const priceStr = sim.price_min != null
+          ? (sim.price_min === sim.price_max
+              ? `¥${sim.price_min.toLocaleString()}`
+              : `¥${sim.price_min.toLocaleString()}〜`)
+          : '-';
+        const reviewStr = sim.review_score != null
+          ? `<span class="spec-sep">|</span><span class="spec-item"><span style="color:#f5a623;">★${sim.review_score.toFixed(1)}</span> <span style="color:#aaa;font-size:0.72rem;">(${(sim.review_count||0).toLocaleString()}件)</span></span>`
+          : '';
+        const dateStr = sim.price_fetched_at
+          ? `<span class="price-date">${sim.price_fetched_at}</span>` : '';
+
+        return `
+          <li class="product-item">
+            <span class="product-rank">${rank}</span>
+            <div class="product-thumb">${thumbHtml}</div>
+            <div class="product-main">
+              <div class="product-id">${sim.id || ''}</div>
+              <div class="product-name">${sim.product_name || ''}</div>
+              <div class="product-specs">
+                ${badge(sim.type)}
+                <span class="spec-sep">|</span>
+                <span class="spec-item"><span class="spec-label">日数</span>${daysStr}</span>
+                <span class="spec-sep">|</span>
+                <span class="spec-item"><span class="spec-label">高速</span>${dataStr}</span>
+                <span class="spec-sep">|</span>
+                <span class="spec-item"><span class="spec-label">低速</span>${dataLow}</span>
+                <span class="spec-sep">|</span>
+                <span class="spec-item"><span class="spec-label">通話</span>${bool(sim.voice_call)}</span>
+                <span class="spec-item"><span class="spec-label"> SMS</span>${bool(sim.sms)}</span>
+                <span class="spec-item"><span class="spec-label"> テザ</span>${bool(sim.tethering)}</span>
+                <span class="spec-sep">|</span>
+                ${netTags(sim.network)}
+                ${reviewStr}
+              </div>
+            </div>
+            <div class="product-right">
+              <span class="price-val">${priceStr}</span>
+              ${dateStr}
+              <a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a>
+            </div>
+          </li>`;
+      }
+
+      // ===== ページネーション =====
+      function renderPagination(total) {
+        const ids = ['pagination-top', 'pagination-bottom'];
+        if (pageSize === Infinity || total <= pageSize) {
+          ids.forEach(id => { document.getElementById(id).innerHTML = ''; });
+          return;
+        }
+        const totalPages = Math.ceil(total / pageSize);
+        let html = '';
+        for (let i = 1; i <= totalPages; i++) {
+          html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goPage(${i})">${i}</button>`;
+        }
+        ids.forEach(id => { document.getElementById(id).innerHTML = html; });
+      }
+
+      function goPage(p) {
+        currentPage = p;
+        render();
+        document.getElementById('product-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // ===== メインレンダー =====
+      function render() {
+        filteredSims = applyFilters(allSims);
+        const sorted = sortSims(filteredSims);
+        const total  = sorted.length;
+        const start  = pageSize === Infinity ? 0 : (currentPage - 1) * pageSize;
+        const end    = pageSize === Infinity ? total : Math.min(start + pageSize, total);
+        const page   = sorted.slice(start, end);
+
+        document.getElementById('result-count').textContent = `${total.toLocaleString()}件`;
+        document.getElementById('product-list').innerHTML =
+          page.length
+            ? page.map((s, i) => buildCard(s, start + i + 1)).join('')
+            : '<li class="loading-msg">該当する商品がありません</li>';
+        renderPagination(total);
+      }
+
+      // ===== データ読み込み =====
+      async function init() {
+        try {
+          const res  = await fetch(JSON_PATH);
+          const data = await res.json();
+          allSims = Array.isArray(data) ? data.flatMap(g => g.sims || []) : (data.sims || []);
+          const fetched = allSims[0]?.price_fetched_at || '不明';
+          document.getElementById('data-note').textContent =
+            `価格は ${fetched} 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。`;
+          render();
+        } catch (e) {
+          document.getElementById('product-list').innerHTML =
+            '<li class="loading-msg">データの読み込みに失敗しました</li>';
+        }
+      }
+
+      init();
+    </script>
   </body>
 </html>
