@@ -58,7 +58,28 @@
         letter-spacing: 0.06em;
         margin-bottom: 6px;
         padding: 0 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
       }
+      .filter-section-title:hover { color: #333; }
+      .filter-section-title .toggle-icon {
+        font-size: 0.9rem;
+        color: #aaa;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .filter-section-body {
+        overflow: hidden;
+        transition: max-height 0.2s ease;
+      }
+      .filter-section.collapsed .filter-section-body {
+        max-height: 0 !important;
+      }
+      .filter-section.collapsed .toggle-icon::after { content: '+'; }
+      .filter-section:not(.collapsed) .toggle-icon::after { content: '−'; }
       .filter-option {
         display: flex;
         align-items: center;
@@ -316,45 +337,55 @@
       <!-- ===== サイドバー ===== -->
       <aside class="sidebar">
         <div class="filter-section">
-          <div class="filter-section-title">種別</div>
-          <label class="filter-option active" data-filter="type" data-value=""><input type="radio" name="type" checked> すべて</label>
-          <label class="filter-option" data-filter="type" data-value="eSIM"><input type="radio" name="type"> eSIM</label>
-          <label class="filter-option" data-filter="type" data-value="物理SIM"><input type="radio" name="type"> 物理SIM</label>
-          <label class="filter-option" data-filter="type" data-value="両対応"><input type="radio" name="type"> 両対応</label>
+          <div class="filter-section-title">種別<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="type" data-value=""><input type="radio" name="type" checked> すべて</label>
+            <label class="filter-option" data-filter="type" data-value="eSIM"><input type="radio" name="type"> eSIM</label>
+            <label class="filter-option" data-filter="type" data-value="物理SIM"><input type="radio" name="type"> 物理SIM</label>
+            <label class="filter-option" data-filter="type" data-value="両対応"><input type="radio" name="type"> 両対応</label>
+          </div>
         </div>
 
         <div class="filter-section">
-          <div class="filter-section-title">有効日数</div>
-          <label class="filter-option active" data-filter="days" data-value=""><input type="radio" name="days" checked> すべて</label>
-          <label class="filter-option" data-filter="days" data-value="3"><input type="radio" name="days"> 〜3日</label>
-          <label class="filter-option" data-filter="days" data-value="5"><input type="radio" name="days"> 〜5日</label>
-          <label class="filter-option" data-filter="days" data-value="7"><input type="radio" name="days"> 〜7日</label>
-          <label class="filter-option" data-filter="days" data-value="10"><input type="radio" name="days"> 〜10日</label>
-          <label class="filter-option" data-filter="days" data-value="14"><input type="radio" name="days"> 〜14日</label>
-          <label class="filter-option" data-filter="days" data-value="30"><input type="radio" name="days"> 〜30日</label>
-          <label class="filter-option" data-filter="days" data-value="999"><input type="radio" name="days"> 30日以上</label>
+          <div class="filter-section-title">有効日数<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="days" data-value=""><input type="radio" name="days" checked> すべて</label>
+            <label class="filter-option" data-filter="days" data-value="3"><input type="radio" name="days"> 〜3日</label>
+            <label class="filter-option" data-filter="days" data-value="5"><input type="radio" name="days"> 〜5日</label>
+            <label class="filter-option" data-filter="days" data-value="7"><input type="radio" name="days"> 〜7日</label>
+            <label class="filter-option" data-filter="days" data-value="10"><input type="radio" name="days"> 〜10日</label>
+            <label class="filter-option" data-filter="days" data-value="14"><input type="radio" name="days"> 〜14日</label>
+            <label class="filter-option" data-filter="days" data-value="30"><input type="radio" name="days"> 〜30日</label>
+            <label class="filter-option" data-filter="days" data-value="999"><input type="radio" name="days"> 30日以上</label>
+          </div>
         </div>
 
         <div class="filter-section">
-          <div class="filter-section-title">通信規格</div>
-          <label class="filter-option active" data-filter="network" data-value=""><input type="radio" name="network" checked> すべて</label>
-          <label class="filter-option" data-filter="network" data-value="5G"><input type="radio" name="network"> 5G</label>
-          <label class="filter-option" data-filter="network" data-value="4G"><input type="radio" name="network"> 4G</label>
-          <label class="filter-option" data-filter="network" data-value="LTE"><input type="radio" name="network"> LTE</label>
-          <label class="filter-option" data-filter="network" data-value="3G"><input type="radio" name="network"> 3G</label>
+          <div class="filter-section-title">通信規格<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="network" data-value=""><input type="radio" name="network" checked> すべて</label>
+            <label class="filter-option" data-filter="network" data-value="5G"><input type="radio" name="network"> 5G</label>
+            <label class="filter-option" data-filter="network" data-value="4G"><input type="radio" name="network"> 4G</label>
+            <label class="filter-option" data-filter="network" data-value="LTE"><input type="radio" name="network"> LTE</label>
+            <label class="filter-option" data-filter="network" data-value="3G"><input type="radio" name="network"> 3G</label>
+          </div>
         </div>
 
         <div class="filter-section">
-          <div class="filter-section-title">通話</div>
-          <label class="filter-option active" data-filter="voice" data-value=""><input type="radio" name="voice" checked> すべて</label>
-          <label class="filter-option" data-filter="voice" data-value="1"><input type="radio" name="voice"> 通話あり</label>
-          <label class="filter-option" data-filter="voice" data-value="0"><input type="radio" name="voice"> データのみ</label>
+          <div class="filter-section-title">通話<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="voice" data-value=""><input type="radio" name="voice" checked> すべて</label>
+            <label class="filter-option" data-filter="voice" data-value="1"><input type="radio" name="voice"> 通話あり</label>
+            <label class="filter-option" data-filter="voice" data-value="0"><input type="radio" name="voice"> データのみ</label>
+          </div>
         </div>
 
         <div class="filter-section">
-          <div class="filter-section-title">テザリング</div>
-          <label class="filter-option active" data-filter="tethering" data-value=""><input type="radio" name="tethering" checked> すべて</label>
-          <label class="filter-option" data-filter="tethering" data-value="1"><input type="radio" name="tethering"> あり</label>
+          <div class="filter-section-title">テザリング<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="tethering" data-value=""><input type="radio" name="tethering" checked> すべて</label>
+            <label class="filter-option" data-filter="tethering" data-value="1"><input type="radio" name="tethering"> あり</label>
+          </div>
         </div>
 
         <button class="btn-clear-all" id="btn-clear">フィルターをリセット</button>
@@ -622,6 +653,21 @@
       }
 
       init();
+
+      // ===== サイドバー折りたたみ =====
+      document.querySelectorAll('.filter-section-title').forEach(title => {
+        const body = title.nextElementSibling;
+        body.style.maxHeight = body.scrollHeight + 'px';
+        title.addEventListener('click', () => {
+          const section = title.closest('.filter-section');
+          if (section.classList.contains('collapsed')) {
+            section.classList.remove('collapsed');
+            body.style.maxHeight = body.scrollHeight + 'px';
+          } else {
+            section.classList.add('collapsed');
+          }
+        });
+      });
     </script>
   </body>
 </html>
