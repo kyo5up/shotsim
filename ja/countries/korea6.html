@@ -101,6 +101,88 @@
       }
       .filter-option.active { color: #1A3263; font-weight: 600; }
 
+      /* ===== デュアルレンジスライダー ===== */
+      .range-slider-wrap {
+        padding: 4px 4px 8px;
+      }
+      .range-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: #1A3263;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .range-track {
+        position: relative;
+        height: 4px;
+        background: #ddd;
+        border-radius: 2px;
+        margin: 12px 4px;
+      }
+      .range-track-fill {
+        position: absolute;
+        height: 100%;
+        background: #1A3263;
+        border-radius: 2px;
+      }
+      .range-track input[type="range"] {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 0;
+        left: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        background: transparent;
+        pointer-events: none;
+        margin: 0;
+      }
+      .range-track input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1A3263;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        pointer-events: all;
+        cursor: pointer;
+      }
+      .range-track input[type="range"]::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1A3263;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        pointer-events: all;
+        cursor: pointer;
+      }
+
+      /* ===== 評価フィルター ===== */
+      .star-option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 4px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 0.82rem;
+        color: #333;
+        user-select: none;
+      }
+      .star-option:hover { background: #f5f5f5; }
+      .star-option input[type="radio"] {
+        width: 14px;
+        height: 14px;
+        accent-color: #1A3263;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .star-option.active { color: #1A3263; font-weight: 600; }
+      .stars { color: #f5a623; font-size: 0.82rem; }
+
       .btn-clear-all {
         width: 100%;
         margin-top: 12px;
@@ -349,14 +431,43 @@
         <div class="filter-section">
           <div class="filter-section-title">有効日数<span class="toggle-icon"></span></div>
           <div class="filter-section-body">
-            <label class="filter-option active" data-filter="days" data-value=""><input type="radio" name="days" checked> すべて</label>
-            <label class="filter-option" data-filter="days" data-value="3"><input type="radio" name="days"> 〜3日</label>
-            <label class="filter-option" data-filter="days" data-value="5"><input type="radio" name="days"> 〜5日</label>
-            <label class="filter-option" data-filter="days" data-value="7"><input type="radio" name="days"> 〜7日</label>
-            <label class="filter-option" data-filter="days" data-value="10"><input type="radio" name="days"> 〜10日</label>
-            <label class="filter-option" data-filter="days" data-value="14"><input type="radio" name="days"> 〜14日</label>
-            <label class="filter-option" data-filter="days" data-value="30"><input type="radio" name="days"> 〜30日</label>
-            <label class="filter-option" data-filter="days" data-value="999"><input type="radio" name="days"> 30日以上</label>
+            <div class="range-slider-wrap">
+              <div class="range-label">
+                <span id="days-label-min">1日</span>
+                <span id="days-label-max">365日</span>
+              </div>
+              <div class="range-track" id="days-track">
+                <div class="range-track-fill" id="days-fill"></div>
+                <input type="range" id="days-min" min="0" max="9" value="0" step="1">
+                <input type="range" id="days-max" min="0" max="9" value="9" step="1">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">価格<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <div class="range-slider-wrap">
+              <div class="range-label">
+                <span id="price-label-min">¥200</span>
+                <span id="price-label-max">¥13,000</span>
+              </div>
+              <div class="range-track" id="price-track">
+                <div class="range-track-fill" id="price-fill"></div>
+                <input type="range" id="price-min" min="0" max="10" value="0" step="1">
+                <input type="range" id="price-max" min="0" max="10" value="10" step="1">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">評価<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="star-option active" data-filter="rating" data-value="0"><input type="radio" name="rating" checked> すべて</label>
+            <label class="star-option" data-filter="rating" data-value="4"><input type="radio" name="rating"> <span class="stars">★★★★</span>以上</label>
+            <label class="star-option" data-filter="rating" data-value="3"><input type="radio" name="rating"> <span class="stars">★★★</span>以上</label>
           </div>
         </div>
 
@@ -434,13 +545,19 @@
 
       let allSims = [];
       let filteredSims = [];
-      let currentFilters = { type: "", days: "", network: "", voice: "", tethering: "" };
+      // ===== スライダー定義 =====
+      const DAYS_STEPS  = [1, 3, 5, 7, 10, 14, 30, 60, 90, 365];
+      const PRICE_STEPS = [200, 500, 1000, 1500, 2000, 3000, 4000, 5000, 7000, 10000, 13000];
+
+      let currentFilters = { type: "", network: "", voice: "", tethering: "", rating: "0" };
+      let daysRange  = { min: 0, max: DAYS_STEPS.length - 1 };
+      let priceRange = { min: 0, max: PRICE_STEPS.length - 1 };
       let sortKey = "price_asc";
       let currentPage = 1;
       let pageSize = 100;
 
-      // ===== フィルター =====
-      document.querySelectorAll('.filter-option').forEach(label => {
+      // ===== ラジオフィルター =====
+      document.querySelectorAll('.filter-option, .star-option').forEach(label => {
         label.addEventListener('click', () => {
           const filterKey = label.dataset.filter;
           document.querySelectorAll(`[data-filter="${filterKey}"]`).forEach(l => {
@@ -455,16 +572,64 @@
         });
       });
 
+      // ===== デュアルレンジスライダー =====
+      function initRangeSlider(idMin, idMax, idFill, idLabelMin, idLabelMax, steps, range, formatFn) {
+        const elMin = document.getElementById(idMin);
+        const elMax = document.getElementById(idMax);
+        const fill  = document.getElementById(idFill);
+        const lblMin = document.getElementById(idLabelMin);
+        const lblMax = document.getElementById(idLabelMax);
+
+        function updateFill() {
+          const pct = 100 / (steps.length - 1);
+          fill.style.left  = (range.min * pct) + '%';
+          fill.style.width = ((range.max - range.min) * pct) + '%';
+          lblMin.textContent = formatFn(steps[range.min]);
+          lblMax.textContent = formatFn(steps[range.max]);
+        }
+
+        elMin.addEventListener('input', () => {
+          range.min = Math.min(parseInt(elMin.value), range.max);
+          elMin.value = range.min;
+          updateFill();
+          currentPage = 1;
+          render();
+        });
+        elMax.addEventListener('input', () => {
+          range.max = Math.max(parseInt(elMax.value), range.min);
+          elMax.value = range.max;
+          updateFill();
+          currentPage = 1;
+          render();
+        });
+        updateFill();
+      }
+
+      initRangeSlider('days-min', 'days-max', 'days-fill', 'days-label-min', 'days-label-max',
+        DAYS_STEPS, daysRange, v => v + '日');
+      initRangeSlider('price-min', 'price-max', 'price-fill', 'price-label-min', 'price-label-max',
+        PRICE_STEPS, priceRange, v => '¥' + v.toLocaleString());
+
       document.getElementById('btn-clear').addEventListener('click', () => {
-        currentFilters = { type: "", days: "", network: "", voice: "", tethering: "" };
-        document.querySelectorAll('.filter-option').forEach(l => {
+        currentFilters = { type: "", network: "", voice: "", tethering: "", rating: "0" };
+        document.querySelectorAll('.filter-option, .star-option').forEach(l => {
           l.classList.remove('active');
           l.querySelector('input').checked = false;
         });
-        document.querySelectorAll('.filter-option[data-value=""]').forEach(l => {
+        document.querySelectorAll('.filter-option[data-value=""], .star-option[data-value="0"]').forEach(l => {
           l.classList.add('active');
           l.querySelector('input').checked = true;
         });
+        daysRange  = { min: 0, max: DAYS_STEPS.length - 1 };
+        priceRange = { min: 0, max: PRICE_STEPS.length - 1 };
+        document.getElementById('days-min').value  = 0;
+        document.getElementById('days-max').value  = DAYS_STEPS.length - 1;
+        document.getElementById('price-min').value = 0;
+        document.getElementById('price-max').value = PRICE_STEPS.length - 1;
+        initRangeSlider('days-min', 'days-max', 'days-fill', 'days-label-min', 'days-label-max',
+          DAYS_STEPS, daysRange, v => v + '日');
+        initRangeSlider('price-min', 'price-max', 'price-fill', 'price-label-min', 'price-label-max',
+          PRICE_STEPS, priceRange, v => '¥' + v.toLocaleString());
         currentPage = 1;
         render();
       });
@@ -483,6 +648,10 @@
 
       // ===== フィルター適用 =====
       function applyFilters(sims) {
+        const dMin = DAYS_STEPS[daysRange.min];
+        const dMax = DAYS_STEPS[daysRange.max];
+        const pMin = PRICE_STEPS[priceRange.min];
+        const pMax = PRICE_STEPS[priceRange.max];
         return sims.filter(s => {
           if (COUNTRY_NAME && !(s.countries || []).includes(COUNTRY_NAME)) return false;
           if (currentFilters.type) {
@@ -491,11 +660,14 @@
             if (currentFilters.type === '物理SIM' && (t.includes('eSIM') || t.includes('両対応'))) return false;
             if (currentFilters.type === '両対応'  && !t.includes('両対応')) return false;
           }
-          if (currentFilters.days) {
-            const d = parseInt(currentFilters.days);
-            if (d === 999) { if ((s.days || 0) <= 30) return false; }
-            else           { if ((s.days || 9999) > d) return false; }
-          }
+          // 有効日数レンジ
+          const days = s.days ?? null;
+          if (days === null || days < dMin || days > dMax) return false;
+          // 価格レンジ（価格なしは除外しない）
+          if (s.price_min != null && (s.price_min < pMin || s.price_min > pMax)) return false;
+          // 評価
+          const minRating = parseFloat(currentFilters.rating || 0);
+          if (minRating > 0 && (s.review_score == null || s.review_score < minRating)) return false;
           if (currentFilters.network && !(s.network || []).includes(currentFilters.network)) return false;
           if (currentFilters.voice === "1" && s.voice_call !== true)  return false;
           if (currentFilters.voice === "0" && s.voice_call !== false) return false;
