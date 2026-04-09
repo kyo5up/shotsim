@@ -125,6 +125,34 @@
 
   <script src="/shotsim/assets/js/main.js"></script>
   <script>
+    // ===== 検索機能 =====
+    const SEARCH_MAP = [
+      { keywords: ['韓国', 'korea', 'ソウル', 'seoul', '釜山', 'busan', '済州', 'jeju'], url: '/shotsim/ja/countries/korea6.html' },
+      { keywords: ['アメリカ', 'usa', 'us', 'ハワイ', 'hawaii', 'ニューヨーク', 'newyork', 'ロサンゼルス'], url: '/shotsim/ja/countries/usa.html' },
+      { keywords: ['台湾', 'taiwan', '台北', 'taipei'], url: '/shotsim/ja/countries/taiwan.html' },
+      { keywords: ['タイ', 'thailand', 'バンコク', 'bangkok', 'プーケット', 'phuket'], url: '/shotsim/ja/countries/thailand.html' },
+      { keywords: ['ベトナム', 'vietnam', 'ホーチミン', 'ハノイ', 'hanoi'], url: '/shotsim/ja/countries/vietnam.html' },
+    ];
+
+    function doSearch() {
+      const q = document.getElementById('search-input').value.trim().toLowerCase();
+      if (!q) return;
+      const hit = SEARCH_MAP.find(entry =>
+        entry.keywords.some(kw => q.includes(kw) || kw.includes(q))
+      );
+      if (hit) {
+        location.href = hit.url;
+      } else {
+        alert(`「${document.getElementById('search-input').value}」に対応するページは現在準備中です。`);
+      }
+    }
+
+    document.getElementById('search-btn').addEventListener('click', doSearch);
+    document.getElementById('search-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') doSearch();
+    });
+  </script>
+  <script>
     fetch('/shotsim/data/articles.json')
       .then(r => r.json())
       .then(articles => {
