@@ -264,6 +264,7 @@
           28px   /* 通話 */
           54px   /* 規格 */
           70px   /* 評価 */
+          80px   /* ブランド */
           52px   /* 種別 */
           70px   /* 価格 */
           84px   /* ボタン */
@@ -699,6 +700,7 @@
           <div class="col-center">通話</div>
           <div class="col-center">規格</div>
           <div class="col-center">評価</div>
+          <div class="col-center">ブランド</div>
           <div class="col-center">種別</div>
           <div class="col-right">価格</div>
           <div></div>
@@ -1045,7 +1047,7 @@
             <div class="product-thumb">${thumbHtml}</div>
             <div class="col-name-wrap">
               <div class="product-name">${shortName}</div>
-              <div class="product-id">${[sim.brand?.ja || sim.brand?.en || sim.brand?.original, sim.company].filter(Boolean).join(' / ') || sim.id || ''}</div>
+              <div class="product-id">${sim.id || ''}</div>
             </div>
             <div class="col-center">${daysStr}</div>
             <div class="col-center">${dataStr}</div>
@@ -1053,6 +1055,7 @@
             <div class="col-center">${bool(sim.voice_call)}</div>
             <div class="col-center">${netTags(sim.network)}</div>
             <div class="col-center">${sim.review_score != null ? `<span style="color:#f5a623;">★${sim.review_score.toFixed(1)}</span> <span style="color:#aaa;font-size:0.7rem;">(${(sim.review_count||0).toLocaleString()})</span>` : '-'}</div>
+            <div class="col-center">${sim.brand?.ja || sim.brand?.en || sim.brand?.original || '-'}</div>
             <div class="col-center">${badge(sim.type)}</div>
             <div class="col-right">
               <span class="price-val">${priceStr}</span>
