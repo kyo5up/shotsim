@@ -10,7 +10,22 @@
       "South Korea",
       "KR",
       "한국",
-      "대한민국"
+      "대한민국",
+      "かんこく",
+      "カンコク",
+      "kankoku",
+      "だいかんみんこく",
+      "大韓民国",
+      "テハンミングク",
+      "ソウル",
+      "서울",
+      "seoul",
+      "釜山",
+      "부산",
+      "busan",
+      "済州",
+      "제주",
+      "jeju"
     ]
   },
   {
@@ -22,7 +37,22 @@
       "台湾",
       "Taiwan",
       "TW",
-      "台灣"
+      "台灣",
+      "たいわん",
+      "タイワン",
+      "taiwan",
+      "中華民国",
+      "ちゅうかみんこく",
+      "chuuka minkoku",
+      "台北",
+      "たいぺい",
+      "taipei",
+      "高雄",
+      "たかお",
+      "kaohsiung",
+      "台中",
+      "たいちゅう",
+      "taichung"
     ]
   },
   {
@@ -33,7 +63,27 @@
     "keywords": [
       "タイ",
       "Thailand",
-      "ไทย"
+      "ไทย",
+      "たい",
+      "tai",
+      "たいおうこく",
+      "タイ王国",
+      "タイオウコク",
+      "tai okoku",
+      "ราชอาณาจักรไทย",
+      "バンコク",
+      "กรุงเทพ",
+      "bangkok",
+      "プーケット",
+      "ภูเก็ต",
+      "phuket",
+      "チェンマイ",
+      "เชียงใหม่",
+      "chiangmai",
+      "chiang mai",
+      "パタヤ",
+      "พัทยา",
+      "pattaya"
     ]
   },
   {
@@ -45,7 +95,22 @@
       "ベトナム",
       "Vietnam",
       "VN",
-      "Việt Nam"
+      "Việt Nam",
+      "べとなむ",
+      "betonamu",
+      "vietnam",
+      "ベトナム社会主義共和国",
+      "べとなむしゃかいしゅぎきょうわこく",
+      "betonamu shakaishugi kyouwakoku",
+      "ホーチミン",
+      "ほーちみん",
+      "ho chi minh",
+      "ハノイ",
+      "はのい",
+      "hanoi",
+      "ダナン",
+      "だなん",
+      "da nang"
     ]
   },
   {
@@ -59,7 +124,29 @@
       "ハワイ",
       "Hawaii",
       "US",
-      "United States"
+      "United States",
+      "あめりか",
+      "amerika",
+      "usa",
+      "us",
+      "アメリカ合衆国",
+      "あめりかがっしゅうこく",
+      "amerika gasshuukoku",
+      "united states of america",
+      "はわい",
+      "hawaii",
+      "ニューヨーク",
+      "にゅーよーく",
+      "new york",
+      "ロサンゼルス",
+      "ろさんぜるす",
+      "los angeles",
+      "サンフランシスコ",
+      "さんふらんしすこ",
+      "san francisco",
+      "ラスベガス",
+      "らすべがす",
+      "las vegas"
     ]
   },
   {
@@ -71,7 +158,19 @@
       "インドネシア",
       "Indonesia",
       "バリ",
-      "Bali"
+      "Bali",
+      "いんどねしあ",
+      "indoneshia",
+      "indonesia",
+      "インドネシア共和国",
+      "いんどねしあきょうわこく",
+      "indoneshia kyouwakoku",
+      "ばり",
+      "bari",
+      "bali",
+      "ジャカルタ",
+      "じゃかるた",
+      "jakarta"
     ]
   },
   {
@@ -81,7 +180,19 @@
     "url": "/shotsim/ja/countries/malaysia.html",
     "keywords": [
       "マレーシア",
-      "Malaysia"
+      "Malaysia",
+      "まれーしあ",
+      "mare-shia",
+      "malaysia",
+      "クアラルンプール",
+      "くあらるんぷーる",
+      "kuala lumpur",
+      "コタキナバル",
+      "こたきなばる",
+      "kota kinabalu",
+      "ペナン",
+      "ぺなん",
+      "penang"
     ]
   },
   {
@@ -91,7 +202,13 @@
     "url": "/shotsim/ja/countries/singapore.html",
     "keywords": [
       "シンガポール",
-      "Singapore"
+      "Singapore",
+      "しんがぽーる",
+      "shingapo-ru",
+      "singapore",
+      "シンガポール共和国",
+      "しんがぽーるきょうわこく",
+      "shingapo-ru kyouwakoku"
     ]
   }
 ]
