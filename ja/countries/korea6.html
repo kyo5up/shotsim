@@ -1049,7 +1049,7 @@
             <div class="product-thumb">${thumbHtml}</div>
             <div class="col-name-wrap">
               <div class="product-name">${shortName}</div>
-              <div class="product-id">${sim.id || ''}</div>
+              <div class="product-id">${[sim.brand?.ja || sim.brand?.en || sim.brand?.original, sim.company].filter(Boolean).join(' / ') || sim.id || ''}</div>
             </div>
             <div class="col-center">${badge(sim.type)}</div>
             <div class="col-center">${daysStr}</div>
