@@ -257,7 +257,7 @@
         grid-template-columns:
           22px   /* # */
           26px   /* 画像 */
-          minmax(0, 1fr) /* 商品名 */
+          minmax(0, 180px) /* 商品名 */
           52px   /* 種別 */
           40px   /* 日数 */
           70px   /* 高速 */
@@ -711,14 +711,42 @@
 
       // ===== ソート =====
       function sortSims(sims) {
+        // タイブレーク: 安い順 → レビュー数多い順 → 評価高い順
+        function tiebreak(a, b) {
+          const p = (a.price_min ?? 999999) - (b.price_min ?? 999999);
+          if (p !== 0) return p;
+          const c = (b.review_count ?? 0) - (a.review_count ?? 0);
+          if (c !== 0) return c;
+          return (b.review_score ?? 0) - (a.review_score ?? 0);
+        }
         return [...sims].sort((a, b) => {
           switch (sortKey) {
-            case 'price_asc':   return (a.price_min ?? 999999) - (b.price_min ?? 999999);
-            case 'price_desc':  return (b.price_min ?? 0) - (a.price_min ?? 0);
-            case 'days_asc':    return (a.days ?? 9999) - (b.days ?? 9999);
-            case 'days_desc':   return (b.days ?? 0) - (a.days ?? 0);
-            case 'review_desc': return (b.review_score ?? 0) - (a.review_score ?? 0);
-            default: return 0;
+            case 'price_asc': {
+              const d = (a.price_min ?? 999999) - (b.price_min ?? 999999);
+              if (d !== 0) return d;
+              return tiebreak(a, b);
+            }
+            case 'price_desc': {
+              const d = (b.price_min ?? 0) - (a.price_min ?? 0);
+              if (d !== 0) return d;
+              return tiebreak(a, b);
+            }
+            case 'days_asc': {
+              const d = (a.days ?? 9999) - (b.days ?? 9999);
+              if (d !== 0) return d;
+              return tiebreak(a, b);
+            }
+            case 'days_desc': {
+              const d = (b.days ?? 0) - (a.days ?? 0);
+              if (d !== 0) return d;
+              return tiebreak(a, b);
+            }
+            case 'review_desc': {
+              const s = (b.review_score ?? 0) - (a.review_score ?? 0);
+              if (s !== 0) return s;
+              return tiebreak(a, b);
+            }
+            default: return tiebreak(a, b);
           }
         });
       }
