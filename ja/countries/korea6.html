@@ -268,7 +268,8 @@
           54px   /* 規格 */
           70px   /* 評価 */
           70px   /* 価格 */
-          84px;  /* ボタン */
+          84px   /* ボタン */
+          22px;  /* 非表示 */
         align-items: center;
         gap: 0 6px;
         padding: 0 4px;
@@ -410,6 +411,119 @@
 
       .loading-msg { text-align: center; padding: 40px; color: #aaa; font-size: 0.9rem; }
 
+      /* ===== 非表示ボタン ===== */
+      .hide-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1;
+        padding: 2px 4px;
+        border-radius: 3px;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      .hide-btn:hover { color: #e55; background: #fff0f0; }
+
+      /* ===== ゴミ箱バー ===== */
+      .trash-bar {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 4px;
+      }
+      .trash-bar.visible { display: flex; }
+      .trash-bar-link {
+        color: #1A3263;
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+        padding: 0;
+      }
+
+      /* ===== ゴミ箱モーダル ===== */
+      .trash-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+      .trash-overlay.open { display: flex; }
+      .trash-modal {
+        background: #fff;
+        border-radius: 8px;
+        width: min(520px, 92vw);
+        max-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      }
+      .trash-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid #e8e8e8;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+      .trash-modal-close {
+        background: none; border: none; cursor: pointer;
+        font-size: 1.2rem; color: #888; line-height: 1;
+      }
+      .trash-modal-body {
+        overflow-y: auto;
+        flex: 1;
+        padding: 8px 0;
+      }
+      .trash-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.82rem;
+      }
+      .trash-item:last-child { border-bottom: none; }
+      .trash-item-name { flex: 1; color: #444; }
+      .trash-restore-btn {
+        padding: 3px 10px;
+        font-size: 0.78rem;
+        background: #1A3263;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .trash-restore-btn:hover { background: #2a4a8a; }
+      .trash-modal-footer {
+        padding: 10px 16px;
+        border-top: 1px solid #e8e8e8;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .trash-restore-all-btn {
+        padding: 5px 14px;
+        font-size: 0.82rem;
+        background: #f5f5f5;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .trash-restore-all-btn:hover { background: #e8e8e8; }
+
       @media (max-width: 768px) {
         .page-wrap { flex-direction: column; padding: 0 8px 40px; }
         .sidebar { width: 100%; position: static; max-height: none; }
@@ -548,6 +662,12 @@
           </div>
         </div>
 
+        <!-- ゴミ箱バー -->
+        <div class="trash-bar" id="trash-bar">
+          <span id="trash-count-msg"></span>
+          <button class="trash-bar-link" onclick="openTrash()">ゴミ箱を見る</button>
+        </div>
+
         <div class="pagination" id="pagination-top"></div>
         <div class="product-header">
           <div></div>
@@ -564,6 +684,7 @@
           <div class="col-center">評価</div>
           <div class="col-right">価格</div>
           <div></div>
+          <div></div>
         </div>
         <ul class="product-list" id="product-list">
           <li class="loading-msg">読み込み中...</li>
@@ -572,9 +693,90 @@
       </main>
     </div>
 
+    <!-- ゴミ箱モーダル -->
+    <div class="trash-overlay" id="trash-overlay" onclick="closeTrashIfBg(event)">
+      <div class="trash-modal">
+        <div class="trash-modal-header">
+          <span>🗑️ 非表示リスト</span>
+          <button class="trash-modal-close" onclick="closeTrash()">✕</button>
+        </div>
+        <div class="trash-modal-body" id="trash-modal-body"></div>
+        <div class="trash-modal-footer">
+          <button class="trash-restore-all-btn" onclick="restoreAll()">すべて復活</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       const COUNTRY_NAME = "韓国";
       const JSON_PATH = "/shotsim/data/sims_kr.json";
+      const LS_HIDDEN_KEY = 'shotsim_hidden_kr';
+
+      // ===== 非表示リスト管理 =====
+      function getHidden() {
+        try { return new Set(JSON.parse(localStorage.getItem(LS_HIDDEN_KEY)) || []); }
+        catch { return new Set(); }
+      }
+      function saveHidden(set) {
+        localStorage.setItem(LS_HIDDEN_KEY, JSON.stringify([...set]));
+      }
+      function hideSim(id) {
+        const h = getHidden();
+        h.add(id);
+        saveHidden(h);
+        currentPage = 1;
+        render();
+      }
+      function restoreSim(id) {
+        const h = getHidden();
+        h.delete(id);
+        saveHidden(h);
+        render();
+        if (h.size === 0) closeTrash();
+        else openTrash();
+      }
+      function restoreAll() {
+        saveHidden(new Set());
+        render();
+        closeTrash();
+      }
+
+      // ===== ゴミ箱モーダル =====
+      function openTrash() {
+        const h = getHidden();
+        const body = document.getElementById('trash-modal-body');
+        if (h.size === 0) { body.innerHTML = '<div style="padding:24px;text-align:center;color:#aaa;">非表示の商品はありません</div>'; }
+        else {
+          body.innerHTML = [...h].map(id => {
+            const sim = allSims.find(s => s.id === id);
+            const name = sim ? (sim.title || id) : id;
+            return `<div class="trash-item">
+              <span class="trash-item-name">${name}</span>
+              <button class="trash-restore-btn" onclick="restoreSim('${id}')">復活</button>
+            </div>`;
+          }).join('');
+        }
+        document.getElementById('trash-overlay').classList.add('open');
+      }
+      function closeTrash() {
+        document.getElementById('trash-overlay').classList.remove('open');
+      }
+      function closeTrashIfBg(e) {
+        if (e.target === document.getElementById('trash-overlay')) closeTrash();
+      }
+
+      // ===== ゴミ箱バー更新 =====
+      function updateTrashBar() {
+        const h = getHidden();
+        const bar = document.getElementById('trash-bar');
+        const msg = document.getElementById('trash-count-msg');
+        if (h.size > 0) {
+          bar.classList.add('visible');
+          msg.textContent = `${h.size}件非表示中`;
+        } else {
+          bar.classList.remove('visible');
+        }
+      }
 
       let allSims = [];
       let filteredSims = [];
@@ -681,11 +883,13 @@
 
       // ===== フィルター適用 =====
       function applyFilters(sims) {
+        const hidden = getHidden();
         const dMin = DAYS_STEPS[daysRange.min];
         const dMax = DAYS_STEPS[daysRange.max];
         const pMin = PRICE_STEPS[priceRange.min];
         const pMax = PRICE_STEPS[priceRange.max];
         return sims.filter(s => {
+          if (hidden.has(s.id)) return false;
           if (COUNTRY_NAME && !(s.countries || []).includes(COUNTRY_NAME)) return false;
           if (currentFilters.type) {
             const t = s.type || '';
@@ -819,6 +1023,7 @@
               <span class="price-date">${sim.price_fetched_at || ''}</span>
             </div>
             <div><a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></div>
+            <div><button class="hide-btn" onclick="hideSim('${sim.id}')" title="非表示にする">✕</button></div>
           </li>`;
       }
 
@@ -852,6 +1057,7 @@
         const end    = pageSize === Infinity ? total : Math.min(start + pageSize, total);
         const page   = sorted.slice(start, end);
 
+        updateTrashBar();
         document.getElementById('result-count').textContent = `${total.toLocaleString()}件`;
         document.getElementById('product-list').innerHTML =
           page.length
