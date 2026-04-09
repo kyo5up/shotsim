@@ -1,0 +1,97 @@
+[
+  {
+    "code": "KR",
+    "label": "韓国",
+    "flag": "🇰🇷",
+    "url": "/shotsim/ja/countries/korea6.html",
+    "keywords": [
+      "韓国",
+      "Korea",
+      "South Korea",
+      "KR",
+      "한국",
+      "대한민국"
+    ]
+  },
+  {
+    "code": "TW",
+    "label": "台湾",
+    "flag": "🇹🇼",
+    "url": "/shotsim/ja/countries/taiwan.html",
+    "keywords": [
+      "台湾",
+      "Taiwan",
+      "TW",
+      "台灣"
+    ]
+  },
+  {
+    "code": "TH",
+    "label": "タイ",
+    "flag": "🇹🇭",
+    "url": "/shotsim/ja/countries/thailand.html",
+    "keywords": [
+      "タイ",
+      "Thailand",
+      "ไทย"
+    ]
+  },
+  {
+    "code": "VN",
+    "label": "ベトナム",
+    "flag": "🇻🇳",
+    "url": "/shotsim/ja/countries/vietnam.html",
+    "keywords": [
+      "ベトナム",
+      "Vietnam",
+      "VN",
+      "Việt Nam"
+    ]
+  },
+  {
+    "code": "US",
+    "label": "アメリカ",
+    "flag": "🇺🇸",
+    "url": "/shotsim/ja/countries/usa.html",
+    "keywords": [
+      "アメリカ",
+      "USA",
+      "ハワイ",
+      "Hawaii",
+      "US",
+      "United States"
+    ]
+  },
+  {
+    "code": "ID",
+    "label": "インドネシア",
+    "flag": "🇮🇩",
+    "url": "/shotsim/ja/countries/indonesia.html",
+    "keywords": [
+      "インドネシア",
+      "Indonesia",
+      "バリ",
+      "Bali"
+    ]
+  },
+  {
+    "code": "MY",
+    "label": "マレーシア",
+    "flag": "🇲🇾",
+    "url": "/shotsim/ja/countries/malaysia.html",
+    "keywords": [
+      "マレーシア",
+      "Malaysia"
+    ]
+  },
+  {
+    "code": "SG",
+    "label": "シンガポール",
+    "flag": "🇸🇬",
+    "url": "/shotsim/ja/countries/singapore.html",
+    "keywords": [
+      "シンガポール",
+      "Singapore"
+    ]
+  }
+]

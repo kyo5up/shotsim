@@ -144,25 +144,21 @@
   <script src="/shotsim/assets/js/main.js"></script>
   <script>
     // ===== 検索サジェスト =====
-    const DESTINATIONS = [
-      { label: '🇰🇷 韓国',         sub: 'Korea',     keywords: ['韓国', 'korea', 'kr', 'ソウル', 'seoul', '釜山', 'busan', '済州', 'jeju'], url: '/shotsim/ja/countries/korea6.html' },
-      { label: '🇺🇸 アメリカ',     sub: 'USA',       keywords: ['アメリカ', 'usa', 'us', 'ニューヨーク', 'newyork', 'ロサンゼルス', 'la'], url: '/shotsim/ja/countries/usa.html' },
-      { label: '🌺 ハワイ',        sub: 'Hawaii',    keywords: ['ハワイ', 'hawaii', 'honolulu', 'ホノルル'], url: '/shotsim/ja/countries/usa.html' },
-      { label: '🇹🇼 台湾',         sub: 'Taiwan',    keywords: ['台湾', 'taiwan', 'tw', '台北', 'taipei'], url: '/shotsim/ja/countries/taiwan.html' },
-      { label: '🇹🇭 タイ',         sub: 'Thailand',  keywords: ['タイ', 'thailand', 'th', 'バンコク', 'bangkok', 'プーケット', 'phuket'], url: '/shotsim/ja/countries/thailand.html' },
-      { label: '🇻🇳 ベトナム',     sub: 'Vietnam',   keywords: ['ベトナム', 'vietnam', 'vn', 'ホーチミン', 'hcm', 'ハノイ', 'hanoi'], url: '/shotsim/ja/countries/vietnam.html' },
-    ];
+    let DESTINATIONS = [];
 
     const input   = document.getElementById('search-input');
     const suggest = document.getElementById('search-suggest');
     let activeIdx = -1;
 
+    fetch('/shotsim/data/countries.json')
+      .then(r => r.json())
+      .then(data => { DESTINATIONS = data; });
+
     function getSuggests(q) {
-      if (!q) return [];
+      if (!q || !DESTINATIONS.length) return [];
       const lower = q.toLowerCase();
       return DESTINATIONS.filter(d =>
-        d.keywords.some(kw => kw.includes(lower)) ||
-        d.label.includes(q) || d.sub.toLowerCase().includes(lower)
+        d.keywords.some(kw => kw.toLowerCase().includes(lower) || lower.includes(kw.toLowerCase()))
       );
     }
 
@@ -174,10 +170,10 @@
           padding:10px 16px; cursor:pointer; font-size:0.95rem;
           border-bottom:1px solid #f0f0f0;
         ">
-          <span style="font-size:1.1rem; min-width:24px">${d.label.split(' ')[0]}</span>
+          <span style="font-size:1.1rem; min-width:24px">${d.flag}</span>
           <span>
-            <span style="font-weight:600">${d.label.split(' ').slice(1).join(' ')}</span>
-            <span style="color:#aaa; font-size:0.8rem; margin-left:6px">${d.sub}</span>
+            <span style="font-weight:600">${d.label}</span>
+            <span style="color:#aaa; font-size:0.8rem; margin-left:6px">${d.code}</span>
           </span>
         </li>`).join('');
       suggest.style.display = 'block';
@@ -197,7 +193,7 @@
     }
 
     function goTo(dest) {
-      input.value = dest.label.split(' ').slice(1).join(' ');
+      input.value = dest.label;
       suggest.style.display = 'none';
       location.href = dest.url;
     }
