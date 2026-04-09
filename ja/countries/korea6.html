@@ -494,7 +494,29 @@
         font-size: 0.82rem;
       }
       .trash-item:last-child { border-bottom: none; }
-      .trash-item-name { flex: 1; color: #444; }
+      .trash-item-thumb {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        flex-shrink: 0;
+        background: #f5f5f5;
+        border-radius: 3px;
+      }
+      .trash-item-thumb-placeholder {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        background: #f0f0f0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+        color: #bbb;
+      }
+      .trash-item-info { flex: 1; min-width: 0; }
+      .trash-item-name { color: #333; font-size: 0.82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .trash-item-date { color: #aaa; font-size: 0.72rem; margin-top: 2px; }
       .trash-restore-btn {
         padding: 3px 10px;
         font-size: 0.78rem;
@@ -713,45 +735,60 @@
       const LS_HIDDEN_KEY = 'shotsim_hidden_kr';
 
       // ===== 非表示リスト管理 =====
+      // 保存形式: [{id, deletedAt}, ...]
       function getHidden() {
-        try { return new Set(JSON.parse(localStorage.getItem(LS_HIDDEN_KEY)) || []); }
-        catch { return new Set(); }
+        try { return JSON.parse(localStorage.getItem(LS_HIDDEN_KEY)) || []; }
+        catch { return []; }
       }
-      function saveHidden(set) {
-        localStorage.setItem(LS_HIDDEN_KEY, JSON.stringify([...set]));
+      function saveHidden(list) {
+        localStorage.setItem(LS_HIDDEN_KEY, JSON.stringify(list));
+      }
+      function getHiddenIds() {
+        return new Set(getHidden().map(e => e.id));
       }
       function hideSim(id) {
-        const h = getHidden();
-        h.add(id);
-        saveHidden(h);
+        const list = getHidden();
+        if (!list.find(e => e.id === id)) {
+          const now = new Date();
+          const deletedAt = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+          list.push({ id, deletedAt });
+          saveHidden(list);
+        }
         currentPage = 1;
         render();
       }
       function restoreSim(id) {
-        const h = getHidden();
-        h.delete(id);
-        saveHidden(h);
+        const list = getHidden().filter(e => e.id !== id);
+        saveHidden(list);
         render();
-        if (h.size === 0) closeTrash();
+        if (list.length === 0) closeTrash();
         else openTrash();
       }
       function restoreAll() {
-        saveHidden(new Set());
+        saveHidden([]);
         render();
         closeTrash();
       }
 
       // ===== ゴミ箱モーダル =====
       function openTrash() {
-        const h = getHidden();
+        const list = getHidden();
         const body = document.getElementById('trash-modal-body');
-        if (h.size === 0) { body.innerHTML = '<div style="padding:24px;text-align:center;color:#aaa;">非表示の商品はありません</div>'; }
-        else {
-          body.innerHTML = [...h].map(id => {
+        if (list.length === 0) {
+          body.innerHTML = '<div style="padding:24px;text-align:center;color:#aaa;">非表示の商品はありません</div>';
+        } else {
+          body.innerHTML = list.map(({ id, deletedAt }) => {
             const sim = allSims.find(s => s.id === id);
             const name = sim ? (sim.title || id) : id;
+            const thumbHtml = sim?.image_url
+              ? `<img class="trash-item-thumb" src="${sim.image_url}" alt="" loading="lazy">`
+              : `<div class="trash-item-thumb-placeholder">NO IMG</div>`;
             return `<div class="trash-item">
-              <span class="trash-item-name">${name}</span>
+              ${thumbHtml}
+              <div class="trash-item-info">
+                <div class="trash-item-name">${name}</div>
+                <div class="trash-item-date">非表示にした日時: ${deletedAt}</div>
+              </div>
               <button class="trash-restore-btn" onclick="restoreSim('${id}')">復活</button>
             </div>`;
           }).join('');
@@ -767,12 +804,12 @@
 
       // ===== ゴミ箱バー更新 =====
       function updateTrashBar() {
-        const h = getHidden();
+        const list = getHidden();
         const bar = document.getElementById('trash-bar');
         const msg = document.getElementById('trash-count-msg');
-        if (h.size > 0) {
+        if (list.length > 0) {
           bar.classList.add('visible');
-          msg.textContent = `${h.size}件非表示中`;
+          msg.textContent = `${list.length}件非表示中`;
         } else {
           bar.classList.remove('visible');
         }
@@ -883,7 +920,7 @@
 
       // ===== フィルター適用 =====
       function applyFilters(sims) {
-        const hidden = getHidden();
+        const hidden = getHiddenIds();
         const dMin = DAYS_STEPS[daysRange.min];
         const dMax = DAYS_STEPS[daysRange.max];
         const pMin = PRICE_STEPS[priceRange.min];
