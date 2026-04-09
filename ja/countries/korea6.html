@@ -257,16 +257,14 @@
         grid-template-columns:
           22px   /* # */
           26px   /* 画像 */
-          minmax(0, 180px) /* 商品名 */
-          52px   /* 種別 */
+          minmax(0, 1fr) /* 商品名 */
           40px   /* 日数 */
           70px   /* 高速 */
           62px   /* 低速 */
           28px   /* 通話 */
-          28px   /* SMS */
-          28px   /* テザ */
           54px   /* 規格 */
           70px   /* 評価 */
+          52px   /* 種別 */
           70px   /* 価格 */
           84px   /* ボタン */
           22px;  /* 非表示 */
@@ -695,15 +693,13 @@
           <div></div>
           <div></div>
           <div class="col-name">商品名</div>
-          <div class="col-center">種別</div>
           <div class="col-center">日数</div>
           <div class="col-center">高速データ</div>
           <div class="col-center">低速</div>
           <div class="col-center">通話</div>
-          <div class="col-center">SMS</div>
-          <div class="col-center">テザ</div>
           <div class="col-center">規格</div>
           <div class="col-center">評価</div>
+          <div class="col-center">種別</div>
           <div class="col-right">価格</div>
           <div></div>
           <div></div>
@@ -1051,15 +1047,13 @@
               <div class="product-name">${shortName}</div>
               <div class="product-id">${[sim.brand?.ja || sim.brand?.en || sim.brand?.original, sim.company].filter(Boolean).join(' / ') || sim.id || ''}</div>
             </div>
-            <div class="col-center">${badge(sim.type)}</div>
             <div class="col-center">${daysStr}</div>
             <div class="col-center">${dataStr}</div>
             <div class="col-center">${dataLow}</div>
             <div class="col-center">${bool(sim.voice_call)}</div>
-            <div class="col-center">${bool(sim.sms)}</div>
-            <div class="col-center">${bool(sim.tethering)}</div>
             <div class="col-center">${netTags(sim.network)}</div>
             <div class="col-center">${sim.review_score != null ? `<span style="color:#f5a623;">★${sim.review_score.toFixed(1)}</span> <span style="color:#aaa;font-size:0.7rem;">(${(sim.review_count||0).toLocaleString()})</span>` : '-'}</div>
+            <div class="col-center">${badge(sim.type)}</div>
             <div class="col-right">
               <span class="price-val">${priceStr}</span>
               <span class="price-date">${sim.price_fetched_at || ''}</span>
