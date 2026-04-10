@@ -146,6 +146,20 @@
 
   <script src="/shotsim/assets/js/main.js"></script>
   <script>
+    // ===== 言語ドロップダウン =====
+    const trigger = document.querySelector('.lang-nav-trigger');
+    const dropdown = document.querySelector('.lang-nav-dropdown');
+    trigger.addEventListener('click', e => {
+      e.stopPropagation();
+      trigger.classList.toggle('open');
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      trigger.classList.remove('open');
+      dropdown.classList.remove('open');
+    });
+  </script>
+  <script>
     // ===== 検索サジェスト =====
     let DESTINATIONS = [];
 
