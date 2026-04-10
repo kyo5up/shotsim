@@ -31,26 +31,65 @@ header .logo {
   color: #fff;
 }
 
-/* 言語切り替えナビ */
+/* 言語切り替えナビ（ドロップダウン） */
 .lang-nav {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  position: relative;
 }
 
-.lang-nav a {
+.lang-nav-trigger {
+  cursor: pointer;
   color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  font-size: 0.8rem;
-  padding: 4px 8px;
+  font-size: 0.85rem;
+  padding: 4px 10px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   transition: background 0.2s;
+  user-select: none;
 }
 
-.lang-nav a:hover,
-.lang-nav a.active {
+.lang-nav:hover .lang-nav-trigger {
   background: rgba(255,255,255,0.2);
   color: #fff;
+}
+
+.lang-nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  min-width: 140px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.lang-nav:hover .lang-nav-dropdown {
+  display: block;
+}
+
+.lang-nav-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+
+.lang-nav-dropdown a:hover {
+  background: #f0f4ff;
+}
+
+.lang-nav-dropdown a.active {
+  background: #e8eef8;
+  font-weight: 600;
+  color: #1A3263;
 }
 
 /* 検索エリア */
