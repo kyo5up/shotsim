@@ -26,260 +26,525 @@
     <link rel="alternate" hreflang="x-default" href="https://shotsim.net/ja/countries/singapore.html" />
     <link rel="stylesheet" href="/shotsim/assets/css/style.css" />
     <style>
-      .country-page {
-        max-width: 1300px;
-        margin: 40px auto;
-        padding: 0 24px 60px;
+      /* ===== レイアウト ===== */
+      .page-wrap {
         display: flex;
-        gap: 20px;
+        gap: 0;
+        padding: 0 24px 60px;
         align-items: flex-start;
       }
-      .filter-sidebar {
-        width: 220px;
+
+      /* ===== サイドバー ===== */
+      .sidebar {
+        width: 200px;
         flex-shrink: 0;
         position: sticky;
         top: 16px;
+        max-height: calc(100vh - 32px);
+        overflow-y: auto;
+        padding: 16px 0;
       }
-      .main-area {
-        flex: 1;
-        min-width: 0;
+      .sidebar::-webkit-scrollbar { width: 4px; }
+      .sidebar::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+      .filter-section {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 0;
       }
-      .country-header {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-bottom: 8px;
-      }
-      .country-header .flag { font-size: 3rem; }
-      .country-header h1 { font-size: 1.8rem; }
-      .data-note {
-        font-size: 0.8rem;
-        color: #888;
-        margin-bottom: 24px;
-      }
-      .filter-panel {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        padding: 12px 16px;
-        margin-bottom: 12px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .filter-group {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .filter-group-label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #888;
+      .filter-section:last-child { border-bottom: none; }
+      .filter-section-title {
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #666;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-      .filter-group select {
-        padding: 5px 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 0.85rem;
-        background: #fafafa;
-      }
-      .radio-filter-group {
+        letter-spacing: 0.06em;
+        margin-bottom: 6px;
+        padding: 0 4px;
         display: flex;
-        flex-direction: column;
-        gap: 3px;
-      }
-      .radio-filter {
-        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 6px;
         cursor: pointer;
-        font-size: 0.85rem;
-        color: #444;
         user-select: none;
       }
-      .radio-filter .radio-box {
-        width: 12px;
-        height: 12px;
+      .filter-section-title:hover { color: #333; }
+      .filter-section-title .toggle-icon {
+        font-size: 0.9rem;
+        color: #aaa;
+        font-weight: 400;
+        line-height: 1;
+      }
+      .filter-section-body {
+        overflow: hidden;
+        transition: max-height 0.2s ease;
+      }
+      .filter-section.collapsed .filter-section-body {
+        max-height: 0 !important;
+      }
+      .filter-section.collapsed .toggle-icon::after { content: '+'; }
+      .filter-section:not(.collapsed) .toggle-icon::after { content: '−'; }
+      .filter-option {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 3px 4px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        color: #333;
+        user-select: none;
+      }
+      .filter-option:hover { background: #f5f5f5; }
+      .filter-option input[type="radio"] {
+        width: 14px;
+        height: 14px;
+        accent-color: #1A3263;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .filter-option.active { color: #1A3263; font-weight: 600; }
+
+      /* ===== デュアルレンジスライダー ===== */
+      .range-slider-wrap {
+        padding: 4px 4px 8px;
+      }
+      .range-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: #1A3263;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .range-track {
+        position: relative;
+        height: 4px;
         background: #ddd;
         border-radius: 2px;
-        flex-shrink: 0;
-        transition: background 0.12s;
+        margin: 12px 4px;
       }
-      .radio-filter.active .radio-box { background: #1A3263; }
-      .radio-filter:hover:not(.active) .radio-box { background: #aab8d8; }
-      .price-slider-wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
+      .range-track-fill {
+        position: absolute;
+        height: 100%;
+        background: #1A3263;
+        border-radius: 2px;
       }
-      .price-slider-labels {
-        font-size: 0.82rem;
-        color: #444;
-      }
-      .price-slider-wrap input[type=range] {
+      .range-track input[type="range"] {
+        position: absolute;
         width: 100%;
-        accent-color: #1A3263;
+        height: 4px;
+        top: 0;
+        left: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        background: transparent;
+        pointer-events: none;
+        margin: 0;
       }
-      .filter-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .filter-count { font-size: 0.82rem; color: #888; }
-      .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
-      .action-btn {
-        padding: 4px 12px;
-        font-size: 0.8rem;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+      .range-track input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1A3263;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        pointer-events: all;
         cursor: pointer;
-        background: #fafafa;
+      }
+      .range-track input[type="range"]::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1A3263;
+        border: 2px solid #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        pointer-events: all;
+        cursor: pointer;
+      }
+
+      /* ===== 評価フィルター ===== */
+      .star-option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 4px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 0.82rem;
+        color: #333;
+        user-select: none;
+      }
+      .star-option:hover { background: #f5f5f5; }
+      .star-option input[type="radio"] {
+        width: 14px;
+        height: 14px;
+        accent-color: #1A3263;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .star-option.active { color: #1A3263; font-weight: 600; }
+      .stars { color: #f5a623; font-size: 0.82rem; }
+
+      .btn-clear-all {
+        width: 100%;
+        margin-top: 12px;
+        padding: 6px 0;
+        font-size: 0.8rem;
+        border: 1px solid #d44;
+        border-radius: 4px;
+        background: #fff;
+        color: #d44;
+        cursor: pointer;
+      }
+      .btn-clear-all:hover { background: #fff0f0; }
+
+      /* ===== メインコンテンツ ===== */
+      .main-content {
+        flex: 1;
+        min-width: 0;
+        padding: 16px 0 0 24px;
+      }
+      .main-header {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 4px;
+      }
+      .main-header h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .result-count {
+        font-size: 0.85rem;
+        color: #666;
+      }
+      .data-note {
+        font-size: 0.75rem;
+        color: #999;
+        margin-bottom: 12px;
+      }
+
+      /* ===== リストコントロール ===== */
+      .list-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #1A3263;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 6px 0;
+        margin-bottom: 0;
+      }
+      .sort-wrap, .pagesize-wrap {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
         color: #555;
       }
-      .action-btn:hover { background: #f0f0f0; }
-      .action-btn.btn-clear { border-color: #d44; color: #d44; }
-      .action-btn.btn-clear:hover { background: #fff0f0; }
-      .sim-table-wrap {
-        overflow: auto;
-        max-height: 80vh;
+      .sort-wrap select, .pagesize-wrap select {
+        font-size: 0.8rem;
+        padding: 2px 6px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fafafa;
       }
-      .sim-table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0;
-        font-size: 0.88rem;
+
+      /* ===== 商品リスト（グリッド風） ===== */
+      .product-list { list-style: none; margin: 0; padding: 0; }
+
+      .product-header,
+      .product-item {
+        display: grid;
+        grid-template-columns:
+          22px   /* # */
+          26px   /* 画像 */
+          minmax(0, 180px) /* 商品名 */
+          40px   /* 日数 */
+          70px   /* 高速 */
+          62px   /* 低速 */
+          28px   /* 通話 */
+          54px   /* 規格 */
+          70px   /* 評価 */
+          80px   /* ブランド */
+          52px   /* 種別 */
+          70px   /* 価格 */
+          84px   /* ボタン */
+          22px;  /* 非表示 */
+        align-items: center;
+        gap: 0 6px;
+        padding: 0 4px;
       }
-      .sim-table th {
+      .product-header {
+        border-top: 2px solid #1A3263;
+        border-bottom: 2px solid #1A3263;
         background: #f0f4ff;
-        font-weight: 600;
-        padding: 10px 12px;
-        border: 1px solid #ddd;
-        white-space: nowrap;
-        text-align: center;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: #555;
+        padding: 6px 4px;
         position: sticky;
         top: 0;
-        z-index: 2;
+        z-index: 10;
       }
-      .sim-table td {
-        border: 1px solid #ddd;
-        padding: 10px 12px;
-        vertical-align: middle;
+      .product-header .col-name { text-align: left; }
+      .product-header .col-center { text-align: center; }
+      .product-header .col-right { text-align: right; }
+
+      .product-item {
+        border-bottom: 1px solid #e8e8e8;
+        padding: 3px 4px;
+        transition: background 0.1s;
       }
-      .sim-table tr:nth-child(even) td { background: #fafafa; }
-      .sim-table tr:hover td { background: #f5f8ff; }
-      .sim-table th:nth-child(1),
-      .sim-table td:nth-child(1) {
-        position: sticky;
-        left: 0;
-        z-index: 3;
-        background: #fff;
+      .product-item:hover { background: #f8f9ff; }
+
+      .col-rank {
+        text-align: center;
+        font-size: 0.78rem;
+        color: #bbb;
       }
-      .sim-table th:nth-child(1) { background: #f0f4ff; z-index: 5; }
-      .sim-table tr:nth-child(even) td:nth-child(1) { background: #fafafa; }
-      .sim-table tr:hover td:nth-child(1) { background: #f5f8ff; }
-      .sim-table th:nth-child(2),
-      .sim-table td:nth-child(2) {
-        position: sticky;
-        left: var(--sticky-col1-width, 0px);
-        z-index: 3;
-        background: #fff;
-        border-right: 2px solid #ccc;
-      }
-      .sim-table th:nth-child(2) { background: #f0f4ff; z-index: 5; }
-      .sim-table tr:nth-child(even) td:nth-child(2) { background: #fafafa; }
-      .sim-table tr:hover td:nth-child(2) { background: #f5f8ff; }
-      .product-cell {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        min-width: 240px;
-        max-width: 380px;
-      }
-      .product-img {
-        width: 60px;
-        height: 60px;
+      .product-thumb {
+        width: 24px;
+        height: 24px;
         background: #f5f5f5;
         border: 1px solid #eee;
-        border-radius: 4px;
-        flex-shrink: 0;
+        border-radius: 3px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #bbb;
-        font-size: 0.7rem;
-      }
-      .product-id { font-size: 0.72rem; color: #aaa; }
-      .product-name {
-        font-size: 0.82rem;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
         overflow: hidden;
       }
-      .product-brand { font-size: 0.78rem; color: #555; margin-top: 2px; }
+      .product-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .col-name-wrap { min-width: 0; }
+      .product-id { font-size: 0.65rem; color: #bbb; }
+      .product-name {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #222;
+        line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .col-center {
+        text-align: center;
+        font-size: 0.78rem;
+        color: #555;
+        white-space: nowrap;
+      }
+      .col-right {
+        text-align: right;
+        font-size: 0.78rem;
+        color: #555;
+        white-space: nowrap;
+      }
+      .price-val {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #111;
+        white-space: nowrap;
+        text-align: right;
+        display: block;
+      }
+
+      /* バッジ */
       .badge {
         display: inline-block;
-        padding: 2px 7px;
+        padding: 1px 6px;
         border-radius: 10px;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         font-weight: 600;
         white-space: nowrap;
       }
-      .badge-esim { background: #e8f0fe; color: #1A3263; }
+      .badge-esim     { background: #e8f0fe; color: #1A3263; }
       .badge-physical { background: #fce8e6; color: #c5221f; }
-      .badge-both { background: #e6f4ea; color: #1e7e34; }
-      .ok { color: #1a7a4a; font-weight: 700; }
-      .ng { color: #c5221f; }
-      .unknown { color: #aaa; font-size: 0.8rem; }
-      .countries-cell { min-width: 120px; max-width: 200px; }
-      .country-tag {
-        display: inline-block;
-        background: #f0f4ff;
-        border-radius: 3px;
-        padding: 1px 5px;
-        font-size: 0.72rem;
-        margin: 1px;
-        white-space: nowrap;
-      }
-      .network-cell { white-space: nowrap; }
-      .net-tag {
-        display: inline-block;
-        padding: 1px 5px;
-        border-radius: 3px;
-        font-size: 0.72rem;
-        margin: 1px;
-      }
-      .net-5g { background: #e8f0fe; color: #1A3263; }
-      .net-4g { background: #e6f4ea; color: #1e7e34; }
+      .badge-both     { background: #e6f4ea; color: #1e7e34; }
+
+      /* 通信規格タグ */
+      .net-tag { display: inline-block; padding: 0 4px; border-radius: 3px; font-size: 0.7rem; }
+      .net-5g  { background: #e8f0fe; color: #1A3263; }
+      .net-4g  { background: #e6f4ea; color: #1e7e34; }
       .net-lte { background: #fff3e0; color: #e65100; }
-      .net-3g { background: #fce8e6; color: #c5221f; }
-      .price-cell { white-space: nowrap; text-align: right; }
-      .price-val { font-weight: 700; font-size: 1rem; }
-      .price-date { font-size: 0.7rem; color: #aaa; display: block; }
-      .stars { color: #f5a623; font-size: 0.85rem; }
+      .net-3g  { background: #fce8e6; color: #c5221f; }
+
+      .ok  { color: #1a7a4a; font-weight: 700; }
+      .ng  { color: #c5221f; }
+      .unk { color: #bbb; }
+
+      .price-date { font-size: 0.65rem; color: #aaa; display: block; }
       .amazon-btn {
-        display: inline-block;
-        padding: 6px 14px;
+        display: block;
+        padding: 4px 0;
         background: #ff9900;
         color: #fff;
         border-radius: 4px;
         text-decoration: none;
-        font-size: 0.82rem;
+        font-size: 0.72rem;
         font-weight: 600;
         white-space: nowrap;
+        text-align: center;
+        width: 100%;
       }
       .amazon-btn:hover { background: #e68900; }
-      .mono-cell { font-family: monospace; font-size: 0.78rem; }
-      .filter-panel.loading { opacity: 0.5; pointer-events: none; }
+
+      /* ===== ページネーション ===== */
+      .pagination { display: flex; flex-wrap: wrap; gap: 4px; margin: 10px 0; }
+      .page-btn {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fafafa;
+        cursor: pointer;
+        color: #444;
+      }
+      .page-btn:hover { background: #f0f0f0; }
+      .page-btn.active { border-color: #1A3263; color: #1A3263; font-weight: 700; background: #fff; }
+
+      .loading-msg { text-align: center; padding: 40px; color: #aaa; font-size: 0.9rem; }
+
+      /* ===== 非表示ボタン ===== */
+      .hide-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1;
+        padding: 2px 4px;
+        border-radius: 3px;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      .hide-btn:hover { color: #e55; background: #fff0f0; }
+
+      /* ===== ゴミ箱バー ===== */
+      .trash-bar {
+        display: none;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 4px;
+      }
+      .trash-bar.visible { display: flex; }
+      .trash-bar-link {
+        color: #1A3263;
+        text-decoration: underline;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+        padding: 0;
+      }
+
+      /* ===== ゴミ箱モーダル ===== */
+      .trash-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+      .trash-overlay.open { display: flex; }
+      .trash-modal {
+        background: #fff;
+        border-radius: 8px;
+        width: min(520px, 92vw);
+        max-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      }
+      .trash-modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        border-bottom: 1px solid #e8e8e8;
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+      .trash-modal-close {
+        background: none; border: none; cursor: pointer;
+        font-size: 1.2rem; color: #888; line-height: 1;
+      }
+      .trash-modal-body {
+        overflow-y: auto;
+        flex: 1;
+        padding: 8px 0;
+      }
+      .trash-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.82rem;
+      }
+      .trash-item:last-child { border-bottom: none; }
+      .trash-item-thumb {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        flex-shrink: 0;
+        background: #f5f5f5;
+        border-radius: 3px;
+      }
+      .trash-item-thumb-placeholder {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        background: #f0f0f0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6rem;
+        color: #bbb;
+      }
+      .trash-item-info { flex: 1; min-width: 0; }
+      .trash-item-name { color: #333; font-size: 0.82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .trash-item-date { color: #aaa; font-size: 0.72rem; margin-top: 2px; }
+      .trash-restore-btn {
+        padding: 3px 10px;
+        font-size: 0.78rem;
+        background: #1A3263;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .trash-restore-btn:hover { background: #2a4a8a; }
+      .trash-modal-footer {
+        padding: 10px 16px;
+        border-top: 1px solid #e8e8e8;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .trash-restore-all-btn {
+        padding: 5px 14px;
+        font-size: 0.82rem;
+        background: #f5f5f5;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .trash-restore-all-btn:hover { background: #e8e8e8; }
+
       @media (max-width: 768px) {
-        .country-page { flex-direction: column; }
-        .filter-sidebar { width: 100%; position: static; }
-        .sim-table { font-size: 0.78rem; }
-        .product-cell { min-width: 160px; }
+        .page-wrap { flex-direction: column; padding: 0 8px 40px; }
+        .sidebar { width: 100%; position: static; max-height: none; }
+        .main-content { padding: 12px 0 0; }
       }
     </style>
   </head>
@@ -294,490 +559,546 @@
         <a href="/shotsim/ko/countries/singapore.html">&#xD55C;&#xAD6D;&#xC5B4;</a>
       </nav>
     </header>
-    <div class="country-page">
-      <div class="filter-sidebar">
-        <div class="filter-panel loading" id="filter-panel">
-          <div class="filter-group">
-            <div class="filter-group-label">種別</div>
-            <div class="radio-filter-group" id="filter-type-group">
-              <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
-              <label class="radio-filter" data-value="eSIM"><span class="radio-box"></span>eSIM</label>
-              <label class="radio-filter" data-value="物理SIM"><span class="radio-box"></span>物理SIM</label>
+
+    <div class="page-wrap">
+      <!-- ===== サイドバー ===== -->
+      <aside class="sidebar">
+        <div class="filter-section">
+          <div class="filter-section-title">種別<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="type" data-value=""><input type="radio" name="type" checked> すべて</label>
+            <label class="filter-option" data-filter="type" data-value="eSIM"><input type="radio" name="type"> eSIM</label>
+            <label class="filter-option" data-filter="type" data-value="物理SIM"><input type="radio" name="type"> 物理SIM</label>
+            <label class="filter-option" data-filter="type" data-value="両対応"><input type="radio" name="type"> 両対応</label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">有効日数<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <div class="range-slider-wrap">
+              <div class="range-label">
+                <span id="days-label-min">1日</span>
+                <span id="days-label-max">365日</span>
+              </div>
+              <div class="range-track" id="days-track">
+                <div class="range-track-fill" id="days-fill"></div>
+                <input type="range" id="days-min" min="0" max="9" value="0" step="1">
+                <input type="range" id="days-max" min="0" max="9" value="9" step="1">
+              </div>
             </div>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">日数</div>
-            <div class="radio-filter-group" id="filter-days-group">
-              <label class="radio-filter" data-value="3"><span class="radio-box"></span>3日以内</label>
-              <label class="radio-filter" data-value="5"><span class="radio-box"></span>5日以内</label>
-              <label class="radio-filter" data-value="7"><span class="radio-box"></span>7日以内</label>
-              <label class="radio-filter" data-value="10"><span class="radio-box"></span>10日以内</label>
-              <label class="radio-filter" data-value="14"><span class="radio-box"></span>14日以内</label>
-              <label class="radio-filter" data-value="30"><span class="radio-box"></span>30日以内</label>
-              <label class="radio-filter" data-value="over30"><span class="radio-box"></span>30日超</label>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">価格<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <div class="range-slider-wrap">
+              <div class="range-label">
+                <span id="price-label-min">¥200</span>
+                <span id="price-label-max">¥13,000</span>
+              </div>
+              <div class="range-track" id="price-track">
+                <div class="range-track-fill" id="price-fill"></div>
+                <input type="range" id="price-min" min="0" max="10" value="0" step="1">
+                <input type="range" id="price-max" min="0" max="10" value="10" step="1">
+              </div>
             </div>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">通信規格</div>
-            <div class="radio-filter-group" id="filter-network-group">
-              <label class="radio-filter" data-value="5G"><span class="radio-box"></span>5G</label>
-              <label class="radio-filter" data-value="4G"><span class="radio-box"></span>4G</label>
-              <label class="radio-filter" data-value="LTE"><span class="radio-box"></span>LTE</label>
-              <label class="radio-filter" data-value="3G"><span class="radio-box"></span>3G</label>
-            </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">評価<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="star-option active" data-filter="rating" data-value="0"><input type="radio" name="rating" checked> すべて</label>
+            <label class="star-option" data-filter="rating" data-value="4"><input type="radio" name="rating"> <span class="stars">★★★★</span>以上</label>
+            <label class="star-option" data-filter="rating" data-value="3"><input type="radio" name="rating"> <span class="stars">★★★</span>以上</label>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">価格</div>
-            <div class="price-slider-wrap">
-              <div class="price-slider-labels" id="price-slider-labels">¥0 〜 ¥--</div>
-              <input type="range" id="price-range-min" min="0" max="99999" value="0" step="100" />
-              <input type="range" id="price-range-max" min="0" max="99999" value="99999" step="100" />
-            </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">通信規格<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="network" data-value=""><input type="radio" name="network" checked> すべて</label>
+            <label class="filter-option" data-filter="network" data-value="5G"><input type="radio" name="network"> 5G</label>
+            <label class="filter-option" data-filter="network" data-value="4G"><input type="radio" name="network"> 4G</label>
+            <label class="filter-option" data-filter="network" data-value="LTE"><input type="radio" name="network"> LTE</label>
+            <label class="filter-option" data-filter="network" data-value="3G"><input type="radio" name="network"> 3G</label>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">データ量</div>
-            <div class="radio-filter-group" id="filter-data-group">
-              <label class="radio-filter" data-value="500mb"><span class="radio-box"></span>〜500MB</label>
-              <label class="radio-filter" data-value="1gb"><span class="radio-box"></span>〜1GB</label>
-              <label class="radio-filter" data-value="3gb"><span class="radio-box"></span>〜3GB</label>
-              <label class="radio-filter" data-value="10gb"><span class="radio-box"></span>〜10GB</label>
-              <label class="radio-filter" data-value="over10gb"><span class="radio-box"></span>10GB超</label>
-            </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">通話<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="voice" data-value=""><input type="radio" name="voice" checked> すべて</label>
+            <label class="filter-option" data-filter="voice" data-value="1"><input type="radio" name="voice"> 通話あり</label>
+            <label class="filter-option" data-filter="voice" data-value="0"><input type="radio" name="voice"> データのみ</label>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">通話</div>
-            <div class="radio-filter-group" id="filter-voice-group">
-              <label class="radio-filter active" data-value=""><span class="radio-box"></span>すべて</label>
-              <label class="radio-filter" data-value="1"><span class="radio-box"></span>通話あり</label>
-              <label class="radio-filter" data-value="0"><span class="radio-box"></span>データのみ</label>
-            </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">テザリング<span class="toggle-icon"></span></div>
+          <div class="filter-section-body">
+            <label class="filter-option active" data-filter="tethering" data-value=""><input type="radio" name="tethering" checked> すべて</label>
+            <label class="filter-option" data-filter="tethering" data-value="1"><input type="radio" name="tethering"> あり</label>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">テザリング</div>
-            <div class="radio-filter-group" id="filter-tethering-group">
-              <label class="radio-filter" id="filter-tethering-label"><span class="radio-box"></span>テザリングあり</label>
-            </div>
-          </div>
-          <div class="filter-group">
-            <div class="filter-group-label">表示件数</div>
-            <select id="select-pagesize">
-              <option value="100" selected>100件ずつ</option>
-              <option value="all">すべて表示</option>
+        </div>
+
+        <button class="btn-clear-all" id="btn-clear">フィルターをリセット</button>
+      </aside>
+
+      <!-- ===== メイン ===== -->
+      <main class="main-content">
+        <div class="main-header">
+          <h1>🇸🇬 シンガポールのSIM比較</h1>
+          <span class="result-count" id="result-count"></span>
+        </div>
+        <p class="data-note" id="data-note">読み込み中...</p>
+
+        <div class="list-controls">
+          <div class="sort-wrap">
+            並び順:
+            <select id="select-sort">
+              <option value="price_asc">価格が安い順</option>
+              <option value="price_desc">価格が高い順</option>
+              <option value="days_asc">日数が少ない順</option>
+              <option value="days_desc">日数が多い順</option>
+              <option value="review_desc">評価が高い順</option>
             </select>
           </div>
-          <div class="filter-group">
-            <div class="filter-group-label">画像</div>
-            <label class="radio-filter active" id="toggle-images" style="cursor:pointer;">
-              <span class="radio-box" id="toggle-images-box"></span>表示する
-            </label>
-          </div>
-          <div class="filter-meta">
-            <span class="filter-count" id="filter-count">526件</span>
-            <div class="filter-btns">
-              <button class="action-btn btn-clear" id="btn-clear">クリア</button>
-            </div>
+          <div class="pagesize-wrap">
+            表示件数:
+            <select id="select-pagesize">
+              <option value="50">50件</option>
+              <option value="100" selected>100件</option>
+              <option value="all">すべて</option>
+            </select>
           </div>
         </div>
-      </div>
 
-      <div class="main-area">
-      <div class="country-header">
-        <div class="flag">🇸🇬</div>
-        <div><h1>シンガポールのSIM比較</h1></div>
-      </div>
-        <p class="data-note" id="data-note">価格は 2026-04-10 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。</p>
-
-        <div id="pagination" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;"></div>
-
-        <div class="sim-table-wrap" id="table-wrap">
-          <table class="sim-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>商品名</th>
-                <th>価格</th>
-                <th>購入</th>
-                <th>種別</th>
-                <th>高速<br>データ量</th>
-                <th>低速時</th>
-                <th>有効<br>日数</th>
-                <th>通話</th>
-                <th>SMS</th>
-                <th>テザ<br>リング</th>
-                <th>対応国</th>
-                <th>キャリア</th>
-                <th>通信<br>規格</th>
-                <th>評価</th>
-                <th>レビュー<br>件数</th>
-                <th>メーカー</th>
-                <th>ブランド</th>
-                <th>ASIN</th>
-                <th>価格</th>
-                <th>購入</th>
-              </tr>
-            </thead>
-            <tbody id="sim-tbody"></tbody>
-          </table>
+        <!-- ゴミ箱バー -->
+        <div class="trash-bar" id="trash-bar">
+          <span id="trash-count-msg"></span>
+          <button class="trash-bar-link" onclick="openTrash()">ゴミ箱を見る</button>
         </div>
 
-        <div id="pagination-bottom" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;"></div>
+        <div class="pagination" id="pagination-top"></div>
+        <div class="product-header">
+          <div></div>
+          <div></div>
+          <div class="col-name">商品名</div>
+          <div class="col-center">日数</div>
+          <div class="col-center">高速データ</div>
+          <div class="col-center">低速</div>
+          <div class="col-center">通話</div>
+          <div class="col-center">規格</div>
+          <div class="col-center">評価</div>
+          <div class="col-center">ブランド</div>
+          <div class="col-center">種別</div>
+          <div class="col-right">価格</div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="product-list" id="product-list">
+          <li class="loading-msg">読み込み中...</li>
+        </ul>
+        <div class="pagination" id="pagination-bottom"></div>
+      </main>
+    </div>
+
+    <!-- ゴミ箱モーダル -->
+    <div class="trash-overlay" id="trash-overlay" onclick="closeTrashIfBg(event)">
+      <div class="trash-modal">
+        <div class="trash-modal-header">
+          <span>🗑️ 非表示リスト</span>
+          <button class="trash-modal-close" onclick="closeTrash()">✕</button>
+        </div>
+        <div class="trash-modal-body" id="trash-modal-body"></div>
+        <div class="trash-modal-footer">
+          <button class="trash-restore-all-btn" onclick="restoreAll()">すべて復活</button>
+        </div>
       </div>
     </div>
 
     <script>
       const COUNTRY_NAME = "シンガポール";
       const JSON_PATH = "/shotsim/data/sims_sg.json";
+      const LS_HIDDEN_KEY = 'shotsim_hidden_sg';
+
+      // ===== 非表示リスト管理 =====
+      function getHidden() {
+        try { return JSON.parse(localStorage.getItem(LS_HIDDEN_KEY)) || []; }
+        catch { return []; }
+      }
+      function saveHidden(list) {
+        localStorage.setItem(LS_HIDDEN_KEY, JSON.stringify(list));
+      }
+      function getHiddenIds() {
+        return new Set(getHidden().map(e => e.id));
+      }
+      function hideSim(id) {
+        const list = getHidden();
+        if (!list.find(e => e.id === id)) {
+          const now = new Date();
+          const deletedAt = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+          list.push({ id, deletedAt });
+          saveHidden(list);
+        }
+        currentPage = 1;
+        render();
+      }
+      function restoreSim(id) {
+        const list = getHidden().filter(e => e.id !== id);
+        saveHidden(list);
+        render();
+        if (list.length === 0) closeTrash();
+        else openTrash();
+      }
+      function restoreAll() {
+        saveHidden([]);
+        render();
+        closeTrash();
+      }
+
+      // ===== ゴミ箱モーダル =====
+      function openTrash() {
+        const list = getHidden();
+        const body = document.getElementById('trash-modal-body');
+        if (list.length === 0) {
+          body.innerHTML = '<div style="padding:24px;text-align:center;color:#aaa;">非表示の商品はありません</div>';
+        } else {
+          body.innerHTML = list.map(({ id, deletedAt }) => {
+            const sim = allSims.find(s => s.id === id);
+            const name = sim ? (getShortName(sim) || id) : id;
+            const thumbHtml = sim?.image_url
+              ? `<img class="trash-item-thumb" src="${sim.image_url}" alt="" loading="lazy">`
+              : `<div class="trash-item-thumb-placeholder">NO IMG</div>`;
+            return `<div class="trash-item">
+              ${thumbHtml}
+              <div class="trash-item-info">
+                <div class="trash-item-name">${name}</div>
+                <div class="trash-item-date">非表示にした日時: ${deletedAt}</div>
+              </div>
+              <button class="trash-restore-btn" onclick="restoreSim('${id}')">復活</button>
+            </div>`;
+          }).join('');
+        }
+        document.getElementById('trash-overlay').classList.add('open');
+      }
+      function closeTrash() {
+        document.getElementById('trash-overlay').classList.remove('open');
+      }
+      function closeTrashIfBg(e) {
+        if (e.target === document.getElementById('trash-overlay')) closeTrash();
+      }
+
+      // ===== ゴミ箱バー更新 =====
+      function updateTrashBar() {
+        const list = getHidden();
+        const bar = document.getElementById('trash-bar');
+        const msg = document.getElementById('trash-count-msg');
+        if (list.length > 0) {
+          bar.classList.add('visible');
+          msg.textContent = `${list.length}件非表示中`;
+        } else {
+          bar.classList.remove('visible');
+        }
+      }
+
       let allSims = [];
       let filteredSims = [];
-      let currentFilters = { type: "", days: [], network: [], dataRange: [], tethering: false, voice: "" };
-      let priceFilterMin = 0;
-      let priceFilterMax = Infinity;
-      let priceDataMin = 0;
-      let priceDataMax = 0;
-      let sortCol = null;
-      let sortDir = 1;
+      const DAYS_STEPS  = [1, 3, 5, 7, 10, 14, 30, 60, 90, 365];
+      const PRICE_STEPS = [200, 500, 1000, 1500, 2000, 3000, 4000, 5000, 7000, 10000, 13000];
+
+      let currentFilters = { type: "", network: "", voice: "", tethering: "", rating: "0" };
+      let daysRange  = { min: 0, max: DAYS_STEPS.length - 1 };
+      let priceRange = { min: 0, max: PRICE_STEPS.length - 1 };
+      let sortKey = "price_asc";
       let currentPage = 1;
       let pageSize = 100;
-      let showImages = true;
 
-      // ラジオ風フィルター（単一選択）の初期化
-      function initBtnFilter(groupId, filterKey) {
-        const group = document.getElementById(groupId);
-        if (!group) return;
-        group.querySelectorAll('.radio-filter').forEach(label => {
-          label.addEventListener('click', () => {
-            group.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
-            label.classList.add('active');
-            currentFilters[filterKey] = label.dataset.value;
-            currentPage = 1;
-            renderTable();
+      // ===== ラジオフィルター =====
+      document.querySelectorAll('.filter-option, .star-option').forEach(label => {
+        label.addEventListener('click', () => {
+          const filterKey = label.dataset.filter;
+          document.querySelectorAll(`[data-filter="${filterKey}"]`).forEach(l => {
+            l.classList.remove('active');
+            l.querySelector('input').checked = false;
           });
+          label.classList.add('active');
+          label.querySelector('input').checked = true;
+          currentFilters[filterKey] = label.dataset.value;
+          currentPage = 1;
+          render();
         });
-      }
+      });
 
-      // チェックボックス風フィルター（複数選択・OR条件）の初期化
-      function initCheckFilter(groupId, filterKey) {
-        const group = document.getElementById(groupId);
-        if (!group) return;
-        group.querySelectorAll('.radio-filter').forEach(label => {
-          label.addEventListener('click', () => {
-            label.classList.toggle('active');
-            const val = label.dataset.value;
-            const idx = currentFilters[filterKey].indexOf(val);
-            if (idx === -1) {
-              currentFilters[filterKey].push(val);
-            } else {
-              currentFilters[filterKey].splice(idx, 1);
-            }
-            currentPage = 1;
-            renderTable();
-          });
+      // ===== デュアルレンジスライダー =====
+      function initRangeSlider(idMin, idMax, idFill, idLabelMin, idLabelMax, steps, range, formatFn) {
+        const elMin = document.getElementById(idMin);
+        const elMax = document.getElementById(idMax);
+        const fill  = document.getElementById(idFill);
+        const lblMin = document.getElementById(idLabelMin);
+        const lblMax = document.getElementById(idLabelMax);
+
+        function updateFill() {
+          const pct = 100 / (steps.length - 1);
+          fill.style.left  = (range.min * pct) + '%';
+          fill.style.width = ((range.max - range.min) * pct) + '%';
+          lblMin.textContent = formatFn(steps[range.min]);
+          lblMax.textContent = formatFn(steps[range.max]);
+        }
+
+        elMin.addEventListener('input', () => {
+          range.min = Math.min(parseInt(elMin.value), range.max);
+          elMin.value = range.min;
+          updateFill();
+          currentPage = 1;
+          render();
         });
-      }
-
-      // data_highをGB換算する
-      function parseDataHighGB(dataHigh) {
-        if (dataHigh == null) return null;
-        const s = String(dataHigh).trim();
-        if (s === '無制限' || s === 'Unlimited' || s === 'unlimited') return Infinity;
-        const mbMatch = s.match(/^([\d.]+)\s*MB$/i);
-        if (mbMatch) return parseFloat(mbMatch[1]) / 1024;
-        const gbMatch = s.match(/^([\d.]+)\s*GB$/i);
-        if (gbMatch) return parseFloat(gbMatch[1]);
-        return null;
-      }
-
-      function sortSims(sims) {
-        if (!sortCol) return sims;
-        return [...sims].sort((a, b) => {
-          const va = a[sortCol] ?? -Infinity;
-          const vb = b[sortCol] ?? -Infinity;
-          return (va < vb ? -1 : va > vb ? 1 : 0) * sortDir;
+        elMax.addEventListener('input', () => {
+          range.max = Math.max(parseInt(elMax.value), range.min);
+          elMax.value = range.max;
+          updateFill();
+          currentPage = 1;
+          render();
         });
+        updateFill();
       }
 
-      function renderBool(v) {
-        if (v === true) return '<span class="ok">○</span>';
-        if (v === false) return '<span class="ng">✕</span>';
-        return '<span class="unknown">不明</span>';
-      }
-      function renderBadge(t) {
-        if (!t) return '';
-        if (t.includes('eSIM')) return '<span class="badge badge-esim">eSIM</span>';
-        if (t.includes('両対応')) return '<span class="badge badge-both">両対応</span>';
-        if (t.includes('物理')) return '<span class="badge badge-physical">物理SIM</span>';
-        return `<span class="badge">${t}</span>`;
-      }
-      function renderTypeWithSize(sim) {
-        const t = sim.type || '';
-        const badge = renderBadge(t);
-        if (t.includes('eSIM')) return badge;
-        const sizes = sim.sim_sizes;
-        if (!sizes || Object.values(sizes).every(v => !v)) return badge + '<br><small class="unknown">サイズ不明</small>';
-        const supported = [];
-        if (sizes.nano) supported.push('nano');
-        if (sizes.micro) supported.push('micro');
-        if (sizes.standard) supported.push('標準');
-        return badge + `<br><small>${supported.length ? supported.join(' / ') : '<span class="unknown">不明</span>'}</small>`;
-      }
-      function renderPrice(sim) {
-        if (sim.price_min == null) return '<span class="unknown">-</span>';
-        const priceStr = sim.price_min === sim.price_max
-          ? `¥${sim.price_min.toLocaleString()}`
-          : `¥${sim.price_min.toLocaleString()}〜`;
-        const dateStr = sim.price_fetched_at ? `<span class="price-date">${sim.price_fetched_at} 時点</span>` : '';
-        return `<div class="price-cell"><span class="price-val">${priceStr}</span>${dateStr}</div>`;
-      }
-      function renderProduct(sim) {
-        const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
-        const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
-        const companyStr = companyLocal ? ` / ${companyLocal}` : '';
-        const imgHtml = (showImages && sim.image_url)
-          ? `<div class="product-img"><img src="${sim.image_url}" alt="" loading="lazy" width="60" height="60" style="object-fit:contain;" /></div>`
-          : '<div class="product-img" style="display:none;"></div>';
-        return `<div class="product-cell">${imgHtml}<div class="product-info"><div class="product-id">${sim.id || ''}</div><div class="product-name">${sim.product_name || ''}</div><div class="product-brand">${brandLocal}${companyStr}</div></div></div>`;
-      }
-      function renderCountries(countries) {
-        if (!countries || !countries.length) return '<span class="unknown">不明</span>';
-        return '<div class="countries-cell">' + countries.map(c => `<span class="country-tag">${c}</span>`).join('') + '</div>';
-      }
-      function renderNetwork(nets) {
-        if (!nets || !nets.length) return '<span class="unknown">-</span>';
-        const m = { '5G': 'net-5g', '4G': 'net-4g', 'LTE': 'net-lte', '3G': 'net-3g' };
-        return '<span class="network-cell">' + nets.map(n => `<span class="net-tag ${m[n] || ''}">${n}</span>`).join('') + '</span>';
-      }
-      function renderCarrier(sim) {
-        const d = sim.carrier;
-        if (!d) return '<span class="unknown">-</span>';
-        const v = Object.values(d)[0];
-        return v ? `<span style="font-size:0.82rem">${v}</span>` : '<span class="unknown">-</span>';
-      }
+      initRangeSlider('days-min', 'days-max', 'days-fill', 'days-label-min', 'days-label-max',
+        DAYS_STEPS, daysRange, v => v + '日');
+      initRangeSlider('price-min', 'price-max', 'price-fill', 'price-label-min', 'price-label-max',
+        PRICE_STEPS, priceRange, v => '¥' + v.toLocaleString());
 
+      document.getElementById('btn-clear').addEventListener('click', () => {
+        currentFilters = { type: "", network: "", voice: "", tethering: "", rating: "0" };
+        document.querySelectorAll('.filter-option, .star-option').forEach(l => {
+          l.classList.remove('active');
+          l.querySelector('input').checked = false;
+        });
+        document.querySelectorAll('.filter-option[data-value=""], .star-option[data-value="0"]').forEach(l => {
+          l.classList.add('active');
+          l.querySelector('input').checked = true;
+        });
+        daysRange  = { min: 0, max: DAYS_STEPS.length - 1 };
+        priceRange = { min: 0, max: PRICE_STEPS.length - 1 };
+        document.getElementById('days-min').value  = 0;
+        document.getElementById('days-max').value  = DAYS_STEPS.length - 1;
+        document.getElementById('price-min').value = 0;
+        document.getElementById('price-max').value = PRICE_STEPS.length - 1;
+        initRangeSlider('days-min', 'days-max', 'days-fill', 'days-label-min', 'days-label-max',
+          DAYS_STEPS, daysRange, v => v + '日');
+        initRangeSlider('price-min', 'price-max', 'price-fill', 'price-label-min', 'price-label-max',
+          PRICE_STEPS, priceRange, v => '¥' + v.toLocaleString());
+        currentPage = 1;
+        render();
+      });
+
+      document.getElementById('select-sort').addEventListener('change', e => {
+        sortKey = e.target.value;
+        currentPage = 1;
+        render();
+      });
+
+      document.getElementById('select-pagesize').addEventListener('change', e => {
+        pageSize = e.target.value === 'all' ? Infinity : parseInt(e.target.value);
+        currentPage = 1;
+        render();
+      });
+
+      // ===== フィルター適用 =====
       function applyFilters(sims) {
+        const hidden = getHiddenIds();
+        const dMin = DAYS_STEPS[daysRange.min];
+        const dMax = DAYS_STEPS[daysRange.max];
+        const pMin = PRICE_STEPS[priceRange.min];
+        const pMax = PRICE_STEPS[priceRange.max];
         return sims.filter(s => {
+          if (hidden.has(s.id)) return false;
           if (COUNTRY_NAME && !(s.countries || []).includes(COUNTRY_NAME)) return false;
-          if (currentFilters.type && !(s.type || '').includes(currentFilters.type)) return false;
-          // 日数: OR条件（複数チェック可）
-          if (currentFilters.days.length > 0) {
-            const days = s.days;
-            const match = currentFilters.days.some(d => {
-              if (d === 'over30') return days != null && days > 30;
-              return days != null && days <= parseInt(d);
-            });
-            if (!match) return false;
+          if (currentFilters.type) {
+            const t = s.type || '';
+            if (currentFilters.type === 'eSIM'   && !t.includes('eSIM'))    return false;
+            if (currentFilters.type === '物理SIM' && (t.includes('eSIM') || t.includes('両対応'))) return false;
+            if (currentFilters.type === '両対応'  && !t.includes('両対応')) return false;
           }
-          // 通信規格: OR条件（複数チェック可）
-          if (currentFilters.network.length > 0) {
-            if (!currentFilters.network.some(n => (s.network || []).includes(n))) return false;
-          }
-          // 価格フィルター
-          const price = s.price_min != null ? s.price_min : 0;
-          if (price < priceFilterMin || price > priceFilterMax) return false;
-          // データ量: OR条件（複数チェック可）
-          if (currentFilters.dataRange.length > 0) {
-            const gb = parseDataHighGB(s.data_high);
-            if (gb !== null) {
-              const match = currentFilters.dataRange.some(d => {
-                if (d === '500mb') return gb <= 0.5;
-                if (d === '1gb') return gb <= 1;
-                if (d === '3gb') return gb <= 3;
-                if (d === '10gb') return gb <= 10;
-                if (d === 'over10gb') return gb > 10;
-                return false;
-              });
-              if (!match) return false;
-            }
-          }
-          // テザリング
-          if (currentFilters.tethering && s.tethering !== true) return false;
-          if (currentFilters.voice === "1" && s.voice_call !== true) return false;
+          const days = s.days ?? null;
+          if (days === null || days < dMin || days > dMax) return false;
+          if (s.price_min != null && (s.price_min < pMin || s.price_min > pMax)) return false;
+          const minRating = parseFloat(currentFilters.rating || 0);
+          if (minRating > 0 && (s.review_score == null || s.review_score < minRating)) return false;
+          if (currentFilters.network && !(s.network || []).includes(currentFilters.network)) return false;
+          if (currentFilters.voice === "1" && s.voice_call !== true)  return false;
           if (currentFilters.voice === "0" && s.voice_call !== false) return false;
+          if (currentFilters.tethering === "1" && s.tethering !== true) return false;
           return true;
         });
       }
 
-      function updatePriceLabel() {
-        const minVal = parseInt(document.getElementById('price-range-min').value);
-        const maxVal = parseInt(document.getElementById('price-range-max').value);
-        const maxLabel = maxVal >= priceDataMax ? `¥${maxVal.toLocaleString()}+` : `¥${maxVal.toLocaleString()}`;
-        document.getElementById('price-slider-labels').textContent = `¥${minVal.toLocaleString()} 〜 ${maxLabel}`;
+      // ===== ソート =====
+      function sortSims(sims) {
+        function tiebreak(a, b) {
+          const p = (a.price_min ?? 999999) - (b.price_min ?? 999999);
+          if (p !== 0) return p;
+          const c = (b.review_count ?? 0) - (a.review_count ?? 0);
+          if (c !== 0) return c;
+          return (b.review_score ?? 0) - (a.review_score ?? 0);
+        }
+        return [...sims].sort((a, b) => {
+          switch (sortKey) {
+            case 'price_asc': { const d = (a.price_min ?? 999999) - (b.price_min ?? 999999); return d !== 0 ? d : tiebreak(a, b); }
+            case 'price_desc': { const d = (b.price_min ?? 0) - (a.price_min ?? 0); return d !== 0 ? d : tiebreak(a, b); }
+            case 'days_asc': { const d = (a.days ?? 9999) - (b.days ?? 9999); return d !== 0 ? d : tiebreak(a, b); }
+            case 'days_desc': { const d = (b.days ?? 0) - (a.days ?? 0); return d !== 0 ? d : tiebreak(a, b); }
+            case 'review_desc': { const s = (b.review_score ?? 0) - (a.review_score ?? 0); return s !== 0 ? s : tiebreak(a, b); }
+            default: return tiebreak(a, b);
+          }
+        });
       }
 
+      // ===== レンダリングヘルパー =====
+      function badge(t) {
+        if (!t) return '<span class="badge badge-physical">物理SIM</span>';
+        if (t.includes('両')) return '<span class="badge badge-both">両対応</span>';
+        if (t.includes('eSIM')) return '<span class="badge badge-esim">eSIM</span>';
+        return '<span class="badge badge-physical">物理SIM</span>';
+      }
+      function bool(v) {
+        if (v === true)  return '<span class="ok">○</span>';
+        if (v === false) return '<span class="ng">✕</span>';
+        return '<span class="unk">-</span>';
+      }
+      function netTags(nets) {
+        if (!nets || !nets.length) return '<span class="unk">-</span>';
+        const m = { '5G': 'net-5g', '4G': 'net-4g', 'LTE': 'net-lte', '3G': 'net-3g' };
+        return nets.map(n => `<span class="net-tag ${m[n] || ''}">${n}</span>`).join(' ');
+      }
+
+      // ===== 短縮商品名生成 =====
+      function getShortName(sim) {
+        const daysStr   = sim.days      != null ? `${sim.days}日` : null;
+        const dataStr   = sim.data_high != null ? sim.data_high   : null;
+        const brandPart = (sim.brand?.local || sim.brand?.en || sim.brand?.original) || null;
+        const countryPart = sim.countries && sim.countries.length > 1 ? `${sim.countries.length}カ国` : null;
+        const mainCountry = (sim.countries && sim.countries.length > 0) ? sim.countries[0] : null;
+        return [brandPart, daysStr, dataStr, mainCountry, countryPart, sim.type].filter(Boolean).join(' / ');
+      }
+
+      // ===== カード生成 =====
+      function buildCard(sim, rank) {
+        const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
+        const thumbHtml = sim.image_url
+          ? `<img src="${sim.image_url}" alt="" loading="lazy">`
+          : '<span style="font-size:0.65rem;color:#ccc;">NO<br>IMG</span>';
+
+        const daysStr = sim.days      != null ? `${sim.days}日`   : '-';
+        const dataStr = sim.data_high != null ? sim.data_high       : '-';
+        const dataLow = sim.data_low  != null ? sim.data_low        : '-';
+        const shortName = getShortName(sim);
+        const priceStr = sim.price_min != null
+          ? (sim.price_min === sim.price_max
+              ? `¥${sim.price_min.toLocaleString()}`
+              : `¥${sim.price_min.toLocaleString()}〜`)
+          : '-';
+        const brandStr = sim.brand?.local || sim.brand?.en || sim.brand?.original || '-';
+
+        return `
+          <li class="product-item">
+            <div class="col-rank">${rank}</div>
+            <div class="product-thumb">${thumbHtml}</div>
+            <div class="col-name-wrap">
+              <div class="product-name">${shortName}</div>
+              <div class="product-id">${sim.id || ''}</div>
+            </div>
+            <div class="col-center">${daysStr}</div>
+            <div class="col-center">${dataStr}</div>
+            <div class="col-center">${dataLow}</div>
+            <div class="col-center">${bool(sim.voice_call)}</div>
+            <div class="col-center">${netTags(sim.network)}</div>
+            <div class="col-center">${sim.review_score != null ? `<span style="color:#f5a623;">★${sim.review_score.toFixed(1)}</span> <span style="color:#aaa;font-size:0.7rem;">(${(sim.review_count||0).toLocaleString()})</span>` : '-'}</div>
+            <div class="col-center">${brandStr}</div>
+            <div class="col-center">${badge(sim.type)}</div>
+            <div class="col-right">
+              <span class="price-val">${priceStr}</span>
+              <span class="price-date">${sim.price_fetched_at || ''}</span>
+            </div>
+            <div><a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a></div>
+            <div><button class="hide-btn" onclick="hideSim('${sim.id}')" title="非表示にする">✕</button></div>
+          </li>`;
+      }
+
+      // ===== ページネーション =====
       function renderPagination(total) {
-        const containers = [document.getElementById('pagination'), document.getElementById('pagination-bottom')];
-        if (pageSize === Infinity) {
-          containers.forEach(c => { if (c) c.innerHTML = ''; });
+        const ids = ['pagination-top', 'pagination-bottom'];
+        if (pageSize === Infinity || total <= pageSize) {
+          ids.forEach(id => { document.getElementById(id).innerHTML = ''; });
           return;
         }
         const totalPages = Math.ceil(total / pageSize);
-        if (totalPages <= 1) {
-          containers.forEach(c => { if (c) c.innerHTML = ''; });
-          return;
-        }
-        const btns = [];
+        let html = '';
         for (let i = 1; i <= totalPages; i++) {
-          const active = i === currentPage ? ' style="font-weight:700;border-color:#1A3263;color:#1A3263;"' : '';
-          btns.push(`<button class="action-btn" onclick="goPage(${i})"${active}>${i}</button>`);
+          html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goPage(${i})">${i}</button>`;
         }
-        const html = btns.join('');
-        containers.forEach(c => { if (c) c.innerHTML = html; });
+        ids.forEach(id => { document.getElementById(id).innerHTML = html; });
       }
 
       function goPage(p) {
         currentPage = p;
-        renderTable();
-        document.getElementById('table-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        render();
+        document.getElementById('product-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
-      let stickyLeft = null;
-
-      function renderTable() {
+      // ===== メインレンダー =====
+      function render() {
         filteredSims = applyFilters(allSims);
         const sorted = sortSims(filteredSims);
-        const total = sorted.length;
-        const start = pageSize === Infinity ? 0 : (currentPage - 1) * pageSize;
-        const end = pageSize === Infinity ? total : Math.min(start + pageSize, total);
-        const pageSims = sorted.slice(start, end);
+        const total  = sorted.length;
+        const start  = pageSize === Infinity ? 0 : (currentPage - 1) * pageSize;
+        const end    = pageSize === Infinity ? total : Math.min(start + pageSize, total);
+        const page   = sorted.slice(start, end);
 
-        const tbody = document.getElementById("sim-tbody");
-        if (pageSize === Infinity) {
-          document.getElementById("filter-count").textContent = `${total}件`;
-        } else {
-          document.getElementById("filter-count").textContent = `${total}件中 ${pageSims.length}件表示`;
-        }
-
-        const frag = document.createDocumentFragment();
-        pageSims.forEach((sim, idx) => {
-          const tr = document.createElement('tr');
-          const url = sim.affiliate_url || `https://www.amazon.co.jp/dp/${sim.asin}?tag=shotsim-22`;
-          const btn = `<a href="${url}" class="amazon-btn" target="_blank" rel="noopener">Amazonで見る</a>`;
-          const price = renderPrice(sim);
-          const dh = sim.data_high != null ? `<span style="white-space:nowrap">${sim.data_high}</span>` : '<span class="unknown">-</span>';
-          const dl = sim.data_low == null ? '<span class="unknown">-</span>' : sim.data_low === "情報不明" ? '<span class="unknown">?</span>' : `<span style="white-space:nowrap;font-size:0.82rem">${sim.data_low}</span>`;
-          const days = sim.days != null ? sim.days + '日間' : '<span class="unknown">-</span>';
-          const rs = sim.review_score != null ? `<span class="stars">&#x2605;${sim.review_score.toFixed(1)}</span>` : '<span class="unknown">-</span>';
-          const rc = sim.review_count != null ? `<span style="font-size:0.82rem">(${sim.review_count.toLocaleString()}件)</span>` : '<span class="unknown">-</span>';
-          const companyLocal = sim.company && sim.company.local ? sim.company.local : '';
-          const brandLocal = sim.brand && sim.brand.local ? sim.brand.local : '';
-          const company = companyLocal ? `<span style="font-size:0.82rem">${companyLocal}</span>` : '<span class="unknown">-</span>';
-          const brand = brandLocal ? `<span style="font-size:0.82rem">${brandLocal}</span>` : '<span class="unknown">-</span>';
-          const asin = sim.asin ? `<span class="mono-cell">${sim.asin}</span>` : '<span class="unknown">-</span>';
-          tr.innerHTML = `<td style="text-align:center;color:#aaa;font-size:0.8rem;white-space:nowrap">${start+idx+1}</td><td>${renderProduct(sim)}</td><td>${price}</td><td>${btn}</td><td style="text-align:center">${renderTypeWithSize(sim)}</td><td style="text-align:center">${dh}</td><td style="text-align:center">${dl}</td><td style="text-align:center;white-space:nowrap">${days}</td><td style="text-align:center">${renderBool(sim.voice_call)}</td><td style="text-align:center">${renderBool(sim.sms)}</td><td style="text-align:center">${renderBool(sim.tethering)}</td><td>${renderCountries(sim.countries)}</td><td style="text-align:center">${renderCarrier(sim)}</td><td>${renderNetwork(sim.network)}</td><td style="text-align:center">${rs}</td><td style="text-align:center">${rc}</td><td style="text-align:center">${company}</td><td style="text-align:center">${brand}</td><td style="text-align:center">${asin}</td><td>${price}</td><td>${btn}</td>`;
-          frag.appendChild(tr);
-        });
-        tbody.textContent = '';
-        tbody.appendChild(frag);
+        updateTrashBar();
+        document.getElementById('result-count').textContent = `${total.toLocaleString()}件`;
+        document.getElementById('product-list').innerHTML =
+          page.length
+            ? page.map((s, i) => buildCard(s, start + i + 1)).join('')
+            : '<li class="loading-msg">該当する商品がありません</li>';
         renderPagination(total);
-
-        requestAnimationFrame(() => {
-          const firstTh = document.querySelector('.sim-table th:nth-child(1)');
-          if (!firstTh) return;
-          stickyLeft = firstTh.getBoundingClientRect().width;
-          document.querySelector('.sim-table').style.setProperty('--sticky-col1-width', stickyLeft + 'px');
-        });
       }
 
+      // ===== データ読み込み =====
       async function init() {
-        initBtnFilter('filter-type-group', 'type');
-        initBtnFilter('filter-voice-group', 'voice');
-        initCheckFilter('filter-days-group', 'days');
-        initCheckFilter('filter-network-group', 'network');
-        initCheckFilter('filter-data-group', 'dataRange');
-
-        // テザリングフィルター
-        const tetheringLabel = document.getElementById('filter-tethering-label');
-        if (tetheringLabel) {
-          tetheringLabel.addEventListener('click', () => {
-            currentFilters.tethering = !currentFilters.tethering;
-            tetheringLabel.classList.toggle('active', currentFilters.tethering);
-            currentPage = 1;
-            renderTable();
-          });
-        }
-
-        // 価格スライダー
-        const rangeMin = document.getElementById('price-range-min');
-        const rangeMax = document.getElementById('price-range-max');
-        rangeMin.addEventListener('input', () => {
-          if (parseInt(rangeMin.value) > parseInt(rangeMax.value)) {
-            rangeMin.value = rangeMax.value;
-          }
-          priceFilterMin = parseInt(rangeMin.value);
-          updatePriceLabel();
-          currentPage = 1;
-          renderTable();
-        });
-        rangeMax.addEventListener('input', () => {
-          if (parseInt(rangeMax.value) < parseInt(rangeMin.value)) {
-            rangeMax.value = rangeMin.value;
-          }
-          priceFilterMax = parseInt(rangeMax.value) >= priceDataMax ? Infinity : parseInt(rangeMax.value);
-          updatePriceLabel();
-          currentPage = 1;
-          renderTable();
-        });
-
-        document.getElementById('btn-clear').addEventListener('click', () => {
-          currentFilters = { type: "", days: [], network: [], dataRange: [], tethering: false, voice: "" };
-          document.querySelectorAll('.radio-filter').forEach(l => l.classList.remove('active'));
-          document.querySelectorAll('#filter-type-group .radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
-          document.querySelectorAll('#filter-voice-group .radio-filter[data-value=""]').forEach(l => l.classList.add('active'));
-          priceFilterMin = priceDataMin;
-          priceFilterMax = Infinity;
-          rangeMin.value = priceDataMin;
-          rangeMax.value = priceDataMax;
-          updatePriceLabel();
-          currentPage = 1;
-          renderTable();
-        });
-        document.getElementById('select-pagesize').addEventListener('change', e => {
-          pageSize = e.target.value === 'all' ? Infinity : parseInt(e.target.value);
-          currentPage = 1;
-          renderTable();
-        });
-        document.getElementById('toggle-images').addEventListener('click', () => {
-          showImages = !showImages;
-          const el = document.getElementById('toggle-images');
-          el.classList.toggle('active', showImages);
-          el.childNodes[1].nodeValue = showImages ? '表示する' : 'オフ';
-          renderTable();
-        });
-
         try {
-          const res = await fetch(JSON_PATH);
+          const res  = await fetch(JSON_PATH);
           const data = await res.json();
-          // 国別: {country, sims: [...]} / 全国: [{country, sims: [...]}, ...]
-          if (Array.isArray(data)) {
-            allSims = data.flatMap(g => g.sims || []);
-          } else {
-            allSims = data.sims || [];
-          }
-          const fetched = allSims[0] && allSims[0].price_fetched_at ? allSims[0].price_fetched_at : "不明";
-          document.getElementById("data-note").textContent =
+          allSims = Array.isArray(data) ? data.flatMap(g => g.sims || []) : (data.sims || []);
+          const fetched = allSims[0]?.price_fetched_at || '不明';
+          document.getElementById('data-note').textContent =
             `価格は ${fetched} 時点のAmazon掲載価格です。最新価格はAmazonでご確認ください。`;
-
-          // 価格スライダーの初期化（データ範囲に合わせる）
-          const prices = allSims.map(s => s.price_min != null ? s.price_min : 0).filter(p => p > 0);
-          priceDataMin = 0;
-          priceDataMax = prices.length > 0 ? Math.max(...prices) : 99999;
-          priceFilterMin = priceDataMin;
-          priceFilterMax = Infinity;
-          rangeMin.min = priceDataMin;
-          rangeMin.max = priceDataMax;
-          rangeMin.value = priceDataMin;
-          rangeMax.min = priceDataMin;
-          rangeMax.max = priceDataMax;
-          rangeMax.value = priceDataMax;
-          updatePriceLabel();
-
-          document.getElementById("filter-panel").classList.remove("loading");
-          renderTable();
+          render();
         } catch (e) {
-          document.getElementById("filter-panel").classList.remove("loading");
+          document.getElementById('product-list').innerHTML =
+            '<li class="loading-msg">データの読み込みに失敗しました</li>';
         }
       }
 
       init();
+
+      // ===== サイドバー折りたたみ =====
+      document.querySelectorAll('.filter-section-title').forEach(title => {
+        const body = title.nextElementSibling;
+        body.style.maxHeight = body.scrollHeight + 'px';
+        title.addEventListener('click', () => {
+          const section = title.closest('.filter-section');
+          if (section.classList.contains('collapsed')) {
+            section.classList.remove('collapsed');
+            body.style.maxHeight = body.scrollHeight + 'px';
+          } else {
+            section.classList.add('collapsed');
+          }
+        });
+      });
     </script>
 
     <footer>
