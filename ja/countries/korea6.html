@@ -1012,7 +1012,7 @@
       function getShortName(sim) {
         const daysStr     = sim.days      != null ? `${sim.days}日` : null;
         const dataStr     = sim.data_high != null ? sim.data_high   : null;
-        const brandPart   = (sim.brand?.ja || sim.brand?.en || sim.brand?.original) || null;
+        const brandPart   = (sim.brand?.local || sim.brand?.en || sim.brand?.original) || null;
         const mainCountry = (sim.countries && sim.countries.length > 0) ? sim.countries[0] : null;
         const countryPart = sim.countries && sim.countries.length > 1 ? `${sim.countries.length}カ国` : null;
         return [brandPart, daysStr, dataStr, mainCountry, countryPart, sim.type].filter(Boolean).join(' / ');
@@ -1055,7 +1055,7 @@
             <div class="col-center">${bool(sim.voice_call)}</div>
             <div class="col-center">${netTags(sim.network)}</div>
             <div class="col-center">${sim.review_score != null ? `<span style="color:#f5a623;">★${sim.review_score.toFixed(1)}</span> <span style="color:#aaa;font-size:0.7rem;">(${(sim.review_count||0).toLocaleString()})</span>` : '-'}</div>
-            <div class="col-center">${sim.brand?.ja || sim.brand?.en || sim.brand?.original || '-'}</div>
+            <div class="col-center">${sim.brand?.local || sim.brand?.en || sim.brand?.original || '-'}</div>
             <div class="col-center">${badge(sim.type)}</div>
             <div class="col-right">
               <span class="price-val">${priceStr}</span>
