@@ -1038,7 +1038,7 @@
         const countriesSorted = COUNTRY_NAME && countries.includes(COUNTRY_NAME)
           ? [COUNTRY_NAME, ...countries.filter(c => c !== COUNTRY_NAME)]
           : [...countries];
-        const countStr = countries.length > 0 ? `${countries.length}カ国` : '-';
+        const countStr = countries.length > 0 ? `${countries.length}` : '-';
         const countriesStr = countriesSorted.length === 0 ? '-'
           : countriesSorted.length <= 4
             ? countriesSorted.join('・')
