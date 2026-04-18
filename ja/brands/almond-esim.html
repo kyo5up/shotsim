@@ -74,6 +74,85 @@
         padding-left: 10px;
         margin: 32px 0 12px;
       }
+      .country-group {
+        margin-bottom: 20px;
+      }
+      .country-group-label {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #555;
+        background: #f0f4ff;
+        border-left: 3px solid #1a3263;
+        padding: 4px 10px;
+        margin-bottom: 8px;
+      }
+      .sim-btn-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 4px;
+      }
+      .sim-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        border: 1px solid #ccd3e8;
+        border-radius: 6px;
+        background: #fff;
+        cursor: pointer;
+        overflow: hidden;
+        transition: border-color 0.15s, box-shadow 0.15s;
+        padding: 0;
+        font-size: 0.85rem;
+      }
+      .sim-btn:hover {
+        border-color: #1a3263;
+        box-shadow: 0 2px 8px rgba(26,50,99,0.12);
+      }
+      .sim-btn-body {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 7px 10px;
+        color: #222;
+      }
+      .sim-days { font-weight: 700; color: #1a3263; }
+      .sim-data { color: #444; }
+      .sim-price { font-weight: 700; color: #c0392b; }
+      .sim-sep { color: #bbb; font-size: 0.75rem; }
+      .sim-amz {
+        display: inline-block;
+        padding: 0 10px;
+        background: #ff9900;
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-decoration: none;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        border-left: 1px solid #e88a00;
+        white-space: nowrap;
+      }
+      .sim-amz:hover { background: #e68900; }
+      /* トースト通知 */
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(0);
+        background: rgba(30,30,30,0.92);
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-size: 0.88rem;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s;
+        z-index: 9999;
+        white-space: nowrap;
+      }
+      .toast.show { opacity: 1; }
     </style>
   </head>
   <body>
@@ -98,6 +177,151 @@
           <tr><th>会社名</th><td class="empty">-</td></tr><tr><th>本社</th><td class="empty">-</td></tr><tr><th>公式サイト</th><td class="empty">-</td></tr><tr><th>掲載SIM数</th><td>73</td></tr><tr><th>価格データ取得日</th><td>2026-04-18</td></tr>
         </tbody>
       </table>
+      
+      <div class="section-title">SIM一覧</div>
+      <div id="sim-sections">
+        
+      <div class="country-group">
+        <div class="country-group-label">アメリカ・カナダ・グアム・グアム・メキシコ・日本</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-1885.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥99,999</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0BWXKHCNW?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">アメリカ・オーストラリア・ニュージーランド</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2197.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥3,580</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FBLQ52Z7?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3173.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,680</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FBLQV91C?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3174.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,180</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FBLQXPCV?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">インド・インドネシア</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3842.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,780</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D7B47PC4?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3839.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,360</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D6R3ZMV8?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3866.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">8日</span><span class="sim-sep">/</span><span class="sim-data">16GB</span><span class="sim-sep">/</span><span class="sim-price">¥1,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DLJKN493?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3847.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,980</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D8VM4HR5?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3846.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">3日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥990</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D8VKZF7X?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4170.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D8V685JG?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4171.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D8VKD1FK?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3858.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,980</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZPN1LB?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4222.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">3日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥990</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZNRNMK?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4224.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">4日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,280</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZRJ233?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4225.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">5日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,580</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZRNH34?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4227.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">6日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,780</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZSBKZ8?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4226.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥2,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZRS3HL?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4223.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥2,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZNVX7P?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">アメリカ・カナダ</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2069.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">5日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,680</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZNC5QB?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2070.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥2,630</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZPLQVC?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2071.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">4日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,580</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZQGPH4?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2072.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">6日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZQSG8X?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2073.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">12日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥3,180</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZQTGXV?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2074.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">20日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥4,330</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZQXG3N?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2075.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">3日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥1,380</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZQZWNC?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2076.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">8日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥2,280</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZSNTFN?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2077.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">1GB/日</span><span class="sim-sep">/</span><span class="sim-price">¥3,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHZSV3SM?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">アメリカ</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2392.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥5,112</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FT2HYC9P?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2393.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FT2K2MTY?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2394.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">5日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,007</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FT2KQX4T?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2395.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥4,280</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FT2M2ZBB?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2396.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">20日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥4,305</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0FT2M728T?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2426.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">8日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,165</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2M1LR5?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2427.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥3,080</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2R37WW?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2428.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,780</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2R3SWV?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2429.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥4,380</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2R4VQJ?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2431.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥7,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2TRQX5?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2432.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">6日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,280</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2X6DV1?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2433.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,316</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2X8Y1B?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2434.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥4,280</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ325BZV?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2435.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">1日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥680</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ35VWKR?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2436.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ35Y6BF?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2437.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">9日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ36VYC8?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2438.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">20日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥5,380</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ36WM8J?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2439.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,598</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3BST2F?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2440.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">3日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,380</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3CM9CZ?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">シンガポール</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4001.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">4日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,680</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3CN8K8?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4002.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">1日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3MS5QC?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4000.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">2日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,180</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3BMDPH?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4824.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">5日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,980</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2TTJ98?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4827.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3MWLD7?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4825.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥3,280</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2X8MVN?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4821.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥4,680</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2MNQNX?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4822.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">20日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥5,880</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2Q53L8?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4826.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥7,380</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ3B9CWJ?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4823.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">3日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,480</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0GJ2SKGRV?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3857.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">7日</span><span class="sim-sep">/</span><span class="sim-data">3GB</span><span class="sim-sep">/</span><span class="sim-price">¥990</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHPR4BS5?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3856.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">20日</span><span class="sim-sep">/</span><span class="sim-data">10GB</span><span class="sim-sep">/</span><span class="sim-price">¥1,980</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHPPGCWG?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4219.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">5GB</span><span class="sim-sep">/</span><span class="sim-price">¥1,380</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DHPR846C?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3905.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">4日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,980</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0F3DCXZYZ?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4399.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">5GB</span><span class="sim-sep">/</span><span class="sim-price">-</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0F3DCLY9K?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-4400.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">30日</span><span class="sim-sep">/</span><span class="sim-data">20GB</span><span class="sim-sep">/</span><span class="sim-price">-</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0F3DDDB1K?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">台湾</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-1919.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">9日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,590</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CP35D3RH?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2576.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">15日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,990</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CP34PJ8X?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2577.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">8日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,490</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CP34V86S?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2578.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">10日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,690</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CP34XDF2?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2581.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">9日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥1,590</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CP35BXL3?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2589.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">20日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥2,490</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CP35WN33?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2720.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">5日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥990</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0CZDGN1ZF?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2014.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">3日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥870</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D16YJ9ZC?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-2023.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">4日</span><span class="sim-sep">/</span><span class="sim-data">無制限</span><span class="sim-sep">/</span><span class="sim-price">¥940</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0D32CHCLW?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      <div class="country-group">
+        <div class="country-group-label">マレーシア</div>
+        <div class="sim-btn-wrap">
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3868.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">8日</span><span class="sim-sep">/</span><span class="sim-data">16GB</span><span class="sim-sep">/</span><span class="sim-price">¥1,980</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DLKMZ8ZX?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+          <button class="sim-btn" data-sim-url="/shotsim/ja/sims/SS-3867.html" onclick="openSim(this)"><span class="sim-btn-body"><span class="sim-days">5日</span><span class="sim-sep">/</span><span class="sim-data">10GB</span><span class="sim-sep">/</span><span class="sim-price">¥1,780</span></span><a class="sim-amz" href="https://www.amazon.co.jp/dp/B0DLKJNRZC?tag=shotsim-22" target="_blank" rel="noopener" onclick="event.stopPropagation()">Amazon</a></button>
+        </div>
+      </div>
+      </div>
     </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      const _pageCache = {};
+      async function openSim(btn) {
+        const url = btn.dataset.simUrl;
+        if (!url) return;
+        if (_pageCache[url] === undefined) {
+          try {
+            const res = await fetch(url, { method: 'HEAD' });
+            _pageCache[url] = res.ok;
+          } catch { _pageCache[url] = false; }
+        }
+        if (_pageCache[url]) {
+          location.href = url;
+        } else {
+          showToast('このSIMの詳細ページは現在準備中です');
+        }
+      }
+      function showToast(msg) {
+        const el = document.getElementById('toast');
+        el.textContent = msg;
+        el.classList.add('show');
+        setTimeout(() => el.classList.remove('show'), 2500);
+      }
+    </script>
   </body>
 </html>
