@@ -261,8 +261,7 @@
           40px   /* 日数 */
           70px   /* 高速 */
           62px   /* 低速 */
-          28px   /* 国数 */
-          minmax(0, 120px) /* 対応国 */
+          minmax(0, 130px) /* 対応国 */
           28px   /* 通話 */
           54px   /* 規格 */
           70px   /* 評価 */
@@ -699,7 +698,6 @@
           <div class="col-center">日数</div>
           <div class="col-center">高速データ</div>
           <div class="col-center">低速</div>
-          <div class="col-center">国数</div>
           <div class="col-name">対応国</div>
           <div class="col-center">通話</div>
           <div class="col-center">規格</div>
@@ -1038,11 +1036,13 @@
         const countriesSorted = COUNTRY_NAME && countries.includes(COUNTRY_NAME)
           ? [COUNTRY_NAME, ...countries.filter(c => c !== COUNTRY_NAME)]
           : [...countries];
-        const countStr = countries.length > 0 ? `${countries.length}` : '-';
-        const countriesStr = countriesSorted.length === 0 ? '-'
+        const countriesBody = countriesSorted.length === 0 ? '-'
           : countriesSorted.length <= 4
             ? countriesSorted.join('・')
             : countriesSorted.slice(0, 3).join('・') + '・など';
+        const countriesStr = countries.length > 0
+          ? `<span style="color:#888;font-size:0.72rem;">${countries.length}:</span> ${countriesBody}`
+          : '-';
 
         const shortName = getShortName(sim);
         const priceStr = sim.price_min != null
@@ -1067,7 +1067,6 @@
             <div class="col-center">${daysStr}</div>
             <div class="col-center">${dataStr}</div>
             <div class="col-center">${dataLow}</div>
-            <div class="col-center">${countStr}</div>
             <div class="col-name-wrap" style="font-size:0.75rem;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${countriesStr}</div>
             <div class="col-center">${bool(sim.voice_call)}</div>
             <div class="col-center">${netTags(sim.network)}</div>
