@@ -48,6 +48,12 @@
         border-radius: 6px;
         padding: 8px;
       }
+      .amz-wrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
       .amz-btn {
         display: inline-flex;
         align-items: center;
@@ -59,9 +65,18 @@
         padding: 10px 24px;
         border-radius: 6px;
         text-decoration: none;
-        margin-bottom: 28px;
+        white-space: nowrap;
       }
       .amz-btn:hover { background: #e68900; }
+      .amz-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #c0392b;
+      }
+      .amz-price-note {
+        font-size: 0.75rem;
+        color: #999;
+      }
       .section-title {
         font-size: 1rem;
         font-weight: 700;
@@ -109,7 +124,13 @@
 
       <img src="https://m.media-amazon.com/images/I/81Zd1leUWZL._AC_SY300_SX300_QL70_ML2_.jpg" alt="【ベトナムeSIM】3日間高速データ通信 9GB/日 | 電話番号付き 無料で着信通話・SMS受信可能 | TikTok/ChatGPT/Google 利用可能 | 当日メール配送 | QRコードで簡単設定 |ベトナムMobiFone回線利用 | LINEサポート 対応 |ベトナム simカード ベトナム sim ベトナム esim (3日間9GB/日)" class="sim-image" />
 
-      <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0F3DDNFBW?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+      <div class="amz-wrap">
+        <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0F3DDNFBW?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+        <div>
+          <div class="amz-price">¥799</div>
+          <div class="amz-price-note">2026-04-18時点</div>
+        </div>
+      </div>
 
       <div class="section-title">スペック詳細</div>
       <table class="info-table">

@@ -48,6 +48,12 @@
         border-radius: 6px;
         padding: 8px;
       }
+      .amz-wrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
       .amz-btn {
         display: inline-flex;
         align-items: center;
@@ -59,9 +65,18 @@
         padding: 10px 24px;
         border-radius: 6px;
         text-decoration: none;
-        margin-bottom: 28px;
+        white-space: nowrap;
       }
       .amz-btn:hover { background: #e68900; }
+      .amz-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #c0392b;
+      }
+      .amz-price-note {
+        font-size: 0.75rem;
+        color: #999;
+      }
       .section-title {
         font-size: 1rem;
         font-weight: 700;
@@ -109,7 +124,13 @@
 
       <img src="https://m.media-amazon.com/images/I/61Yjp4g6F6L._AC_SX522_.jpg" alt="[ シンガポール eSIM ] オンライン最短即日発行（メール受取）｜選べる容量・日数｜即利用OK｜安心24時間日本語サポート｜低速無制限付き (30Days-Daily 1GB)" class="sim-image" />
 
-      <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0FHCSPHHQ?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+      <div class="amz-wrap">
+        <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0FHCSPHHQ?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+        <div>
+          <div class="amz-price">¥6,190</div>
+          <div class="amz-price-note">2026-04-18時点</div>
+        </div>
+      </div>
 
       <div class="section-title">スペック詳細</div>
       <table class="info-table">

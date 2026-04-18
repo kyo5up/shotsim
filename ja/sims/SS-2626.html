@@ -48,6 +48,12 @@
         border-radius: 6px;
         padding: 8px;
       }
+      .amz-wrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
       .amz-btn {
         display: inline-flex;
         align-items: center;
@@ -59,9 +65,18 @@
         padding: 10px 24px;
         border-radius: 6px;
         text-decoration: none;
-        margin-bottom: 28px;
+        white-space: nowrap;
       }
       .amz-btn:hover { background: #e68900; }
+      .amz-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #c0392b;
+      }
+      .amz-price-note {
+        font-size: 0.75rem;
+        color: #999;
+      }
       .section-title {
         font-size: 1rem;
         font-weight: 700;
@@ -109,7 +124,13 @@
 
       <img src="https://m.media-amazon.com/images/I/61Q3ypfE5zL._AC_SX300_SY300_QL70_ML2_.jpg" alt="アメリカ eSIMカード 7ヶ月 高速データ 5GB / 日本含む 使い放題 国際通話/SMS テザリング可 ハワイ旅行 出張 留学用 ジェスロモバイル 5G/4G-LTE T-mobile回線 プリペイド" class="sim-image" />
 
-      <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0CS53CKQ6?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+      <div class="amz-wrap">
+        <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0CS53CKQ6?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+        <div>
+          <div class="amz-price">¥27,160</div>
+          <div class="amz-price-note">2026-04-18時点</div>
+        </div>
+      </div>
 
       <div class="section-title">スペック詳細</div>
       <table class="info-table">

@@ -48,6 +48,12 @@
         border-radius: 6px;
         padding: 8px;
       }
+      .amz-wrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
       .amz-btn {
         display: inline-flex;
         align-items: center;
@@ -59,9 +65,18 @@
         padding: 10px 24px;
         border-radius: 6px;
         text-decoration: none;
-        margin-bottom: 28px;
+        white-space: nowrap;
       }
       .amz-btn:hover { background: #e68900; }
+      .amz-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #c0392b;
+      }
+      .amz-price-note {
+        font-size: 0.75rem;
+        color: #999;
+      }
       .section-title {
         font-size: 1rem;
         font-weight: 700;
@@ -109,7 +124,13 @@
 
       <img src="https://m.media-amazon.com/images/I/71pYNNc5ETL._AC_SX522_.jpg" alt="【SKテレコム正規品】韓国eSIM｜2日間 完全無制限（低速なし）｜電話番号付き・通話/SMS受信専用｜即日利用OK｜韓国空港SKTカウンター対応｜LINEで24時間サポート｜韓国SIM (2日間)" class="sim-image" />
 
-      <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0FGVW9BJD?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+      <div class="amz-wrap">
+        <a class="amz-btn" href="https://www.amazon.co.jp/dp/B0FGVW9BJD?tag=shotsim-22" target="_blank" rel="noopener">Amazonで見る</a>
+        <div>
+          <div class="amz-price">¥1,320</div>
+          <div class="amz-price-note">2026-04-18時点</div>
+        </div>
+      </div>
 
       <div class="section-title">スペック詳細</div>
       <table class="info-table">
