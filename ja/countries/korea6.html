@@ -261,6 +261,8 @@
           40px   /* 日数 */
           70px   /* 高速 */
           62px   /* 低速 */
+          28px   /* 国数 */
+          minmax(0, 120px) /* 対応国 */
           28px   /* 通話 */
           54px   /* 規格 */
           70px   /* 評価 */
@@ -697,6 +699,8 @@
           <div class="col-center">日数</div>
           <div class="col-center">高速データ</div>
           <div class="col-center">低速</div>
+          <div class="col-center">国数</div>
+          <div class="col-name">対応国</div>
           <div class="col-center">通話</div>
           <div class="col-center">規格</div>
           <div class="col-center">評価</div>
@@ -1029,6 +1033,17 @@
         const dataStr  = sim.data_high != null ? sim.data_high        : '-';
         const dataLow  = sim.data_low  != null ? sim.data_low         : '-';
 
+        // 対応国（当該国を先頭に）
+        const countries = sim.countries || [];
+        const countriesSorted = COUNTRY_NAME && countries.includes(COUNTRY_NAME)
+          ? [COUNTRY_NAME, ...countries.filter(c => c !== COUNTRY_NAME)]
+          : [...countries];
+        const countStr = countries.length > 0 ? `${countries.length}カ国` : '-';
+        const countriesStr = countriesSorted.length === 0 ? '-'
+          : countriesSorted.length <= 4
+            ? countriesSorted.join('・')
+            : countriesSorted.slice(0, 3).join('・') + '・など';
+
         const shortName = getShortName(sim);
         const priceStr = sim.price_min != null
           ? (sim.price_min === sim.price_max
@@ -1052,6 +1067,8 @@
             <div class="col-center">${daysStr}</div>
             <div class="col-center">${dataStr}</div>
             <div class="col-center">${dataLow}</div>
+            <div class="col-center">${countStr}</div>
+            <div class="col-name-wrap" style="font-size:0.75rem;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${countriesStr}</div>
             <div class="col-center">${bool(sim.voice_call)}</div>
             <div class="col-center">${netTags(sim.network)}</div>
             <div class="col-center">${sim.review_score != null ? `<span style="color:#f5a623;">★${sim.review_score.toFixed(1)}</span> <span style="color:#aaa;font-size:0.7rem;">(${(sim.review_count||0).toLocaleString()})</span>` : '-'}</div>
