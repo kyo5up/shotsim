@@ -186,6 +186,29 @@ header .logo {
   margin-bottom: 8px;
 }
 
+/* PC（マウス操作デバイス）: フラグ画像を表示・絵文字を非表示 */
+@media (hover: hover) and (pointer: fine) {
+  .country-card .flag .flag-emoji { display: none; }
+  .country-card .flag .flag-img {
+    display: block;
+    width: 48px;
+    height: auto;
+  }
+  .flag-h1 .flag-emoji { display: none; }
+  .flag-h1 .flag-img {
+    display: inline-block;
+    width: 1em;
+    height: 0.8em;
+    vertical-align: middle;
+    margin-right: 4px;
+    object-fit: contain;
+  }
+}
+
+/* スマホ（タッチデバイス）: 画像を非表示・絵文字そのまま */
+.country-card .flag .flag-img { display: none; }
+.flag-h1 .flag-img { display: none; }
+
 .country-card .name {
   font-weight: 600;
 }
